@@ -1,0 +1,2 @@
+allow blkid_untrusted vold_block_device:blk_file { create getattr read open ioctl };
+allow blkid_untrusted sda_block_device:blk_file { r_file_perms getattr };

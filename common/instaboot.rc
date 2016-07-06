@@ -1,0 +1,4 @@
+on early-init
+    loglevel 3
+
+    insmod /boot/instaboot.ko

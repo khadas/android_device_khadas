@@ -1,0 +1,13 @@
+type hdcp_rx22, domain;
+type hdcp_rx22_exec, exec_type, file_type;
+init_daemon_domain(hdcp_rx22)
+type hdcprx_device, dev_type;
+
+allow hdcp_rx22 hdcprx_device:chr_file { open read write getattr ioctl };
+
+allow hdcp_rx22 system_file:file execute_no_trans;
+
+allow hdcp_rx22 sysfs:file rw_file_perms;
+
+allow hdcp_rx22 param_tv_device:dir  { search read write open add_name remove_name rmdir };
+allow hdcp_rx22 param_tv_device:file { create open read write setattr getattr lock unlink };

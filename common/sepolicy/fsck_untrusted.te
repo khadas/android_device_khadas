@@ -1,0 +1,2 @@
+allow fsck_untrusted vold_block_device:blk_file { create getattr read write open ioctl };
+allow fsck_untrusted sda_block_device:blk_file { create getattr read write open ioctl };

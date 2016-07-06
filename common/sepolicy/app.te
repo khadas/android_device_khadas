@@ -1,0 +1,84 @@
+# Write to various pseudo file systems.
+allow untrusted_app block_device:dir { search getattr };
+allow untrusted_app block_device:blk_file { getattr };
+allow untrusted_app imageserver_service:service_manager find;
+
+allow untrusted_app system_control_service:service_manager find;
+
+
+allow untrusted_app unlabeled:dir { search read write getattr };
+allow untrusted_app unlabeled:file { lock open read write getattr };
+
+# Read and write /data/data subdirectory.
+allow untrusted_app system_app_data_file:dir create_dir_perms;
+allow untrusted_app { system_app_data_file app_data_file }:dir { getattr read search };
+
+allow untrusted_app system_app_data_file:file create_file_perms;
+allow untrusted_app { system_app_data_file app_data_file }:file { getattr read write };
+
+#allow untrusted_app unlabeled:dir r_dir_perms;
+#allow untrusted_app unlabeled:file r_file_perms;
+allow untrusted_app subtitle_service:service_manager { find };
+allow untrusted_app unlabeled:filesystem getattr;
+allow untrusted_app shm:chr_file { read write getattr };
+allow untrusted_app proc_sysrq:file { read getattr };
+allow untrusted_app kernel:file { open read getattr };
+allow untrusted_app kernel:dir { search getattr };
+allow untrusted_app pppoe_wrapper:file { open read getattr };
+allow untrusted_app pppoe_wrapper:dir { search getattr };
+allow untrusted_app zygote:file { open read getattr };
+allow untrusted_app zygote:dir { search getattr };
+allow untrusted_app gatekeeperd:file { open read getattr };
+allow untrusted_app gatekeeperd:dir { search getattr };
+allow untrusted_app imageserver:file { open read getattr };
+allow untrusted_app imageserver:dir { search getattr };
+allow untrusted_app system_control:file { open read getattr };
+allow untrusted_app system_control:dir { search getattr };
+allow untrusted_app keystore:file { open read getattr };
+allow untrusted_app keystore:dir { search getattr };
+allow untrusted_app installd:file { open read getattr };
+allow untrusted_app installd:dir { search getattr };
+allow untrusted_app mediaserver:file { open read getattr };
+allow untrusted_app mediaserver:dir { search getattr };
+allow untrusted_app drmserver:file { open read getattr };
+allow untrusted_app drmserver:dir { search getattr };
+allow untrusted_app debuggerd:file { open read getattr };
+allow untrusted_app debuggerd:dir { search getattr };
+allow untrusted_app netd:file { open read getattr };
+allow untrusted_app netd:dir { search getattr };
+allow untrusted_app surfaceflinger:file { open read getattr };
+allow untrusted_app surfaceflinger:dir { search getattr };
+allow untrusted_app servicemanager:file { open read getattr };
+allow untrusted_app servicemanager:dir { search getattr };
+allow untrusted_app lmkd:file { open read getattr };
+allow untrusted_app lmkd:dir { search getattr };
+allow untrusted_app shell:file { open read getattr };
+allow untrusted_app shell:dir { search getattr };
+allow untrusted_app healthd:file { open read getattr };
+allow untrusted_app healthd:dir { search getattr };
+allow untrusted_app vold:file { open read getattr };
+allow untrusted_app vold:dir { search getattr };
+allow untrusted_app logd:file { open read getattr };
+allow untrusted_app logd:dir { search getattr };
+allow untrusted_app ueventd:file { open read getattr };
+allow untrusted_app ueventd:dir { search getattr };
+allow untrusted_app init:file { open read getattr };
+allow untrusted_app init:dir { search getattr };
+allow untrusted_app system_server:file { open read getattr };
+allow untrusted_app system_server:dir { search getattr };
+allow untrusted_app dhcp:file { open read getattr };
+allow untrusted_app dhcp:dir { search getattr };
+allow untrusted_app sdcardd:file { open read getattr };
+allow untrusted_app sdcardd:dir { search getattr };
+allow untrusted_app platform_app:file { open read getattr };
+allow untrusted_app platform_app:dir { search getattr };
+allow untrusted_app system_app:file { open read getattr };
+allow untrusted_app system_app:dir { search getattr };
+allow untrusted_app usbpm:file { open read getattr };
+allow untrusted_app usbpm:dir { search getattr };
+
+allow untrusted_app self:{ udp_socket } { ioctl };
+allow untrusted_app fuseblk:dir { search };
+allow untrusted_app dex2oat:dir { getattr };
+allow untrusted_app wpa:dir { getattr };
+allow untrusted_app storage_stub_file:dir { getattr };

@@ -1,0 +1,3 @@
+allow sgdisk vold_block_device:blk_file { create getattr read open ioctl };
+
+allow sgdisk kernel:system module_request;
