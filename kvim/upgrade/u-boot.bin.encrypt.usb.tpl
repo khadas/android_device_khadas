@@ -1,0 +1,1 @@
+../../../../uboot/fip/u-boot.bin.encrypt.usb.tpl
