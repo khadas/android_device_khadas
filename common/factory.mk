@@ -92,7 +92,7 @@ endif
 logoimg: $(INSTALLED_AML_LOGO)
 
 ifneq ($(BOARD_AUTO_COLLECT_MANIFEST),false)
-BUILD_TIME := $(shell date +%Y-%m-%d--%H-%M)
+BUILD_TIME := $(shell date +%y%m%d-%H%M)
 INSTALLED_MANIFEST_XML := $(PRODUCT_OUT)/manifests/manifest-$(BUILD_TIME).xml
 $(INSTALLED_MANIFEST_XML):
 	$(hide) mkdir -p $(PRODUCT_OUT)/manifests
