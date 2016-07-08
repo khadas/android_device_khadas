@@ -100,6 +100,8 @@
                 android:label="@string/settings_label_launcher"
                 android:launchMode="singleTask">
             <intent-filter android:priority="1">
+			    <action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.settings.SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
