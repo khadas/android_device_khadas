@@ -1,5 +1,5 @@
 KERNEL_ARCH ?= arm64
-CROSS_COMPILE ?= aarch64-linux-gnu-
+CROSS_COMPILE ?= /opt/toolchains/gcc-linaro-aarch64-linux-gnu-4.9-2014.09_linux/bin/aarch64-linux-gnu-
 CONFIG_DHD_USE_STATIC_BUF ?= y
 PRODUCT_OUT=out/target/product/$(TARGET_PRODUCT)
 TARGET_OUT=$(PRODUCT_OUT)/system
