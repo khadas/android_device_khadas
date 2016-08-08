@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
 	device/khadas/common/config/lowmemorykiller_512M.txt:system/etc/lowmemorykiller_512M.txt
 endif
 
+#DDR LOG
+PRODUCT_COPY_FILES += \
+	device/amlogic/common/ddrtest.sh:system/bin/ddrtest.sh
+
 # USB
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
