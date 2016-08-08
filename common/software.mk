@@ -50,6 +50,7 @@ PRODUCT_PACKAGES += \
     Contacts \
     TvProvider \
     Bluetooth \
+	PrintSpooler \
     DownloadProviderUi \
     Calendar \
     QuickSearchBox
