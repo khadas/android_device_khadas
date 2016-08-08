@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_COPY_FILES += \
-    device/khadas/common/android.software.atv.xml:system/etc/permissions/android.software.google_atv.xml
+    device/khadas/common/android.software.google_atv.xml:system/etc/permissions/android.software.google_atv.xml
 
 PRODUCT_PACKAGES += \
 	GooglePackageInstaller
