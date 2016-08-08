@@ -25,3 +25,9 @@ allow system_app dig_socket:sock_file write;
 allow system_app iso9660:dir { search read open };
 allow system_app unlabeled:dir { search read write getattr };
 allow system_app unlabeled:file { lock open read write getattr };
+# /dev/uio0 for amadec
+allow system_app uio_device:chr_file rw_file_perms;
+
+# /cache_file for dvb app creat update.zip file at /cache  dir
+allow system_app cache_file:dir {create_dir_perms create_file_perms rw_file_perms};
+allow system_app cache_file:file {create_file_perms rw_file_perms};
