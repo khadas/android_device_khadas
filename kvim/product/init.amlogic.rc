@@ -462,3 +462,9 @@ service hdcp_tx22 /system/bin/hdcp_tx22 \
     class main
     disabled
     oneshot
+
+service ddrtest /system/bin/ddrtest.sh
+   class main
+   user root
+   group root
+   oneshot
