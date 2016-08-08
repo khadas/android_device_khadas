@@ -334,7 +334,9 @@ on fs
 
 on aml-firstboot-init
     #format data and cache patrition if not exist
+    wait /dev/block/data 20
     confirm_formated ext4 /dev/block/data /data
+	wait /dev/block/cache 20
     confirm_formated ext4 /dev/block/cache /cache
 
 service system_control /system/bin/systemcontrol
