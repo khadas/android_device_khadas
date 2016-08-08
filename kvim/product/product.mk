@@ -35,11 +35,11 @@ PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
 
 #Tvsettings
 PRODUCT_PACKAGES += \
-    TvSettings
+    Settings
 
 #MboxLauncher
 PRODUCT_PACKAGES += \
-    MboxLauncher
+    Launcher3
 
 #USB PM
 PRODUCT_PACKAGES += \
