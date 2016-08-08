@@ -43,7 +43,6 @@ media.amsuperplayer.m4aplayer=STAGEFRIGHT_PLAYER
 media.amsuperplayer.defplayer=PV_PLAYER
 media.amplayer.thumbnail=true
 media.amplayer.dsource4local=1
-media.amplayer.startmode=true
 media.amplayer.dropwaitxms=100
 
 media.arm.audio.decoder=ape,flac,dts,ac3,eac3,wma,wmapro,mp3,aac,vorbis,raac,cook,amr,pcm,adpcm,aac_latm,rm
