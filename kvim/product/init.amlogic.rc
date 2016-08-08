@@ -87,6 +87,7 @@ on boot
     chown media system /sys/class/tsync/av_threshold_min
     chown media system /sys/class/tsync/av_threshold_max
     chown system system /sys/class/graphics/fb0/blank
+	chown media system /sys/class/graphics/fb0/free_scale_switch
     chown media system /sys/class/graphics/fb1/blank
     chown media system /sys/class/graphics/fb0/order
     chown media system /sys/class/graphics/fb1/order
@@ -97,6 +98,7 @@ on boot
 
     chmod 0664 /sys/class/graphics/fb0/blank
     chmod 0664 /sys/class/graphics/fb1/blank
+	chmod 0664 /sys/class/graphics/fb0/free_scale_switch
 
     chown media system /sys/class/video/blackout_policy
     chown media system /sys/class/video/screen_mode
