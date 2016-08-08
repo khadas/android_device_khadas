@@ -42,7 +42,6 @@ media.amplayer.enable=true
 media.amsuperplayer.m4aplayer=STAGEFRIGHT_PLAYER
 media.amsuperplayer.defplayer=PV_PLAYER
 media.amplayer.thumbnail=true
-media.amplayer.widevineenable=false
 media.amplayer.dsource4local=1
 media.amplayer.startmode=true
 media.amplayer.dropwaitxms=100
