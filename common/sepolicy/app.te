@@ -79,6 +79,7 @@ allow untrusted_app usbpm:dir { search getattr };
 
 allow untrusted_app self:{ udp_socket } { ioctl };
 allow untrusted_app fuseblk:dir { search };
+allow untrusted_app fuseblk:file { read open };
 allow untrusted_app dex2oat:dir { getattr };
 allow untrusted_app wpa:dir { getattr };
 allow untrusted_app storage_stub_file:dir { getattr };
