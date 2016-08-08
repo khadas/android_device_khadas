@@ -7,6 +7,10 @@ ro.camera.preview.MaxSize=1280x720
 ro.camera.preview.LimitedRate=1280x720x30,640x480x30,320x240x28
 ro.camera.preview.UseMJPEG=1
 
+#for bt auto connect
+ro.autoconnectbt.macprefix=DC:2C:26
+ro.autoconnectbt.btclass=2540
+
 #if wifi Only
 ro.radio.noril=false
 
