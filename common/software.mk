@@ -38,7 +38,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.app.rotation=original
+    persist.sys.app.rotation=original \
+	media.amplayer.widevineenable=true
 
 #WITH_DEXPREOPT := true
 #WITH_DEXPREOPT_PIC := true
