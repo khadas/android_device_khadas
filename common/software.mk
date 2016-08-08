@@ -26,6 +26,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=1
 
 ifeq ($(TARGET_BUILD_CTS), true)
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.software.voice_recognizers.xml:system/etc/permissions/android.software.voice_recognizers.xml \
+	frameworks/native/data/etc/android.hardware.screen.landscape.xml:system/etc/permissions/android.hardware.screen.landscape.xml
+
+ifeq ($(TARGET_BUILD_GOOGLE_ATV), true)
+PRODUCT_COPY_FILES += \
+    device/khadas/common/android.software.atv.xml:system/etc/permissions/android.software.google_atv.xml
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.app.rotation=original
 
@@ -39,8 +48,6 @@ PRODUCT_PACKAGES += \
     DownloadProviderUi \
     Calendar \
     QuickSearchBox
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 else
 PRODUCT_PACKAGES += \
     Dig \
