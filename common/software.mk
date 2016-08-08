@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
 #    $(LOCAL_PATH)/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 else
 PRODUCT_PACKAGES += \
-    Dig
+    Dig \
+	libfwdlockengine
 
 endif
 

@@ -21,7 +21,6 @@ PRODUCT_LOCALES := en_US
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 
 PRODUCT_PACKAGES += \
-    libfwdlockengine \
     OpenWnn \
     libWnnEngDic \
     libWnnJpnDic \
