@@ -15,6 +15,7 @@
 #
 GPU_TARGET_PLATFORM := default_8a
 GPU_TYPE:=mali450
+GPU_ARCH:=utgard
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
