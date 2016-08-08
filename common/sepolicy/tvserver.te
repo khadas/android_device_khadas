@@ -47,7 +47,7 @@ binder_call(tvserver, binderservicedomain)
 binder_service(tvserver)
 
 allow tvserver avin_device:chr_file  { read write open };
-allow tvserver hdmirx0_device:chr_file  { read write open };
+allow tvserver hdmirx0_device:chr_file  { ioctl read write open };
 allow tvserver amvideo_device:chr_file  { read write open };
 
 allow tvserver param_tv_device:dir  { search read write open add_name remove_name rmdir };
