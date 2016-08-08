@@ -226,3 +226,10 @@ PRODUCT_COPY_FILES += \
 
 TARGET_BUILD_CTS:= false
 include device/khadas/common/software.mk
+ifeq ($(TARGET_BUILD_GOOGLE_ATV),true)
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.sf.lcd_density=320
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.sf.lcd_density=240
+endif

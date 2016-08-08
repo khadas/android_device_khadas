@@ -10,8 +10,6 @@ ro.camera.preview.UseMJPEG=1
 #if wifi Only
 ro.radio.noril=false
 
-ro.sf.lcd_density=240
-
 #if need pppoe
 ro.net.pppoe=true
 
