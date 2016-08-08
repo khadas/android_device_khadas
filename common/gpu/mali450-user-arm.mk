@@ -16,3 +16,8 @@
 #
 GPU_TARGET_PLATFORM := default_7a
 GPU_TYPE:=mali450
+
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.opengles.version=131072

@@ -123,10 +123,7 @@ endif
 # set soft stagefright extractor&decoder as defaults
 WITH_SOFT_AM_EXTRACTOR_DECODER := true
 
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
     debug.hwui.render_dirty_regions=false \
     camera.disable_zsl_mode=1
 
