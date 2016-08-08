@@ -32,8 +32,8 @@ PRODUCT_COPY_FILES += \
 # remote IME config file
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/files/remote.conf:system/etc/remote.conf \
-    device/khadas/kvim/files/Vendor_0001_Product_0001.kl:/system/usr/keylayout/Vendor_0001_Product_0001.kl
-
+    device/khadas/kvim/files/Vendor_0001_Product_0001.kl:/system/usr/keylayout/Vendor_0001_Product_0001.kl \
+    device/khadas/kvim/files/Generic.kl:/system/usr/keylayout/Generic.kl
 PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
