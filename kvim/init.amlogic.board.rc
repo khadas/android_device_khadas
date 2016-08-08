@@ -7,13 +7,13 @@ on early-init
     mount configfs configfs /sys/kernel/config
     #mount usbfs none /proc/bus/usb
 
-    insmod /boot/mali.ko mali_debug_level=2 mali_shared_mem_size=0x40000000
     insmod /boot/optee.ko
     insmod /boot/optee_armtz.ko
 
 on init
 
 on post-fs-data
+    insmod /system/lib/mali.ko mali_debug_level=2 mali_shared_mem_size=0x40000000
 
 on boot
     setprop ro.radio.noril true
