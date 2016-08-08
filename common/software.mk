@@ -67,5 +67,5 @@ endif
 
 ifeq ($(TARGET_BUILD_NETFLIX), true)
 PRODUCT_COPY_FILES += \
-	device/khadas/common/droidlogic.software.netflix.xml:system/etc/permissions/android.software.netflix.xml
+	device/khadas/common/droidlogic.software.netflix.xml:system/etc/permissions/droidlogic.software.netflix.xml
 endif
