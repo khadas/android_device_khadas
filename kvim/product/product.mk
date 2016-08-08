@@ -62,7 +62,7 @@ endif
 
 #DDR LOG
 PRODUCT_COPY_FILES += \
-	device/amlogic/common/ddrtest.sh:system/bin/ddrtest.sh
+	device/khadas/common/ddrtest.sh:system/bin/ddrtest.sh
 
 # USB
 PRODUCT_COPY_FILES += \
