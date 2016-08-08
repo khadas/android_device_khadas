@@ -30,3 +30,6 @@ allow vold vold_block_device:blk_file { create getattr read open unlink ioctl lo
 
 allow vold storage_stub_file:dir { getattr read open search write add_name };
 allow vold block_device:blk_file { read write open getattr };
+
+# for make ext4fs
+domain_auto_trans(vold, make_ext4fs_exec, make_ext4fs);
