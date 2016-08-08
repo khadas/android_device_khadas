@@ -131,6 +131,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     rw.camera.usb.faceback=true
 
+SKIP_BOOT_JARS_CHECK = true
+
 PRODUCT_BOOT_JARS += \
     droidlogic \
     droidlogic.frameworks.pppoe
