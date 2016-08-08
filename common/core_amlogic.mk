@@ -149,8 +149,7 @@ PRODUCT_PACKAGES += \
     SubTitle \
     AppInstaller \
     FileBrowser \
-    libdig \
-    Miracast
+    libdig
 
 PRODUCT_PACKAGES += \
     hostapd \
