@@ -226,6 +226,7 @@ PRODUCT_COPY_FILES += \
 
 TARGET_BUILD_CTS:= false
 TARGET_BUILD_GOOGLE_ATV:= false
+TARGET_BUILD_NETFLIX:= false
 include device/khadas/common/software.mk
 ifeq ($(TARGET_BUILD_GOOGLE_ATV),true)
 PRODUCT_PROPERTY_OVERRIDES += \
