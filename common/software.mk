@@ -56,7 +56,8 @@ PRODUCT_PACKAGES += \
 else
 PRODUCT_PACKAGES += \
     Dig \
-	libfwdlockengine
+	libfwdlockengine \
+	DownloadProviderUi
 
 endif
 
