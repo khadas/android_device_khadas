@@ -66,6 +66,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.primary.default \
     audio_policy.default \
+	audio.dia_remote.default \
     local_time.default \
     vibrator.default \
     power.default
