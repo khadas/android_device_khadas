@@ -224,6 +224,7 @@ BOARD_USES_USB_PM := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Third_party_apk_camera.xml:system/etc/Third_party_apk_camera.xml \
 
+BUILD_WITH_GAPPS_CONFIG :=false
 BUILD_WITH_TIMER_POWER_CONFIG :=true
 TARGET_BUILD_CTS:= false
 TARGET_BUILD_GOOGLE_ATV:= false

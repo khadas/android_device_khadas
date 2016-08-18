@@ -146,10 +146,13 @@ PRODUCT_PACKAGES += \
     libsystemcontrolservice \
     VideoPlayer \
     SubTitle \
-    AppInstaller \
     FileBrowser \
     libdig
 
+ifeq ($(BUILD_WITH_GAPPS_CONFIG),false)
+PRODUCT_PACKAGES += \
+	AppInstaller
+endif
 PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
