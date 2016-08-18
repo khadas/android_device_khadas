@@ -138,7 +138,6 @@ PRODUCT_BOOT_JARS += \
     droidlogic.frameworks.pppoe
 
 PRODUCT_PACKAGES += \
-    OTAUpgrade \
     RemoteIME \
     droidlogic \
     droidlogic-res \
