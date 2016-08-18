@@ -46,6 +46,15 @@ PRODUCT_PACKAGES += \
     usbtestpm \
     usbpower
 
+ifeq ($(BUILD_WITH_TIMER_POWER_CONFIG),true)
+PRODUCT_PROPERTY_OVERRIDES += persist.has.timer.power=true
+
+PRODUCT_PACKAGES += \
+	SchPwrOnOff
+else
+PRODUCT_PROPERTY_OVERRIDES += persist.has.timer.power=false
+endif
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/android.software.backup.xml:system/etc/permissions/android.software.backup.xml \
