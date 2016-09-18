@@ -96,6 +96,7 @@
 /data/tee(/.*)?         u:object_r:tee_supplicant_file:s0
 /dev/block/mmcblk[0-9]  u:object_r:sda_block_device:s0
 /dev/block/mmcblk[0-9]p(.*) u:object_r:sda_block_device:s0
+/data/log(/.*)?         u:object_r:log_file:s0
 
 /dev/socket/dig	        u:object_r:dig_socket:s0
 

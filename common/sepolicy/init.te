@@ -6,6 +6,7 @@ domain_auto_trans(init, system_control_exec, system_server)
 #allow init imageserver_service:service_manager add;
 domain_trans(init, imageserver_exec, imageserver)
 
+domain_trans(init, logcat, logcat)
 domain_trans(init, tee_supplicant_exec, tee_supplicant)
 allow init fuse:file { open read write };
 allow init fuse:dir search;

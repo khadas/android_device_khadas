@@ -43,6 +43,10 @@ on post-fs-data
     chown system system /etc/ppp
     chmod 0770 /etc/ppp
 
+    #save log
+	mkdir /data/log 0771 log log
+	mkdir /data/log/dontpanic 0771 log log
+
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
 
@@ -470,3 +474,10 @@ service ddrtest /system/bin/ddrtest.sh
    user root
    group root
    oneshot
+
+# logcat offline log
+service logcat /system/bin/logcat -b system -b events -b main -b crash -K -n 10 -v threadtime -f /data/log/logcat.log -r 1000 -M
+   class main
+   user log
+   group  log
+   seclabel u:r:logcat:s0

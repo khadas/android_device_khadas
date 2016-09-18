@@ -31,3 +31,8 @@ allow system_app uio_device:chr_file rw_file_perms;
 # /cache_file for dvb app creat update.zip file at /cache  dir
 allow system_app cache_file:dir {create_dir_perms create_file_perms rw_file_perms};
 allow system_app cache_file:file {create_file_perms rw_file_perms};
+
+allow system_app log_file:dir { search read open getattr };
+allow system_app log_file:file { read open getattr };
+allow system_app tombstone_data_file:dir r_dir_perms;
+allow system_app tombstone_data_file:file r_file_perms;
