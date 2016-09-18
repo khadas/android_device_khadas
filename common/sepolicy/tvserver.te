@@ -62,6 +62,9 @@ allow tvserver tv_config_prop:property_service set;
 allow tvserver sysfs:dir { write };
 allow tvserver self:capability sys_nice;
 
+allow tvserver { fuse storage_file }:dir { read search };
+allow tvserver { fuse storage_file }:file { open read getattr };
+
 allow tvserver unlabeled:dir { setattr search write };
 allow tvserver unlabeled:file { getattr open write read lock };
 allow tvserver uhid_device:chr_file rw_file_perms;
