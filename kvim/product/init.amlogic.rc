@@ -35,6 +35,7 @@ on init
 
     # for tee
 	mkdir /tee 0700 system system
+	confirm_formated ext4 /dev/block/tee /tee
 
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -345,8 +346,6 @@ on aml-firstboot-init
     confirm_formated ext4 /dev/block/data /data
 	wait /dev/block/cache 20
     confirm_formated ext4 /dev/block/cache /cache
-	wait /dev/block/tee 20
-	confirm_formated ext4 /dev/block/tee /tee
 
 service system_control /system/bin/systemcontrol
     class core
