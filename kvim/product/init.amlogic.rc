@@ -454,6 +454,12 @@ service instaboot /system/bin/instabootserver
     group root
     seclabel u:r:instaboot:s0
 
+service preinstall /system/bin/preinstall.sh
+    user root
+	group root
+	oneshot
+	seclabel u:r:preinstall:s0
+
 on property:config.disable_instaboot=false
     start instaboot
 
@@ -462,6 +468,9 @@ on property:instaboot.status=completed
 
 on property:dev.bootcomplete=1
     start usbpm
+
+on property:dev.bootcomplete=1
+    start preinstall
 
 service hdcp_tx22 /system/bin/hdcp_tx22 \
     -f /system/etc/firmware/firmware.le

@@ -1,0 +1,35 @@
+# preinstall seclabel is specified in init.amlogic.rc
+type preinstall, domain;
+type preinstall_exec, exec_type, file_type;
+
+init_daemon_domain(preinstall)
+
+allow preinstall system_file:file { execute_no_trans };
+allow preinstall shell_exec:file  { open read write execute execute_no_trans };
+#allow preinstall shell_data_file:dir { create getattr setattr search };
+#allow preinstall shell_data_file:file { open create read write getattr };
+allow preinstall shell:file { getattr };
+allow preinstall zygote_exec:file { read open write execute getattr execute_no_trans };
+allow preinstall system_data_file:dir { open read write add_name create };
+allow preinstall system_data_file:file { open read write create };
+allow preinstall dalvikcache_data_file:dir { open read write add_name remove_name unlink};
+allow preinstall dalvikcache_data_file:file { open read write create execute execute_no_trans unlink};
+allow preinstall servicemanager:binder { call  transfer};
+allow preinstall servicemanager:dir  { open read write create search };
+allow preinstall servicemanager:file  { open read write create };
+allow preinstall servicemanager:process { getattr };
+allow servicemanager preinstall:dir search;
+allow servicemanager preinstall:file { open read write create };
+allow servicemanager preinstall:process getattr;
+allow preinstall user_service:service_manager { find add list };
+allow preinstall package_service:service_manager { find add list };
+allow preinstall system_server:binder { call transfer };
+allow system_server preinstall:binder { call transfer };
+allow preinstall apk_data_file:dir create_dir_perms;
+allow preinstall apk_data_file:file { create_file_perms link };
+allow preinstall apk_tmp_file:dir create_dir_perms;
+allow preinstall apk_tmp_file:file create_file_perms;
+
+binder_use(preinstall)
+binder_service(preinstall)
+binder_call(preinstall, system_server)
