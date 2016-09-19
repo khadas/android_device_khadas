@@ -13,3 +13,4 @@
 /dev/block/loop     auto                loop      defaults                                  voldmanaged=loop:auto
 # Add for zram. zramsize can be in numeric (byte) , in percent or auto (detect by the system)
 /dev/block/zram0     /swap_zram0             swap      defaults                             wait,zramsize=auto
+/dev/block/tee       /tee                 ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check

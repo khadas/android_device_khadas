@@ -33,6 +33,9 @@ on init
     # for zram
     mkdir /swap_zram0 0700 root root
 
+    # for tee
+	mkdir /tee 0700 system system
+
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -342,6 +345,8 @@ on aml-firstboot-init
     confirm_formated ext4 /dev/block/data /data
 	wait /dev/block/cache 20
     confirm_formated ext4 /dev/block/cache /cache
+	wait /dev/block/tee 20
+	confirm_formated ext4 /dev/block/tee /tee
 
 service system_control /system/bin/systemcontrol
     class core

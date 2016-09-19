@@ -96,6 +96,7 @@
 /dev/teepriv0           u:object_r:drm_device:s0
 /dev/opteearmtz00       u:object_r:drm_device:s0
 /system/bin/tee-supplicant   u:object_r:tee_supplicant_exec:s0
+/tee(/.*)?              u:object_r:tee_data_file:s0
 /data/tee(/.*)?         u:object_r:tee_supplicant_file:s0
 /dev/block/mmcblk[0-9]  u:object_r:sda_block_device:s0
 /dev/block/mmcblk[0-9]p(.*) u:object_r:sda_block_device:s0
