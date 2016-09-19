@@ -21,6 +21,11 @@ ifeq ($(BOARD_HAVE_BLUETOOTH),false)
     BLUETOOTH_MODULE :=
 endif
 
+ifeq ($(MULTI_BLUETOOTH_SUPPORT), true)
+    BOARD_HAVE_BLUETOOTH := true
+    PRODUCT_PROPERTY_OVERRIDES += \
+        config.disable_bluetooth=false
+else
 ifeq ($(BLUETOOTH_MODULE),)
     BOARD_HAVE_BLUETOOTH := false
     PRODUCT_PROPERTY_OVERRIDES += \
@@ -29,6 +34,7 @@ else
     BOARD_HAVE_BLUETOOTH := true
     PRODUCT_PROPERTY_OVERRIDES += \
         config.disable_bluetooth=false
+endif
 endif
 
 ifeq ($(BOARD_HAVE_BLUETOOTH),true)
@@ -382,6 +388,28 @@ ifeq ($(BLUETOOTH_MODULE),rtl8723bu)
 BOARD_HAVE_BLUETOOTH_RTK := true
 
 $(call inherit-product, hardware/realtek/bluetooth/firmware/rtl8723b/device-rtl.mk)
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+endif
+
+##################################################################################
+ifeq ($(MULTI_BLUETOOTH_SUPPORT), true)
+BOARD_HAVE_BLUETOOTH_BCM := true
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/AP6210/BT/bcm20710a1.hcd:system/etc/bluetooth/BCM20702.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/AP6476/GPS/bcm2076b1.hcd:system/etc/bluetooth/BCM2076.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/AP6330/BT/bcm40183b2.hcd:system/etc/bluetooth/BCM4330.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/62x2/BT/bcm43241b4.hcd:system/etc/bluetooth/bcm43241b4.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6335/BT/bcm4335c0.hcd:system/etc/bluetooth/bcm4335c0.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6441/BT/bcm43341b0.hcd:system/etc/bluetooth/bcm43341b0.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6212/BT/bcm43438a0.hcd:system/etc/bluetooth/4343.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/4354/bcm4354a1.hcd:system/etc/bluetooth/BCM4350.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/4356/bcm4356a2.hcd:system/etc/bluetooth/BCM4354.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6255/BT/BCM4345C0.hcd:system/etc/bluetooth/BCM4345C0.hcd
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
