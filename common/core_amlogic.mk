@@ -265,6 +265,7 @@ PRODUCT_PACKAGES += \
 	tee_helloworld \
 	tee_crypto \
 	tee_xtest \
+	tdk_auto_test \
 	tee_helloworld_ta \
 	tee_fail_test_ta \
 	tee_crypt_ta \
@@ -272,7 +273,9 @@ PRODUCT_PACKAGES += \
 	tee_rpc_test_ta \
 	tee_sims_ta \
 	tee_storage_ta \
-	tee_concurrent_ta
+	tee_storage_benchmark_ta \
+	tee_concurrent_ta \
+	tee_concurrent_large_ta
 endif
 
 #########################################################################

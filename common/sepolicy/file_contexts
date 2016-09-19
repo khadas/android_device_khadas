@@ -92,6 +92,8 @@
 
 /system/bin/tvserver    u:object_r:tvserver_exec:s0
 
+/dev/tee0               u:object_r:drm_device:s0
+/dev/teepriv0           u:object_r:drm_device:s0
 /dev/opteearmtz00       u:object_r:drm_device:s0
 /system/bin/tee-supplicant   u:object_r:tee_supplicant_exec:s0
 /data/tee(/.*)?         u:object_r:tee_supplicant_file:s0
