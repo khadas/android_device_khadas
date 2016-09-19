@@ -13,3 +13,4 @@ type cri_block_device, dev_type;
 type sda_block_device, dev_type;
 type vold_block_device, dev_type;
 type drm_block_device, dev_type;
+type tee_block_device, dev_type;
