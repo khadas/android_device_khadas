@@ -102,7 +102,7 @@ PRODUCT_DEFAULT_WIFI_CHANNELS := 11
 #########################################################################
 
 BOARD_HAVE_BLUETOOTH := true
-BLUETOOTH_MODULE := AP6212
+MULTI_BLUETOOTH_SUPPORT := true
 BCM_BLUETOOTH_LPM_ENABLE := true
 include device/khadas/common/bluetooth.mk
 
