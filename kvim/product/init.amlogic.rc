@@ -114,6 +114,7 @@ on boot
     chown media system /sys/class/video/disable_video
     chown media system /sys/class/video/zoom
     chown media system /sys/class/video/free_keep_buffer
+	chown media system /sys/class/video/free_cma_buffer
     chown media system /sys/class/codec_mm/tvp_enable
     chown media system /sys/class/ppmgr/angle
     chown media system /sys/class/ppmgr/disp
