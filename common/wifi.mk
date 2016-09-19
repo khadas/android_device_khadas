@@ -533,6 +533,41 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0
 endif
 
+ifeq ($(WIFI_MODULE),AP6255)
+WIFI_DRIVER := AP6255
+WIFI_DRIVER_MODULE_PATH := /system/lib/dhd.ko
+WIFI_DRIVER_MODULE_NAME := dhd
+WIFI_DRIVER_MODULE_ARG  := "firmware_path=/etc/wifi/6255/fw_bcm43455c0_ag.bin nvram_path=/etc/wifi/6255/nvram.txt"
+WIFI_DRIVER_FW_PATH_STA := /etc/wifi/6255/fw_bcm43455c0_ag.bin
+WIFI_DRIVER_FW_PATH_AP  := /etc/wifi/6255/fw_bcm43455c0_ag_apsta.bin
+WIFI_DRIVER_FW_PATH_P2P := /etc/wifi/6255/fw_bcm43455c0_ag_p2p.bin
+
+BOARD_WLAN_DEVICE := bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
+
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd_ampak
+BOARD_HOSTAPD_DRIVER        := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd_ampak
+PRODUCT_PACKAGES += \
+	6255/nvram.txt    \
+	6255/fw_bcm43455c0_ag.bin \
+	6255/fw_bcm43455c0_ag_apsta.bin \
+	6255/fw_bcm43455c0_ag_p2p.bin \
+	wl \
+	p2p_supplicant_overlay.conf \
+	dhd
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+
+ifneq ($(wildcard $(TARGET_PRODUCT_DIR)/dhd.ko),)
+PRODUCT_COPY_FILES += $(TARGET_PRODUCT_DIR)/dhd.ko:system/lib/dhd.ko
+endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.interface=wlan0
+endif
 
 ################################################################################## bcm43341
 ifeq ($(WIFI_MODULE),bcm43341)

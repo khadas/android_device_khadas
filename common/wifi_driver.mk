@@ -34,6 +34,9 @@ AP6212:
 AP62x2:
 	@echo "wifi module is AP62x2"
 	$(bcmwifi-modules)
+AP6255:
+	@echo "wifi module is AP6255"
+	$(bcmwifi-modules)
 bcm43341:
 	@echo "wifi module is bcm43341"
 	$(bcmwifi-modules)
