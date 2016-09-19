@@ -157,6 +157,14 @@ def IncrementalOTA_VerifyEnd(info):
   print "amlogic extensions:IncrementalOTA_VerifyEnd"
 
 def IncrementalOTA_InstallBegin(info):
+  platform = GetBuildProp("ro.board.platform", info.info_dict)
+  print "ro.board.platform: %s" % (platform)
+  if "meson3" in platform:
+    SetBootloaderEnv(info.script, "upgrade_step", "0")
+  elif "meson6" in platform:
+    SetBootloaderEnv(info.script, "upgrade_step", "0")
+  else:
+    SetBootloaderEnv(info.script, "upgrade_step", "3")
   print "amlogic extensions:IncrementalOTA_InstallBegin"
 
 def IncrementalOTA_InstallEnd(info):
@@ -176,3 +184,5 @@ def IncrementalOTA_InstallEnd(info):
 
   if updating_bootloader:
     SetBootloaderEnv(info.script, "upgrade_step", "1")
+  else:
+    SetBootloaderEnv(info.script, "upgrade_step", "2")
