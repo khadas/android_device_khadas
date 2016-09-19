@@ -276,6 +276,10 @@ PRODUCT_PACKAGES += \
 	tee_storage_benchmark_ta \
 	tee_concurrent_ta \
 	tee_concurrent_large_ta
+ifeq ($(TARGET_USE_HW_KEYMASTER),true)
+PRODUCT_PACKAGES += \
+	keystore.amlogic
+endif
 endif
 
 #########################################################################
