@@ -4,4 +4,4 @@ type tvserver_service,          service_manager_type;
 type system_control_service,    service_manager_type;
 type pppoe_service,             service_manager_type;
 type screenmediasource_service, service_manager_type;
-type tee_supplicant_service,    service_manager_type;
+type tee_service,               service_manager_type;

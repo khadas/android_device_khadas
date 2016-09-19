@@ -75,5 +75,5 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service tee_supplicant /system/bin/tee-supplicant
 		class main
 		oneshot
-		seclabel u:r:tee_supplicant:s0
+        seclabel u:r:tee:s0
 

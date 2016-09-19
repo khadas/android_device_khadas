@@ -1,9 +1,0 @@
-type  tee_supplicant, domain;
-type  tee_supplicant_exec,  exec_type, file_type;
-type  tee_supplicant_file, file_type,data_file_type;
-allow tee_supplicant drm_device:chr_file  {read open write ioctl};
-allow tee_supplicant  tee_supplicant:capability {dac_override};
-allow tee_supplicant  tee_supplicant_file:dir   {add_name write create ioctl remove_name open read rmdir getattr search};
-allow tee_supplicant  tee_supplicant_file:file   {write create open unlink link read};
-allow tee_supplicant  system_data_file:dir { write search add_name create };
-allow tee_supplicant  system_data_file:file read;

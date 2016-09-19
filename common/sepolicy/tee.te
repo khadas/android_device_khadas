@@ -1,0 +1,9 @@
+allow tee self:capability { sys_rawio };
+allow tee sysfs_xbmc:file { read open };
+allow tee block_device:dir { open read search};
+allow tee sda_block_device:blk_file { read open write ioctl };
+allow tee drm_device:chr_file { read open write ioctl };
+allow tee tee_data_file:dir { add_name write create ioctl remove_name open read rmdir getattr search };
+allow tee tee_data_file:file { write create open unlink link read };
+allow tee system_data_file:dir { write search add_name create };
+allow tee system_data_file:file read;
