@@ -68,3 +68,6 @@ allow tvserver { fuse storage_file }:file { open read getattr };
 allow tvserver unlabeled:dir { setattr search write };
 allow tvserver unlabeled:file { getattr open write read lock };
 allow tvserver uhid_device:chr_file rw_file_perms;
+
+allow tvserver self:capability kill;
+allow tvserver appdomain:process { sigkill signal };
