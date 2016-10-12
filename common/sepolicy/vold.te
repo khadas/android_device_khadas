@@ -33,3 +33,8 @@ allow vold block_device:blk_file { read write open getattr };
 
 # for make ext4fs
 domain_auto_trans(vold, make_ext4fs_exec, make_ext4fs);
+
+# for tee
+allow vold drm_device:chr_file  {open read write ioctl};
+allow vold tee_data_file:dir { open read ioctl getattr };
+

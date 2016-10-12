@@ -35,7 +35,10 @@ on init
 
     # for tee
 	mkdir /tee 0700 system system
-	confirm_formated ext4 /dev/block/tee /tee
+    confirm_formated_ext ext4 /dev/block/tee /tee 1024 1024
+
+on post-fs
+    start tee_supplicant
 
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -472,6 +475,9 @@ on property:config.disable_instaboot=false
 
 on property:instaboot.status=completed
     start remotecfg
+
+on property:vold.post_fs_data_done=1
+   start tee_supplicant
 
 on property:dev.bootcomplete=1
     start usbpm
