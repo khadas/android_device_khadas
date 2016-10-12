@@ -23,4 +23,6 @@ recovery_only(`
   allow recovery kmsg_device:chr_file rw_file_perms;
   allow recovery recovery:capability { net_admin };
   allow recovery recovery:netlink_kobject_uevent_socket { create bind setopt read };
+  allow pppoe_wrapper_exec labeledfs:filesystem associate;
+  allow ppp_system_file labeledfs:filesystem associate;
 ')
