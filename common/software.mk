@@ -63,6 +63,9 @@ PRODUCT_PACKAGES += \
 	libfwdlockengine \
 	DownloadProviderUi
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.app.rotation=middle_port
+
 endif
 
 ifeq ($(TARGET_BUILD_NETFLIX), true)
