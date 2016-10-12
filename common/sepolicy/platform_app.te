@@ -8,6 +8,9 @@ allow platform_app imageserver_service:service_manager find;
 
 allow platform_app loop_device:dir { open read };
 
+allow platform_app udf:dir { search open read getattr };
+allow platform_app udf:file { open read getattr };
+
 allow platform_app iso9660:dir { search open read getattr };
 allow platform_app iso9660:file { open read getattr };
 
