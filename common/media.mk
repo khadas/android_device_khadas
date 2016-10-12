@@ -141,9 +141,11 @@ endif
 
 ifeq ($(TARGET_USE_OPTEEOS), true)
     BOARD_OMX_WITH_OPTEE_TVP := true
+    USE_MEDIACODEC_SECURE := true
 else
 ifeq ($(TARGET_USE_SECUREOS), true)
     BOARD_OMX_WITH_TVP := true
+    USE_MEDIACODEC_SECURE := true
 endif
 endif
 

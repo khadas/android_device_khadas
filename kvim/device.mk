@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
     device/khadas/kvim/files/mesondisplay.cfg:system/etc/mesondisplay.cfg \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
+ifeq ($(USE_MEDIACODEC_SECURE), true)
+PRODUCT_COPY_FILES += device/khadas/kvim/files/media_codecs_secure.xml:system/etc/media_codecs_secure.xml
+endif
+
 # remote IME config file
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/files/remote.conf:system/etc/remote.conf \
