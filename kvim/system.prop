@@ -8,7 +8,7 @@ ro.camera.preview.LimitedRate=1280x720x30,640x480x30,320x240x28
 ro.camera.preview.UseMJPEG=1
 
 #for bt auto connect
-ro.autoconnectbt.isneed=false
+ro.autoconnectbt.isneed=true
 ro.autoconnectbt.macprefix=00:CD:FF
 ro.autoconnectbt.btclass=50c
 
