@@ -80,7 +80,7 @@ persist.fw.force_adoptable=true
 
 #add livhls,libcurl as default hls
 media.libplayer.curlenable=true
-media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod
+media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod,bluray_mod
 
 
 #Hdmi In

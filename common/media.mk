@@ -178,6 +178,8 @@ PRODUCT_PACKAGES += libmedia_amlogic \
     libvhls_mod \
     libprhls_mod \
     libdash_mod.so  \
+    libbluray.so \
+    libbluray_mod.so
 
 #audio
 PRODUCT_PACKAGES += libamadec_omx_api \
