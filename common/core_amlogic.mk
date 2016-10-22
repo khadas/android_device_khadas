@@ -139,6 +139,7 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_PACKAGES += \
     RemoteIME \
+    OTAUpgrade \
     droidlogic \
     droidlogic-res \
     systemcontrol \
