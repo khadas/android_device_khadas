@@ -103,7 +103,7 @@ PRODUCT_DEFAULT_WIFI_CHANNELS := 11
 
 BOARD_HAVE_BLUETOOTH := true
 MULTI_BLUETOOTH_SUPPORT := true
-BCM_BLUETOOTH_LPM_ENABLE := true
+BCM_BLUETOOTH_LPM_ENABLE := false
 include device/khadas/common/bluetooth.mk
 
 
