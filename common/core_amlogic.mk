@@ -290,4 +290,4 @@ endif
 #########################################################################
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.firmware=00502001 \
-    ro.product.otaupdateurl=http://10.28.11.53:8080/otaupdate/update
+    ro.product.otaupdateurl=http://khadas.com:8008/otaupdate/update
