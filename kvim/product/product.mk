@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RC_Service
 
+#Factory Test
+PRODUCT_PACKAGES += \
+	FactoryTest
+
 # Camera Hal
 PRODUCT_PACKAGES += \
     camera.amlogic
