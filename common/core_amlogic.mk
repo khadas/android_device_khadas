@@ -291,3 +291,8 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.firmware=00601001 \
     ro.product.otaupdateurl=http://khadas.com:8008/otaupdate/update
+ifeq ($(BUILD_WITH_CHINA_CONFIG), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.language=zh \
+	persist.sys.country=CN
+endif

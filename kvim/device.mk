@@ -48,8 +48,10 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+ifneq ($(BUILD_WITH_CHINA_CONFIG), true)
 $(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
 -include device/khadas/kvim/preinstall/preinstall.mk
+endif
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/preinstall/preinstall.sh:system/bin/preinstall.sh
 
