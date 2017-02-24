@@ -44,3 +44,4 @@ allow imageserver { mnt_user_file storage_file }:lnk_file { getattr read };
 allow imageserver permission_service:service_manager find;
 
 allow imageserver init_tmpfs:file create_file_perms;
+allow imageserver tmpfs:dir { getattr search };
