@@ -59,3 +59,5 @@ allow system_app cache_recovery_file:file { create rw_file_perms unlink};
 allow system_app update_data_file:dir {getattr search read write open add_name remove_name};
 allow system_app update_data_file:file {getattr write read create open unlink};
 allow system_app update_engine:binder {call transfer};
+
+allow system_app tv_prop:file {open read getattr};
