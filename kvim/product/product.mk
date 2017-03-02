@@ -18,6 +18,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     remotecfg
 
+# Miracast
+PRODUCT_PACKAGES += \
+    Miracast
+
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # NativeImagePlayer
