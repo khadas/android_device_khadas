@@ -57,6 +57,7 @@ allow system_control env_device:chr_file rw_file_perms;
 
 allow system_control graphics_device:chr_file rw_file_perms;
 allow system_control graphics_device:dir r_dir_perms;
+allow system_control sysfs_audio_cap:file {open getattr read};
 allow system_control sysfs_xbmc:file rw_file_perms;
 allow system_control app_data_file:file rw_file_perms;
 allow system_control system_control_service:service_manager add;
