@@ -61,3 +61,4 @@ allow system_app update_data_file:file {getattr write read create open unlink};
 allow system_app update_engine:binder {call transfer};
 
 allow system_app tv_prop:file {open read getattr};
+allow system_app tv_prop:property_service {set};
