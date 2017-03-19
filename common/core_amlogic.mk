@@ -173,7 +173,6 @@ PRODUCT_PACKAGES += \
     systemcontrol_static \
     libsystemcontrolservice \
     libdig \
-    ReadLog \
     BluetoothRemote
 
 PRODUCT_PACKAGES += \
