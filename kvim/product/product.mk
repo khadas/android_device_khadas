@@ -22,9 +22,9 @@ ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
     NativeImagePlayer
 
-#MboxLauncher
+#Launcher
 PRODUCT_PACKAGES += \
-    MboxLauncher
+    Launcher3
 endif
 
 
