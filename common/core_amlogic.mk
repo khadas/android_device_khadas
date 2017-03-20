@@ -154,7 +154,6 @@ PRODUCT_PACKAGES += \
     DeskClock \
     Launcher2 \
     MusicFX \
-    Browser2 \
     LatinIME \
     OpenWnn \
     Music
