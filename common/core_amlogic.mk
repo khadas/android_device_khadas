@@ -151,7 +151,6 @@ PRODUCT_PACKAGES += \
     FileBrowser \
     Miracast \
     RemoteIME \
-    DeskClock \
     Launcher2 \
     MusicFX \
     LatinIME \
