@@ -83,6 +83,7 @@ allow system_control param_tv_device:file { create open read write setattr getat
 allow system_control param_block_device:blk_file { getattr read write open };
 
 allow system_control shell_exec:file { execute_no_trans execute open read getattr };
+allow system_control sysfs_digital_codec:file { read write };
 allow system_control system_file:file execute_no_trans;
 
 allow system_control init_tmpfs:file create_file_perms;
