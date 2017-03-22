@@ -157,7 +157,11 @@ $(INSTALLED_AMLOGIC_BOOTLOADER_TARGET) : $(TARGET_DEVICE_DIR)/u-boot.bin
 	@echo "make $@: bootloader installed end"
 
 ifeq ($(TARGET_SUPPORT_USB_BURNING_V2),true)
+ifeq ($(TARGET_PRODUCT),kvim)
+INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/update.img
+else
 INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/aml_upgrade_package.img
+endif
 
 ifeq ($(AB_OTA_UPDATER),true)
 ifeq ($(TARGET_USE_SECURITY_MODE),true)
