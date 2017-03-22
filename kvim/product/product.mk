@@ -45,6 +45,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	 ro.build.display.id=Vim_Nougat_$(BUILD_NUMBER)
+
 #Tvsettings
 PRODUCT_PACKAGES += \
     TvSettings
