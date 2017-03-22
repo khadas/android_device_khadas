@@ -52,6 +52,11 @@ DEVICE_PACKAGE_OVERLAYS := \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+$(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
+-include device/khadas/kvim/preinstall/preinstall.mk
+PRODUCT_COPY_FILES += \
+     device/khadas/kvim/preinstall/preinstall.sh:system/bin/preinstall.sh
+
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
