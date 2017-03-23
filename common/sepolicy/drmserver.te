@@ -6,3 +6,5 @@ allow drmserver system_control_service:service_manager  find;
 allow drmserver system_control:binder  call;
 allow drmserver drm_device:chr_file  {open read write ioctl};
 allow drmserver mediaserver:dir  {getattr};
+
+allow drmserver init_tmpfs:file create_file_perms;

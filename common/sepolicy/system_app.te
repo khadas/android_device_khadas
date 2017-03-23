@@ -10,18 +10,52 @@ allow system_app ppp_data_file:dir { create_dir_perms };
 allow system_app ppp_data_file:file { create_file_perms };
 allow system_app ppp_data_file:sock_file { create_file_perms };
 allow system_app pppoe_wrapper_socket:sock_file { write setattr };
+allow system_app pppoe_wrapper_socket:file { getattr write open };
 allow system_app pppoe_wrapper:unix_dgram_socket sendto;
 allow system_app dhcp_data_file:dir { r_dir_perms };
 allow system_app dhcp_data_file:fifo_file { r_file_perms };
-allow system_app system_data_file:dir { add_name create setattr };
+#allow system_app system_data_file:dir { add_name create setattr };
 
 #read sub stream
-allow system_app video_device:chr_file { rw_file_perms };
+#allow system_app video_device:chr_file { rw_file_perms };
+#for dvb
+allow system_app dvb_video_device:chr_file { rw_file_perms };
 allow system_app system_app:netlink_kobject_uevent_socket {create bind read};
 allow system_app vold:unix_stream_socket connectto;
 allow system_app pppoe_service:service_manager add;
 allow system_app dig_socket:sock_file write;
 
+allow system_app subtitle_device:chr_file {open read write ioctl};
+
 allow system_app iso9660:dir { search read open };
 allow system_app unlabeled:dir { search read write getattr };
 allow system_app unlabeled:file { lock open read write getattr };
+# /dev/uio0 for amadec
+allow system_app uio_device:chr_file rw_file_perms;
+
+# /cache_file for dvb app creat update.zip file at /cache  dir
+allow system_app cache_file:dir {create_dir_perms create_file_perms rw_file_perms};
+allow system_app cache_file:file {create_file_perms rw_file_perms};
+allow system_app dvb_device:chr_file { read write open ioctl };
+
+allow system_app log_file:dir { search read open getattr };
+allow system_app log_file:file { read open getattr };
+allow system_app tombstone_data_file:dir r_dir_perms;
+allow system_app tombstone_data_file:file r_file_perms;
+
+#allow system_app debugfs:file r_file_perms;
+allow system_app shell_data_file:dir search;
+allow system_app kernel:system syslog_read;
+allow system_app graphics_device:dir search;
+allow system_app sysfs_xbmc:file {open read write};
+allow system_app media_prop:property_service set;
+allow system_app system_app:process setfscreate;
+allow system_app socket_device:sock_file setattr;
+allow system_app pppoe_wrapper_socket:sock_file create;
+allow system_app pppoe_wrapper_socket:sock_file unlink;
+allow system_app pppoe_wrapper_socket:file create;
+allow system_app cache_recovery_file:dir { search read open write add_name remove_name};
+allow system_app cache_recovery_file:file { create rw_file_perms unlink};
+allow system_app update_data_file:dir {getattr search read write open add_name remove_name};
+allow system_app update_data_file:file {getattr write read create open unlink};
+allow system_app update_engine:binder {call transfer};

@@ -4,6 +4,7 @@ allow mediaserver media_prop:property_service set;
 allow mediaserver system_server:dir search;
 # /dev/uio0 for amadec
 allow mediaserver uio_device:chr_file rw_file_perms;
+allow mediaserver dvb_video_device:chr_file rw_file_perms;
 # read app /proc/pid/
 allow mediaserver appdomain:dir { getattr search };
 allow mediaserver appdomain:file { r_file_perms };
@@ -12,8 +13,9 @@ allow mediaserver graphics_device:dir r_dir_perms;
 allow mediaserver graphics_device:chr_file rw_file_perms;
 allow mediaserver mediaserver:netlink_kobject_uevent_socket {create bind read shutdown};
 allow mediaserver system_data_file:dir {write add_name};
+allow mediaserver sysfs:file  { open read write};
 allow mediaserver sysfs_xbmc:file {open read write};
-allow mediaserver system_file:file execmod;
+#allow mediaserver system_file:file execmod;
 allow mediaserver screenmediasource_service:service_manager add;
 allow mediaserver system_control_service:service_manager find;
 allow mediaserver media_data_file:lnk_file  {create open read write};
@@ -21,3 +23,11 @@ allow mediaserver drm_device:chr_file  {open read write ioctl};
 allow mediaserver tvserver:fd use;
 allow mediaserver storage_file:dir search;
 
+allow mediaserver init_tmpfs:file create_file_perms;
+allow mediaserver audio_device:dir r_dir_perms;
+allow mediaserver audio_device:chr_file rw_file_perms;
+allow mediaserver sysfs_audio_cap:file {open read write};
+
+allow mediaserver subtitle_device:chr_file {open read write ioctl};
+
+get_prop(mediaserver, media_prop)

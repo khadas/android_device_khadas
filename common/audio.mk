@@ -20,8 +20,8 @@ PRODUCT_PACKAGES += \
     audio.hdmi.amlogic \
     audio.r_submix.default \
     acoustics.default \
-    audio_firmware
-
+    audio_firmware \
+    libparameter
 
 #PRODUCT_COPY_FILES += \
 #    $(TARGET_PRODUCT_DIR)/audio_policy.conf:system/etc/audio_policy.conf \
@@ -30,10 +30,23 @@ PRODUCT_PACKAGES += \
 #arm audio decoder lib
 soft_adec_libs := $(shell ls vendor/amlogic/frameworks/av/LibPlayer/amadec/acodec_lib)
 PRODUCT_COPY_FILES += $(foreach file, $(soft_adec_libs), \
-        vendor/amlogic/frameworks/av/LibPlayer/amadec/acodec_lib_50/$(file):system/lib/$(file))
+        vendor/amlogic/frameworks/av/LibPlayer/amadec/acodec_lib_android_n/$(file):system/lib/$(file))
         
 #audio data ko 
 PRODUCT_COPY_FILES += device/khadas/common/audio/audio_data.ko:system/lib/audio_data.ko        
+
+#configurable audio policy
+#USE_CONFIGURABLE_AUDIO_POLICY := 1
+#USE_XML_AUDIO_POLICY_CONF := 1
+configurable_audiopolicy_xmls := device/khadas/common/audio/
+PRODUCT_COPY_FILES += \
+    $(configurable_audiopolicy_xmls)audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)dia_remote_audio_policy_configuration.xml:system/etc/dia_remote_audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
+    $(configurable_audiopolicy_xmls)default_volume_tables.xml:system/etc/default_volume_tables.xml
 
 ################################################################################## alsa
 

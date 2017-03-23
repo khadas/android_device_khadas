@@ -188,6 +188,17 @@ Only the three quirks included above are recognized at this point:
             <Feature name="adaptive-playback" />
 	    <Limit name="concurrent-instances" max="1" />
         </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp9.decoder.awesome.secure" type="video/x-vnd.on2.vp9" >
+            <Limit name="size" min="64x64" max="3840x2160" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="bitrate" range="1-300000000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
+            <Feature name="tunneled-playback" />
+	    <Limit name="concurrent-instances" max="1" />
+        </MediaCodec>
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
@@ -206,8 +217,10 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.truehd.decoder" type="audio/truehd" />
         <MediaCodec name="OMX.google.ffmpeg.decoder" type="audio/ffmpeg" />
         <MediaCodec name="OMX.google.raw.decoder" type="audio/raw" />
-
-
+        <MediaCodec name="OMX.google.ac3.decoder" type="audio/ac3" />
+        <MediaCodec name="OMX.google.eac3.decoder" type="audio/eac3" />
+        <MediaCodec name="OMX.google.dtshd.decoder" type="audio/dtshd" />
+        <MediaCodec name="OMX.google.mp2.decoder" type="audio/mpeg-L2" />
         <MediaCodec name="OMX.google.opus.decoder" type="audio/opus">
             <Limit name="channel-count" max="8" />
             <Limit name="sample-rate" ranges="48000" />
@@ -253,24 +266,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.rm40.decoder" type="video/rm40" />
         <MediaCodec name="OMX.google.wmv2.decoder" type="video/wmv2" />
         <MediaCodec name="OMX.google.wmv1.decoder" type="video/wmv1" />
-        <!-- DOLBY_UDC -->
-        <MediaCodec name="AML.google.ac3.decoder" >
-            <Type name="audio/ac3" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
-        <MediaCodec name="AML.google.ec3.decoder" >
-            <Type  name="audio/eac3" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
-        <!-- DOLBY_UDC END -->
 
-        <MediaCodec name="OMX.google.mp2.decoder" >
-            <Type  name="audio/mpeg-L2" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
 
         <MediaCodec name="OMX.google.mp3.decoder" >
             <Type  name="audio/mpeg" />
@@ -278,17 +274,12 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="requires-flush-complete-emulation" />
         </MediaCodec>
 
-        <MediaCodec name="AML.google.dtshd.decoder" >
-            <Type  name="audio/dtshd" />
-            <Quirk name="needs-flush-before-disable" />
-            <Quirk name="requires-flush-complete-emulation" />
-        </MediaCodec>
     </Decoders>
 
     <Settings>
         <Setting name="max-video-encoder-input-buffers" value="9" />
-        <Setting name="supports-multiple-secure-codecs" value="fasle" />
-        <Setting name="supports-secure-with-non-secure-codec" value="fasle" />
+        <Setting name="supports-multiple-secure-codecs" value="false" />
+        <Setting name="supports-secure-with-non-secure-codec" value="false" />
     </Settings>
 
     <Encoders>
@@ -302,7 +293,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="alignment" value="16x16" />
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" min="1" max="244800" />
-            <Limit name="bitrate" range="1-10000000" />
+            <Limit name="bitrate" range="1-20000000" />
             <Limit name="concurrent-instances" max="2" />
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" >

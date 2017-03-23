@@ -21,8 +21,6 @@ PRODUCT_LOCALES := en_US
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 
 PRODUCT_PACKAGES += \
-    libfwdlockengine \
-    OpenWnn \
     libWnnEngDic \
     libWnnJpnDic \
     libwnndict \
@@ -31,19 +29,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
-    LiveWallpapers \
-    LiveWallpapersPicker \
     MagicSmokeWallpapers \
     NoiseField \
     PhaseBeam \
-    VisualizationWallpapers \
+    VisualizationWallpapers
+
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
+PRODUCT_PACKAGES += \
     PhotoTable
+endif
+
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker
+endif
 
 PRODUCT_PACKAGES += \
     Camera2 \
     Gallery2 \
-    Music \
-    MusicFX \
     OneTimeInitializer \
     Provision \
     SystemUI \
@@ -66,6 +70,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.primary.default \
     audio_policy.default \
+    audio.dia_remote.default \
     local_time.default \
     vibrator.default \
     power.default
@@ -76,26 +81,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
+PRODUCT_COPY_FILES += \
+        device/khadas/common/ddr/ddr_window_64.ko:/system/lib/ddr_window_64.ko
+
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=unknown
+    ro.carrier=unknown \
+    net.tethering.noprovisioning=true
 
 PRODUCT_PACKAGES += \
     BasicDreams \
-    Browser \
     CalendarProvider \
     CaptivePortalLogin \
     CertInstaller \
-    DeskClock \
     DocumentsUI \
-    Exchange2 \
     ExternalStorageProvider \
     FusedLocation \
     InputDevices \
     KeyChain \
     Keyguard \
-    LatinIME \
-    Launcher2 \
-    ManagedProvisioning \
     PacProcessor \
     libpac \
     ProxyHandler \
@@ -115,6 +118,9 @@ $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
 $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 $(call inherit-product, build/target/product/core_base.mk)
 
+#default hardware composer version is 2.0
+TARGET_USES_HWC2 := true
+
 ifneq ($(wildcard vendor/amlogic/frameworks/av/LibPlayer),)
     WITH_LIBPLAYER_MODULE := true
 else
@@ -124,35 +130,51 @@ endif
 # set soft stagefright extractor&decoder as defaults
 WITH_SOFT_AM_EXTRACTOR_DECODER := true
 
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072 \
     debug.hwui.render_dirty_regions=false \
+    ro.hwui.texture_cache_size=64.0f \
     camera.disable_zsl_mode=1
 
 # USB camera default face
 PRODUCT_PROPERTY_OVERRIDES += \
     rw.camera.usb.faceback=true
 
+SKIP_BOOT_JARS_CHECK = true
+
 PRODUCT_BOOT_JARS += \
     droidlogic \
     droidlogic.frameworks.pppoe
 
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
-    OTAUpgrade \
+    AppInstaller \
+    FileBrowser \
+    Miracast \
     RemoteIME \
+    DeskClock \
+    Launcher2 \
+    MusicFX \
+    Browser2 \
+    LatinIME \
+    OpenWnn \
+    Music
+else
+PRODUCT_PACKAGES += \
+    LeanbackCustomizer
+endif
+
+PRODUCT_PACKAGES += \
     droidlogic \
     droidlogic-res \
     systemcontrol \
+    OTAUpgrade \
+    VideoPlayer \
+    SubTitle    \
     systemcontrol_static \
     libsystemcontrolservice \
-    VideoPlayer \
-    SubTitle \
-    AppInstaller \
-    FileBrowser \
     libdig \
-    Miracast
+    ReadLog \
+    BluetoothRemote
 
 PRODUCT_PACKAGES += \
     hostapd \
@@ -212,7 +234,9 @@ PRODUCT_PACKAGES += libomx_av_core_alt \
 ifeq ($(BUILD_WITH_DM_VERITY), true)
 PRODUCT_SYSTEM_VERITY_PARTITION = /dev/block/system
 # Provides dependencies necessary for verified boot
+PRODUCT_SUPPORTS_BOOT_SIGNER := true
 PRODUCT_SUPPORTS_VERITY := true
+PRODUCT_SUPPORTS_VERITY_FEC := true
 # The dev key is used to sign boot and recovery images, and the verity
 # metadata table. Actual product deliverables will be re-signed by hand.
 # We expect this file to exist with the suffixes ".x509.pem" and ".pk8".
@@ -266,6 +290,7 @@ PRODUCT_PACKAGES += \
 	tee_helloworld \
 	tee_crypto \
 	tee_xtest \
+	tdk_auto_test \
 	tee_helloworld_ta \
 	tee_fail_test_ta \
 	tee_crypt_ta \
@@ -273,7 +298,14 @@ PRODUCT_PACKAGES += \
 	tee_rpc_test_ta \
 	tee_sims_ta \
 	tee_storage_ta \
-	tee_concurrent_ta
+	tee_storage_benchmark_ta \
+	tee_concurrent_ta \
+	tee_concurrent_large_ta
+
+ifeq ($(TARGET_USE_HW_KEYMASTER),true)
+PRODUCT_PACKAGES += \
+	keystore.amlogic
+endif
 endif
 
 #########################################################################

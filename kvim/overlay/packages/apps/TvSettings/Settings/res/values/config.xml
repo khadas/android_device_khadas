@@ -3,4 +3,5 @@
 <resources>
     <string name="display_filter_outputmode">480i60hz,576i50hz</string>
     <bool name="display_need_hdr_function">true</bool>
+    <bool name="display_need_sdr_function">true</bool>
 </resources>

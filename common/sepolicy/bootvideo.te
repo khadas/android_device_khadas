@@ -4,6 +4,12 @@ init_daemon_domain(bootvideo)
 binder_use(bootvideo);
 unix_socket_connect(bootvideo, property, init);
 
+#Bootvideo
+allow bootvideo media_prop:file { read open getattr };
+allow bootvideo sysfs:file { read open getattr };
+allow bootvideo proc:file { read open getattr };
+allow bootvideo sysfs_audio_cap:file { read open getattr };
+
 #Self
 allow bootvideo self:process execmem;
 allow bootvideo self:capability {dac_override dac_read_search};
@@ -13,10 +19,11 @@ allow bootvideo video_device:chr_file rw_file_perms;
 allow bootvideo audio_device:dir r_dir_perms;
 allow bootvideo audio_device:chr_file rw_file_perms;
 allow bootvideo uio_device:chr_file rw_file_perms;
+allow bootvideo dvb_video_device:chr_file rw_file_perms;
 
 #File system and property
 allow bootvideo system_control:binder call;
-allow bootvideo property_socket:property_service set;
+#allow bootvideo property_socket:property_service set;
 allow bootvideo media_prop:property_service set;
 allow bootvideo property_socket:sock_file write;
 

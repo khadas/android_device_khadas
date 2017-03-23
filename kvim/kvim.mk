@@ -45,11 +45,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_NAME := kvim
 PRODUCT_DEVICE := kvim
-PRODUCT_BRAND := Khadas
+PRODUCT_BRAND := Amlogic
 PRODUCT_MODEL := kvim
-PRODUCT_MANUFACTURER := Khadas
+PRODUCT_MANUFACTURER := Amlogic
 
 WITH_LIBPLAYER_MODULE := false
+
+#AB_OTA_UPDATER :=true
+
+ifeq ($(AB_OTA_UPDATER),true)
+AB_OTA_PARTITIONS := \
+    boot \
+    system
+
+TARGET_BOOTLOADER_CONTROL_BLOCK := true
+TARGET_NO_RECOVERY := true
+else
+TARGET_NO_RECOVERY := false
+endif
 
 #########Support compiling out encrypted zip/aml_upgrade_package.img directly
 #PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY := true
@@ -60,8 +73,32 @@ PRODUCT_AML_SECUREBOOT_SIGNBOOTLOADER := $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --bo
 						--aeskey enable
 PRODUCT_AML_SECUREBOOT_SIGNIMAGE := $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --imgsig \
 					--amluserkey $(PRODUCT_AML_SECUREBOOT_USERKEY)
+PRODUCT_AML_SECUREBOOT_SIGBIN	:= $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --binsig \
+					--amluserkey $(PRODUCT_AML_SECUREBOOT_USERKEY)
 
+########################################################################
+#
+#                           ATV
+#
+########################################################################
+ifeq ($(BOARD_COMPILE_ATV),true)
+BOARD_COMPILE_CTS := true
+TARGET_BUILD_GOOGLE_ATV:= true
+endif
+########################################################################
 
+########################################################################
+#
+#                           CTS
+#
+########################################################################
+ifeq ($(BOARD_COMPILE_CTS),true)
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
+BOARD_PLAYREADY_LEVEL := 1
+TARGET_BUILD_CTS:= true
+TARGET_BUILD_NETFLIX:= true
+endif
+########################################################################
 
 #########################################################################
 #
@@ -74,12 +111,48 @@ ifeq ($(TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL), true)
 BUILD_WITH_DM_VERITY := true
 endif # ifeq ($(TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL), true)
 ifeq ($(BUILD_WITH_DM_VERITY), true)
+PRODUCT_PACKAGES += \
+	libfs_mgr \
+	fs_mgr \
+	slideshow
+endif
+ifneq ($(BOARD_USES_RECOVERY_AS_BOOT), true)
+ifeq ($(AB_OTA_UPDATER),true)
+ifeq ($(BUILD_WITH_DM_VERITY), true)
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.AB.verity.amlogic:root/fstab.amlogic
+else
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.AB.amlogic:root/fstab.amlogic
+endif
+else
+ifeq ($(BUILD_WITH_DM_VERITY), true)
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/fstab.verity.amlogic:root/fstab.amlogic
 else
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/fstab.amlogic:root/fstab.amlogic
-endif # ifeq ($(BUILD_WITH_DM_VERITY), true)
+endif
+endif
+else
+ifeq ($(AB_OTA_UPDATER),true)
+ifeq ($(BUILD_WITH_DM_VERITY), true)
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.AB.verity.amlogic:recovery/root/fstab.amlogic
+else
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.AB.amlogic:recovery/root/fstab.amlogic
+endif
+else
+ifeq ($(BUILD_WITH_DM_VERITY), true)
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.verity.amlogic:recovery/root/fstab.amlogic
+else
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/fstab.amlogic:recovery/root/fstab.amlogic
+endif
+endif
+endif
 
 #########################################################################
 #
@@ -102,7 +175,7 @@ PRODUCT_DEFAULT_WIFI_CHANNELS := 11
 #########################################################################
 
 BOARD_HAVE_BLUETOOTH := true
-BLUETOOTH_MODULE := AP6212
+MULTI_BLUETOOTH_SUPPORT := true
 BCM_BLUETOOTH_LPM_ENABLE := true
 include device/khadas/common/bluetooth.mk
 
@@ -114,7 +187,7 @@ include device/khadas/common/bluetooth.mk
 #########################################################################
 
 #PRODUCT_PACKAGES += \
-#    consumerir.amlogic \
+#    consumerir.khadas \
 #    SmartRemote
 #PRODUCT_COPY_FILES += \
 #    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
@@ -142,8 +215,10 @@ include device/khadas/common/audio.mk
 #
 #########################################################################
 
+ifneq ($(TARGET_BUILD_CTS), true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml
+endif
 
 
 
@@ -195,8 +270,9 @@ PRODUCT_LOCALES := en_US en_AU en_IN fr_FR it_IT es_ES et_EE de_DE nl_NL cs_CZ p
 #                                                PPPOE
 #
 #################################################################################
-
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 BUILD_WITH_PPPOE := true
+endif
 
 ifeq ($(BUILD_WITH_PPPOE),true)
 PRODUCT_PACKAGES += \
@@ -224,5 +300,30 @@ BOARD_USES_USB_PM := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Third_party_apk_camera.xml:system/etc/Third_party_apk_camera.xml \
 
-TARGET_BUILD_CTS:= false
 include device/khadas/common/software.mk
+ifeq ($(TARGET_BUILD_GOOGLE_ATV),true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=320
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=240
+endif
+
+
+#########################################################################
+#
+#                                     A/B update
+#
+#########################################################################
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_PACKAGES += \
+    bootctrl.default \
+    bootctl
+
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_client \
+    update_verifier \
+    delta_generator \
+    brillo_update_payload
+endif

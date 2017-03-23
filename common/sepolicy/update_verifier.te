@@ -1,0 +1,2 @@
+# TODO: Add rules to allow update_verifier to read system_block_device.
+allow update_verifier system_block_device:blk_file r_file_perms;

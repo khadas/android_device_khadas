@@ -31,10 +31,23 @@ allow system_control powerctl_prop:property_service set;
 allow system_control uboot_prop:property_service set;
 allow system_control media_prop:property_service set;
 allow system_control tv_config_prop:property_service set;
+allow system_control tv_config_prop:file {open getattr};
 allow system_control tv_prop:property_service set;
+allow system_control tv_prop:file {open getattr};
+allow system_control bcmdl_prop:file {open getattr};
+allow system_control safemode_prop:file {open getattr};
+allow system_control mmc_prop:file {open getattr};
+allow system_control device_logging_prop:file {open getattr};
+
+set_prop(system_control, media_prop)
+get_prop(system_control, media_prop)
+get_prop(system_control, aml_display_prop)
+get_prop(system_control, uboot_prop)
+get_prop(system_control, tv_prop)
+
+set_prop(system_control, ctl_default_prop)
 
 # ctl interface
-allow system_control ctl_default_prop:property_service set;
 allow system_control ctl_dhcp_pan_prop:property_service set;
 allow system_control ctl_bugreport_prop:property_service set;
 
@@ -62,7 +75,13 @@ allow system_control platform_app:dir { search };
 
 # for 3D set
 allow system_control video_device:chr_file { open read write ioctl };
+allow system_control dvb_video_device:chr_file { open read write ioctl };
 
 allow system_control param_tv_device:dir  { search read write open add_name remove_name rmdir };
 allow system_control param_tv_device:file { create open read write setattr getattr lock unlink };
 allow system_control param_block_device:blk_file { getattr read write open };
+
+allow system_control shell_exec:file { execute_no_trans execute open read getattr };
+allow system_control system_file:file execute_no_trans;
+
+allow system_control init_tmpfs:file create_file_perms;

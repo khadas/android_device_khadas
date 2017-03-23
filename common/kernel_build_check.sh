@@ -82,7 +82,7 @@ function build_busybox()
 	local ROOTFS=rootfs.cpio
 	local BOARD_NAME=meson${MESON_GEN}_skt
 	local IMG_FILE=${OUTPUT_PATH}m${MESON_GEN}boot.img
-	local DTD_FILE=arch/arm/boot/dts/amlogic/${BOARD_NAME}.dtb
+	local DTD_FILE=arch/arm/boot/dts/${BOARD_NAME}.dtb
 
 	if test ! -e ${OUTPUT_PATH}/.config; then
 		echo "The file .config is absent"

@@ -23,4 +23,5 @@
     <fraction name="def_window_transition_scale">0%</fraction>
     <!--<string name="config_defaultIME">com.amlogic.inputmethod.remote/.RemoteIME</string>-->
     <bool name="def_wifi_on">true</bool>
+    <bool name="def_lockscreen_disabled">true</bool>
 </resources>

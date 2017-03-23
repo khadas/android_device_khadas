@@ -7,21 +7,27 @@ PRODUCT_PACKAGES += \
     utility_busybox
 
 # DLNA
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
     DLNA
+endif
 
 PRODUCT_PACKAGES += \
     remotecfg
 
 USE_CUSTOM_AUDIO_POLICY := 1
 
+ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 # NativeImagePlayer
 PRODUCT_PACKAGES += \
     NativeImagePlayer
 
-#RemoteControl Service
+#MboxLauncher
 PRODUCT_PACKAGES += \
-    RC_Service
+    MboxLauncher
+endif
+
+
 
 # Camera Hal
 PRODUCT_PACKAGES += \
@@ -29,6 +35,9 @@ PRODUCT_PACKAGES += \
 
 # HDMITX CEC HAL
 PRODUCT_PACKAGES += \
+    hdmi_cec \
+    libhdmicec \
+    libhdmicec_jni \
     hdmi_cec.amlogic
 
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
@@ -37,9 +46,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
 PRODUCT_PACKAGES += \
     TvSettings
 
-#MboxLauncher
-PRODUCT_PACKAGES += \
-    MboxLauncher
 
 #USB PM
 PRODUCT_PACKAGES += \
@@ -49,8 +55,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/native/data/etc/android.software.backup.xml:system/etc/permissions/android.software.backup.xml \
-    frameworks/native/data/etc/android.software.device_admin.xml:system/etc/permissions/android.software.device_admin.xml \
-    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml \
+    frameworks/native/data/etc/android.hardware.audio.output.xml:system/etc/permissions/android.hardware.audio.output.xml \
+    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml
 
 #copy lowmemorykiller.txt
 ifeq ($(BUILD_WITH_LOWMEM_COMMON_CONFIG),true)
@@ -59,6 +66,10 @@ PRODUCT_COPY_FILES += \
 	device/khadas/common/config/lowmemorykiller.txt:system/etc/lowmemorykiller.txt \
 	device/khadas/common/config/lowmemorykiller_512M.txt:system/etc/lowmemorykiller_512M.txt
 endif
+
+#DDR LOG
+PRODUCT_COPY_FILES += \
+    device/khadas/common/ddrtest.sh:system/bin/ddrtest.sh
 
 # USB
 PRODUCT_COPY_FILES += \
@@ -80,7 +91,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/boot.mp4:system/etc/bootvideo
 
-# default wallpaper
+# default wallpaper for mbox to fix bug 106225
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/default_wallpaper.png:system/etc/default_wallpaper.png
 

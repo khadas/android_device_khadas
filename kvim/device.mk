@@ -14,11 +14,19 @@
 # limitations under the License.
 #
 
+ifneq ($(BOARD_USES_RECOVERY_AS_BOOT), true)
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/product/init.amlogic.rc:root/init.amlogic.rc \
     device/khadas/kvim/init.amlogic.usb.rc:root/init.amlogic.usb.rc \
     device/khadas/kvim/product/ueventd.amlogic.rc:root/ueventd.amlogic.rc \
     device/khadas/kvim/init.amlogic.board.rc:root/init.amlogic.board.rc
+else
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim/product/init.amlogic.rc:recovery/root/init.amlogic.rc \
+    device/khadas/kvim/init.amlogic.usb.rc:recovery/root/init.amlogic.usb.rc \
+    device/khadas/kvim/product/ueventd.amlogic.rc:recovery/root/ueventd.amlogic.rc \
+    device/khadas/kvim/init.amlogic.board.rc:recovery/root/init.amlogic.board.rc
+endif
 
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/files/media_profiles.xml:system/etc/media_profiles.xml \
@@ -32,8 +40,8 @@ PRODUCT_COPY_FILES += \
 # remote IME config file
 PRODUCT_COPY_FILES += \
     device/khadas/kvim/files/remote.conf:system/etc/remote.conf \
-    device/khadas/kvim/files/Vendor_0001_Product_0001.kl:/system/usr/keylayout/Vendor_0001_Product_0001.kl
-
+    device/khadas/kvim/files/Vendor_0001_Product_0001.kl:/system/usr/keylayout/Vendor_0001_Product_0001.kl \
+    device/khadas/kvim/files/Generic.kl:/system/usr/keylayout/Generic.kl
 PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 

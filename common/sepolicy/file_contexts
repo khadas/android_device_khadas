@@ -2,8 +2,16 @@
 /dev/mali0          u:object_r:gpu_device:s0
 /dev/amaudio_.*     u:object_r:audio_device:s0
 /dev/amstream_.*    u:object_r:video_device:s0
+#for dvb open dev
+/dev/amstream_mpts  u:object_r:dvb_video_device:s0
+/dev/amvideo   			u:object_r:dvb_video_device:s0
+/dev/amstream_userdata   			u:object_r:dvb_video_device:s0
+
 /dev/amv.*          u:object_r:video_device:s0
 /dev/wifi_power     u:object_r:radio_device:s0
+
+/dev/amstream_sub   u:object_r:subtitle_device:s0
+/dev/amstream_sub_read   u:object_r:subtitle_device:s0
 
 /dev/amremote       u:object_r:input_device:s0
 /dev/am_adc_kpd     u:object_r:input_device:s0
@@ -11,6 +19,7 @@
 /dev/irblaster1     u:object_r:ir_device:s0
 /dev/ttyS[1-2]      u:object_r:hci_attach_dev:s0
 /dev/btusb0         u:object_r:hci_attach_dev:s0
+/dev/rtk_btusb      u:object_r:hci_attach_dev:s0
 
 /dev/block/env      u:object_r:env_device:s0
 /dev/nand_env       u:object_r:env_device:s0
@@ -19,6 +28,12 @@
 /dev/block/data     u:object_r:userdata_block_device:s0
 /dev/block/cache    u:object_r:cache_block_device:s0
 /dev/block/zram0    u:object_r:swap_block_device:s0
+
+#############################
+# boot files
+#
+/boot(/.*)?     u:object_r:rootfs:s0
+/etc_r(/.*)?    u:object_r:rootfs:s0
 
 /dev/bootloader     u:object_r:bootloader_device:s0
 /dev/defendkey      u:object_r:defendkey_device:s0
@@ -52,6 +67,13 @@
 /dev/block/vold(/.*)? u:object_r:vold_block_device:s0
 /dev/block/drm      u:object_r:drm_block_device:s0
 
+/dev/block/boot_a   u:object_r:boot_block_device:s0
+/dev/block/boot_b   u:object_r:boot_block_device:s0
+/dev/block/boot     u:object_r:boot_block_device:s0
+/dev/block/system_a   u:object_r:system_block_device:s0
+/dev/block/system_b   u:object_r:system_block_device:s0
+/dev/block/misc     u:object_r:misc_block_device:s0
+
 /sys/devices/platform/bt-dev/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/platform/bt-dev/rfkill/rfkill0/type  u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bt-dev.*/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
@@ -71,7 +93,7 @@
 /dev/ttyUSB.*               u:object_r:radio_device:s0
 /data/misc/etc(/.*)?        u:object_r:ppp_data_file:s0
 /data/misc/etc/ppp(/.*)?    u:object_r:ppp_data_file:s0
-/system/bin/ntfs-3g         u:object_r:vold_ext_exec:s0
+#/system/bin/ntfs-3g         u:object_r:vold_ext_exec:s0
 /system/bin/bootplayer      u:object_r:bootvideo_exec:s0
 /system/bin/usbtestpm       u:object_r:usbpm_exec:s0
 /system/bin/hdcp_tx22       u:object_r:hdcp_tx22_exec:s0
@@ -83,20 +105,41 @@
 /sys/class/video/screen_mode            u:object_r:sysfs_xbmc:s0
 /sys/class/tsync/pts_pcrscr             u:object_r:sysfs_xbmc:s0
 /sys/class/tsync/enable                 u:object_r:sysfs_xbmc:s0
+/sys/class/tsync/event                  u:object_r:sysfs_xbmc:s0
+/sys/class/tsync/pts_audio              u:object_r:sysfs_xbmc:s0
+/sys/class/amhdmitx/amhdmitx0/aud_output_chs              u:object_r:sysfs_xbmc:s0
+/sys/devices/d0074000.emmc/mmc_host/emmc/emmc:0001/cid    u:object_r:sysfs_xbmc:s0
 
 
 /dev/vdin0              u:object_r:video_device:s0
 /dev/tvafe0             u:object_r:video_device:s0
 /dev/amaudio2_out       u:object_r:audio_device:s0
 
+/system/bin/hdmi_cec    u:object_r:hdmi_cec_exec:s0
+
 /system/bin/tvserver    u:object_r:tvserver_exec:s0
 
+/dev/tee0               u:object_r:drm_device:s0
+/dev/teepriv0           u:object_r:drm_device:s0
 /dev/opteearmtz00       u:object_r:drm_device:s0
-/system/bin/tee-supplicant   u:object_r:tee_supplicant_exec:s0
-/data/tee(/.*)?         u:object_r:tee_supplicant_file:s0
+/system/bin/tee-supplicant   u:object_r:tee_exec:s0
+/tee(/.*)?              u:object_r:tee_data_file:s0
+/data/tee(/.*)?         u:object_r:tee_data_file:s0
+/data/droidota(/.*)? u:object_r:update_data_file:s0
+/dev/block/tee          u:object_r:tee_block_device:s0
 /dev/block/mmcblk[0-9]  u:object_r:sda_block_device:s0
 /dev/block/mmcblk[0-9]p(.*) u:object_r:sda_block_device:s0
+/dev/block/mmcblk[0-9]rpmb u:object_r:sda_block_device:s0
+/data/log(/.*)?         u:object_r:log_file:s0
 
 /dev/socket/dig	        u:object_r:dig_socket:s0
 
 /system/xbin/bcmdl   u:object_r:bcmdl_exec:s0
+
+/sys/class/audiodsp/digital_codec       u:object_r:sysfs_digital_codec:s0
+/sys/class/audiodsp/audio_samesource    u:object_r:sysfs_audio_samesource:s0
+/sys/class/amhdmitx/amhdmitx0/aud_cap   u:object_r:sysfs_audio_cap:s0
+/sys/devices/virtual/amhdmitx/amhdmitx0/aud_cap u:object_r:sysfs_audio_cap:s0
+
+/dev/sw_sync           u:object_r:sw_sync_device:s0
+/dev/ge2d              u:object_r:ge2d_device:s0

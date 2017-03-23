@@ -1,5 +1,5 @@
 # Point to Point Protocol daemon
-type ppp_system_file, exec_type;
+type ppp_system_file, exec_type, file_type;
 type ppp_data_file, file_type;
 
 allow ppp mtp:socket rw_socket_perms;

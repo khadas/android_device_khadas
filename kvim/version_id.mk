@@ -16,4 +16,4 @@
 # BUILD_NUMBER can be customized to project specific version scheme.
 # Default scheme uses the date to identify incremental version.
 
-export BUILD_NUMBER := $(shell date +%y%m%d)
+export BUILD_NUMBER := $(shell date +%Y%m%d)

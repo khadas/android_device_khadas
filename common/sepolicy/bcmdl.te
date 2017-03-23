@@ -1,9 +1,15 @@
 type bcmdl, domain;
 type bcmdl_exec, exec_type, file_type;
-allow bcmdl bcmdl:netlink_kobject_uevent_socket { read create };
-allow bcmdl usb_device:dir { read open };
+allow bcmdl bcmdl:netlink_kobject_uevent_socket { read create setopt bind };
+allow bcmdl usb_device:dir { read open search };
 allow bcmdl usb_device:chr_file { read open write ioctl };
 allow bcmdl bcmdl:udp_socket { create ioctl };
 allow bcmdl bcmdl:capability { net_raw net_admin };
 allow bcmdl property_socket:sock_file write;
 allow bcmdl init:unix_stream_socket connectto;
+allow bcmdl sysfs:file { open read getattr };
+allow bcmdl proc:file { open read getattr };
+allow bcmdl sysfs:dir { read open };
+allow bcmdl bcmdl_prop:property_service { set };
+
+

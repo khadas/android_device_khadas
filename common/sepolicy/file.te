@@ -1,5 +1,5 @@
 # NTFS
-type fuseblk, sdcard_type, fs_type;
+type fuseblk, sdcard_type, fs_type, mlstrustedsubject;
 type hfsplus, sdcard_type, fs_type;
 type iso9660, sdcard_type, fs_type;
 type udf,sdcard_type, fs_type;
@@ -9,9 +9,15 @@ type pppoe_wrapper_socket, file_type;
 
 # XBMC
 type sysfs_xbmc, fs_type, sysfs_type;
-
+# Update
+type update_data_file, file_type;
 #optee
 type drm_device, fs_type,sysfs_type;
 
 #dig_socket
 type dig_socket, file_type;
+
+
+type sysfs_digital_codec, fs_type, sysfs_type;
+type sysfs_audio_samesource, fs_type, sysfs_type;
+type sysfs_audio_cap, fs_type, sysfs_type;

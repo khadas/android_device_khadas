@@ -1,13 +1,16 @@
 IMGPACK := $(BUILD_OUT_EXECUTABLES)/logo_img_packer$(BUILD_EXECUTABLE_SUFFIX)
-TARGET_PRODUCT_DIR := device/khadas/$(TARGET_PRODUCT)
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/upgrade
 
-BUILT_IMAGES := system.img userdata.img cache.img
-ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
-	BUILT_IMAGES += boot.img.encrypt recovery.img.encrypt u-boot.bin.encrypt
+ifeq ($(TARGET_NO_RECOVERY),true)
+BUILT_IMAGES := boot.img u-boot.bin dtb.img
 else
-	BUILT_IMAGES += boot.img recovery.img u-boot.bin
+BUILT_IMAGES := boot.img recovery.img u-boot.bin dtb.img
+endif
+ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+	BUILT_IMAGES := $(addsuffix .encrypt, $(BUILT_IMAGES))
 endif#ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+
+BUILT_IMAGES += system.img userdata.img cache.img
 
 ifdef KERNEL_DEVICETREE
 DTBTOOL := vendor/amlogic/tools/dtbTool
@@ -15,7 +18,7 @@ DTBTOOL := vendor/amlogic/tools/dtbTool
 ifdef KERNEL_DEVICETREE_CUSTOMER_DIR
 KERNEL_DEVICETREE_DIR := $(KERNEL_DEVICETREE_CUSTOMER_DIR)
 else
-KERNEL_DEVICETREE_DIR := arch/$(KERNEL_ARCH)/boot/dts/amlogic/
+KERNEL_DEVICETREE_DIR := arch/$(KERNEL_ARCH)/boot/dts/
 endif
 
 KERNEL_DEVICETREE_SRC := $(addprefix $(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR), $(KERNEL_DEVICETREE) )
@@ -25,6 +28,9 @@ KERNEL_DEVICETREE_BIN := $(addprefix $(KERNEL_OUT)/$(KERNEL_DEVICETREE_DIR), $(K
 KERNEL_DEVICETREE_BIN := $(addsuffix .dtb, $(KERNEL_DEVICETREE_BIN))
 
 INSTALLED_BOARDDTB_TARGET := $(PRODUCT_OUT)/dtb.img
+ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+	INSTALLED_BOARDDTB_TARGET := $(INSTALLED_BOARDDTB_TARGET).encrypt
+endif# ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 
 $(INSTALLED_BOARDDTB_TARGET) : $(KERNEL_DEVICETREE_SRC) $(INSTALLED_KERNEL_TARGET)
 	$(foreach aDts, $(KERNEL_DEVICETREE), \
@@ -38,12 +44,13 @@ ifneq ($(strip $(word 2, $(KERNEL_DEVICETREE)) ),)
 else# elif dts num == 1
 	cp -f $(KERNEL_DEVICETREE_BIN) $@
 endif
+	$(hide) $(call aml-secureboot-sign-bin, $@)
 	@echo "Instaled $@"
 
 .PHONY: dtbimage
 dtbimage: $(INSTALLED_BOARDDTB_TARGET)
 
-else
+else #KERNEL_DEVICETREE undefined in Kernel.mk
 INSTALLED_BOARDDTB_TARGET	   :=
 endif # ifdef KERNEL_DEVICETREE
 
@@ -54,6 +61,18 @@ UPGRADE_FILES := \
 	u-boot.bin.sd.bin  u-boot.bin.usb.bl2 u-boot.bin.usb.tpl \
         u-boot-comp.bin
 
+ifeq ($(AB_OTA_UPDATER),true)
+ifneq ($(TARGET_USE_SECURITY_MODE),true)
+UPGRADE_FILES += \
+        platform.conf \
+        aml_upgrade_package_AB.conf
+else # secureboot mode
+UPGRADE_FILES += \
+        u-boot-usb.bin.aml \
+        platform_enc.conf \
+        aml_upgrade_package_AB_enc.conf
+endif
+else
 ifneq ($(TARGET_USE_SECURITY_MODE),true)
 UPGRADE_FILES += \
         platform.conf \
@@ -64,24 +83,18 @@ UPGRADE_FILES += \
         platform_enc.conf \
         aml_upgrade_package_enc.conf
 endif
+endif
 
 UPGRADE_FILES := $(addprefix $(TARGET_DEVICE_DIR)/upgrade/,$(UPGRADE_FILES))
 UPGRADE_FILES := $(wildcard $(UPGRADE_FILES)) #extract only existing files for burnning
 
 ifneq ($(TARGET_AMLOGIC_RES_PACKAGE),)
 INSTALLED_AML_LOGO := $(PRODUCT_UPGRADE_OUT)/logo.img
-$(INSTALLED_AML_LOGO): $(IMGPACK) $(shell find $(TARGET_AMLOGIC_RES_PACKAGE) -type f)
+$(INSTALLED_AML_LOGO): $(IMGPACK) $(wildcard $(TARGET_AMLOGIC_RES_PACKAGE)/*)
 	@echo "generate $(INSTALLED_AML_LOGO)"
 	$(hide) mkdir -p $(PRODUCT_UPGRADE_OUT)/logo
 	$(hide) rm -rf $(PRODUCT_UPGRADE_OUT)/logo/*
 	@cp -rf $(TARGET_AMLOGIC_RES_PACKAGE)/* $(PRODUCT_UPGRADE_OUT)/logo
-	$(hide) $(foreach bmpf, $(wildcard $(TARGET_AMLOGIC_RES_PACKAGE)/*.bmp), \
-		$(eval targetBmpSz := $(shell stat -L -c %s $(bmpf))) \
-		if [ $(targetBmpSz) -gt 524288 ]; then \
-			echo "gzip -c $(bmpf) > $(PRODUCT_UPGRADE_OUT)/logo/$(notdir $(bmpf))" ;\
-			gzip -c $(bmpf) > $(PRODUCT_UPGRADE_OUT)/logo/$(notdir $(bmpf)); \
-		fi; \
-		)
 	$(hide) $(IMGPACK) -r $(PRODUCT_UPGRADE_OUT)/logo $@
 	@echo "Installed $@"
 else
@@ -133,18 +146,31 @@ endef
 aml_usrimg :$(INSTALLED_AML_USER_IMAGES)
 endif # ifeq ($(TARGET_BUILD_USER_PARTS),true)
 
+INSTALLED_AMLOGIC_BOOTLOADER_TARGET := $(PRODUCT_OUT)/u-boot.bin
+ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+	INSTALLED_AMLOGIC_BOOTLOADER_TARGET := $(INSTALLED_AMLOGIC_BOOTLOADER_TARGET).encrypt
+endif# ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+
+$(INSTALLED_AMLOGIC_BOOTLOADER_TARGET) : $(TARGET_DEVICE_DIR)/u-boot.bin
+	$(hide) cp $< $(PRODUCT_OUT)/u-boot.bin
+	$(hide) $(call aml-secureboot-sign-bootloader, $@)
+	@echo "make $@: bootloader installed end"
+
 ifeq ($(TARGET_SUPPORT_USB_BURNING_V2),true)
+INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/aml_upgrade_package.img
 
-ifeq ($(TARGET_PRODUCT),kvim)
-  INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/update.img
+ifeq ($(AB_OTA_UPDATER),true)
+ifeq ($(TARGET_USE_SECURITY_MODE),true)
+  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_AB_enc.conf
 else
-  INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/aml_upgrade_package.img
+  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_AB.conf
 endif
-
+else
 ifeq ($(TARGET_USE_SECURITY_MODE),true)
   PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_enc.conf
 else
   PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package.conf
+endif
 endif
 
 ifeq ($(TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL),true)
@@ -173,6 +199,12 @@ define aml-secureboot-sign-kernel
 	$(hide) $(PRODUCT_AML_SECUREBOOT_SIGNIMAGE) --input $(basename $(1)) --output $(1)
 	@echo ----- Made aml secure-boot singed bootloader: $(1) --------
 endef #define aml-secureboot-sign-kernel
+define aml-secureboot-sign-bin
+	@echo -----aml-secureboot-sign-bin------
+	$(hide) mv -f $(1) $(basename $(1))
+	$(hide) $(PRODUCT_AML_SECUREBOOT_SIGBIN) --input $(basename $(1)) --output $(1)
+	@echo ----- Made aml secure-boot singed bin: $(1) --------
+endef #define aml-secureboot-sign-bin
 endif# ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 
 .PHONY:aml_upgrade
@@ -182,37 +214,24 @@ $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): \
 	$(UPGRADE_FILES) \
 	$(INSTALLED_AML_USER_IMAGES) \
 	$(INSTALLED_AML_LOGO) \
-	$(INSTALLED_BOARDDTB_TARGET) \
 	$(INSTALLED_MANIFEST_XML) \
 	$(TARGET_USB_BURNING_V2_DEPEND_MODULES)
 	mkdir -p $(PRODUCT_UPGRADE_OUT)
-ifneq ($(TARGET_USE_SECURITY_MODE),true)
-	$(hide) $(foreach file,$(UPGRADE_FILES), \
-			echo cp $(file) $(PRODUCT_UPGRADE_OUT)/$(notdir $(file)); \
-			cp -f $(file) $(PRODUCT_UPGRADE_OUT)/$(notdir $(file)); \
-		)
-else # secureboot mode
 	$(hide) $(foreach file,$(UPGRADE_FILES), \
 		echo cp $(file) $(PRODUCT_UPGRADE_OUT)/$(notdir $(file)); \
 		cp -f $(file) $(PRODUCT_UPGRADE_OUT)/$(notdir $(file)); \
-		if [ "$(file)" == "ddr_init.bin" ]; then \
-			echo cp $(file) $(PRODUCT_UPGRADE_OUT)/DDR_ENC.USB; \
-			cp $(file) $(PRODUCT_UPGRADE_OUT)/DDR_ENC.USB; \
-		fi; \
 		)
-	-cp $(TARGET_DEVICE_DIR)/u-boot.bin.aml $(PRODUCT_UPGRADE_OUT)
-endif
 	$(hide) $(foreach file,$(BUILT_IMAGES), \
-		echo ln -s $(PRODUCT_OUT)/$(file) $(PRODUCT_UPGRADE_OUT)/$(file); \
-		rm -f $(PRODUCT_UPGRADE_OUT)/$(file); \
-		ln -s $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/$(file) $(PRODUCT_UPGRADE_OUT)/$(file); \
+		echo ln -sf $(PRODUCT_OUT)/$(file) $(PRODUCT_UPGRADE_OUT)/$(file); \
+		ln -sf $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/$(file) $(PRODUCT_UPGRADE_OUT)/$(file); \
 		)
-	ln -sf $(ANDROID_BUILD_TOP)/$(INSTALLED_BOARDDTB_TARGET) $(PRODUCT_UPGRADE_OUT)/meson.dtb
 ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 	$(hide) rm -f $(PRODUCT_UPGRADE_OUT)/u-boot.bin.encrypt.*
 	$(hide) rm -f $(PACKAGE_CONFIG_FILE)
 	$(hide) $(ACP) $(PRODUCT_OUT)/u-boot.bin.encrypt.* $(PRODUCT_UPGRADE_OUT)/
 	$(hide) $(ACP) $(TARGET_DEVICE_DIR)/upgrade/aml_upgrade_package_enc.conf $(PACKAGE_CONFIG_FILE)
+	ln -sf $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/dtb.img $(PRODUCT_UPGRADE_OUT)/dtb.img
+	ln -sf $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/u-boot.bin.encrypt.efuse $(PRODUCT_UPGRADE_OUT)/SECURE_BOOT_SET
 endif#ifneq ($(TARGET_USE_SECURITY_MODE),true)
 	$(security_dm_verity_conf)
 	$(update-aml_upgrade-conf)
@@ -220,13 +239,9 @@ endif#ifneq ($(TARGET_USE_SECURITY_MODE),true)
 		$(call aml-user-img-update-pkg,$(userPartName),$(PACKAGE_CONFIG_FILE)))
 	@echo "Package: $@"
 	@echo ./vendor/amlogic/tools/aml_upgrade/aml_image_v2_packer -r \
-		$(PACKAGE_CONFIG_FILE) \
-		$(PRODUCT_UPGRADE_OUT)/ \
-		$(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
-	$(hide) ./vendor/amlogic/tools/aml_upgrade/aml_image_v2_packer -r \
-		$(PACKAGE_CONFIG_FILE) \
-		$(PRODUCT_UPGRADE_OUT)/ \
-		$(INSTALLED_AML_UPGRADE_PACKAGE_TARGET)
+		$(PACKAGE_CONFIG_FILE)  $(PRODUCT_UPGRADE_OUT)/ $@
+	./vendor/amlogic/tools/aml_upgrade/aml_image_v2_packer -r \
+		$(PACKAGE_CONFIG_FILE)  $(PRODUCT_UPGRADE_OUT)/ $@
 	@echo " $@ installed"
 else
 #none

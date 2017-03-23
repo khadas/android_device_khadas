@@ -1,5 +1,8 @@
 # NTFS
-allow vold self:capability { setgid setuid sys_rawio };
+userdebug_or_eng(`
+  allow vold self:capability { sys_rawio };
+')
+allow vold self:capability { setgid setuid };
 
 allow vold fuse_device:chr_file rw_file_perms;
 
@@ -29,4 +32,10 @@ allow vold sda_block_device:blk_file { getattr read write open };
 allow vold vold_block_device:blk_file { create getattr read open unlink ioctl lock write };
 
 allow vold storage_stub_file:dir { getattr read open search write add_name };
-allow vold block_device:blk_file { read write open getattr };
+#allow vold block_device:blk_file { read write open getattr };
+
+# for make ext4fs
+domain_auto_trans(vold, make_ext4fs_exec, make_ext4fs);
+
+allow vold init_tmpfs:file create_file_perms;
+allow vold tee_data_file:dir { open read ioctl };

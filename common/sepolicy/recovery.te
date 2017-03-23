@@ -3,14 +3,14 @@ recovery_only(`
   allow recovery uboot_prop:property_service set;
   allow recovery rootfs:dir create_dir_perms;
   allow recovery sysfs:dir mounton;
-  allow recovery debugfs:file r_file_perms;
+  #allow recovery debugfs:file r_file_perms;
   allow recovery init_tmpfs:file create_file_perms;
 
   allow recovery vfat:dir create_dir_perms;
   allow recovery vfat:file create_file_perms;
 
-  allow recovery ppp_system_file:file {create_file_perms relabelfrom relabelto};
-  allow recovery ppp_system_file:dir {create_dir_perms relabelfrom relabelto};
+  #allow recovery ppp_system_file:file {create_file_perms relabelfrom relabelto};
+  #allow recovery ppp_system_file:dir {create_dir_perms relabelfrom relabelto};
 
   allow recovery env_device:chr_file rw_file_perms;
   allow recovery input_device:chr_file write;
@@ -23,4 +23,13 @@ recovery_only(`
   allow recovery kmsg_device:chr_file rw_file_perms;
   allow recovery recovery:capability { net_admin };
   allow recovery recovery:netlink_kobject_uevent_socket { create bind setopt read };
+  allow recovery aml_display_prop:file {open read getattr};
+  allow recovery uboot_prop:file {open read getattr};
+  allow recovery sysfs_xbmc:file {open read write};
+  allow recovery update_data_file:file rw_file_perms;
+  allow recovery update_data_file:dir { search read write open };
+
+  allow shell tmpfs:file {open read getattr};
+  allow shell sysfs:file {read};
+  allow shell rootfs:file {execute_no_trans};
 ')

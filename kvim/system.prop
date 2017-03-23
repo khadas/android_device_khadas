@@ -7,10 +7,13 @@ ro.camera.preview.MaxSize=1280x720
 ro.camera.preview.LimitedRate=1280x720x30,640x480x30,320x240x28
 ro.camera.preview.UseMJPEG=1
 
+#for bt auto connect
+ro.autoconnectbt.isneed=true
+ro.autoconnectbt.macprefix=00:CD:FF
+ro.autoconnectbt.btclass=50c
+
 #if wifi Only
 ro.radio.noril=false
-
-ro.sf.lcd_density=240
 
 #if need pppoe
 ro.net.pppoe=true
@@ -40,9 +43,7 @@ media.amplayer.enable=true
 media.amsuperplayer.m4aplayer=STAGEFRIGHT_PLAYER
 media.amsuperplayer.defplayer=PV_PLAYER
 media.amplayer.thumbnail=true
-media.amplayer.widevineenable=false
 media.amplayer.dsource4local=1
-media.amplayer.startmode=true
 media.amplayer.dropwaitxms=100
 
 media.arm.audio.decoder=ape,flac,dts,ac3,eac3,wma,wmapro,mp3,aac,vorbis,raac,cook,amr,pcm,adpcm,aac_latm,rm
@@ -79,7 +80,7 @@ persist.fw.force_adoptable=true
 
 #add livhls,libcurl as default hls
 media.libplayer.curlenable=true
-media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod
+media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod,bluray_mod
 
 
 #Hdmi In

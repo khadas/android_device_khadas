@@ -25,8 +25,10 @@ TARGET_WITH_AMLOGIC_EXTRATORS :=true
 TARGET_WITH_AMLOGIC_SCREAN_MEDIASOURCE :=true
 TARGET_WITH_AMLOGIC_RETRIEVER :=true
 TARGET_WITH_AMLOGIC_PLAYERS :=true
-#set on some prducts
+TARGET_WITH_AMNUPLAYER :=true
+#set on some prducts,used libplayer.
 BUILD_WITH_BOOT_PLAYER :=true
+TARGET_WITH_AMLOGIC_SWCODEC :=true
 
 #########################################################################
 #
@@ -54,7 +56,6 @@ ifeq ($(BUILD_WITH_PLAYREADY_DRM),true)
 PRODUCT_PACKAGES += libdrmplayreadyplugin \
   libsmoothstreaming_test \
   libsmoothstreaming \
-  libprwmv \
   libplayreadymediadrmplugin\
   playready \
   libdrmclientplayreadyplugin \
@@ -126,11 +127,12 @@ PRODUCT_PACKAGES += \
 
 #soft codec related.
 #
+ifeq ($(TARGET_WITH_AMLOGIC_SWCODEC), true)
 PRODUCT_PACKAGES += \
-    libopenHEVC\
-    libstagefright_soft_amh265dec\
     libstagefright_soft_amsoftdec\
-    libstagefright_soft_amsoftadec \
+    libstagefright_soft_amsoftadec
+
+endif
 
 #for drm widevine.
 PRODUCT_PROPERTY_OVERRIDES += drm.service.enable=true
@@ -165,7 +167,10 @@ PRODUCT_PACKAGES += com.google.widevine.software.drm.xml \
     widevine \
     wvcenc \
     edef8ba9-79d6-4ace-a3c827dcd51d21ed \
-    e043cde0-61d0-11e5-9c260002a5d5c51b
+    e043cde0-61d0-11e5-9c260002a5d5c51b \
+    secmem_test \
+    secureapi_test \
+    oemcrypto_test
 
 ifeq ($(TARGET_WITH_AMLOGIC_PLAYERS), true)
 ##player related
@@ -174,10 +179,12 @@ BUILD_WITH_AMLOGIC_PLAYER := true
 PRODUCT_PACKAGES += libmedia_amlogic \
     librtmp \
     libmms_mod \
-    libcurl_mod \
+	libcurl_mod \
     libvhls_mod \
-    libprhls_mod \
+    libprhls_mod.so \
     libdash_mod.so  \
+    libbluray.so \
+    libbluray_mod.so \
 
 #audio
 PRODUCT_PACKAGES += libamadec_omx_api \
@@ -193,7 +200,11 @@ PRODUCT_PACKAGES += libamadec_omx_api \
     libpcm_wfd \
     libaac_helix \
     libamadec_wfd_out
-
+else
+#no libplayer but have amnuplayer
+ifeq ($(TARGET_WITH_AMNUPLAYER), true)
+PRODUCT_PACKAGES += libmedia_amlogic
+endif #amnuplayer
 
 endif
 
@@ -224,3 +235,4 @@ PRODUCT_PACKAGES += bootplayer \
 
 endif
 
+BOARD_SECCOMP_POLICY := device/khadas/common/seccomp

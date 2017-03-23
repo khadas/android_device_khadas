@@ -4,6 +4,7 @@ import init.amlogic.wifi.rc
 import init.mtk.rc
 
 on early-init
+    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
 
 
 on init
@@ -26,12 +27,21 @@ on init
     chmod 666 /sys/class/vdec/poweron_clock_level
     chmod 666 /sys/module/ionvideo/parameters/freerun_mode
     chown media system /sys/class/graphics/fb0/osd_afbcd
+    write /sys/class/graphics/fb0/osd_afbcd 1
     chmod 666 /sys/class/video/blackout_policy
     chmod 666 /sys/class/tsync/vpause_flag
     chmod 0666 /dev/amstream_sub_read
 
     # for zram
     mkdir /swap_zram0 0700 root root
+
+    # for tee
+    mkdir /tee 0700 system system
+    confirm_formated ext4 /dev/block/tee /tee 1024 1024
+
+on post-fs
+    restorecon_recursive /tee
+    start tee_supplicant
 
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -42,6 +52,11 @@ on post-fs-data
     mkdir /data/misc/etc/ppp 0777 system pppoe
     chown system system /etc/ppp
     chmod 0770 /etc/ppp
+    #create droidota directory for system update
+    mkdir /data/droidota 0771 system system
+    #save log
+    mkdir /data/log 0771 log log
+    mkdir /data/log/dontpanic 0771 log log
 
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
@@ -51,7 +66,6 @@ on post-fs-data
 
 
 on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 
 
@@ -74,19 +88,21 @@ on boot
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
     write /sys/block/mmcblk1/queue/read_ahead_kb 2048
 
-    chown media system /sys/class/amhdmitx/amhdmitx0/aud_ch
+    chown system mediadrm /sys/class/amhdmitx/amhdmitx0/aud_ch
     chmod 0664 /sys/class/amhdmitx/amhdmitx0/aud_ch
     insmod  /system/lib/aml_thermal.ko
+    insmod  /system/lib/ddr_window_64.ko
 
     chown media system /sys/class/tsync/pts_video
-    chown media system /sys/class/tsync/pts_audio
-    chown media system /sys/class/tsync/pts_pcrscr
-    chown media system /sys/class/tsync/event
+    chown system mediadrm /sys/class/tsync/pts_audio
+    chown system mediadrm /sys/class/tsync/pts_pcrscr
+    chown system mediadrm /sys/class/tsync/event
     chown media system /sys/class/tsync/mode
     chown media system /sys/class/tsync/enable
     chown media system /sys/class/tsync/av_threshold_min
     chown media system /sys/class/tsync/av_threshold_max
     chown system system /sys/class/graphics/fb0/blank
+    chown media system /sys/class/graphics/fb0/free_scale_switch
     chown media system /sys/class/graphics/fb1/blank
     chown media system /sys/class/graphics/fb0/order
     chown media system /sys/class/graphics/fb1/order
@@ -97,6 +113,7 @@ on boot
 
     chmod 0664 /sys/class/graphics/fb0/blank
     chmod 0664 /sys/class/graphics/fb1/blank
+    chmod 0664 /sys/class/graphics/fb0/free_scale_switch
 
     chown media system /sys/class/video/blackout_policy
     chown media system /sys/class/video/screen_mode
@@ -104,7 +121,8 @@ on boot
     chown media system /sys/class/video/disable_video
     chown media system /sys/class/video/zoom
     chown media system /sys/class/video/free_keep_buffer
-    chown media system /sys/class/codec_mm/tvp_enable
+    chown media system /sys/class/video/free_cma_buffer
+    chown mediacodec mediadrm /sys/class/codec_mm/tvp_enable
     chown media system /sys/class/ppmgr/angle
     chown media system /sys/class/ppmgr/disp
     chown system system /sys/class/ppmgr/ppscaler
@@ -114,7 +132,7 @@ on boot
     chown media system /sys/class/amaudio/audio_channels_mask
     chown media system /sys/class/amaudio/enable_resample
     chown media system /sys/class/amaudio/resample_type
-    chown media system /sys/class/amaudio/debug
+    chown system mediadrm /sys/class/amaudio/debug
 
     chown system system /sys/class/audiodsp/digital_raw
     chown system system /sys/class/audiodsp/ac3_drc_control
@@ -210,6 +228,9 @@ on boot
     chown media system /sys/module/amvideo/parameters/smooth_sync_enable
     chown media system /sys/module/amvdec_h264/parameters/error_recovery_mode
 
+    chown media system /sys/module/amvdec_h265/parameters/double_write_mode
+    chmod 666 /sys/module/amvdec_h265/parameters/double_write_mode
+
     chown media system /sys/module/deinterlace/parameters/deinterlace_mode
     chown media system /sys/class/graphics/fb0/block_mode
 
@@ -229,7 +250,7 @@ on boot
     chown system system /sys/class/amhdmitx/amhdmitx0/config
     chown system system /sys/class/amhdmitx/amhdmitx0/avmute
     chmod 644 /sys/class/amhdmitx/amhdmitx0/avmute
-    chown media system /sys/class/amhdmitx/amhdmitx0/aud_output_chs
+    chown system mediadrm /sys/class/amhdmitx/amhdmitx0/aud_output_chs
     chown media system /sys/class/switch/hdmi/state
     chmod 0660 /sys/class/switch/hdmi/state
     chown media system /sys/devices/virtual/switch/hdmi/state
@@ -256,6 +277,7 @@ on boot
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/hmp_boost
     chown system system /sys/devices/system/cpu/cpufreq/conservative/freq_step
 
     chown system system /sys/devices/system/cpu/cpufreq/performance2/sampling_rate
@@ -273,6 +295,7 @@ on boot
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/hmp_boost
     chmod 664 /sys/devices/system/cpu/cpufreq/conservative/freq_step
     chmod 664 /sys/devices/system/cpu/cpufreq/performance2/sampling_rate
     chmod 664 /sys/devices/system/cpu/cpufreq/performance2/down_threshold
@@ -332,7 +355,9 @@ on fs
 
 on aml-firstboot-init
     #format data and cache patrition if not exist
+    wait /dev/block/data 20
     confirm_formated ext4 /dev/block/data /data
+    wait /dev/block/cache 20
     confirm_formated ext4 /dev/block/cache /cache
 
 service system_control /system/bin/systemcontrol
@@ -340,6 +365,13 @@ service system_control /system/bin/systemcontrol
     user root
     group system
     seclabel u:r:system_control:s0
+
+
+service hdmi_cec /system/bin/hdmi_cec
+    class core
+    user root
+    group system
+    seclabel u:r:hdmi_cec:s0
 
 # virtual sdcard daemon running as media_rw (1023)
 #service sdcard /system/bin/sdcard -u 1023 -g 1023 /data/media /mnt/shell/emulated
@@ -455,8 +487,31 @@ on property:instaboot.status=completed
 on property:dev.bootcomplete=1
     start usbpm
 
+on property:vold.post_fs_data_done=1
+    start tee_supplicant
+
 service hdcp_tx22 /system/bin/hdcp_tx22 \
     -f /system/etc/firmware/firmware.le
     class main
     disabled
     oneshot
+
+service ddrtest /system/bin/ddrtest.sh
+    class main
+    user root
+    group root
+    oneshot
+
+service factoryreset /system/bin/factoryreset.sh
+    class main
+    user root
+    group root
+    oneshot
+    seclabel u:r:install_recovery:s0
+
+# logcat offline log
+service logcat /system/bin/logcat -b system -b events -b main -b crash -K -n 10 -v threadtime -f /data/log/logcat.log -r 1000 -M
+    class main
+    user log
+    group log
+    seclabel u:r:logcat:s0

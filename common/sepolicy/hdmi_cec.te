@@ -1,0 +1,16 @@
+type hdmi_cec, domain;
+type hdmi_cec_exec, exec_type, file_type;
+
+
+init_daemon_domain(hdmi_cec)
+
+binder_use(hdmi_cec);
+binder_call(hdmi_cec, binderservicedomain)
+binder_call(hdmi_cec, appdomain)
+binder_service(hdmi_cec)
+
+allow hdmi_cec system_file:file execute_no_trans;
+allow hdmi_cec hdmi_cec_exec:file { entrypoint read };
+allow hdmi_cec hdmi_cec_service:service_manager add;
+
+allow hdmi_cec cec_device:chr_file { open read write ioctl };

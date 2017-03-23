@@ -6,13 +6,19 @@ domain_auto_trans(init, system_control_exec, system_server)
 #allow init imageserver_service:service_manager add;
 domain_trans(init, imageserver_exec, imageserver)
 
-domain_trans(init, tee_supplicant_exec, tee_supplicant)
+domain_trans(init, shell_exec, logcat)
+
+domain_trans(init, tee_exec, tee)
 allow init fuse:file { open read write };
 allow init fuse:dir search;
 
 #allow tvserver service
 domain_trans(init, tvserver_exec, tvserver)
 domain_auto_trans(init, tvserver_exec, tvserver)
+
+#allow hdmi_cec service
+domain_trans(init, hdmi_cec_exec, hdmi_cec)
+domain_auto_trans(init, hdmi_cec_exec, hdmi_cec)
 
 domain_trans(init, make_ext4fs_exec, make_ext4fs)
 
@@ -33,8 +39,8 @@ allow init vfat:file create_file_perms;
 allow init init:tcp_socket create_stream_socket_perms;
 allow init port:tcp_socket name_bind;
 allow init node:tcp_socket node_bind;
-allow init shell_data_file:file create_file_perms;
-allow init shell_data_file:dir rw_dir_perms;
+#allow init shell_data_file:file create_file_perms;
+#allow init shell_data_file:dir rw_dir_perms;
 allow init kernel:system {syslog_read module_request};
 allow init tmpfs:lnk_file {create_file_perms};
 allow init block_device:blk_file rw_file_perms;
@@ -48,6 +54,7 @@ allow init drm_device:chr_file {setattr read write open ioctl};
 allow shell drm_device:chr_file rw_file_perms;
 allow init system_data_file:file {link};
 allow init debugfs:dir mounton;
+allow init debugfs:file w_file_perms;
 allow init userdata_block_device:blk_file rw_file_perms;
 allow init cache_block_device:blk_file rw_file_perms;
 
@@ -66,3 +73,4 @@ allow init self:netlink_kobject_uevent_socket { create read write };
 allow init param_block_device:blk_file { getattr read write open };
 
 allow init drm_block_device:blk_file rw_file_perms;
+allow init tee_block_device:blk_file rw_file_perms;

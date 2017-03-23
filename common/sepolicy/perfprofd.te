@@ -1,0 +1,3 @@
+userdebug_or_eng(`
+  allow perfprofd init_tmpfs:file create_file_perms;
+')

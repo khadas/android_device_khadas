@@ -1,0 +1,1 @@
+allow tzdatacheck init_tmpfs:file create_file_perms;

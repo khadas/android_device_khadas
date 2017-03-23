@@ -2,6 +2,8 @@ type imageserver, domain;
 type imageserver_exec, exec_type, file_type;
 type picture_device, dev_type;
 
+typeattribute imageserver mlstrustedsubject;
+
 init_daemon_domain(imageserver)
 
 allow imageserver shell_exec:file rx_file_perms;
@@ -31,10 +33,14 @@ allow imageserver picture_device:chr_file rw_file_perms;
 allow imageserver fuse:dir r_dir_perms;
 allow imageserver fuse:file r_file_perms;
 allow imageserver app_data_file:file rw_file_perms;
-allow imageserver system_file:file execmod;
+#allow imageserver system_file:file execmod;
+
+allow imageserver app_data_file:dir search;
 
 allow imageserver system_control_service:service_manager find;
 
 allow imageserver { mnt_user_file storage_file }:dir { getattr search };
 allow imageserver { mnt_user_file storage_file }:lnk_file { getattr read };
 allow imageserver permission_service:service_manager find;
+
+allow imageserver init_tmpfs:file create_file_perms;

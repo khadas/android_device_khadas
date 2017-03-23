@@ -5,7 +5,7 @@ init_daemon_domain(vold_ext)
 
 allow vold_ext self:capability { setgid setuid };
 
-allow vold_ext fuse_device:chr_file rw_file_perms;
+#allow vold_ext fuse_device:chr_file rw_file_perms;
 
 allow vold_ext cpuctl_device:dir search;
 

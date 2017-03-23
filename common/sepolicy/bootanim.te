@@ -1,2 +1,3 @@
 #Bootanim start bootvideo
 allow bootanim system_control:binder call;
+allow bootanim init_tmpfs:file create_file_perms;

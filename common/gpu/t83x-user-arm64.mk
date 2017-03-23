@@ -16,4 +16,10 @@
 
 GPU_TARGET_PLATFORM := default_8a
 GPU_TYPE:=t83x
+GPU_ARCH:=midgard
 
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+# midgard r7p0 is 3.1, r11p0 is 3.2
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.opengles.version=196610

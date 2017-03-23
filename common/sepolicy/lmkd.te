@@ -1,2 +1,4 @@
 allow lmkd mediaserver:dir {open read search };
 allow lmkd mediaserver:file { open read write};
+
+allow lmkd init_tmpfs:file create_file_perms;

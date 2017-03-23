@@ -1,0 +1,13 @@
+type logcat, domain;
+type log_file, file_type, data_file_type;
+
+allow logcat logcat_exec:file { entrypoint read execute getattr };
+
+allow logcat log_file:dir { read open write add_name create setattr search remove_name rename };
+allow logcat log_file:file { create write open getattr read append rename unlink setattr };
+allow logcat logdr_socket:sock_file write;
+allow logcat logd:unix_stream_socket connectto;
+
+
+allow logcat shell_exec:file rx_file_perms;
+allow logcat shell_exec:file { execute_no_trans execute read open };

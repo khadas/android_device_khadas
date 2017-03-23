@@ -13,3 +13,8 @@ type cri_block_device, dev_type;
 type sda_block_device, dev_type;
 type vold_block_device, dev_type;
 type drm_block_device, dev_type;
+type tee_block_device, dev_type;
+type dvb_video_device, dev_type;
+type subtitle_device, dev_type;
+type sw_sync_device, dev_type;
+type ge2d_device, dev_type;
