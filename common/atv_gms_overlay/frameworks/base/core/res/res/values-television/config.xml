@@ -23,5 +23,5 @@
 
     <!-- Flags enabling default window features. See Window.java -->
     <bool name="config_defaultWindowFeatureOptionsPanel">true</bool>
-    <integer name="config_longPressOnHomeBehavior">2</integer>
+    <integer name="config_longPressOnHomeBehavior">1</integer>
 </resources>
