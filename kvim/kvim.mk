@@ -51,6 +51,8 @@ PRODUCT_MANUFACTURER := Khadas
 
 WITH_LIBPLAYER_MODULE := false
 
+OTA_UP_PART_NUM_CHANGED := true
+
 #AB_OTA_UPDATER :=true
 
 ifeq ($(AB_OTA_UPDATER),true)
