@@ -171,7 +171,8 @@ PRODUCT_PACKAGES += \
     systemcontrol_static \
     libsystemcontrolservice \
     libdig \
-    BluetoothRemote
+    BluetoothRemote \
+    Happycast_Tv
 
 PRODUCT_PACKAGES += \
     hostapd \
