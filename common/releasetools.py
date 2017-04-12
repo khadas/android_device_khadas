@@ -167,22 +167,42 @@ def IncrementalOTA_InstallBegin(info):
     SetBootloaderEnv(info.script, "upgrade_step", "3")
   print "amlogic extensions:IncrementalOTA_InstallBegin"
 
+def IncrementalOTA_ImageCheck(info, name):
+  source_image = False; target_image = False; updating_image = False;
+
+  image_path = name.upper() + "/" + name
+  image_name = name + ".img"
+
+  if HasTargetImage(info.source_zip, image_path):
+    source_image = common.File(image_name, info.source_zip.read(image_path));
+
+  if HasTargetImage(info.target_zip, image_path):
+    target_image = common.File(image_name, info.target_zip.read(image_path));
+
+  if target_image:
+    if source_image:
+      updating_image = (source_image.data != target_image.data);
+    else:
+      updating_image = 1;
+
+  if updating_image:
+    message_process = "install " + name + " image..."
+    info.script.Print(message_process);
+    common.ZipWriteStr(info.output_zip, image_name, target_image.data)
+    if name == "dtb":
+      info.script.WriteDtbImage(image_name)
+    else:
+      info.script.WriteRawImage("/" + name, image_name)
+
+  if name == "bootloader":
+    if updating_image:
+      SetBootloaderEnv(info.script, "upgrade_step", "1")
+    else:
+      SetBootloaderEnv(info.script, "upgrade_step", "2")
+
+
 def IncrementalOTA_InstallEnd(info):
   print "amlogic extensions:IncrementalOTA_InstallEnd"
-  source_bootloader = False; target_bootloader = False; updating_bootloader = False;
-  if HasTargetImage(info.source_zip, "BOOTLOADER/bootloader"):
-    source_bootloader = common.File("bootloader.img", info.source_zip.read("BOOTLOADER/bootloader"));
-
-  if HasTargetImage(info.target_zip, "BOOTLOADER/bootloader"):
-    target_bootloader = common.File("bootloader.img", info.target_zip.read("BOOTLOADER/bootloader"));
-
-  if target_bootloader:
-    if source_bootloader:
-      updating_bootloader = (source_bootloader.data != target_bootloader.data);
-    else:
-      updating_bootloader = 1;
-
-  if updating_bootloader:
-    SetBootloaderEnv(info.script, "upgrade_step", "1")
-  else:
-    SetBootloaderEnv(info.script, "upgrade_step", "2")
+  IncrementalOTA_ImageCheck(info, "logo");
+  IncrementalOTA_ImageCheck(info, "dtb");
+  IncrementalOTA_ImageCheck(info, "bootloader");
