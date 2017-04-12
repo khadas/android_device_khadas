@@ -518,9 +518,3 @@ service factoryreset /system/bin/factoryreset.sh
     oneshot
     seclabel u:r:install_recovery:s0
 
-# logcat offline log
-service logcat /system/bin/logcat -b system -b events -b main -b crash -K -n 10 -v threadtime -f /data/log/logcat.log -r 1000 -M
-    class main
-    user log
-    group log
-    seclabel u:r:logcat:s0
