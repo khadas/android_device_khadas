@@ -84,3 +84,6 @@
 #consumerir
 /dev/irblaster1           0660   system     system
 
+# DVB API device nodes
+/dev/dvb0.frontend0                 0666   root       system
+

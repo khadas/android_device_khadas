@@ -25,4 +25,6 @@ allow system_server system_app:fifo_file { ioctl read write getattr };
 allow system_server uhid_device:chr_file { ioctl write open read };
 get_prop(system_server, media_prop)
 
+#allow system_server to access dvb_device
+allow system_server dvb_device:chr_file { read write open getattr };
 allow system_server dvb_video_device:chr_file rw_file_perms;
