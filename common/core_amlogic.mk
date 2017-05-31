@@ -125,6 +125,7 @@ WITH_SOFT_AM_EXTRACTOR_DECODER := true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.render_dirty_regions=false \
+    ro.hwui.texture_cache_size=64.0f \
     camera.disable_zsl_mode=1
 
 # USB camera default face
