@@ -25,7 +25,7 @@ allow vold sda_block_device:blk_file { rw_file_perms };
 allow vold cache_file:file create_file_perms;
 allow vold cache_file:dir { create_file_perms add_name remove_name };
 
-allow vold param_tv_device:dir { read open ioctl };
+allow vold param_tv_file:dir { read open ioctl };
 
 allow vold sda_block_device:chr_file { getattr };
 allow vold sda_block_device:blk_file { getattr read write open };

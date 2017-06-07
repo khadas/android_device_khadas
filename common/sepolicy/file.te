@@ -17,6 +17,8 @@ type drm_device, fs_type,sysfs_type;
 #dig_socket
 type dig_socket, file_type;
 
+#TV param
+type param_tv_file, file_type;
 
 type sysfs_digital_codec, fs_type, sysfs_type;
 type sysfs_audio_samesource, fs_type, sysfs_type;

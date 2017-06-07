@@ -30,7 +30,7 @@ domain_trans(init, usbpm_exec, usbpm)
 domain_auto_trans(init, usbpm_exec, usbpm)
 
 allow init property_socket:sock_file write;
-allow param_tv_device rootfs:filesystem { associate };
+allow param_tv_file rootfs:filesystem { associate };
 
 allow init vfat:dir rw_dir_perms;
 allow init vfat:file create_file_perms;

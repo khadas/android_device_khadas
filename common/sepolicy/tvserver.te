@@ -54,9 +54,9 @@ allow tvserver avin_device:chr_file  { read write open };
 allow tvserver hdmirx0_device:chr_file  { ioctl read write open };
 allow tvserver amvideo_device:chr_file  { read write open };
 
-allow tvserver param_tv_device:dir  { search read write open add_name remove_name rmdir };
-allow tvserver param_tv_device:file { create open read write setattr getattr lock unlink };
-allow param_tv_device labeledfs:filesystem { associate };
+allow tvserver param_tv_file:dir  { search read write open add_name remove_name rmdir };
+allow tvserver param_tv_file:file { create open read write setattr getattr lock unlink };
+allow param_tv_file labeledfs:filesystem { associate };
 
 allow tvserver param_block_device:blk_file { getattr read write open };
 allow tvserver cri_block_device:blk_file { getattr read write open };
