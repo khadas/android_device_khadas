@@ -3,5 +3,6 @@ allow fsck block_device:blk_file { getattr };
 allow fsck drm_block_device:blk_file { getattr read write };
 allow fsck userdata_block_device:blk_file { getattr read write };
 allow fsck tee_block_device:blk_file rw_file_perms;
+allow fsck vold_block_device:blk_file { getattr read write open ioctl };
 
 allow fsck init_tmpfs:file create_file_perms;
