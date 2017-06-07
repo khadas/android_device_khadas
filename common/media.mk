@@ -236,3 +236,8 @@ PRODUCT_PACKAGES += bootplayer \
 endif
 
 BOARD_SECCOMP_POLICY := device/khadas/common/seccomp
+
+
+BOARD_AML_MEDIAHAL_PATH := hardware/amlogic/media/
+BOARD_AML_LIBAUDIO_PATH := hardware/amlogic/LibAudio/
+
