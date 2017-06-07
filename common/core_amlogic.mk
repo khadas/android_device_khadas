@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
     libpac \
     ProxyHandler \
     Settings \
+    DroidTvSettings \
     SharedStorageBackup \
     VpnDialogs
 

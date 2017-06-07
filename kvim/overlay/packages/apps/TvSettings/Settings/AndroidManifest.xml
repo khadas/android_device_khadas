@@ -35,8 +35,6 @@
     <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="droidlogic.permission.SYSTEM_CONTROL" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
         android:icon="@drawable/logo_settings_color_48dp"
         android:label="@string/settings_app_name"
@@ -55,7 +53,6 @@
             android:label="@string/settings_app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.settings.SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -270,39 +267,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".device.display.DisplayActivity"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.android.settings.DISPLAY_SETTINGS" />
-                <action android:name="android.settings.DISPLAY_SETTINGS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.VOICE_LAUNCH" />
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".device.display.outputmode.OutputmodeActivity"
-            android:theme="@style/Theme.Settings.Transparent"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" />
-        <activity
-            android:name=".device.display.outputmode.ColorAttributeActivity"
-            android:theme="@style/Theme.Settings.Transparent"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" />
-        <activity
-            android:name=".device.display.position.DisplayPositionActivity"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" />
-        <activity
-            android:name=".device.display.hdr.HdrSettingActivity"
-            android:theme="@style/Theme.Settings.Transparent"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" />
-         <activity
             android:name=".device.display.daydream.DaydreamActivity"
             android:theme="@style/Theme.Settings.Transparent"
             android:configChanges="keyboard|keyboardHidden|navigation"
@@ -428,26 +392,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".system.PowerKeyActivity"
-            android:label="@string/power_key_action"
-            android:icon="@drawable/ic_power_launch"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".system.InputsActivity"
-            android:configChanges="keyboard|keyboardHidden|navigation"
-            android:excludeFromRecents="true"
-            android:exported="true" />
-        <activity
-            android:name=".system.HdmiCecActivity"
-            android:configChanges="keyboard|keyboardHidden|navigation"
             android:excludeFromRecents="true"
             android:exported="true" />
         <activity
@@ -599,6 +543,36 @@
             <intent-filter android:priority="1">
                 <action android:name="android.bluetooth.adapter.action.REQUEST_DISCOVERABLE" />
                 <action android:name="android.bluetooth.adapter.action.REQUEST_ENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Dummy intent filters for CTS TODO: implement something useful -->
+        <activity android:name=".EmptyStubActivity"
+                  android:exported="true"
+                  android:excludeFromRecents="true"
+                  android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.settings.WEBVIEW_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.MANAGE_DEFAULT_APPS_SETTINGS" />
+                <action android:name="android.settings.HOME_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
