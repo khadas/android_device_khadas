@@ -155,7 +155,6 @@ PRODUCT_PACKAGES += \
     Launcher2 \
     MusicFX \
     LatinIME \
-    OpenWnn \
     Music
 else
 PRODUCT_PACKAGES += \
