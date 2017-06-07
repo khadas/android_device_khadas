@@ -13,3 +13,6 @@ allow make_ext4fs vold:fd use;
 allow make_ext4fs vold:fifo_file { read write getattr };
 
 allow make_ext4fs dm_device:blk_file create_file_perms;
+
+allow make_ext4fs rootfs:lnk_file {getattr};
+allow make_ext4fs rootfs:file {getattr read open};
