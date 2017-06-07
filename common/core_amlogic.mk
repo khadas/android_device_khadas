@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
     LeanbackCustomizer
 endif
 
+ifeq ($(TARGET_BUILD_LIVETV), true)
+PRODUCT_PACKAGES += LiveTv
+endif
+
 PRODUCT_PACKAGES += \
     droidlogic \
     droidlogic-res \
