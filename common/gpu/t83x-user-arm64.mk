@@ -17,6 +17,7 @@
 GPU_TARGET_PLATFORM := default_8a
 GPU_TYPE:=t83x
 GPU_ARCH:=midgard
+GPU_DRV_VERSION:=r16p0
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
