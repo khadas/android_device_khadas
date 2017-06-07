@@ -97,3 +97,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nrdp.modelgroup=P212ATV
 endif
+
+$(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
