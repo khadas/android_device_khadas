@@ -156,9 +156,6 @@ PRODUCT_PACKAGES += \
     MusicFX \
     LatinIME \
     Music
-else
-PRODUCT_PACKAGES += \
-    LeanbackCustomizer
 endif
 
 ifeq ($(TARGET_BUILD_LIVETV), true)
