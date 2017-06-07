@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
 #    $(TARGET_PRODUCT_DIR)/audio_effects.conf:system/etc/audio_effects.conf
 
 #arm audio decoder lib
-soft_adec_libs := $(shell ls hardware/amlogic/LibAudio/amadec/acodec_lib)
+soft_adec_libs := $(shell ls hardware/amlogic/LibAudio/amadec/acodec_lib_android_n)
 PRODUCT_COPY_FILES += $(foreach file, $(soft_adec_libs), \
         hardware/amlogic/LibAudio/amadec/acodec_lib_android_n/$(file):system/lib/$(file))
         
