@@ -50,9 +50,9 @@
             <Limit name="measured-frame-rate-3840x2160" range="62-62" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.hevc.decoder.awesome" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-352x288" range="458-458" />
-            <Limit name="measured-frame-rate-640x360" range="164-164" />
-            <Limit name="measured-frame-rate-720x480" range="148-148" />
+            <Limit name="measured-frame-rate-352x288" range="604-604" />
+            <Limit name="measured-frame-rate-640x360" range="513-513" />
+            <Limit name="measured-frame-rate-720x480" range="363-363" />
             <Limit name="measured-frame-rate-1280x720" range="294-294" />
             <Limit name="measured-frame-rate-1920x1080" range="132-132" />
             <Limit name="measured-frame-rate-3840x2160" range="72-72" />
