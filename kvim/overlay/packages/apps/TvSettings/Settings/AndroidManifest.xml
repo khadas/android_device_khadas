@@ -392,6 +392,8 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".system.InputsActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
             android:excludeFromRecents="true"
             android:exported="true" />
         <activity
