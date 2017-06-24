@@ -1,0 +1,7 @@
+type dv_config, domain;
+type dv_config_exec, exec_type, file_type;
+
+
+init_daemon_domain(dv_config)
+
+allow dv_config amvecm_device:chr_file { open read write ioctl };

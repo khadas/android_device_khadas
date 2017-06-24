@@ -17,3 +17,4 @@ type dvb_video_device, dev_type;
 type subtitle_device, dev_type;
 type sw_sync_device, dev_type;
 type ge2d_device, dev_type;
+type amvecm_device, dev_type;

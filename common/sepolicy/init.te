@@ -3,6 +3,10 @@ allow init self:capability { sys_module };
 domain_trans(init, system_control_exec, system_control)
 domain_auto_trans(init, system_control_exec, system_server)
 
+#allow dv_config service
+domain_trans(init, dv_config_exec, dv_config)
+domain_auto_trans(init, dv_config_exec, dv_config)
+
 #allow init imageserver_service:service_manager add;
 domain_trans(init, imageserver_exec, imageserver)
 
