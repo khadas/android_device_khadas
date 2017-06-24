@@ -29,4 +29,22 @@
     </string-array>
     <bool name="config_defaultInTouchMode">false</bool>
     <bool name="config_forceDefaultOrientation">false</bool>
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- This device is data-only. -->
+    <bool name="config_voice_capable">false</bool>
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+    <!-- Control the behavior when the user long presses the home button.
+            0 - Nothing
+            1 - Recent apps view in SystemUI
+            2 - Launch assist intent
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+    -->
+    <integer name="config_longPressOnHomeBehavior">1</integer>
+    <!-- Launcher customization requires AppWidgetService, but otherwise
+         home screen widgets are not supported on TV -->
+    <bool name="config_enableAppWidgetService">true</bool>
+    <bool name="config_enableWallpaperService">true</bool>
 </resources>

@@ -14,18 +14,28 @@
      limitations under the License.
 -->
 
-<resources>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Height of the status bar -->
-    <dimen name="status_bar_height">0dp</dimen>
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="#44ffffff" />
+        </shape>
+    </item>
 
-    <!-- Height of the bottom navigation / system bar -->
-    <dimen name="navigation_bar_height">0dp</dimen>
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <solid android:color="#44ffffff" />
+            </shape>
+        </clip>
+    </item>
 
-    <!-- Height of the bottom navigation bar in landscape -->
-    <dimen name="navigation_bar_height_landscape">0dp</dimen>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="#ff33b5e5" />
+            </shape>
+        </clip>
+    </item>
 
-    <!-- Width of the navigation bar when it is placed vertically on the screen -->
-    <dimen name="navigation_bar_width">42dp</dimen>
-
-</resources>
+</layer-list>

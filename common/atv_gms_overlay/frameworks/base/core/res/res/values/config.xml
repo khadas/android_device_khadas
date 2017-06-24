@@ -35,4 +35,35 @@
     <bool name="config_defaultInTouchMode">false</bool>
     <bool name="config_forceDefaultOrientation">false</bool>
     <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- Flag indicating that the media framework should support playing of sounds on volume
+         key usage.  This adds noticeable additional overhead to volume key processing, so
+         is disableable for products for which it is irrelevant. -->
+    <bool name="config_useVolumeKeySounds">false</bool>
+
+    <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
+    <bool name="config_sendAudioBecomingNoisy">false</bool>
+    <!-- This device is data-only. -->
+    <bool name="config_voice_capable">false</bool>
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+    <!-- Control the default UI mode type to use when there is no other type override
+         happening.  One of the following values (See Configuration.java):
+             1  UI_MODE_TYPE_NORMAL
+             4  UI_MODE_TYPE_TELEVISION
+             5  UI_MODE_TYPE_APPLIANCE
+         Any other values will have surprising consequences. -->
+    <integer name="config_defaultUiModeType">4</integer>
+    <!-- Control the behavior when the user long presses the home button.
+            0 - Nothing
+            1 - Recent apps view in SystemUI
+            2 - Launch assist intent
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+    -->
+    <integer name="config_longPressOnHomeBehavior">1</integer>
+    <!-- Launcher customization requires AppWidgetService, but otherwise
+         home screen widgets are not supported on TV -->
+    <bool name="config_enableAppWidgetService">true</bool>
+    <bool name="config_enableWallpaperService">true</bool>
 </resources>
