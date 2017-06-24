@@ -5,7 +5,6 @@
 
 /dev/block/misc       /misc               emmc      defaults      defaults
 /dev/block/system     /system             ext4      ro wait,verify,slotselect
-/dev/block/cache      /cache              ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check
 /dev/block/data       /data               ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,encryptable=footer
 /devices/*.sd/mmc_host/sd*  auto                vfat      defaults                       voldmanaged=sdcard1:auto,noemulatedsd
 /devices/*dwc2_*/usb?/*/host*/target*/block/sd*  auto             vfat      defaults                       voldmanaged=udisk0:auto

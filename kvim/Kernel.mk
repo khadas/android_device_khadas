@@ -16,11 +16,7 @@ $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 
 else
 
-ifeq ($(AB_OTA_UPDATER),true)
-KERNEL_DEVICETREE := kvim_1g_AB kvim_2g_AB
-else
 KERNEL_DEVICETREE := kvim
-endif
 KERNEL_DEFCONFIG := kvim_defconfig
 KERNEL_ARCH := arm64
 KERNEL_ROOTDIR := common

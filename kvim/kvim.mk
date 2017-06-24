@@ -62,8 +62,12 @@ AB_OTA_PARTITIONS := \
 
 TARGET_BOOTLOADER_CONTROL_BLOCK := true
 TARGET_NO_RECOVERY := true
+TARGET_PARTITION_DTSI := partition_mbox_ab.dtsi
 else
 TARGET_NO_RECOVERY := false
+BOARD_CACHEIMAGE_PARTITION_SIZE := 69206016
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_PARTITION_DTSI := partition_mbox.dtsi
 endif
 
 #########Support compiling out encrypted zip/aml_upgrade_package.img directly
