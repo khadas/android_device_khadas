@@ -56,6 +56,8 @@ media.html5videowin.enable=1
 media.decoder.vfm.defmap=decoder ppmgr deinterlace amvideo
 media.decoder.vfm.drmmap=decoder amvideo
 
+persist.sys.dts.edid=false
+
 #add for video boot, 1 means use video boot, others not .
 service.bootvideo=0
 
