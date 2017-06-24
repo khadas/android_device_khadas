@@ -152,13 +152,20 @@ on boot
     chmod 666 /sys/class/tsync/pts_pcrscr
     chmod 666 /dev/amstream_abuf
     chmod 666 /dev/amstream_hevc
+    chmod 666 /dev/amstream_hevc_frame
+    chmod 666 /dev/amstream_hevc_sched
     chmod 666 /dev/amstream_mpps
     chmod 666 /dev/amstream_mpts
+    chmod 666 /dev/amstream_mpts_sched
     chmod 666 /dev/amstream_rm
     chmod 666 /dev/amstream_sub
     chmod 666 /dev/amstream_sub_read
     chmod 666 /dev/amstream_userdata
     chmod 666 /dev/amstream_vbuf
+    chmod 666 /dev/amstream_vframe
+    chmod 666 /dev/amstream_vbuf_sched
+    chmod 666 /dev/amstream_dves_avc
+    chmod 666 /dev/amstream_dves_hevc
     chmod 666 /dev/amvideo
 #add for XBMC BlueRay 3d and audio Passthrough
     chmod 666 /sys/class/audiodsp/digital_raw
