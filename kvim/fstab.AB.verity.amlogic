@@ -6,10 +6,10 @@
 /dev/block/misc       /misc               emmc      defaults      defaults
 /dev/block/system     /system             ext4      ro wait,verify,slotselect
 /dev/block/data       /data               ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,encryptable=footer
-/devices/*.sd/mmc_host/sd*  auto                vfat      defaults                       voldmanaged=sdcard1:auto,noemulatedsd
-/devices/*dwc2_*/usb?/*/host*/target*/block/sd*  auto             vfat      defaults                       voldmanaged=udisk0:auto
-/devices/*dwc2_*/usb?/*/host*/target*/block/sd*  auto             vfat      defaults                       voldmanaged=udisk1:auto
+/devices/*.sd/mmc_host/sd*  auto                auto      defaults                       voldmanaged=sdcard1:auto,noemulatedsd
+/devices/*dwc3/xhci-hcd.0.auto/usb?/*/host*/target*/block/sd*  auto             auto      defaults                       voldmanaged=udisk:auto
+/devices/*dwc3/xhci-hcd.0.auto/usb?/*/host*/target*/block/sr*  auto             auto      defaults                       voldmanaged=sr0:auto
 /dev/block/loop     auto                loop      defaults                                  voldmanaged=loop:auto
 # Add for zram. zramsize can be in numeric (byte) , in percent or auto (detect by the system)
-/dev/block/zram0     /swap_zram0             swap      defaults                             wait,zramsize=auto
+/dev/block/zram0     /swap_zram0             swap      defaults                             wait,zramsize=524288000
 /dev/block/tee       /tee                 ext4      noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check
