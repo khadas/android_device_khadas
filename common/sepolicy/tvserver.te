@@ -20,6 +20,7 @@ allow tvserver uio_device:chr_file rw_file_perms;
 allow tvserver block_device:dir search;
 allow tvserver input_device:dir search;
 allow tvserver input_device:chr_file { read write open ioctl };
+allow tvserver amvecm_device:chr_file { read write open ioctl };
 allow tvserver sysfs:file { read write open ioctl getattr };
 allow tvserver sysfs_xbmc:file { open read write getattr };
 allow tvserver property_socket:sock_file write;
