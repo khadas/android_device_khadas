@@ -37,6 +37,7 @@ on init
 
     # for tee
     mkdir /tee 0700 system system
+    wait /dev/block/tee 1000
     confirm_formated ext4 /dev/block/tee /tee 1024 1024
 
 on post-fs
