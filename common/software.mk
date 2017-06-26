@@ -95,7 +95,8 @@ PRODUCT_COPY_FILES += \
 	device/khadas/common/droidlogic.software.netflix.xml:system/etc/permissions/droidlogic.software.netflix.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nrdp.modelgroup=P212ATV
+    ro.nrdp.modelgroup=P212ATV \
+    ro.nrdp.validation=ninja_4
 endif
 
 $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
