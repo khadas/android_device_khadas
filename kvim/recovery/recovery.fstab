@@ -1,8 +1,7 @@
 #device    mountpoint    fstype    options    flags?    (fstab    version    2)
-bootloader  /bootloader mtd    defaults    defaults
-logo        /logo       mtd    defaults    defaults
-aml_logo    /aml_logo   mtd    defaults    defaults
-recovery    /recovery   mtd    defaults    defaults
+/dev/block/bootloader   /bootloader emmc    defaults    defaults
+/dev/block/logo         /logo       emmc    defaults    defaults
+/dev/block/recovery     /recovery   emmc    defaults    defaults
 /dev/block/boot         /boot   emmc    defaults    defaults
 /dev/block/misc         /misc   emmc    defaults    defaults
 /dev/block/system       /system ext4    defaults    defaults

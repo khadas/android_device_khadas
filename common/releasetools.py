@@ -142,7 +142,7 @@ def FullOTA_InstallEnd(info):
   if bootloader_img_exist:
     common.CheckSize(bootloader_img.data, "bootloader.img", info.info_dict)
     common.ZipWriteStr(info.output_zip, "bootloader.img", bootloader_img.data)
-    info.script.WriteRawImage("/bootloader", "bootloader.img")
+    info.script.WriteBootloaderImage("/bootloader", "bootloader.img")
     SetBootloaderEnv(info.script, "upgrade_step", "1")
   else:
     SetBootloaderEnv(info.script, "upgrade_step", "1")
@@ -192,7 +192,10 @@ def IncrementalOTA_ImageCheck(info, name):
     if name == "dtb":
       info.script.WriteDtbImage(image_name)
     else:
-      info.script.WriteRawImage("/" + name, image_name)
+      if name == "bootloader":
+         info.script.WriteBootloaderImage("/" + name, image_name)
+      else
+         info.script.WriteRawImage("/" + name, image_name)
 
   if name == "bootloader":
     if updating_image:
