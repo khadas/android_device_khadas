@@ -84,6 +84,8 @@ persist.fw.force_adoptable=true
 media.libplayer.curlenable=true
 media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod,bluray_mod
 
+#Do note send inactive cmd when disable cec service
+sys.ignore.inativecec = true
 
 #Hdmi In
 ro.sys.hdmiin.enable=true
