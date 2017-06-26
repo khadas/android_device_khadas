@@ -167,6 +167,28 @@ on boot
     chmod 666 /dev/amstream_dves_avc
     chmod 666 /dev/amstream_dves_hevc
     chmod 666 /dev/amvideo
+    chmod 666 /dev/media
+    chmod 666 /dev/media.amports
+    chmod 666 /dev/media.codec_mm
+    chmod 666 /dev/media.parser
+    chmod 666 /dev/media.decoder
+    chmod 666 /dev/media.video
+    chmod 666 /dev/media.tsync
+    chmod 666 /dev/media.audio
+    chmod 666 /dev/media.vfm
+    chmod 666 /dev/vfm
+    chmod 666 /dev/amsubtitle
+    chown media system /dev/media
+    chown media system /dev/media.amports
+    chown media system /dev/media.codec_mm
+    chown media system /dev/media.parser
+    chown media system /dev/media.decoder
+    chown media system /dev/media.video
+    chown media system /dev/media.tsync
+    chown media system /dev/media.audio
+    chown media system /dev/media.vfm
+    chown media system /dev/vfm
+    chown media system /dev/amsubtitle
 #add for XBMC BlueRay 3d and audio Passthrough
     chmod 666 /sys/class/audiodsp/digital_raw
     chmod 666 /sys/class/audiodsp/digital_codec

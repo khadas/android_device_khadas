@@ -4,6 +4,7 @@ allow surfaceflinger system_control_service:service_manager find;
 allow surfaceflinger sw_sync_device:chr_file { open read write ioctl };
 allow surfaceflinger ge2d_device:chr_file { open read write ioctl };
 
+allow mediaserver mediactl_video_device:chr_file {read write open ioctl};
 get_prop(surfaceflinger, tv_prop)
 set_prop(surfaceflinger, ctl_default_prop)
 

@@ -5,6 +5,7 @@ allow mediaserver system_server:dir search;
 # /dev/uio0 for amadec
 allow mediaserver uio_device:chr_file rw_file_perms;
 allow mediaserver dvb_video_device:chr_file rw_file_perms;
+allow mediaserver mediactl_video_device:chr_file {read write open ioctl};
 # read app /proc/pid/
 allow mediaserver appdomain:dir { getattr search };
 allow mediaserver appdomain:file { r_file_perms };

@@ -2,6 +2,11 @@
 /dev/mali0          u:object_r:gpu_device:s0
 /dev/amaudio_.*     u:object_r:audio_device:s0
 /dev/amstream_.*    u:object_r:video_device:s0
+/dev/media*         u:object_r:video_device:s0
+/dev/media.*        u:object_r:mediactl_video_device:s0
+media.*             u:object_r:mediactl_video_device:s0
+/dev/vfm            u:object_r:mediactl_video_device:s0
+/dev/amsubtitle     u:object_r:mediactl_video_device:s0
 #for dvb open dev
 /dev/amstream_mpts  u:object_r:dvb_video_device:s0
 /dev/amvideo   			u:object_r:dvb_video_device:s0

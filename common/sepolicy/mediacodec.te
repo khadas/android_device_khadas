@@ -1,6 +1,7 @@
 allow mediacodec init_tmpfs:file create_file_perms;
 allow mediacodec system_control_service:service_manager find;
 allow mediacodec drm_device:chr_file {setattr read write open ioctl};
+allow mediaserver mediactl_video_device:chr_file {read write open ioctl};
 allow mediacodec sysfs:file  { open read write};
 allow mediacodec sysfs_xbmc:file  { open read write};
 allow mediacodec audioserver_service:service_manager find;

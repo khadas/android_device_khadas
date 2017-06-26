@@ -7,6 +7,7 @@ type dtb_device, dev_type;
 type dvb_device, dev_type, mlstrustedobject;
 type cec_device, dev_type;
 
+type mediactl_video_device, dev_type;
 type param_block_device, dev_type;
 type cri_block_device, dev_type;
 type sda_block_device, dev_type;

@@ -1,5 +1,6 @@
 allow mediadrmserver init_tmpfs:file create_file_perms;
 allow mediadrmserver media_data_file:lnk_file { create read write };
 allow mediadrmserver drm_device:chr_file {setattr read write open ioctl};
+allow mediaserver mediactl_video_device:chr_file {read write open ioctl};
 allow mediadrmserver sysfs:file  { open read write};
 get_prop(mediadrmserver, media_prop)
