@@ -300,7 +300,11 @@ PRODUCT_PACKAGES += \
 	tee_rpc_test_ta \
 	tee_sims_ta \
 	tee_storage_ta \
+	tee_storage2_ta \
 	tee_storage_benchmark_ta \
+	tee_aes_perf_ta \
+	tee_sha_perf_ta \
+	tee_sdp_basic_ta \
 	tee_concurrent_ta \
 	tee_concurrent_large_ta
 
