@@ -31,4 +31,5 @@ get_prop(system_server, media_prop)
 #allow system_server to access dvb_device
 allow system_server dvb_device:chr_file { read write open getattr };
 allow system_server dvb_video_device:chr_file rw_file_perms;
+allow system_server vbi_device:chr_file { read write open getattr };
 allow system_server param_tv_file:dir { search };

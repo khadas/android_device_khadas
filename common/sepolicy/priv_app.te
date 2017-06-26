@@ -2,3 +2,5 @@ allow priv_app fuseblk:dir { search };
 allow priv_app fuseblk:file { read open getattr };
 allow priv_app dvb_device:chr_file { read write open ioctl };
 allow priv_app dvb_device:chr_file rw_file_perms;
+allow priv_app vbi_device:chr_file { read write open ioctl };
+allow priv_app vbi_device:chr_file rw_file_perms;
