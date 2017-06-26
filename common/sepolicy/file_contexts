@@ -151,3 +151,4 @@ media.*             u:object_r:mediactl_video_device:s0
 /dev/sw_sync           u:object_r:sw_sync_device:s0
 /dev/ge2d              u:object_r:ge2d_device:s0
 /dev/amvecm            u:object_r:amvecm_device:s0
+/dev/display           u:object_r:display_device:s0

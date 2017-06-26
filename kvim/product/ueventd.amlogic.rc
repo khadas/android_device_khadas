@@ -37,6 +37,7 @@
 /dev/amvenc_avc           0660   mediacodec     system
 /dev/amsubtitle           0660   media     system
 /dev/jpegenc		  0660   media     system
+/dev/display              0660   system     graphics
 
 #audio data
 /dev/audio_data_debug     0660   mediacodec system
