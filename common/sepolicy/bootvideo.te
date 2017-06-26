@@ -21,6 +21,14 @@ allow bootvideo audio_device:chr_file rw_file_perms;
 allow bootvideo uio_device:chr_file rw_file_perms;
 allow bootvideo dvb_video_device:chr_file rw_file_perms;
 
+allow bootvideo uboot_prop:file { getattr read open};
+allow bootvideo bootvideo:udp_socket create;
+allow bootvideo bootvideo:capability net_raw;
+allow bootvideo mediactl_video_device:chr_file {open read write ioctl};
+allow bootvideo sysfs_fb0_blank:file { open read write };
+allow bootvideo sysfs_fb1_blank:file { open read write };
+allow bootvideo sysfs_video_file_name:file { open read write };
+
 #File system and property
 allow bootvideo system_control:binder call;
 #allow bootvideo property_socket:property_service set;

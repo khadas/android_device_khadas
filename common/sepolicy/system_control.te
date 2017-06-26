@@ -69,6 +69,10 @@ r_dir_file(system_control, binderservicedomain)
 r_dir_file(system_control, appdomain)
 r_dir_file(system_control, platform_app)
 
+allow system_control sysfs_fb0_blank:file { open read write };
+allow system_control sysfs_fb1_blank:file { open read write };
+allow system_control sysfs_video_file_name:file { open read write };
+
 
 allow system_control appdomain:dir { getattr search };
 allow system_control appdomain:file { r_file_perms };

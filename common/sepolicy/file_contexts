@@ -150,6 +150,9 @@ media.*             u:object_r:mediactl_video_device:s0
 /sys/class/audiodsp/audio_samesource    u:object_r:sysfs_audio_samesource:s0
 /sys/class/amhdmitx/amhdmitx0/aud_cap   u:object_r:sysfs_audio_cap:s0
 /sys/devices/virtual/amhdmitx/amhdmitx0/aud_cap u:object_r:sysfs_audio_cap:s0
+/sys/devices/meson-fb.21/graphics/fb1/blank     u:object_r:sysfs_fb1_blank:s0
+/sys/devices/meson-fb.21/graphics/fb0/blank     u:object_r:sysfs_fb0_blank:s0
+/sys/class/video/file_name  u:object_r:sysfs_video_file_name:s0
 
 /dev/sw_sync           u:object_r:sw_sync_device:s0
 /dev/ge2d              u:object_r:ge2d_device:s0

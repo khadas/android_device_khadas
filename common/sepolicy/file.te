@@ -21,5 +21,9 @@ type dig_socket, file_type;
 type param_tv_file, file_type;
 
 type sysfs_digital_codec, fs_type, sysfs_type;
+type sysfs_fb0_blank, fs_type, sysfs_type;
+type sysfs_fb1_blank, fs_type, sysfs_type;
+type sysfs_video_file_name, fs_type, sysfs_type;
+
 type sysfs_audio_samesource, fs_type, sysfs_type;
 type sysfs_audio_cap, fs_type, sysfs_type;
