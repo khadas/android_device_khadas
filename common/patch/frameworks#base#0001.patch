@@ -1,0 +1,45 @@
+From 25cedbd8b434eab353688f2f90430d7aa91f1a25 Mon Sep 17 00:00:00 2001
+From: Shuai Li <shuai.li@amlogic.com>
+Date: Thu, 12 Jan 2017 14:05:16 -0800
+Subject: [PATCH] PD#138361: remove HDMI device from fixed volume devices
+ PD#143289: remove SPDIF device from fixed volume devices  -HDMI/SPDIF audio
+ device is digital output which prefer fixed volume   in original Android
+ design  -unmask HDMI/SPDIF from fixed volume devices, allow volume-panel
+ adjusting it
+
+Change-Id: If4e1ab57499d5852da780b479969db9958545d7b
+Signed-off-by: Jian Xu <jian.xu@amlogic.com>
+---
+ services/core/java/com/android/server/audio/AudioService.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/services/core/java/com/android/server/audio/AudioService.java b/services/core/java/com/android/server/audio/AudioService.java
+index a9277ce..32f5c10 100644
+--- a/services/core/java/com/android/server/audio/AudioService.java
++++ b/services/core/java/com/android/server/audio/AudioService.java
+@@ -520,11 +520,11 @@ public class AudioService extends IAudioService.Stub {
+             = new RemoteCallbackList<IAudioRoutesObserver>();
+ 
+     // Devices for which the volume is fixed and VolumePanel slider should be disabled
+-    int mFixedVolumeDevices = AudioSystem.DEVICE_OUT_HDMI |
++    int mFixedVolumeDevices = //AudioSystem.DEVICE_OUT_HDMI |
+             AudioSystem.DEVICE_OUT_DGTL_DOCK_HEADSET |
+             AudioSystem.DEVICE_OUT_ANLG_DOCK_HEADSET |
+             AudioSystem.DEVICE_OUT_HDMI_ARC |
+-            AudioSystem.DEVICE_OUT_SPDIF |
++            //AudioSystem.DEVICE_OUT_SPDIF |
+             AudioSystem.DEVICE_OUT_AUX_LINE;
+     int mFullVolumeDevices = 0;
+ 
+@@ -5135,7 +5135,7 @@ public class AudioService extends IAudioService.Stub {
+                 }
+                 // Television devices without CEC service apply software volume on HDMI output
+                 if (isPlatformTelevision() && ((device & AudioSystem.DEVICE_OUT_HDMI) != 0)) {
+-                    mFixedVolumeDevices |= AudioSystem.DEVICE_OUT_HDMI;
++                    //mFixedVolumeDevices |= AudioSystem.DEVICE_OUT_HDMI;
+                     checkAllFixedVolumeDevices();
+                     if (mHdmiManager != null) {
+                         synchronized (mHdmiManager) {
+-- 
+2.10.2
+
