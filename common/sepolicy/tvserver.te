@@ -83,3 +83,5 @@ allow tvserver proc:file { read write open ioctl getattr };
 get_prop(tvserver, tv_prop)
 allow tvserver tv_prop:property_service set;
 allow tvserver tv_prop:file { read open getattr};
+
+allow tvserver mediactl_video_device:chr_file {read write open ioctl};
