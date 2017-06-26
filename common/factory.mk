@@ -1,5 +1,7 @@
 IMGPACK := $(BUILD_OUT_EXECUTABLES)/logo_img_packer$(BUILD_EXECUTABLE_SUFFIX)
 PRODUCT_UPGRADE_OUT := $(PRODUCT_OUT)/upgrade
+AML_EMMC_BIN_GENERATOR := vendor/amlogic/tools/aml_upgrade/amlogic_emmc_bin_maker.sh
+PRODUCT_COMMON_DIR := device/khadas/$(TARGET_PRODUCT)/upgrade
 
 ifeq ($(TARGET_NO_RECOVERY),true)
 BUILT_IMAGES := boot.img u-boot.bin dtb.img
@@ -37,14 +39,23 @@ ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 endif# ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 
 $(INSTALLED_BOARDDTB_TARGET) : $(KERNEL_DEVICETREE_SRC) $(INSTALLED_KERNEL_TARGET)
+ifeq ($(AB_OTA_UPDATER),true)
 	$(foreach aDts, $(KERNEL_DEVICETREE), \
-		sed -i 's/^#include \"partition_.*/#include \"$(TARGET_PARTITION_DTSI)\"/' $(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR)/$(strip $(aDts)).dts; \			
+		sed -i 's/^#include \"partition_.*/#include \"$(TARGET_PARTITION_DTSI)\"/' $(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR)/$(strip $(aDts)).dts; \
 		if [ -f "$(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR)/$(aDts).dtd" ]; then \
 			$(MAKE) -C $(KERNEL_ROOTDIR) O=../$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(PREFIX_CROSS_COMPILE) $(strip $(aDts)).dtd; \
 		fi;\
 		$(MAKE) -C $(KERNEL_ROOTDIR) O=../$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(PREFIX_CROSS_COMPILE) $(strip $(aDts)).dtb; \
 		cd $(KERNEL_ROOTDIR); git checkout -- $(KERNEL_DEVICETREE_DIR)/$(strip $(aDts)).dts; cd ../; \
 	)
+else
+	$(foreach aDts, $(KERNEL_DEVICETREE), \
+		if [ -f "$(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR)/$(aDts).dtd" ]; then \
+			$(MAKE) -C $(KERNEL_ROOTDIR) O=../$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(PREFIX_CROSS_COMPILE) $(strip $(aDts)).dtd; \
+		fi;\
+		$(MAKE) -C $(KERNEL_ROOTDIR) O=../$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) CROSS_COMPILE=$(PREFIX_CROSS_COMPILE) $(strip $(aDts)).dtb; \
+	)
+endif
 ifneq ($(strip $(word 2, $(KERNEL_DEVICETREE)) ),)
 	$(hide) $(DTBTOOL) -o $@ -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/$(KERNEL_DEVICETREE_DIR)
 else# elif dts num == 1
@@ -67,32 +78,31 @@ UPGRADE_FILES := \
 	u-boot.bin.sd.bin  u-boot.bin.usb.bl2 u-boot.bin.usb.tpl \
         u-boot-comp.bin
 
-ifeq ($(AB_OTA_UPDATER),true)
 ifneq ($(TARGET_USE_SECURITY_MODE),true)
 UPGRADE_FILES += \
-        platform.conf \
-        aml_upgrade_package_AB.conf
+        platform.conf
 else # secureboot mode
 UPGRADE_FILES += \
         u-boot-usb.bin.aml \
-        platform_enc.conf \
-        aml_upgrade_package_AB_enc.conf
-endif
-else
-ifneq ($(TARGET_USE_SECURITY_MODE),true)
-UPGRADE_FILES += \
-        platform.conf \
-        aml_upgrade_package.conf
-else # secureboot mode
-UPGRADE_FILES += \
-        u-boot-usb.bin.aml \
-        platform_enc.conf \
-        aml_upgrade_package_enc.conf
-endif
+        platform_enc.conf
 endif
 
 UPGRADE_FILES := $(addprefix $(TARGET_DEVICE_DIR)/upgrade/,$(UPGRADE_FILES))
 UPGRADE_FILES := $(wildcard $(UPGRADE_FILES)) #extract only existing files for burnning
+
+PACKAGE_CONFIG_FILE := aml_upgrade_package
+ifeq ($(AB_OTA_UPDATER),true)
+	PACKAGE_CONFIG_FILE := $(PACKAGE_CONFIG_FILE)_AB
+endif # ifeq ($(AB_OTA_UPDATER),true)
+ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+	PACKAGE_CONFIG_FILE := $(PACKAGE_CONFIG_FILE)_enc
+endif # ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
+PACKAGE_CONFIG_FILE := $(TARGET_DEVICE_DIR)/upgrade/$(PACKAGE_CONFIG_FILE).conf
+
+ifeq ($(wildcard $(PACKAGE_CONFIG_FILE)),)
+	PACKAGE_CONFIG_FILE := $(PRODUCT_COMMON_DIR)/upgrade/$(notdir $(PACKAGE_CONFIG_FILE))
+endif ## ifeq ($(wildcard $(TARGET_DEVICE_DIR)/upgrade/$(PACKAGE_CONFIG_FILE)))
+UPGRADE_FILES += $(PACKAGE_CONFIG_FILE)
 
 ifneq ($(TARGET_AMLOGIC_RES_PACKAGE),)
 INSTALLED_AML_LOGO := $(PRODUCT_UPGRADE_OUT)/logo.img
@@ -163,25 +173,12 @@ $(INSTALLED_AMLOGIC_BOOTLOADER_TARGET) : $(TARGET_DEVICE_DIR)/u-boot.bin
 	@echo "make $@: bootloader installed end"
 
 ifeq ($(TARGET_SUPPORT_USB_BURNING_V2),true)
-ifeq ($(TARGET_PRODUCT),kvim)
+ifneq (,$(filter $(TARGET_PRODUCT),kvim kvim2))
 INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/update.img
 else
 INSTALLED_AML_UPGRADE_PACKAGE_TARGET := $(PRODUCT_OUT)/aml_upgrade_package.img
 endif
-
-ifeq ($(AB_OTA_UPDATER),true)
-ifeq ($(TARGET_USE_SECURITY_MODE),true)
-  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_AB_enc.conf
-else
-  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_AB.conf
-endif
-else
-ifeq ($(TARGET_USE_SECURITY_MODE),true)
-  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package_enc.conf
-else
-  PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/aml_upgrade_package.conf
-endif
-endif
+PACKAGE_CONFIG_FILE := $(PRODUCT_UPGRADE_OUT)/$(notdir $(PACKAGE_CONFIG_FILE))
 
 ifeq ($(TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL),true)
   SYSTEMIMG_INTERMEDIATES := $(PRODUCT_OUT)/obj/PACKAGING/systemimage_intermediates/system.img.
@@ -237,12 +234,10 @@ $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET): \
 		)
 ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 	$(hide) rm -f $(PRODUCT_UPGRADE_OUT)/u-boot.bin.encrypt.*
-	$(hide) rm -f $(PACKAGE_CONFIG_FILE)
 	$(hide) $(ACP) $(PRODUCT_OUT)/u-boot.bin.encrypt.* $(PRODUCT_UPGRADE_OUT)/
-	$(hide) $(ACP) $(TARGET_DEVICE_DIR)/upgrade/aml_upgrade_package_enc.conf $(PACKAGE_CONFIG_FILE)
 	ln -sf $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/dtb.img $(PRODUCT_UPGRADE_OUT)/dtb.img
 	ln -sf $(ANDROID_BUILD_TOP)/$(PRODUCT_OUT)/u-boot.bin.encrypt.efuse $(PRODUCT_UPGRADE_OUT)/SECURE_BOOT_SET
-endif#ifneq ($(TARGET_USE_SECURITY_MODE),true)
+endif# ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 	$(security_dm_verity_conf)
 	$(update-aml_upgrade-conf)
 	$(hide) $(foreach userPartName, $(BOARD_USER_PARTS_NAME), \
@@ -260,4 +255,25 @@ endif
 
 droidcore: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET) $(INSTALLED_MANIFEST_XML)
 otapackage: $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET) $(INSTALLED_MANIFEST_XML)
+
+ifeq ($(TARGET_SUPPORT_USB_BURNING_V2),true)
+INSTALLED_AML_EMMC_BIN := $(PRODUCT_OUT)/aml_emmc_mirror.bin.gz
+PRODUCT_CFG_EMMC_LGC_TABLE	:= $(TARGET_DEVICE_DIR)/upgrade/aml_emmc_logic_table.xml
+ifeq ($(wildcard $(PRODUCT_CFG_EMMC_LGC_TABLE)),)
+	PRODUCT_CFG_EMMC_LGC_TABLE	:= \
+		$(PRODUCT_COMMON_DIR)/upgrade/$(notdir $(PRODUCT_CFG_EMMC_LGC_TABLE))
+endif#ifeq ($(wildcard $(PRODUCT_CFG_EMMC_LGC_TABLE)),)
+PRODUCT_CFG_EMMC_CAP := uboot/include/emmc_partitions.h
+
+$(INSTALLED_AML_EMMC_BIN): $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET) $(PRODUCT_CFG_EMMC_CAP) \
+	$(PRODUCT_CFG_EMMC_LGC_TABLE) | $(SIMG2IMG) $(MINIGZIP)
+	@echo "Packaging $(INSTALLED_AML_EMMC_BIN)"
+	@echo $(AML_EMMC_BIN_GENERATOR) $(PRODUCT_CFG_EMMC_CAP) $(PRODUCT_CFG_EMMC_LGC_TABLE) $< $(basename $@) $(SIMG2IMG)
+	$(AML_EMMC_BIN_GENERATOR) $(PRODUCT_CFG_EMMC_CAP) $(PRODUCT_CFG_EMMC_LGC_TABLE) $< $(basename $@) $(SIMG2IMG)
+	$(MINIGZIP) $(basename $@)
+	@echo "installed $@"
+
+.PHONY: aml_emmc_bin
+aml_emmc_bin :$(INSTALLED_AML_EMMC_BIN)
+endif # ifeq ($(TARGET_SUPPORT_USB_BURNING_V2),true)
 
