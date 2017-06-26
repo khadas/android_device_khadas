@@ -34,3 +34,10 @@ allow system_server dvb_device:chr_file { read write open getattr };
 allow system_server dvb_video_device:chr_file rw_file_perms;
 allow system_server vbi_device:chr_file { read write open getattr };
 allow system_server param_tv_file:dir { search };
+
+# Ask debuggerd to dump backtraces for native stacks of interest.
+allow system_server {
+   tvserver
+   system_control
+   hdmi_cec
+}:debuggerd dump_backtrace;
