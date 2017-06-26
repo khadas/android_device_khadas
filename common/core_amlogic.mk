@@ -160,6 +160,10 @@ endif
 
 ifeq ($(TARGET_BUILD_LIVETV), true)
 PRODUCT_PACKAGES += LiveTv
+PRODUCT_PROPERTY_OVERRIDES += \
+    tv.need.preview_window=false
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.picture_in_picture.xml:system/etc/permissions/android.software.picture_in_picture.xml
 endif
 
 PRODUCT_PACKAGES += \
