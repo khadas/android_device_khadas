@@ -95,8 +95,6 @@ service.adb.tcp.port=5555
 
 sys.open.deepcolor=true
 
-#netflix
-ro.nrdp.modelgroup=S905
 
 ######## UBOOTENV VARIBLES - r/w as system properties ##########
 #
