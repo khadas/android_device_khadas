@@ -350,6 +350,7 @@ on boot
     chown media root /sys/class/unifykeys/name
     chown media root /sys/class/unifykeys/read
     write /proc/sys/net/ipv4/tcp_max_syn_backlog 2048
+    write /proc/sys/net/core/rmem_max 524288
 
     mkdir /data/misc/hdcp 0770 media media
     chown media root /sys/devices/platform/crypto_device/status
