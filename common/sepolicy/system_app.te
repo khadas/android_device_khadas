@@ -38,6 +38,7 @@ allow system_app cache_file:dir {create_dir_perms create_file_perms rw_file_perm
 allow system_app cache_file:file {create_file_perms rw_file_perms};
 allow system_app dvb_device:chr_file { read write open ioctl };
 allow system_app vbi_device:chr_file { read write open ioctl };
+allow system_app mediactl_video_device:chr_file {read write open ioctl};
 
 allow system_app log_file:dir { search read open getattr };
 allow system_app log_file:file { read open getattr };
