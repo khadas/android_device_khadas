@@ -1,5 +1,6 @@
 # Amlogic AV streaming devices
 /dev/amvideo              0660   media     system
+/dev/ionvideo             0660   media     system
 /dev/vfm                  0660   media     system
 /dev/ppmgr                0660   media     system
 /dev/amstream_sub         0660   media     system

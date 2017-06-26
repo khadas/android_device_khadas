@@ -167,6 +167,7 @@ on boot
     chmod 666 /dev/amstream_dves_avc
     chmod 666 /dev/amstream_dves_hevc
     chmod 666 /dev/amvideo
+    chmod 666 /dev/ionvideo
     chmod 666 /dev/media
     chmod 666 /dev/media.amports
     chmod 666 /dev/media.codec_mm
