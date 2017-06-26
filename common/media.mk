@@ -21,14 +21,18 @@
 
 
 #for amlogicplayer& liblayer related.
-TARGET_WITH_AMLOGIC_EXTRATORS :=true
-TARGET_WITH_AMLOGIC_SCREAN_MEDIASOURCE :=true
-TARGET_WITH_AMLOGIC_RETRIEVER :=true
-TARGET_WITH_AMLOGIC_PLAYERS :=true
-TARGET_WITH_AMNUPLAYER :=true
+TARGET_WITH_AMLOGIC_AV_EX_SUPPORT ?=true
+ifeq ($(TARGET_WITH_AMLOGIC_AV_EX_SUPPORT),true)
+  TARGET_WITH_AMLOGIC_EXTRATORS :=true
+  TARGET_WITH_AMLOGIC_SCREAN_MEDIASOURCE :=true
+  TARGET_WITH_AMLOGIC_RETRIEVER :=true
+  TARGET_WITH_AMLOGIC_PLAYERS :=true
+  TARGET_WITH_AMNUPLAYER :=true
+  TARGET_WITH_AMLOGIC_SWCODEC :=true
+endif
 #set on some prducts,used libplayer.
 BUILD_WITH_BOOT_PLAYER :=true
-TARGET_WITH_AMLOGIC_SWCODEC :=true
+
 
 #########################################################################
 #
@@ -238,6 +242,10 @@ endif
 BOARD_SECCOMP_POLICY := device/khadas/common/seccomp
 
 
+AMLOGIC_FRAMEWORKS_AV_CONFIG_MK := $(TOP)/frameworks/av/amlogic/config.mk
 BOARD_AML_MEDIAHAL_PATH := hardware/amlogic/media/
 BOARD_AML_LIBAUDIO_PATH := hardware/amlogic/LibAudio/
 
+BOARD_AML_VENDOR_PATH := vendor/amlogic/
+BOARD_AML_HARDWARE_PATH := hardware/amlogic/
+BOARD_AML_MEDIA_HAL_CONFIG := $(BOARD_AML_MEDIAHAL_PATH)/media_base_config.mk
