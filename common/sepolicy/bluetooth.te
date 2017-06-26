@@ -1,0 +1,5 @@
+# bluetooth subsystem
+allow bluetooth system_control_service:service_manager find;
+type bluetooth_radio_device, dev_type;
+allow bluetooth bluetooth_radio_device:chr_file {open read write ioctl};
+#allow bluetooth bluetooth_device:chr_file {open read write };
