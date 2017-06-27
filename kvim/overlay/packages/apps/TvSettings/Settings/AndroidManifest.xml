@@ -312,6 +312,11 @@
             android:excludeFromRecents="true"
             android:exported="true" />
         <activity
+            android:name=".system.HdmiCecActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+        <activity
             android:name=".device.display.daydream.DaydreamVoiceAction"
             android:excludeFromRecents="true"
             android:exported="true"
