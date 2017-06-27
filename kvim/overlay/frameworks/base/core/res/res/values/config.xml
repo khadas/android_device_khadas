@@ -94,5 +94,5 @@
     </string-array>
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">2</integer>
-    <bool name="config_enableWallpaperService">false</bool>
+    <bool name="config_enableWallpaperService">true</bool>
 </resources>
