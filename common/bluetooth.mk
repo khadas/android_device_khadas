@@ -449,6 +449,8 @@ PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/4354/bcm4354a1.hcd:
 PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/4356/bcm4356a2.hcd:system/etc/bluetooth/BCM4354.hcd
 PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6255/BT/BCM4345C0.hcd:system/etc/bluetooth/BCM4345C0.hcd
 PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/AP6269/BT/bcm43569a2.hcd:system/etc/bluetooth/bcm43569a2.hcd
+PRODUCT_COPY_FILES += hardware/amlogic/wifi/bcm_ampak/config/6359sa/BT/BCM4359C0.hcd:system/etc/bluetooth/BCM4359C0.hcd
+
 #$(call inherit-product, hardware/realtek/bluetooth/firmware/uart/rtlbtfw_cfg.mk )
 #$(call inherit-product, hardware/realtek/bluetooth/firmware/usb/rtl8723b/device-rtl.mk)
 #$(call inherit-product, hardware/realtek/bluetooth/firmware/usb/rtl8761a/device-rtl.mk)
