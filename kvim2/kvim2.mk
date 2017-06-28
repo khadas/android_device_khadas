@@ -149,14 +149,12 @@ endif
 #
 #########################################################################
 
-WIFI_MODULE := bcm4356
+MULTI_WIFI_SUPPORT := true
 include device/khadas/common/wifi.mk
 
 # Change this to match target country
 # 11 North America; 14 Japan; 13 rest of world
 PRODUCT_DEFAULT_WIFI_CHANNELS := 11
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/config.txt:system/etc/wifi/4356/config.txt
 
 
 #########################################################################
@@ -166,7 +164,7 @@ PRODUCT_COPY_FILES += \
 #########################################################################
 
 BOARD_HAVE_BLUETOOTH := true
-BLUETOOTH_MODULE := bcm4356
+MULTI_BLUETOOTH_SUPPORT := true
 include device/khadas/common/bluetooth.mk
 
 

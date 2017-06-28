@@ -2,7 +2,7 @@
 -include device/khadas/common/gpu.mk
 
 USE_PREBUILT_KERNEL := false
-WIFI_MODULE := bcm4356
+WIFI_MODULE := multiwifi
 
 INSTALLED_KERNEL_TARGET := $(PRODUCT_OUT)/kernel
 
