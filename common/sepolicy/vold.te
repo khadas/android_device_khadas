@@ -37,5 +37,7 @@ allow vold storage_stub_file:dir { getattr read open search write add_name };
 # for make ext4fs
 domain_auto_trans(vold, make_ext4fs_exec, make_ext4fs);
 
+allow vold unlabeled:filesystem { mount unmount };
+
 allow vold init_tmpfs:file create_file_perms;
 allow vold tee_data_file:dir { open read ioctl };
