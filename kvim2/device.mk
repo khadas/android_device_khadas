@@ -43,6 +43,10 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/khadas/kvim2/overlay
 
 PRODUCT_TAGS += dalvik.gc.type-precise
+$(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
+-include device/khadas/kvim2/preinstall/preinstall.mk
+PRODUCT_COPY_FILES += \
+     device/khadas/kvim2/preinstall/preinstall.sh:system/bin/preinstall.sh
 
 
 # setup dalvik vm configs.
