@@ -311,6 +311,12 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+PRODUCT_PACKAGES += \
+	i2cget \
+	i2cset \
+	i2cdump \
+	i2cdetect
+
 #########################################################################
 #
 #                                     OTA PROPERTY
