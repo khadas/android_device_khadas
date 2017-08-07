@@ -70,6 +70,12 @@ TARGET_AMLOGIC_RES_PACKAGE := device/khadas/kvim/product/logo
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.mboxdefault
 
+user_variant := $(filter user userdebug,$(TARGET_BUILD_VARIANT))
+ifneq (,$(user_variant))
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+endif
+
 USE_E2FSPROGS := true
 
 BOARD_KERNEL_BASE := 0x0

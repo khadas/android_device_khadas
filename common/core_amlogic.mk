@@ -205,6 +205,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdisplaysetting
 
+# boot acclerate
+PRODUCT_PACKAGES += \
+    accelerateboot
+
 #native image player surface overlay so
 PRODUCT_PACKAGES += \
     libsurfaceoverlay_jni

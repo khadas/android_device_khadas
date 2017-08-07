@@ -76,6 +76,12 @@ BOARD_KERNEL_OFFSET := 0x1080000
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 
+user_variant := $(filter user userdebug,$(TARGET_BUILD_VARIANT))
+ifneq (,$(user_variant))
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_PIC := true
+endif
+
 TARGET_RELEASETOOLS_EXTENSIONS := device/khadas/common
 TARGET_USE_BLOCK_BASE_UPGRADE := true
 TARGET_OTA_UPDATE_DTB := true
