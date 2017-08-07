@@ -4,5 +4,4 @@ allow audioserver sysfs_digital_codec:file { open read write getattr };
 allow audioserver sysfs_audio_samesource:file { open read write getattr };
 allow audioserver sysfs_audio_cap:file { open read write getattr };
 allow audioserver sysfs_xbmc:file { open read write getattr };
-allow audioserver sysfs_aud_output_chs:file { open read write getattr };
 get_prop(audioserver, media_prop)

@@ -115,6 +115,7 @@ media.*             u:object_r:mediactl_video_device:s0
 /sys/class/tsync/enable                 u:object_r:sysfs_xbmc:s0
 /sys/class/tsync/event                  u:object_r:sysfs_xbmc:s0
 /sys/class/tsync/pts_audio              u:object_r:sysfs_xbmc:s0
+/sys/class/amhdmitx/amhdmitx0/aud_output_chs              u:object_r:sysfs_xbmc:s0
 /sys/devices/d0074000.emmc/mmc_host/emmc/emmc:0001/cid    u:object_r:sysfs_xbmc:s0
 
 
@@ -145,8 +146,6 @@ media.*             u:object_r:mediactl_video_device:s0
 
 /system/xbin/bcmdl   u:object_r:bcmdl_exec:s0
 
-/sys/class/amhdmitx/amhdmitx0/aud_output_chs   u:object_r:sysfs_aud_output_chs:s0
-/sys/devices/virtual/amhdmitx/amhdmitx0/aud_output_chs u:object_r:sysfs_aud_output_chs:s0
 /sys/class/audiodsp/digital_codec       u:object_r:sysfs_digital_codec:s0
 /sys/class/audiodsp/audio_samesource    u:object_r:sysfs_audio_samesource:s0
 /sys/class/amhdmitx/amhdmitx0/aud_cap   u:object_r:sysfs_audio_cap:s0
