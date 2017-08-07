@@ -43,6 +43,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=4 \
         persist.sys.hdmi.keep_awake=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.sf.full_activemode=false
+
 PRODUCT_NAME := kvim
 PRODUCT_DEVICE := kvim
 PRODUCT_BRAND := Khadas

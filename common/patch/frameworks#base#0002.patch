@@ -1,16 +1,18 @@
-From ed898aaa752c5766a34c722d2b8feb5b8647a425 Mon Sep 17 00:00:00 2001
+From ec8d1224eebecca90fe8189061e71af0688ac48d Mon Sep 17 00:00:00 2001
 From: Chaomin Zheng <chaomin.zheng@amlogic.com>
 Date: Mon, 20 Mar 2017 15:20:00 +0800
-Subject: [PATCH] PD #140968:TV platform allow direct mute volume
+Subject: [PATCH 2/3] PD #140968:TV platform allow direct mute volume
 
 Change-Id: I7432fc0e0716515292b7c7d5f4879999f2ef214c
 ---
+ services/core/java/com/android/server/audio/AudioService.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/services/core/java/com/android/server/audio/AudioService.java b/services/core/java/com/android/server/audio/AudioService.java
-index a9277ce..2fc772e 100644
+index 4189548e..836670a 100644
 --- a/services/core/java/com/android/server/audio/AudioService.java
 +++ b/services/core/java/com/android/server/audio/AudioService.java
-@@ -3417,7 +3417,7 @@
+@@ -3417,7 +3417,7 @@ public class AudioService extends IAudioService.Stub {
                      ringerMode = RINGER_MODE_SILENT;
                  }
                  // Setting the ringer mode will toggle mute
@@ -19,3 +21,6 @@ index a9277ce..2fc772e 100644
              }
              break;
          case RINGER_MODE_VIBRATE:
+-- 
+2.7.4
+
