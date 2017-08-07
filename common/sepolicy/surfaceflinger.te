@@ -7,6 +7,7 @@ allow surfaceflinger ge2d_device:chr_file { open read write ioctl };
 allow mediaserver mediactl_video_device:chr_file {read write open ioctl};
 allow surfaceflinger display_device:chr_file { open read ioctl };
 
+allow surfaceflinger sysfs_fb0_blank:file { open read write };
 get_prop(surfaceflinger, tv_prop)
 set_prop(surfaceflinger, ctl_default_prop)
 
