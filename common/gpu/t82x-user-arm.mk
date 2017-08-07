@@ -23,4 +23,4 @@ GPU_DRV_VERSION:=r16p0
 # This is a 16.16 fixed point number
 # midgard r7p0 is 3.1, r11p0 is 3.2
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.opengles.version=196610
+    ro.opengles.version=196608
