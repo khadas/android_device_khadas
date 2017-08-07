@@ -317,6 +317,9 @@ PRODUCT_PACKAGES += \
 	i2cdump \
 	i2cdetect
 
+PRODUCT_PACKAGES += \
+	FactoryTest
+
 #########################################################################
 #
 #                                     OTA PROPERTY
