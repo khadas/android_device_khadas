@@ -3,9 +3,9 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0" startOffsetMs="50">
 
-        <EncoderProfile quality="720p" fileFormat="3gp" duration="60">
+        <EncoderProfile quality="1080p" fileFormat="3gp" duration="60">
             <Video codec="h264"
-            bitRate="6000000"
+            bitRate="8000000"
             width="1280"
             height="720"
             frameRate="30" />
@@ -186,9 +186,9 @@
         minFrameRate="1" maxFrameRate="20" />
 
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="192000" maxBitRate="6000000"
-        minFrameWidth="176" maxFrameWidth="1280"
-        minFrameHeight="144" maxFrameHeight="720"
+        minBitRate="192000" maxBitRate="8000000"
+        minFrameWidth="176" maxFrameWidth="1920"
+        minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="5" maxFrameRate="30" />
 
     <VideoEncoderCap name="m4v" enabled="true"
