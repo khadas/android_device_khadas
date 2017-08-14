@@ -536,6 +536,15 @@ service preinstall /system/bin/preinstall.sh
     oneshot
     seclabel u:r:preinstall:s0
 
+service rsdb /system/bin/rsdb.sh
+	user root
+	group root
+	oneshot
+	seclabel u:r:rsdb:s0
+
+on property:sys.wifi.rsdb.change=1
+	start rsdb
+
 on property:config.disable_instaboot=false
     start instaboot
 

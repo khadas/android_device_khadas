@@ -48,6 +48,8 @@ $(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
 PRODUCT_COPY_FILES += \
      device/khadas/kvim2/preinstall/preinstall.sh:system/bin/preinstall.sh
 
+PRODUCT_COPY_FILES += \
+     device/khadas/kvim2/rsdb.sh:system/bin/rsdb.sh
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
