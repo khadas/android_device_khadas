@@ -143,6 +143,9 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim2/wifi/wl:system/bin/wl
+
 #########################################################################
 #
 #                                                WiFi
