@@ -33,6 +33,13 @@ on boot
 #open osd for s912
 		write /sys/class/graphics/fb0/osd_afbcd 1
 
+#OTP
+    chmod 666 /sys/class/efuse/mac
+    chmod 666 /sys/class/efuse/mac_bt
+    chmod 666 /sys/class/efuse/mac_wifi
+    chmod 666 /sys/class/efuse/userdata
+    chmod 666 /sys/class/efuse/usid
+
 #HDMI IN
     chmod 666 /sys/class/sii9233a/port
     chmod 666 /sys/class/sii9233a/enable
