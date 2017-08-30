@@ -1,2 +1,4 @@
 allow mediaextractor init_tmpfs:file create_file_perms;
+allow mediaextractor media_prop:property_service set;
 get_prop(mediaextractor, media_prop)
+set_prop(mediaextractor, media_prop)

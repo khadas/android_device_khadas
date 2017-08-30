@@ -8,3 +8,6 @@ epoll_ctl: 1
 epoll_pwait: 1
 _llseek: 1
 
+# for debug info apk
+sendto: 1
+ppoll: 1
