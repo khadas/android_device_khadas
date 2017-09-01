@@ -194,7 +194,7 @@ def IncrementalOTA_ImageCheck(info, name):
     else:
       if name == "bootloader":
          info.script.WriteBootloaderImage("/" + name, image_name)
-      else
+      else:
          info.script.WriteRawImage("/" + name, image_name)
 
   if name == "bootloader":
