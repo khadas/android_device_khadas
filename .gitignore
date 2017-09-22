@@ -1,0 +1,9 @@
+# preinstall
+kvim2/preinstall/Android.mk
+kvim2/preinstall/Chrome.apk
+kvim2/preinstall/preinstall.mk
+
+kvim/preinstall/Android.mk
+kvim/preinstall/Chrome.apk
+kvim/preinstall/preinstall.mk
+
