@@ -6,4 +6,6 @@ allow audioserver sysfs_audio_cap:file { open read write getattr };
 allow audioserver sysfs_xbmc:file { open read write getattr };
 allow audioserver sysfs_aud_output_chs:file { open read write getattr };
 allow audioserver property_socket:sock_file { open write };
+allow audioserver init:unix_stream_socket {connectto};
+allow audioserver audio_prop:property_service {set};
 get_prop(audioserver, media_prop)
