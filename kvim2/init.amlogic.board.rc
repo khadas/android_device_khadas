@@ -46,6 +46,26 @@ on boot
 #uboot env
     chmod 666 /dev/block/env
 
+#dvb
+    write /sys/module/amports/parameters/def_vstreambuf_sizeM 10
+    write /sys/module/amports/parameters/def_4k_vstreambuf_sizeM 15
+
+    chmod 0666 /dev/i2c-2
+    chmod 0666 /dev/dvb0.dsc0
+    chmod 0666 /dev/dvb0.dsc1
+    chmod 0666 /sys/class/stb/dsc0_source
+    chmod 0666 /sys/class/stb/dsc1_source
+    chmod 0666 /sys/class/tsync/firstvpts
+    chmod 0666 /sys/class/tsync/firstapts
+    chmod 0666 /sys/module/aml/parameters/dmx0_chanrec_enable
+    chmod 0666 /sys/module/aml/parameters/dmx1_chanrec_enable
+    chmod 0666 /sys/module/aml/parameters/dmx2_chanrec_enable
+    chmod 0666 /sys/class/stb/dvr0_mode
+    chmod 0666 /sys/class/stb/dvr1_mode
+    chmod 0666 /sys/class/stb/dvr2_mode
+    chown media system /sys/module/amvdec_h264/parameters/fatal_error_reset
+    setprop libplayer.slowsync.disable true
+
 #HDMI IN
     chmod 666 /sys/class/sii9233a/port
     chmod 666 /sys/class/sii9233a/enable
