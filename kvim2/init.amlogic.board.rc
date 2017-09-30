@@ -40,6 +40,9 @@ on boot
     chmod 666 /sys/class/efuse/userdata
     chmod 666 /sys/class/efuse/usid
 
+#UART
+    chmod 666 /dev/ttyS4
+
 #HDMI IN
     chmod 666 /sys/class/sii9233a/port
     chmod 666 /sys/class/sii9233a/enable
