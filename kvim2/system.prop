@@ -173,3 +173,4 @@ ubootenv.var.is.bestmode=
 ubootenv.var.disp.fromleft=
 ubootenv.var.edid.crcvalue=
 ubootenv.var.colorattribute=
+ubootenv.var.bls=

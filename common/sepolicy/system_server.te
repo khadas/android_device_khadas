@@ -35,6 +35,9 @@ allow system_server dvb_video_device:chr_file rw_file_perms;
 allow system_server vbi_device:chr_file { read write open getattr };
 allow system_server param_tv_file:dir { search };
 
+#allow system_server to access env_device
+allow system_server env_device:blk_file { getattr read write open };
+
 # Ask debuggerd to dump backtraces for native stacks of interest.
 allow system_server {
    tvserver

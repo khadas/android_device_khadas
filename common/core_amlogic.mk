@@ -324,6 +324,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	FactoryTest
 
+PRODUCT_PACKAGES += \
+	setbootenv \
+	getbootenv
+
 #########################################################################
 #
 #                                     OTA PROPERTY

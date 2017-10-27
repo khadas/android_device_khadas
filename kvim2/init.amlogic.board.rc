@@ -43,6 +43,9 @@ on boot
 #UART
     chmod 666 /dev/ttyS4
 
+#uboot env
+    chmod 666 /dev/block/env
+
 #HDMI IN
     chmod 666 /sys/class/sii9233a/port
     chmod 666 /sys/class/sii9233a/enable
