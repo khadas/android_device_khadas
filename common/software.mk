@@ -79,7 +79,7 @@ PRODUCT_PACKAGES += \
     libfwdlockengine
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.app.rotation=middle_port
+    persist.sys.app.rotation=force_land
 
 endif
 
