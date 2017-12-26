@@ -1,0 +1,41 @@
+From 787a233d2b30b7aecc795d7a46d20b649cdbd033 Mon Sep 17 00:00:00 2001
+From: Chaomin Zheng <chaomin.zheng@amlogic.com>
+Date: Wed, 5 Jul 2017 18:59:38 +0800
+Subject: [PATCH] PD #146924:remove HDMI/SPDIF device from fixed volume
+ devices
+
+Change-Id: Ib61a667204ebde2f4daa7f2043ebd6eecd18783c
+---
+ .../com/android/server/audio/AudioService.java     |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/services/core/java/com/android/server/audio/AudioService.java b/services/core/java/com/android/server/audio/AudioService.java
+index e5c3106..f1c9255 100644
+--- a/services/core/java/com/android/server/audio/AudioService.java
++++ b/services/core/java/com/android/server/audio/AudioService.java
+@@ -546,11 +546,11 @@ public class AudioService extends IAudioService.Stub
+             = new RemoteCallbackList<IAudioRoutesObserver>();
+ 
+     // Devices for which the volume is fixed and VolumePanel slider should be disabled
+-    int mFixedVolumeDevices = AudioSystem.DEVICE_OUT_HDMI |
++    int mFixedVolumeDevices = //AudioSystem.DEVICE_OUT_HDMI |
+             AudioSystem.DEVICE_OUT_DGTL_DOCK_HEADSET |
+             AudioSystem.DEVICE_OUT_ANLG_DOCK_HEADSET |
+             AudioSystem.DEVICE_OUT_HDMI_ARC |
+-            AudioSystem.DEVICE_OUT_SPDIF |
++            //AudioSystem.DEVICE_OUT_SPDIF |
+             AudioSystem.DEVICE_OUT_AUX_LINE;
+     int mFullVolumeDevices = 0;
+ 
+@@ -5402,7 +5402,7 @@ public class AudioService extends IAudioService.Stub
+                 }
+                 // Television devices without CEC service apply software volume on HDMI output
+                 if (isPlatformTelevision() && ((device & AudioSystem.DEVICE_OUT_HDMI) != 0)) {
+-                    mFixedVolumeDevices |= AudioSystem.DEVICE_OUT_HDMI;
++                    //mFixedVolumeDevices |= AudioSystem.DEVICE_OUT_HDMI;
+                     checkAllFixedVolumeDevices();
+                     if (mHdmiManager != null) {
+                         synchronized (mHdmiManager) {
+-- 
+1.7.9.5
+

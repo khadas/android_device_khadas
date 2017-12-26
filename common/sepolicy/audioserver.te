@@ -1,0 +1,7 @@
+allow audioserver { sysfs_xbmc sysfs_digital_codec sysfs_audio_samesource sysfs_audio_cap }:file { open read write getattr };
+allow audioserver property_socket:sock_file { open write };
+allow audioserver vendor_file:file { read open getattr execute };
+allow audioserver sysfs_aud_output_chs:file { open read write getattr };
+allow audioserver kernel:system module_request;
+
+get_prop(audioserver, media_prop)

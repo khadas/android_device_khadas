@@ -1,0 +1,39 @@
+allow recovery aml_display_prop:property_service set;
+allow recovery input_device:chr_file write;
+allow recovery kmsg_device:chr_file { write open read };
+allow recovery self:netlink_kobject_uevent_socket { create setopt bind read };
+allow recovery sysfs_xbmc:file { read write open };
+allow recovery system_prop:property_service set;
+allow recovery self:capability net_admin;
+
+allow recovery uboot_prop:property_service set;
+allow recovery rootfs:dir create_dir_perms;
+allow recovery sysfs:dir mounton;
+
+allow recovery vfat:dir create_dir_perms;
+allow recovery vfat:file create_file_perms;
+
+allow recovery env_device:chr_file rw_file_perms;
+allow recovery input_device:chr_file write;
+allow recovery property_data_file:dir { search };
+allow recovery device:dir rw_dir_perms;
+allow recovery bootloader_device:chr_file rw_file_perms;
+allow recovery defendkey_device:chr_file rw_file_perms;
+allow recovery dtb_device:chr_file { open read write };
+allow recovery aml_display_prop:property_service set;
+allow recovery recovery:capability { net_admin };
+
+allow recovery aml_display_prop:file {open read getattr};
+allow recovery uboot_prop:file {open read getattr};
+
+allow recovery update_data_file:file rw_file_perms;
+allow recovery update_data_file:dir { search read write open };
+
+allow recovery graphics_device:dir {search};
+allow recovery graphics_device:chr_file {open read write ioctl};
+
+allow shell rootfs:file { entrypoint execute getattr open read };
+
+allow shell tmpfs:file {open read getattr};
+allow shell sysfs:file { read open };
+allow shell rootfs:file {execute_no_trans};

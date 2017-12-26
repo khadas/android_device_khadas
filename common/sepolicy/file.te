@@ -1,0 +1,42 @@
+# NTFS
+type fuseblk, sdcard_type, fs_type, mlstrustedsubject;
+type hfsplus, sdcard_type, fs_type;
+type iso9660, sdcard_type, fs_type;
+type udf,sdcard_type, fs_type;
+type proc_mounts, fs_type;
+
+type pppoe_wrapper_socket, file_type;
+
+# XBMC
+type sysfs_xbmc, fs_type, sysfs_type;
+# Update
+type update_data_file, file_type;
+#optee
+type drm_device, fs_type,sysfs_type;
+
+#dig_socket
+type dig_socket, file_type;
+
+#TV param
+type param_tv_file, file_type;
+
+#power
+type sysfs_mpgpu_cmd, fs_type, sysfs_type;
+type sysfs_power_trigger, fs_type, sysfs_type;
+
+type sysfs_digital_codec, fs_type, sysfs_type;
+type sysfs_audio_samesource, fs_type, sysfs_type;
+type sysfs_audio_cap, fs_type, sysfs_type;
+type sysfs_aud_output_chs, fs_type, sysfs_type;
+type sysfs_audio, fs_type, sysfs_type;
+type sysfs_video, fs_type, sysfs_type;
+
+type ppp_system_file, exec_type, file_type;
+type ppp_data_file, file_type;
+type log_file, file_type, data_file_type;
+
+type ntfs, sdcard_type, fs_type, mlstrustedobject;
+type exfat, sdcard_type, fs_type, mlstrustedobject;
+
+type optee_file, file_type, data_file_type;
+

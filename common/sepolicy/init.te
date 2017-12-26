@@ -1,0 +1,111 @@
+allow init self:capability { sys_module };
+allow init tmpfs:lnk_file { create_file_perms };
+allow init tmpfs:blk_file { getattr read write open };
+
+allow init sysfs:dir { add_name };
+allow init sysfs:file { create };
+
+allow init kernel:system module_request;
+allow init configfs:file { create getattr open unlink write };
+
+allow init cgroup:file create_file_perms;
+allow init { system_file vendor_file rootfs}:system { module_load };
+
+allow init vendor_file:file { execute };
+
+allow init { tee_block_device userdata_block_device cache_block_device block_device }:blk_file { relabelto write read };
+allow init { vendor_block_device system_block_fsck_device odm_block_device param_block_device }:blk_file { relabelto write read };
+
+
+allow init configfs:file { create getattr open unlink write };
+allow init configfs:lnk_file { create unlink };
+
+allow init sysfs_devices_system_cpu:file { create };
+allow init sysfs_devices_system_cpu:dir { write add_name };
+allow init functionfs:dir mounton;
+
+allow init property_socket:sock_file write;
+allow init proc:dir { write add_name };
+allow init proc:file { create };
+
+allow init socket_device:sock_file { create setattr unlink };
+
+allow init drm_device:chr_file { setattr read write open ioctl };
+allow init firmload_exec:file {getattr};
+
+#
+#
+## add system_control service
+##domain_trans(init, system_control_exec, system_control)
+#domain_auto_trans(init, system_control_exec, system_control)
+#
+##allow init imageserver_service:service_manager add;
+#domain_trans(init, imageserver_exec, imageserver)
+#
+#domain_trans(init, shell_exec, logcat)
+#
+#domain_trans(init, tee_exec, tee)
+#allow init fuse:file { open read write };
+#allow init fuse:dir search;
+#
+##allow tvserver service
+#domain_trans(init, tvserver_exec, tvserver)
+#domain_auto_trans(init, tvserver_exec, tvserver)
+#
+##allow hdmi_cec service
+#domain_trans(init, hdmi_cec_exec, hdmi_cec)
+#domain_auto_trans(init, hdmi_cec_exec, hdmi_cec)
+#
+##allow dv_config service
+#domain_trans(init, dv_config_exec, dv_config)
+#domain_auto_trans(init, dv_config_exec, dv_config)
+#
+#domain_trans(init, make_ext4fs_exec, make_ext4fs)
+#
+#domain_trans(init, hdcp_tx22_exec, hdcp_tx22)
+#
+#domain_trans(init, bcmdl_exec, bcmdl);
+##allow usbpm service
+#domain_trans(init, usbpm_exec, usbpm)
+#domain_auto_trans(init, usbpm_exec, usbpm)
+#
+#allow init property_socket:sock_file write;
+#allow param_tv_file rootfs:filesystem { associate };
+#
+#allow init vfat:dir rw_dir_perms;
+#allow init vfat:file create_file_perms;
+#
+#allow init init:tcp_socket create_stream_socket_perms;
+#allow init port:tcp_socket name_bind;
+#allow init node:tcp_socket node_bind;
+#allow init tmpfs:lnk_file {create_file_perms};
+#allow init socket_device:sock_file create_file_perms;
+#allow init functionfs:file mounton;
+#allow init functionfs:dir mounton;
+#allow init system_data_file:file {link};
+#allow init debugfs:dir mounton;
+#allow init debugfs:file w_file_perms;
+#allow init userdata_block_device:blk_file rw_file_perms;
+#allow init cache_block_device:blk_file rw_file_perms;
+
+#allow init tee_block_device:blk_file rw_file_perms;
+#allow init odm_block_device:blk_file rw_file_perms;
+
+#
+#recovery_only(`
+#  domain_trans(init, rootfs, shell)
+#  domain_trans(init, rootfs, adbd)
+#')
+#
+#allow init property_socket:sock_file write;
+#allow init configfs:file { create getattr open unlink write };
+#allow init configfs:lnk_file { create };
+#allow init sysfs_devices_system_cpu:dir { add_name write };
+#allow init sysfs_devices_system_cpu:file { create };
+#
+#allow init sysfs:dir { add_name };
+#allow init sysfs:file { create };
+#allow init cgroup:file create_file_perms;
+#allow init kernel:system module_request;
+#
+#allow init { system_file vendor_file rootfs}:system { module_load };

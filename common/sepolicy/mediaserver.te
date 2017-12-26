@@ -1,0 +1,34 @@
+allow mediaserver system_server:unix_stream_socket { read write setopt };
+# media.* props
+#allow mediaserver media_prop:property_service set;
+#allow mediaserver system_server:dir search;
+## /dev/uio0 for amadec
+#allow mediaserver uio_device:chr_file rw_file_perms;
+#allow mediaserver dvb_video_device:chr_file rw_file_perms;
+allow mediaserver video_device:chr_file rw_file_perms;
+allow mediaserver codec_device:chr_file rw_file_perms;
+## read app /proc/pid/
+#allow mediaserver appdomain:dir { getattr search };
+#allow mediaserver appdomain:file { r_file_perms };
+
+#allow mediaserver graphics_device:dir r_dir_perms;
+#allow mediaserver system_data_file:dir {write add_name};
+#allow mediaserver sysfs:file  { open read write};
+#allow mediaserver sysfs_xbmc:file {open read write};
+#allow mediaserver screenmediasource_service:service_manager add;
+#allow mediaserver system_control_service:service_manager find;
+#allow mediaserver media_data_file:lnk_file  {create open read write};
+#allow mediaserver storage_file:dir search;
+
+#allow mediaserver audio_device:dir r_dir_perms;
+#allow mediaserver sysfs_audio_cap:file {open read write};
+#allow mediaserver kernel:system module_request;
+
+allow mediaserver exfat:file { getattr read };
+allow mediaserver ntfs:file { getattr read };
+allow mediaserver vendor_file:file { read open getattr execute };
+allow mediaserver sysfs_video:file  rw_file_perms;
+allow mediaserver sysfs_audio:file  rw_file_perms;
+
+
+get_prop(mediaserver, media_prop)

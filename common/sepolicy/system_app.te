@@ -1,0 +1,84 @@
+#allow system_app sysfs_lowmemorykiller:file { getattr w_file_perms };
+#allow system_app subtitle_service:service_manager add;
+#
+##added for atv remote
+#allow system_app uhid_device:dir r_dir_perms;
+#
+#allow system_app dhcp_data_file:file { r_file_perms };
+#allow system_app ppp_data_file:dir { create_dir_perms };
+#allow system_app ppp_data_file:file { create_file_perms };
+#allow system_app ppp_data_file:sock_file { create_file_perms };
+#allow system_app pppoe_wrapper_socket:sock_file { write setattr };
+#allow system_app pppoe_wrapper_socket:file { getattr write open };
+#allow system_app pppoe_wrapper:unix_dgram_socket sendto;
+#allow system_app dhcp_data_file:dir { r_dir_perms };
+#allow system_app dhcp_data_file:fifo_file { r_file_perms };
+#
+#allow system_app vold:unix_stream_socket connectto;
+#allow system_app pppoe_service:service_manager add;
+#allow system_app dig_socket:sock_file write;
+#
+#allow system_app iso9660:dir { search read open };
+#allow system_app unlabeled:dir { search read write getattr };
+#allow system_app unlabeled:file { lock open read write getattr };
+#
+## /cache_file for dvb app creat update.zip file at /cache  dir
+#allow system_app cache_file:dir {create_dir_perms create_file_perms rw_file_perms};
+#allow system_app cache_file:file {create_file_perms rw_file_perms};
+#
+#allow system_app log_file:dir { search read open getattr };
+#allow system_app log_file:file { read open getattr };
+#allow system_app tombstone_data_file:dir r_dir_perms;
+#allow system_app tombstone_data_file:file r_file_perms;
+#
+#allow system_app shell_data_file:dir search;
+#allow system_app graphics_device:dir search;
+#allow system_app sysfs_xbmc:file {open read write};
+#allow system_app media_prop:property_service set;
+#allow system_app system_app:process setfscreate;
+#allow system_app socket_device:sock_file setattr;
+#allow system_app pppoe_wrapper_socket:sock_file create;
+#allow system_app pppoe_wrapper_socket:sock_file unlink;
+#allow system_app pppoe_wrapper_socket:file create;
+
+allow system_app cache_recovery_file:dir { search read open write add_name remove_name };
+allow system_app cache_recovery_file:file { create getattr open read write };
+
+allow system_app update_engine:binder {call transfer};
+#
+#allow system_app tv_prop:file {open read getattr};
+#allow system_app tv_prop:property_service {set};
+
+allow system_app rootfs:dir { getattr };
+
+allow system_app vendor_file:file { read open getattr execute };
+
+allow system_app system_app:netlink_kobject_uevent_socket { create };
+
+allow system_app update_data_file:dir { getattr search read write open add_name remove_name };
+allow system_app update_data_file:file { getattr write read create open unlink };
+
+allow system_app { pppoe_service subtitle_service }:service_manager { add };
+
+allow system_app system_app:netlink_kobject_uevent_socket { create setopt bind read getopt };
+
+#allow system_app socket_device:sock_file { write };
+
+allow system_app exfat:dir create_dir_perms;
+allow system_app exfat:file create_file_perms;
+
+allow system_app ntfs:dir create_dir_perms;
+allow system_app ntfs:file create_file_perms;
+
+allow system_app mnt_media_rw_file:dir r_dir_perms;
+allow system_app { systemcontrol_hwservice hdmicecd_hwservice }:hwservice_manager { find };
+
+allow system_app { system_control hdmicecd }:binder { call transfer };
+
+allow system_app droidvold_hwservice:hwservice_manager { find };
+allow system_app droidvold:binder { call transfer };
+
+allow system_app droidmount_service:service_manager { add };
+
+allow system_app fuseblk:dir create_dir_perms;
+allow system_app fuseblk:file create_file_perms;
