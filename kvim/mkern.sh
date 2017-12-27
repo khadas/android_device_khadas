@@ -15,7 +15,7 @@ KERNEL_OUT=out/target/product/kvim/obj/KERNEL_OBJ
 #mkdir -p $KERNEL_OUT
 
 if [ ! -f $KERNEL_OUT/.config ]; then
-    make -C common O=../$KERNEL_OUT meson64_defconfig ARCH=arm64 CROSS_COMPILE=$PREFIX_CROSS_COMPILE
+    make -C common O=../$KERNEL_OUT kvims_defconfig ARCH=arm64 CROSS_COMPILE=$PREFIX_CROSS_COMPILE
 fi
 #if [ "$2" != "m" ]; then
 #    make -C common O=../$KERNEL_OUT ARCH=arm64 -j6 CROSS_COMPILE=$PREFIX_CROSS_COMPILE UIMAGE_LOADADDR=0x1008000
