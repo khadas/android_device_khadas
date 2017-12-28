@@ -33,10 +33,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
 
-#Tvsettings
-PRODUCT_PACKAGES += \
-    TvSettings
-
 
 #USB PM
 PRODUCT_PACKAGES += \
