@@ -340,6 +340,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 endif
 
+##### ROOT #####
+BUILD_WITH_ROOT_CONFIG :=false
 
 #########################################################################
 #
