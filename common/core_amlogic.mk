@@ -177,7 +177,6 @@ PRODUCT_PACKAGES += \
     VideoPlayer \
     SubTitle    \
     libdig \
-    ReadLog \
     BluetoothRemote
 
 PRODUCT_PACKAGES += \
