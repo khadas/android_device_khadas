@@ -21,10 +21,6 @@ ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 # NativeImagePlayer
 PRODUCT_PACKAGES += \
     NativeImagePlayer
-
-#MboxLauncher
-PRODUCT_PACKAGES += \
-    MboxLauncher
 endif
 
 #droid vold
