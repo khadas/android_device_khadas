@@ -36,6 +36,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.display.id=VIM_Oreo_$(shell date +%Y%m%d)
 
 #USB PM
 PRODUCT_PACKAGES += \
