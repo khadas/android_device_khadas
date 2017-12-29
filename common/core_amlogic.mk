@@ -154,7 +154,7 @@ PRODUCT_PACKAGES += \
     FileBrowser \
     RemoteIME \
     DeskClock \
-    Launcher2 \
+    Launcher3 \
     MusicFX \
     LatinIME \
     Settings \
