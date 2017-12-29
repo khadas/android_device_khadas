@@ -343,6 +343,9 @@ endif
 ##### ROOT #####
 BUILD_WITH_ROOT_CONFIG :=false
 
+##### GAPPS #####
+BUILD_WITH_GAPPS_CONFIG :=false
+
 #########################################################################
 #
 #                                     A/B update

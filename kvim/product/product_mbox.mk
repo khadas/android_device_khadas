@@ -2,6 +2,9 @@ $(call inherit-product, device/khadas/common/core_amlogic.mk)
 ifeq ($(BUILD_WITH_ROOT_CONFIG),true)
 $(call inherit-product, vendor/amlogic/root/root.mk)
 endif
+ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
+$(call inherit-product, vendor/amlogic/google/gapps.mk)
+endif
 
 
 PRODUCT_PACKAGES += \
