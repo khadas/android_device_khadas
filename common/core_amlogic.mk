@@ -150,7 +150,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
     AppInstaller \
-    DocumentsUI \
     FileBrowser \
     RemoteIME \
     DeskClock \
