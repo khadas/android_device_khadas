@@ -11,6 +11,7 @@ ro.camera.preview.UseMJPEG=1
 ro.autoconnectbt.isneed=true
 ro.autoconnectbt.macprefix=00:CD:FF
 ro.autoconnectbt.btclass=50c
+ro.autoconnectbt.nameprefix=Amlogic_RC
 
 #if wifi Only
 ro.radio.noril=false
