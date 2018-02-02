@@ -5,7 +5,8 @@ import init.mtk.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
-
+    # Set up kernel tracing, but disable it by default
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
 
 on init
     # Support legacy paths
@@ -40,6 +41,30 @@ on init
     wait /dev/block/tee 1000
     confirm_formated ext4 /dev/block/tee /tee 1024 1024
 
+
+on aml-firstboot-init
+    #format data and cache patrition if not exist
+    wait /dev/block/data 20
+    confirm_formated ext4 /dev/block/data /data
+    wait /dev/block/cache 20
+    confirm_formated ext4 /dev/block/cache /cache
+
+on fs
+    # first, only mount system, quick bringup accelerateboot
+    mount_all /fstab.amlogic --early_system
+    start accelerateboot
+
+    # then, mount other partition.
+    # Note! mount cache is much faster than data, we store
+    # learn result at cache partition. so cache should be
+    # mounted early than data.
+    mount_all /fstab.amlogic --ignore_system
+    mkdir /cache/accelboot 0777 root system
+    mkdir /data/accelboot 0777
+    setprop ro.boot.data_mounted true
+    setprop ro.crypto.fuse_sdcard true
+    swapon_all /fstab.amlogic
+
 on post-fs
     restorecon_recursive /tee
     start tee_supplicant
@@ -65,15 +90,21 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
+on late-fs
+    #boottime fs tune
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/scheduler cfq
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcplk0/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+
+on property:sys.boot_completed=1
+    # end boot time fs tune
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
 
 on boot
-
-
-
-    # Set up kernel tracing, but disable it by default
-    chmod 0222 /sys/kernel/debug/tracing/trace_marker
-    write /sys/kernel/debug/tracing/tracing_on 0
-
     #bluetooth
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
@@ -235,7 +266,8 @@ on boot
     chown media system /dev/dvb0.demux2
     chown media system /dev/dvb0.dvr0
     chown media system /dev/dvb0.dvr1
-    chmod media system /dev/dvb0.dvr2
+	chmod media system /dev/smc0
+    chown media system /dev/dvb0.dvr2
 
     chown media system /sys/class/stb/demux0_source
     chown media system /sys/class/stb/demux1_source
@@ -379,18 +411,6 @@ on boot
 
     write /sys/class/vfm/map "rm default"
     write /sys/class/vfm/map "add default decoder ppmgr deinterlace amvideo"
-
-on fs
-    mount_all /fstab.amlogic
-    setprop ro.crypto.fuse_sdcard true
-    swapon_all /fstab.amlogic
-
-on aml-firstboot-init
-    #format data and cache patrition if not exist
-    wait /dev/block/data 20
-    confirm_formated ext4 /dev/block/data /data
-    wait /dev/block/cache 20
-    confirm_formated ext4 /dev/block/cache /cache
 
 service system_control /system/bin/systemcontrol
     class core
@@ -550,3 +570,21 @@ service factoryreset /system/bin/factoryreset.sh
     oneshot
     seclabel u:r:install_recovery:s0
 
+service accelerateboot /system/bin/accelerateboot
+    class core
+    writepid /dev/cpuset/foreground/tasks
+    user root
+    ioprio idle 1
+    oneshot
+    disabled
+# logcat offline log
+service aml_logcat /system/bin/aml_logcat -b system -b events -b main -b crash -n 2 -r 5000 -v threadtime -f /data/log/logcat.log
+    class main
+    user root
+    group system
+    ioprio idle 7
+    disabled
+    seclabel u:r:aml_logcat:s0
+
+#on property:ro.debuggable=1
+#    start aml_logcat

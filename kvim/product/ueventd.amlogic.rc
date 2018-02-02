@@ -89,6 +89,10 @@
 
 /sys/class/video/device_resolution    0666   system     system
 
+/sys/kernel/debug/tracing/events/readahead/do_file_map/enable 0666 root system
+/sys/kernel/debug/tracing/events/readahead/do_fs_read/enable 0666 root system
+/sys/kernel/debug/tracing/events/readahead/do_open_exec/enable 0666 root system
+
 #
 /dev/graphics/*           0660   root       graphics
 
