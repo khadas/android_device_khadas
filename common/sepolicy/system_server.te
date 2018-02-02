@@ -19,7 +19,7 @@ allow system_server { system_control_service tvserver_service hdmi_cec_service }
 allow system_server storage_stub_file:dir { getattr read open };
 allow system_server bcmdl_prop:property_service set;
 allow system_server media_prop:property_service set;
-
+allow system_server audio_prop:property_service set;
 
 allow system_server debugfs:dir { getattr read open };
 allow system_server debugfs:file r_file_perms;

@@ -163,3 +163,5 @@ media.*             u:object_r:mediactl_video_device:s0
 /system/bin/accelerateboot u:object_r:accelerateboot_exec:s0
 /data/accelboot(/.*)?      u:object_r:accel_data_file:s0
 /cache/accelboot(/.*)?      u:object_r:accel_data_file:s0
+
+/dev/hidraw[0-1]       u:object_r:audio_device:s0

@@ -184,6 +184,9 @@
         <!-- Dialogue Remote Audio HAL -->
         <xi:include href="dia_remote_audio_policy_configuration.xml"/>
 
+		<!-- huitong Remote Audio HAL -->
+        <xi:include href="huitong_remote_audio_policy_configuration.xml"/>
+
     </modules>
     <!-- End of Modules section -->
 

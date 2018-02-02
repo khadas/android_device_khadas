@@ -71,6 +71,7 @@ PRODUCT_PACKAGES += \
     audio.primary.default \
     audio_policy.default \
     audio.dia_remote.default \
+    audio.huitong.default \
     local_time.default \
     vibrator.default \
     power.default
@@ -83,6 +84,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
         device/khadas/common/ddr/ddr_window_64.ko:/system/lib/ddr_window_64.ko
+PRODUCT_COPY_FILES += \
+	vendor/huitong/audio.huitong.default.so:system/lib/hw/audio.huitong.default.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown \

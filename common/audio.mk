@@ -45,6 +45,7 @@ PRODUCT_COPY_FILES += \
     $(configurable_audiopolicy_xmls)a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
     $(configurable_audiopolicy_xmls)r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
     $(configurable_audiopolicy_xmls)dia_remote_audio_policy_configuration.xml:system/etc/dia_remote_audio_policy_configuration.xml \
+    $(configurable_audiopolicy_xmls)huitong_remote_audio_policy_configuration.xml:system/etc/huitong_remote_audio_policy_configuration.xml \
     $(configurable_audiopolicy_xmls)audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml \
     $(configurable_audiopolicy_xmls)default_volume_tables.xml:system/etc/default_volume_tables.xml
 
