@@ -1,0 +1,11 @@
+#device    mountpoint    fstype    options    flags?    (fstab    version    2)
+/dev/block/bootloader   /bootloader emmc    defaults    defaults
+/dev/block/logo         /logo       emmc    defaults    defaults
+/dev/block/recovery     /recovery   emmc    defaults    defaults
+/dev/block/boot         /boot   emmc    defaults    defaults
+/dev/block/misc         /misc   emmc    defaults    defaults
+/dev/block/system       /system ext4    defaults    defaults
+/dev/block/cache        /cache  ext4    defaults    defaults
+/dev/block/data         /data   ext4    defaults    encryptable=footer
+/dev/block/mmcblk#p#    /sdcard vfat    defaults    defaults
+/dev/block/sd##         /udisk  auto    defaults    defaults
