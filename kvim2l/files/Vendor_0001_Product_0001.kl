@@ -1,4 +1,4 @@
-key 399   GRAVE
+key 41   GRAVE
 key 1     BACK
 key 2     1
 key 3     2
@@ -33,9 +33,23 @@ key 105   DPAD_LEFT
 key 106   DPAD_RIGHT
 key 115   VOLUME_UP
 key 114   VOLUME_DOWN
-key 104   VOLUME_UP
-key 109   VOLUME_DOWN
+key 104   PAGE_UP
+key 109   PAGE_DOWN
 key 212   CAMERA
+key 381   COMMA
+key 365   GUIDE
+key 358   INFO
+key 398   PROG_RED
+key 399   PROG_GREEN
+key 400   PROG_YELLOW
+key 401   PROG_BLUE
+key 750   DVB_TV_RADIO
+key 751   DVB_SAT
+key 752   DVB_RECALL
+key 753   DVB_REC
+key 754   DVB_APPS
+key 755   DVB_RECORD_LIST
+key 756   DVB_FAV
 
 key 16    Q
 key 17    W
