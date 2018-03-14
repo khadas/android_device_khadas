@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
     device/khadas/kvim2l/files/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     device/khadas/kvim2l/files/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/khadas/kvim2l/files/mesondisplay.cfg:system/etc/mesondisplay.cfg \
+    device/khadas/kvim2l/files/pq.db:system/etc/pq.db \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
 # remote IME config file
