@@ -306,6 +306,18 @@ endif
 #########################################################################
 BUILD_WITH_ROOT_CONFIG :=false
 BUILD_WITH_GAPPS_CONFIG :=false
+BUILD_WITH_DVB_APP := false
+
+ifeq ($(BUILD_WITH_DVB_APP),true)
+PRODUCT_PACKAGES += \
+    VTV
+
+PRODUCT_COPY_FILES += \
+    vendor/amlogic/prebuilt/VTV/lib64/libcom_superdtv_external_c.so:system/lib64/libcom_superdtv_external_c.so \
+    vendor/amlogic/prebuilt/VTV/lib64/libcom_superdtv_other.so:system/lib64/libcom_superdtv_other.so \
+    vendor/amlogic/prebuilt/VTV/lib64/libcom_superdtv_mw.so:system/lib64/libcom_superdtv_mw.so \
+    vendor/amlogic/prebuilt/VTV/lib64/libcom_superdtv_pi.so:system/lib64/libcom_superdtv_pi.so
+endif
 
 #########################################################################
 #
