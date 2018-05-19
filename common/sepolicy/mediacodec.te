@@ -9,5 +9,7 @@ allow mediacodec uio_device:chr_file rw_file_perms;
 allow mediacodec audio_device:chr_file rw_file_perms;
 allow mediacodec dvb_video_device:chr_file rw_file_perms;
 allow mediacodec media_prop:property_service set;
+allow mediacodec property_socket:sock_file rw_file_perms;
+allow mediacodec init:unix_stream_socket connectto;
 get_prop(mediacodec, media_prop)
 set_prop(mediacodec, media_prop)
