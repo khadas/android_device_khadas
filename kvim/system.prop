@@ -81,6 +81,9 @@ ro.audio.mapvalue=0,0,0,0
 #Support storage visible to apps
 persist.fw.force_adoptable=true
 
+#wifi hotspot
+persist.sys.softap.band=0
+
 #add livhls,libcurl as default hls
 media.libplayer.curlenable=true
 media.libplayer.modules=vhls_mod,dash_mod,curl_mod,prhls_mod,vm_mod,bluray_mod
