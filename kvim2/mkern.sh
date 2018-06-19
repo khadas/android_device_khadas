@@ -4,7 +4,7 @@
 
 #ROOTFS=$1
 ROOTFS="out/target/product/kvim2/ramdisk.img"
-PREFIX_CROSS_COMPILE=aarch64-linux-gnu-
+PREFIX_CROSS_COMPILE=/opt/toolchains/gcc-linaro-aarch64-linux-gnu-4.9-2014.09_linux/bin/aarch64-linux-gnu-
 
 if [ "$ROOTFS" == "" -o ! -f "$ROOTFS" ]; then
     echo "Usage: $0 <ramdisk.img> [m]"

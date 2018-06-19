@@ -29,7 +29,7 @@ TARGET_AMLOGIC_INT_RECOVERY_KERNEL := $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/Ima
 
 WIFI_OUT  := $(TARGET_OUT_INTERMEDIATES)/hardware/wifi
 
-PREFIX_CROSS_COMPILE=aarch64-linux-gnu-
+PREFIX_CROSS_COMPILE=/opt/toolchains/gcc-linaro-aarch64-linux-gnu-4.9-2014.09_linux/bin/aarch64-linux-gnu-
 
 define cp-modules
 	mkdir -p $(PRODUCT_OUT)/root/boot
