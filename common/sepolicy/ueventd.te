@@ -1,2 +1,3 @@
 allow ueventd drm_device:chr_file { create setattr relabelfrom relabelto } ;
 allow ueventd init_tmpfs:file create_file_perms;
+allow ueventd owntty_device:chr_file {open write read relabelfrom};

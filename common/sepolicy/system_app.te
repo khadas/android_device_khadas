@@ -64,3 +64,8 @@ allow system_app update_engine:binder {call transfer};
 
 allow system_app tv_prop:file {open read getattr};
 allow system_app tv_prop:property_service {set};
+
+allow system_app sysfs_xbmc:file { open read write getattr };
+allow system_app sysfs:file rw_file_perms;
+allow system_app i2c_device:dir r_dir_perms;
+allow system_app i2c_device:chr_file rw_file_perms;

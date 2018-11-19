@@ -91,3 +91,6 @@ allow system_control system_file:file execute_no_trans;
 
 allow system_control init_tmpfs:file create_file_perms;
 allow system_control sysfs_bluetooth_writable:file { open read write };
+
+allow system_control rootfs:lnk_file {getattr};
+allow system_control rootfs:file {getattr read open};
