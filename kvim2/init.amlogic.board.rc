@@ -46,6 +46,10 @@ on boot
 #uboot env
     chmod 666 /dev/block/env
 
+#wol
+    chmod 666 /sys/class/wol/enable
+    chmod 666 /sys/class/wol/test
+
 #dvb
     write /sys/module/amports/parameters/def_vstreambuf_sizeM 10
     write /sys/module/amports/parameters/def_4k_vstreambuf_sizeM 15
