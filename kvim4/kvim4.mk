@@ -196,8 +196,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #########Support compiling out encrypted zip/aml_upgrade_package.img directly
 #PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY := true
 ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
-PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot-repo/bl33/board/v2019/amlogic/t7_pxp_v1/aml-user-key.sig
-PRODUCT_AML_SECUREBOOT_SIGNTOOL := ./bootloader/uboot-repo/fip/t7/aml_encrypt_t7
+PRODUCT_AML_SECUREBOOT_USERKEY := ./bootloader/uboot/amlogic/t7_pxp_v1/aml-user-key.sig
+PRODUCT_AML_SECUREBOOT_SIGNTOOL := ./bootloader/uboot/fip/t7/aml_encrypt_t7
 PRODUCT_AML_SECUREBOOT_SIGNBOOTLOADER := $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --bootsig \
 						--amluserkey $(PRODUCT_AML_SECUREBOOT_USERKEY) \
 						--aeskey enable
@@ -208,7 +208,7 @@ PRODUCT_AML_SECUREBOOT_SIGBIN	:= $(PRODUCT_AML_SECUREBOOT_SIGNTOOL) --binsig \
 endif #ifeq ($(PRODUCT_BUILD_SECURE_BOOT_IMAGE_DIRECTLY),true)
 
 #########Support compiling out encrypted zip/aml_upgrade_package.img directly with Aml_Linux_SecureBootV3_SignTool
-BOARD_AML_SECUREBOOT_KEY_DIR := ./bootloader/uboot-repo/bl33/v2019/board/amlogic/t7_pxp_v1/aml-key
+BOARD_AML_SECUREBOOT_KEY_DIR := ./bootloader/uboot/board/amlogic/t7_pxp_v1/aml-key
 BOARD_AML_SECUREBOOT_SOC_TYPE := t7
 
 #################################################################

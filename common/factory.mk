@@ -269,11 +269,11 @@ endif
 endif # ifeq ($(BOOTLOADER_INPUT),)
 
 ANDROID_HOME_DIR = $(shell pwd)
-ifneq ($(wildcard bootloader/uboot-repo/*),)
-BOOTLOADER_DIR := $(ANDROID_HOME_DIR)/bootloader/uboot-repo
+ifneq ($(wildcard bootloader/uboot/*),)
+BOOTLOADER_DIR := $(ANDROID_HOME_DIR)/bootloader/uboot
 else
 ifneq ($(wildcard ~/bootloader/.*),)
-BOOTLOADER_DIR := ~/bootloader/uboot-repo
+BOOTLOADER_DIR := ~/bootloader/uboot
 endif
 endif
 
@@ -550,7 +550,7 @@ PRODUCT_CFG_EMMC_LGC_TABLE := $(KERNEL_ROOTDIR)/$(KERNEL_DEVICETREE_DIR)/$(TARGE
 AML_DTB_CRC_TOOL		:= $(BOARD_AML_VENDOR_PATH)/tools/aml_upgrade/dtb_pc
 AML_IMG_PKG_TOOL		:= $(BOARD_AML_VENDOR_PATH)/tools/aml_upgrade/aml_image_v2_packer
 ifeq ($(PRODUCT_CFG_EMMC_CAP),)
-	PRODUCT_CFG_EMMC_CAP := bootloader/uboot-repo/bl33/v2015/include/emmc_partitions.h
+	PRODUCT_CFG_EMMC_CAP := bootloader/uboot/include/emmc_partitions.h
 endif
 
 $(INSTALLED_AML_EMMC_BIN): $(INSTALLED_AML_UPGRADE_PACKAGE_TARGET) $(PRODUCT_CFG_EMMC_CAP) \

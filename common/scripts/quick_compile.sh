@@ -155,7 +155,7 @@ read_android_type() {
 compile_uboot() {
     uboot_name=${uboot[platform_type]}
     tdk_name=${tdk[platform_type]}
-    cd bootloader/uboot-repo
+    cd bootloader/uboot
 
     if [ $uboot_drm_type -gt 1 ]; then
         compile_bl32="--bl32 ../../vendor/amlogic/common/tdk/secureos/$tdk_name"
