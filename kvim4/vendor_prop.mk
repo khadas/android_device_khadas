@@ -30,4 +30,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.omx=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.platform.hdmi.device_type=0
+    ro.vendor.platform.hdmi.device_type=4
+#adb
+PRODUCT_PROPERTY_OVERRIDES += \
+    service.adb.tcp.port=5555
