@@ -23,3 +23,4 @@ odm                                                     /odm                    
 /devices/*.sd*/*/block/mmcblk*  auto          auto       defaults     voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/*.crg*drd/xhci-hcd.*.auto/usb?/*/host*/target*/block/sd*  auto    auto    defaults       voldmanaged=usb:auto,encryptable=userdata
 /devices/*.crg*drd/xhci-hcd.*.auto/usb?/*/host*/target*/block/sr*  auto    auto    defaults       voldmanaged=sr0:auto,encryptable=userdata
+/devices/*pcie/pci*/nvme*                     auto          auto       defaults     voldmanaged=pcie:auto,encryptable=userdata
