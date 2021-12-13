@@ -1,0 +1,160 @@
+{
+    "countrylist": [
+        {
+            "countrycode": "def",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "aus",
+            "LCN": "3",
+            "FirstUnanllocLcn": "350",
+            "LastUnanllocLcnx": "399"
+        },
+        {
+            "countrycode": "aut",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "bel",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "blr",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "chi",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "cri",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "cze",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "deu",
+            "LCN": "3",
+            "FirstUnanllocLcn": "3000",
+            "LastUnanllocLcnx": "3999"
+        },
+        {
+            "countrycode": "dma",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "dnk",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "ecu",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "esp",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "fin",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "fra",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "gbr",
+            "LCN": "3",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "hrv",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "isl",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "ita",
+            "LCN": "3",
+            "FirstUnanllocLcn": "850",
+            "LastUnanllocLcnx": "999"
+        },
+        {
+            "countrycode": "nor",
+            "LCN": "3",
+            "FirstUnanllocLcn": "0",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "nzl",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "rus",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "srb",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "swe",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        },
+        {
+            "countrycode": "tur",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899"
+        },
+        {
+            "countrycode": "ukr",
+            "LCN": "3",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999"
+        }
+    ]
+}

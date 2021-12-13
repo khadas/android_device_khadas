@@ -1,0 +1,3 @@
+/dev/hifi4dsp.*                 u:object_r:hifi4dsp_device:s0
+
+/vendor/bin/startdsp            u:object_r:startdsp_exec:s0

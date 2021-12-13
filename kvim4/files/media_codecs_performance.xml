@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2015 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<MediaCodecs>
+    <Encoders>
+        <MediaCodec name="OMX.amlogic.video.encoder.avc" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="415-415" />
+            <Limit name="measured-frame-rate-720x480" range="138-276" />
+            <Limit name="measured-frame-rate-1280x720" range="60-120" />
+            <Limit name="measured-frame-rate-1920x1080" range="60-120" />
+            <Limit name="measured-frame-rate-3840x2160" range="30-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.video.encoder.hevc" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="415-415" />
+            <Limit name="measured-frame-rate-720x480" range="145-290" />
+            <Limit name="measured-frame-rate-1280x720" range="60-120" />
+            <Limit name="measured-frame-rate-1920x1080" range="60-120" />
+            <Limit name="measured-frame-rate-3840x2160" range="30-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" update="true">
+            <Limit name="measured-frame-rate-176x144" range="267-267" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="223-223" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="120-120" />
+            <Limit name="measured-frame-rate-640x360" range="37-37" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.h263.encoder" type="video/3gpp" update="true">
+            <Limit name="measured-frame-rate-176x144" range="986-994" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="926-926" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.avc.encoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="513-513" />
+            <Limit name="measured-frame-rate-720x480" range="159-160" />
+            <Limit name="measured-frame-rate-1280x720" range="94-94" />
+            <Limit name="measured-frame-rate-1920x1080" range="49-49" />
+        </MediaCodec>
+        <!--MediaCodec name="c2.android.hevc.encoder" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="73-73" />
+            <Limit name="measured-frame-rate-720x480" range="22-23" />
+        </MediaCodec-->
+        <MediaCodec name="c2.android.vp8.encoder" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="158-158" />
+            <Limit name="measured-frame-rate-640x360" range="79-80" />
+            <Limit name="measured-frame-rate-1280x720" range="38-38" />
+            <Limit name="measured-frame-rate-1920x1080" range="19-19" />
+        </MediaCodec>
+    </Encoders>
+    <Decoders>
+        <MediaCodec name="OMX.amlogic.avc.decoder.awesome2" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="903-907" />
+            <Limit name="measured-frame-rate-720x480" range="504-505" />
+            <Limit name="measured-frame-rate-1280x720" range="226-227" />
+            <Limit name="measured-frame-rate-1920x1080" range="129-130" />
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.avc.decoder.awesome2.secure" type="video/avc" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.avc.decoder.awesome2.hdcp.secure" type="video/avc" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp9.decoder.awesome2" type="video/x-vnd.on2.vp9" update="true">
+            <Limit name="measured-frame-rate-320x180" range="1221-1226" />
+            <Limit name="measured-frame-rate-640x360" range="825-828" />
+            <Limit name="measured-frame-rate-1280x720" range="228-228" />
+            <Limit name="measured-frame-rate-1920x1080" range="277-278" />
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp9.decoder.awesome2.secure" type="video/x-vnd.on2.vp9" update="true">
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.hevc.decoder.awesome2" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-352x288" range="887-911" />
+            <Limit name="measured-frame-rate-640x360" range="742-755" />
+            <Limit name="measured-frame-rate-720x480" range="569-572" />
+            <Limit name="measured-frame-rate-1280x720" range="227-229" />
+            <Limit name="measured-frame-rate-1920x1080" range="278-278" />
+            <Limit name="measured-frame-rate-4096x2304" range="454-454" />
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.hevc.decoder.awesome2.secure" type="video/hevc" update="true">
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.av1.decoder.awesome2" type="video/av01" update="true">
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.av1.decoder.awesome2.secure" type="video/av01" update="true">
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mpeg4.decoder.awesome2" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="1742-1759" />
+            <Limit name="measured-frame-rate-480x360" range="1067-1068" />
+            <Limit name="performance-point-480x360" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mpeg2.decoder.awesome2" type="video/mpeg2" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mjpeg.decoder.awesome2" type="video/x-motion-jpeg" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp6a.decoder.sw" type="video/x-vnd.on2.vp6a" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp6f.decoder.sw" type="video/x-vnd.on2.vp6f" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp8.decoder.sw" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="1278-1279" />
+            <Limit name="measured-frame-rate-640x360" range="385-386" />
+            <Limit name="measured-frame-rate-1280x720" range="345-347" />
+            <Limit name="measured-frame-rate-1920x1080" range="159-160" />
+            <Limit name="performance-point-1920x1080" range="60-60" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.avs.decoder.awesome" type="video/avs" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.avs2.decoder.awesome" type="video/avs2" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.rm10.decoder.sw" type="video/rm10" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.rm20.decoder.sw" type="video/rm20" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.rm30.decoder.sw" type="video/rm30" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.rm40.decoder.sw" type="video/rm40" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.wmv1.decoder.sw" type="video/wmv1" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.wmv2.decoder.sw" type="video/wmv2" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.wmv3.decoder.sw" type="video/wmv3" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.wmv3.decoder.awesome" type="video/wmv3" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mswmv3.decoder.awesome" type="video/x-ms-wmv" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vc1.decoder.awesome" type="video/vc1" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.wvc1.decoder.awesome" type="video/wvc1" update="true">
+            <Limit name="performance-point-1920x1080" range="120-120" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" update="true">
+            <Limit name="measured-frame-rate-176x144" range="451-451" />
+            <Limit name="measured-frame-rate-352x288" range="795-795" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.h264.decoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="696-702" />
+            <Limit name="measured-frame-rate-720x480" range="170-171" />
+            <Limit name="measured-frame-rate-1280x720" range="62-62" />
+            <Limit name="measured-frame-rate-1920x1080" range="29-30" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.hevc.decoder" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-352x288" range="604-604" />
+            <Limit name="measured-frame-rate-640x360" range="151-151" />
+            <Limit name="measured-frame-rate-720x480" range="137-137" />
+            <Limit name="measured-frame-rate-1280x720" range="62-62" />
+            <Limit name="measured-frame-rate-1920x1080" range="35-35" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="594-594" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
+            <Limit name="measured-frame-rate-320x180" range="676-676" />
+            <Limit name="measured-frame-rate-640x360" range="330-330" />
+            <Limit name="measured-frame-rate-1280x720" range="93-93" />
+            <Limit name="measured-frame-rate-1920x1080" range="14-14" />
+        </MediaCodec>
+        <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
+            <Limit name="measured-frame-rate-320x180" range="265-265" />
+            <Limit name="measured-frame-rate-640x360" range="115-115" />
+            <Limit name="measured-frame-rate-1280x720" range="49-49" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
+            <Limit name="measured-frame-rate-176x144" range="1092-1100" />
+            <Limit name="measured-frame-rate-352x288" range="671-676" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.mpeg4.decoder" type="video/mp4v-es" update="true">
+            <Limit name="measured-frame-rate-176x144" range="1336-1343" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
+             <Limit name="measured-frame-rate-320x180" range="699-700" />
+            <Limit name="measured-frame-rate-640x360" range="267-269" />
+            <Limit name="measured-frame-rate-1280x720" range="68-68" />
+            <Limit name="measured-frame-rate-1920x1080" range="28-28" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
+            <Limit name="measured-frame-rate-320x180" range="267-308" />
+            <Limit name="measured-frame-rate-640x360" range="136-160" />
+            <Limit name="measured-frame-rate-1280x720" range="66-80" />
+            <Limit name="measured-frame-rate-1920x1080" range="38-38" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.hevc.decoder" type="video/hevc" update="true">
+            <Limit name="measured-frame-rate-352x288" range="442-445" />
+            <Limit name="measured-frame-rate-640x360" range="221-221" />
+            <Limit name="measured-frame-rate-720x480" range="203-203" />
+            <Limit name="measured-frame-rate-1280x720" range="91-91" />
+        </MediaCodec>
+    </Decoders>
+</MediaCodecs>

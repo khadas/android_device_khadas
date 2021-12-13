@@ -1,0 +1,844 @@
+{
+    "frequencylist": [
+        {
+            "name": "ch1",
+            "modulation": "auto",
+            "frequency": "52000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch2",
+            "modulation": "auto",
+            "frequency": "62000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch3",
+            "modulation": "auto",
+            "frequency": "80000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch4",
+            "modulation": "auto",
+            "frequency": "88000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch5",
+            "modulation": "auto",
+            "frequency": "96000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch6",
+            "modulation": "auto",
+            "frequency": "107500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch7",
+            "modulation": "auto",
+            "frequency": "113000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch8",
+            "modulation": "auto",
+            "frequency": "114000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch9",
+            "modulation": "auto",
+            "frequency": "121000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch10",
+            "modulation": "auto",
+            "frequency": "122000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch11",
+            "modulation": "auto",
+            "frequency": "129000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch12",
+            "modulation": "auto",
+            "frequency": "130000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch13",
+            "modulation": "auto",
+            "frequency": "135500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch14",
+            "modulation": "auto",
+            "frequency": "137000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch15",
+            "modulation": "auto",
+            "frequency": "138000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch16",
+            "modulation": "auto",
+            "frequency": "142500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch17",
+            "modulation": "auto",
+            "frequency": "145000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch18",
+            "modulation": "auto",
+            "frequency": "146000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch19",
+            "modulation": "auto",
+            "frequency": "149500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch20",
+            "modulation": "auto",
+            "frequency": "153000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch21",
+            "modulation": "auto",
+            "frequency": "154000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch22",
+            "modulation": "auto",
+            "frequency": "156000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch23",
+            "modulation": "auto",
+            "frequency": "161000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch24",
+            "modulation": "auto",
+            "frequency": "162000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch25",
+            "modulation": "auto",
+            "frequency": "164000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch26",
+            "modulation": "auto",
+            "frequency": "169000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch27",
+            "modulation": "auto",
+            "frequency": "170000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch28",
+            "modulation": "auto",
+            "frequency": "177000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch29",
+            "modulation": "auto",
+            "frequency": "178000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch30",
+            "modulation": "auto",
+            "frequency": "185000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch31",
+            "modulation": "auto",
+            "frequency": "186000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch32",
+            "modulation": "auto",
+            "frequency": "191500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch33",
+            "modulation": "auto",
+            "frequency": "193000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch34",
+            "modulation": "auto",
+            "frequency": "194000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch35",
+            "modulation": "auto",
+            "frequency": "198500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch36",
+            "modulation": "auto",
+            "frequency": "201000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch37",
+            "modulation": "auto",
+            "frequency": "202000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch38",
+            "modulation": "auto",
+            "frequency": "205500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch39",
+            "modulation": "auto",
+            "frequency": "209000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch40",
+            "modulation": "auto",
+            "frequency": "210000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch41",
+            "modulation": "auto",
+            "frequency": "212500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch42",
+            "modulation": "auto",
+            "frequency": "217000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch43",
+            "modulation": "auto",
+            "frequency": "218000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch44",
+            "modulation": "auto",
+            "frequency": "219500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch45",
+            "modulation": "auto",
+            "frequency": "225000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch46",
+            "modulation": "auto",
+            "frequency": "226000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch47",
+            "modulation": "auto",
+            "frequency": "227000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch48",
+            "modulation": "auto",
+            "frequency": "230000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch49",
+            "modulation": "auto",
+            "frequency": "234000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch50",
+            "modulation": "auto",
+            "frequency": "241000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch51",
+            "modulation": "auto",
+            "frequency": "242000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch52",
+            "modulation": "auto",
+            "frequency": "247500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch53",
+            "modulation": "auto",
+            "frequency": "249000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch54",
+            "modulation": "auto",
+            "frequency": "250000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch55",
+            "modulation": "auto",
+            "frequency": "254500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch56",
+            "modulation": "auto",
+            "frequency": "257000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch57",
+            "modulation": "auto",
+            "frequency": "258000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch58",
+            "modulation": "auto",
+            "frequency": "261500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch59",
+            "modulation": "auto",
+            "frequency": "265000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch60",
+            "modulation": "auto",
+            "frequency": "266000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch61",
+            "modulation": "auto",
+            "frequency": "268500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch62",
+            "modulation": "auto",
+            "frequency": "273000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch63",
+            "modulation": "auto",
+            "frequency": "247000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch64",
+            "modulation": "auto",
+            "frequency": "275500000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch65",
+            "modulation": "auto",
+            "frequency": "281000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch66",
+            "modulation": "auto",
+            "frequency": "282000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch67",
+            "modulation": "auto",
+            "frequency": "289000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch68",
+            "modulation": "auto",
+            "frequency": "290000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch69",
+            "modulation": "auto",
+            "frequency": "297000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch70",
+            "modulation": "auto",
+            "frequency": "298000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch71",
+            "modulation": "auto",
+            "frequency": "306000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch72",
+            "modulation": "auto",
+            "frequency": "314000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch73",
+            "modulation": "auto",
+            "frequency": "322000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch74",
+            "modulation": "auto",
+            "frequency": "330000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch75",
+            "modulation": "auto",
+            "frequency": "338000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch76",
+            "modulation": "auto",
+            "frequency": "346000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch77",
+            "modulation": "auto",
+            "frequency": "354000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch78",
+            "modulation": "auto",
+            "frequency": "362000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch79",
+            "modulation": "auto",
+            "frequency": "370000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch80",
+            "modulation": "auto",
+            "frequency": "378000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch81",
+            "modulation": "auto",
+            "frequency": "386000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch82",
+            "modulation": "auto",
+            "frequency": "394000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch83",
+            "modulation": "auto",
+            "frequency": "402000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch84",
+            "modulation": "auto",
+            "frequency": "410000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch85",
+            "modulation": "auto",
+            "frequency": "418000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch86",
+            "modulation": "auto",
+            "frequency": "426000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch87",
+            "modulation": "auto",
+            "frequency": "434000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch88",
+            "modulation": "auto",
+            "frequency": "442000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch89",
+            "modulation": "auto",
+            "frequency": "450000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch90",
+            "modulation": "auto",
+            "frequency": "458000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch91",
+            "modulation": "auto",
+            "frequency": "466000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch92",
+            "modulation": "auto",
+            "frequency": "474000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch93",
+            "modulation": "auto",
+            "frequency": "482000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch94",
+            "modulation": "auto",
+            "frequency": "490000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch95",
+            "modulation": "auto",
+            "frequency": "498000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch96",
+            "modulation": "auto",
+            "frequency": "506000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch97",
+            "modulation": "auto",
+            "frequency": "514000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch98",
+            "modulation": "auto",
+            "frequency": "522000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch99",
+            "modulation": "auto",
+            "frequency": "530000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch100",
+            "modulation": "auto",
+            "frequency": "538000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch101",
+            "modulation": "auto",
+            "frequency": "546000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch102",
+            "modulation": "auto",
+            "frequency": "554000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch103",
+            "modulation": "auto",
+            "frequency": "562000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch104",
+            "modulation": "auto",
+            "frequency": "570000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch105",
+            "modulation": "auto",
+            "frequency": "578000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch106",
+            "modulation": "auto",
+            "frequency": "586000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch107",
+            "modulation": "auto",
+            "frequency": "594000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch108",
+            "modulation": "auto",
+            "frequency": "602000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch109",
+            "modulation": "auto",
+            "frequency": "610000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch110",
+            "modulation": "auto",
+            "frequency": "618000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch111",
+            "modulation": "auto",
+            "frequency": "626000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch112",
+            "modulation": "auto",
+            "frequency": "634000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch113",
+            "modulation": "auto",
+            "frequency": "642000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch114",
+            "modulation": "auto",
+            "frequency": "650000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch115",
+            "modulation": "auto",
+            "frequency": "658000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch116",
+            "modulation": "auto",
+            "frequency": "666000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch117",
+            "modulation": "auto",
+            "frequency": "674000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch118",
+            "modulation": "auto",
+            "frequency": "682000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch119",
+            "modulation": "auto",
+            "frequency": "690000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch120",
+            "modulation": "auto",
+            "frequency": "698000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch121",
+            "modulation": "auto",
+            "frequency": "706000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch122",
+            "modulation": "auto",
+            "frequency": "714000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch123",
+            "modulation": "auto",
+            "frequency": "722000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch124",
+            "modulation": "auto",
+            "frequency": "730000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch125",
+            "modulation": "auto",
+            "frequency": "738000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch126",
+            "modulation": "auto",
+            "frequency": "746000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch127",
+            "modulation": "auto",
+            "frequency": "754000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch128",
+            "modulation": "auto",
+            "frequency": "762000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch129",
+            "modulation": "auto",
+            "frequency": "770000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch130",
+            "modulation": "auto",
+            "frequency": "778000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch131",
+            "modulation": "auto",
+            "frequency": "786000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch132",
+            "modulation": "auto",
+            "frequency": "794000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch133",
+            "modulation": "auto",
+            "frequency": "802000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch134",
+            "modulation": "auto",
+            "frequency": "810000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch135",
+            "modulation": "auto",
+            "frequency": "818000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch136",
+            "modulation": "auto",
+            "frequency": "826000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch137",
+            "modulation": "auto",
+            "frequency": "834000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch138",
+            "modulation": "auto",
+            "frequency": "842000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch139",
+            "modulation": "auto",
+            "frequency": "850000000",
+            "symbolrate": "0"
+        },
+        {
+            "name": "ch140",
+            "modulation": "auto",
+            "frequency": "858000000",
+            "symbolrate": "0"
+        }
+    ]
+}

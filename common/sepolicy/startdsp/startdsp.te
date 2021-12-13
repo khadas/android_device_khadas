@@ -1,0 +1,9 @@
+type startdsp, domain;
+type startdsp_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(startdsp)
+
+#allow startdsp system_file:file execute_no_trans;
+allow startdsp vendor_shell_exec:file execute_no_trans;
+allow startdsp hifi4dsp_device:chr_file { read write open ioctl };
+allow startdsp vendor_file:file { open read execute execute_no_trans };

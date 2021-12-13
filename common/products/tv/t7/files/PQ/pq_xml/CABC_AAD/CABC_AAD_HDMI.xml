@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form name="CABC_AAD_HDMI" platform="txlx" commands="">
+<Group num="0" val="">
+<Page tab_title="AAD_PARAMETERS" layout="35x4">
+<Control ui_type="checkbox" name="cabc_aad_en" range="0~1" addr="100" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="aad_en" range="0~1" addr="101" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="aad_tf_en" range="0~1" addr="102" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="aad_force_gain_en" range="0~1" addr="103" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="array" name="sensor_rgb" range="0~4096" addr="405" mask="31:0" dst="U" desc="" default="243 256 314" value="243 256 314" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="aad_sensor_mode" range="0~4" addr="104" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="aad_mode" range="0~4" addr="105" mask="31:0" dst="U" desc="" default="2" value="2" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="aad_dist_mode" range="0~4" addr="106" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="aad_tf_alpha" range="0~256" addr="107" mask="31:0" dst="U" desc="" default="32" value="32" cmd="cabc_aad:name"/>
+
+</Page>
+<Page tab_title="CABC_AAD_CURVES" layout="35x4">
+<Control ui_type="curve" name="lut_Y_gain_w_val_str" range="0~4096" addr="400" mask="" dst="U" desc="" default="0 256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4096" value="0 256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4096" cmd="cabc_aad:name"/>
+<Control ui_type="curve" name="lut_RG_gain_w_val_str" range="0~16384" addr="401" mask="" dst="U" desc="" default="0 1024 2048 3072 4096 5120 6144 7168 8192 9216 10240 11264 12288 13312 14336 15360 16384" value="0 1024 2048 3072 4096 5120 6144 7168 8192 9216 10240 11264 12288 13312 14336 15360 16384" cmd="cabc_aad:name"/>
+<Control ui_type="curve" name="lut_BG_gain_w_val_str" range="0~16384" addr="402" mask="" dst="U" desc="" default="0 1024 2048 3072 4096 5120 6144 7168 8192 9216 10240 11264 12288 13312 14336 15360 16384" value="0 1024 2048 3072 4096 5120 6144 7168 8192 9216 10240 11264 12288 13312 14336 15360 16384" cmd="cabc_aad:name"/>
+
+<Control ui_type="curve" name="gain_lut_w_val_str" range="0~8192" addr="403" mask="" dst="U" desc="" default="7567 3381 953 5153 3885 3075 4319 3988 4509 4846 3989 2950 4543 4036 3371 4096 4096 4096 3817 4119 4688 4954 3879 3719 5513 3855 2314 4104 4095 4079 5784 3787 2182 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096" value="7567 3381 953 5153 3885 3075 4319 3988 4509 4846 3989 2950 4543 4036 3371 4096 4096 4096 3817 4119 4688 4954 3879 3719 5513 3855 2314 4104 4095 4079 5784 3787 2182 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096 4096" cmd="cabc_aad:name"/>
+<Control ui_type="curve" name="xy_lut_w_val_str" range="0~2048" addr="404" mask="" dst="U" desc="" default="1833 1669 1427 1441 1270 1295 1416 1468 1362 1423 1281 1348 1225 1290 1365 1365 1524 1537 1281 1348 1559 1544 1281 1348 1281 1348 1281 1348 1281 1348 1281 1348" value="1833 1669 1427 1441 1270 1295 1416 1468 1362 1423 1281 1348 1225 1290 1365 1365 1524 1537 1281 1348 1559 1544 1281 1348 1281 1348 1281 1348 1281 1348 1281 1348" cmd="cabc_aad:name"/>
+
+<Control ui_type="curve" name="o_bl_cv_w_val_str" range="0~4095" addr="600" mask="" dst="U" desc="" default="2048 2048 2048 2048 2048 2662 2867 3072 3276 3481 3686 3891 4096" value="2048 2048 2048 2048 2048 2662 2867 3072 3276 3481 3686 3891 4096" cmd="cabc_aad:name"/>
+<Control ui_type="curve" name="maxbin_bl_cv_w_val_str" range="0~4095" addr="601" mask="" dst="U" desc="" default="1984 1984 3292 3292 3292 3292 3292 3292 3592 4096 4096 4096 4096" value="1984 1984 3292 3292 3292 3292 3292 3292 3592 4096 4096 4096 4096" cmd="cabc_aad:name"/>
+
+
+</Page>
+
+<Page tab_title="CABC_PARAMETERS" layout="35x4">
+<Control ui_type="checkbox" name="cabc_en" range="0~1" addr="500" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_hist_mode" range="0~1" addr="501" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_tf_en" range="0~1" addr="502" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_sc_flag" range="0~1" addr="503" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_bl_map_mode" range="0~1" addr="504" mask="31:0" dst="U" desc="" default="0" value="0" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_bl_map_en" range="0~1" addr="505" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="checkbox" name="cabc_temp_proc" range="0~1" addr="506" mask="31:0" dst="U" desc="" default="1" value="1" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_max95_ratio" range="0~255" addr="507" mask="31:0" dst="U" desc="" default="10" value="10" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_hist_blend_alpha" range="0~128" addr="508" mask="31:0" dst="U" desc="" default="64" value="64" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_init_bl_min" range="0~4095" addr="509" mask="31:0" dst="U" desc="" default="128" value="128" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_init_bl_max" range="0~4095" addr="510" mask="31:0" dst="U" desc="" default="4095" value="4095" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_tf_alpha" range="0~255" addr="511" mask="31:0" dst="U" desc="" default="32" value="32" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_sc_hist_diff_thd" range="0~8294400" addr="512" mask="31:0" dst="U" desc="" default="691200" value="691200" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_sc_apl_diff_thd" range="0~16320" addr="513" mask="31:0" dst="U" desc="" default="1536" value="1536" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_patch_bl_th" range="0~255" addr="514" mask="31:0" dst="U" desc="" default="25" value="25" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_patch_on_alpha" range="0~255" addr="515" mask="31:0" dst="U" desc="" default="30" value="30" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_patch_bl_off_th" range="0~255" addr="516" mask="31:0" dst="U" desc="" default="10" value="10" cmd="cabc_aad:name"/>
+<Control ui_type="slider" name="cabc_patch_off_alpha" range="0~255" addr="517" mask="31:0" dst="U" desc="" default="15" value="15" cmd="cabc_aad:name"/>
+</Page>
+</Group>
+</Form>
