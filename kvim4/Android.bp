@@ -2,6 +2,6 @@ soong_namespace {
     imports: [
         "device/khadas/common",
         "vendor/amlogic/common",
-        "vendor/amlogic/t7_an400",
+        "vendor/amlogic/kvim4",
     ],
 }

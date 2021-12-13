@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/t7_an400.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/kvim4.mk
 COMMON_LUNCH_CHOICES := \
-    t7_an400-eng \
-    t7_an400-user \
-    t7_an400-userdebug
+    kvim4-eng \
+    kvim4-user \
+    kvim4-userdebug

@@ -1,6 +1,6 @@
 
 
-DEVICE_PRODUCT_PATH := device/khadas/t7_an400
+DEVICE_PRODUCT_PATH := device/khadas/kvim4
 
 
 KERNEL_ROOTDIR := common
