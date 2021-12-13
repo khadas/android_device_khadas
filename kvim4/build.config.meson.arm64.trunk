@@ -1,6 +1,6 @@
 . common/build.config.common
 . common/build.config.aarch64
-. device/amlogic/common/kernelbuild/build.config.common
+. device/khadas/common/kernelbuild/build.config.common
 
 DEFCONFIG=meson64_a64_defconfig
 EXTRA_CMDS=''
@@ -10,7 +10,7 @@ GPU_DRV_VERSION=r25p0
 
 KERNEL_DEVICETREE=t7_a311d2_an400
 DTBO_DEVICETREE=android_overlay_dt
-PRODUCT_DIRNAME=device/amlogic/t7_an400
+PRODUCT_DIRNAME=device/khadas/t7_an400
 BOARD_DEVICENAME=t7_an400
 
 ENABLE_KASAN=false

@@ -45,14 +45,14 @@ PRODUCT_COPY_FILES += hardware/amlogic/audio/amlogic_AQ_tools/Amlogic_DRC_Param_
 
 ifeq ($(BUILD_DTS_VIRTUALX), true)
 PRODUCT_COPY_FILES += \
-    device/amlogic/$(PRODUCT_DIR)/files/libvx.so:vendor/lib/soundfx/libvx.so
+    device/khadas/$(PRODUCT_DIR)/files/libvx.so:vendor/lib/soundfx/libvx.so
 endif
 
 #configurable audio policy
 USE_XML_AUDIO_POLICY_CONF := 1
 
 ifeq ($(USE_XML_AUDIO_POLICY_CONF),1)
-configurable_audiopolicy_xmls := device/amlogic/common/audio/
+configurable_audiopolicy_xmls := device/khadas/common/audio/
 PRODUCT_COPY_FILES += \
     $(configurable_audiopolicy_xmls)usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
     $(configurable_audiopolicy_xmls)a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \

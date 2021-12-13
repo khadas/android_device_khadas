@@ -27,8 +27,8 @@ ifeq ($(strip $(LDIM_FW_MODULE)),true)
 
         else
             PRODUCT_COPY_FILES += \
-                device/amlogic/common/ldim/64/ldim_fw.ko:$(PRODUCT_OUT)/obj/lib_vendor/ldim_fw.ko \
-                device/amlogic/common/initscripts/ldim.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ldim.rc
+                device/khadas/common/ldim/64/ldim_fw.ko:$(PRODUCT_OUT)/obj/lib_vendor/ldim_fw.ko \
+                device/khadas/common/initscripts/ldim.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ldim.rc
         endif
     endif
 endif

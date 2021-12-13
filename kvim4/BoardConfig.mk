@@ -220,7 +220,7 @@ endif
 endif
 
 TARGET_SUPPORT_USB_BURNING_V2 := true
-TARGET_AMLOGIC_RES_PACKAGE := device/amlogic/$(PRODUCT_DIR)/logo_img_files
+TARGET_AMLOGIC_RES_PACKAGE := device/khadas/$(PRODUCT_DIR)/logo_img_files
 
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.mboxdefault
 
@@ -243,7 +243,7 @@ TARGET_OTA_UPDATE_DTB := true
 
 TARGET_COPY_OUT_ODM := odm
 
-include device/amlogic/common/sepolicy.mk
+include device/khadas/common/sepolicy.mk
 
 #MALLOC_SVELTE := true
 
@@ -267,7 +267,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 # introduced and must set in Q, also can used in P, see the ReadMe.txt at below dir:
 TARGET_HOST_TOOL_PATH := vendor/amlogic/common/tools/host-tool
 #put here after all vendor configuration assigend evaluated.
-include device/amlogic/common/soong_config/soong_config.mk
+include device/khadas/common/soong_config/soong_config.mk
 
 #########################################################################
 #
@@ -277,7 +277,7 @@ include device/amlogic/common/soong_config/soong_config.mk
 ifeq ($(BOARD_USES_DYNAMIC_FINGERPRINT),true)
 #Building raw OEM images with "make custom_images"
 PRODUCT_CUSTOM_IMAGE_MAKEFILES := \
-    device/amlogic/t7_an400/oem/oem.mk
+    device/khadas/t7_an400/oem/oem.mk
 
 #re-sign the raw ext4 OEM image
 ifeq ($(filter $(MAKECMDGOALS),custom_images),)
@@ -290,17 +290,17 @@ BOARD_AVB_OEM_ROLLBACK_INDEX_LOCATION := 1
 ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
 BOARD_AVB_OEM_PARTITION_SIZE := 16777216
 BOARD_AVB_OEM_IMAGE_LIST := \
-    device/amlogic/t7_an400/oem/oem_4.9/oem.img
+    device/khadas/t7_an400/oem/oem_4.9/oem.img
 else
 BOARD_AVB_OEM_PARTITION_SIZE := 33554432
 BOARD_AVB_OEM_IMAGE_LIST := \
-    device/amlogic/t7_an400/oem/oem.img
+    device/khadas/t7_an400/oem/oem.img
 endif
 
 #Set the OEM partition mounting flag to Read Only
 TARGET_RECOVERY_FSTYPE_MOUNT_OPTIONS := ext4=ro
 #Building OTAs for OEM properties
-OEM_OTA_CONFIG := device/amlogic/t7_an400/oem/oem.prop
+OEM_OTA_CONFIG := device/khadas/t7_an400/oem/oem.prop
 endif
 
 ifeq ($(BOARD_USES_VBMETA_SYSTEM),true)
