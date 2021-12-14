@@ -51,3 +51,10 @@ on property:ro.boot.oem.key1=*
 
 on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+
+# add EM06 4G
+service ril-daemon /vendor/bin/hw/rild -l /vendor/lib/libquectel-ril.so
+    class main
+    user root
+    group radio cache inet misc audio sdcard_rw log
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
