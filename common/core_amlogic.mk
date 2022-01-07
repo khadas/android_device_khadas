@@ -275,7 +275,13 @@ PRODUCT_PACKAGES += \
     gralloc.amlogic \
     hwcomposer.amlogic \
     memtrack.amlogic \
-    screen_source.amlogic
+    screen_source.amlogic \
+    sensors.amlogic
+
+#sensor hal
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@1.0-impl
 
 #glscaler and 3d format api
 PRODUCT_PACKAGES += \

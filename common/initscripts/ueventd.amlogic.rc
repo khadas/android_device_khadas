@@ -107,6 +107,10 @@
 /dev/ttyBT0               0660   bluetooth     bluetooth
 /dev/ttyBT1               0660   bluetooth     bluetooth
 
+#gsneosr
+/dev/input/event*         0666   input     system
+/dev/gsensor              0660   system     system
+
 /dev/display              0660   root         graphics
 /dev/display2             0660   root         graphics
 /dev/display3             0660   root         graphics
