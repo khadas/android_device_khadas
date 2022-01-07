@@ -163,6 +163,9 @@ PRODUCT_BRAND := Amlogic
 PRODUCT_MODEL := kvim4
 PRODUCT_MANUFACTURER := Amlogic
 
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.display.id=VIM4_R_V$(shell date +%y%m%d)
+
 PRODUCT_TYPE := tv
 # Non updatable APEX
 OVERRIDE_TARGET_FLATTEN_APEX := true
@@ -180,6 +183,19 @@ BOARD_AML_SOC_TYPE ?= A311D2
 BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
 BUILD_WITH_AVB := true
 PRODUCT_PACKAGES += lights
+
+#KVIM4 app
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep \
+    FactoryTest \
+    Settings \
+    KSettings \
+    KTools \
+    SchPwrOnOff \
+    TTS
+PRODUCT_COPY_FILES += \
+	device/khadas/kvim4/TTS_so/libtts_android.so:system/lib64/libtts_android.so \
+	device/khadas/kvim4/TTS_so/libtts_android_neon.so:system/lib64/libtts_android_neon.so
 
 TARGET_BUILD_KERNEL_4_9 ?= false
 
