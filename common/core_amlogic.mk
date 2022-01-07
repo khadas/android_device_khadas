@@ -167,7 +167,6 @@ PRODUCT_PACKAGES += \
     RemoteIME \
     NativeImagePlayer \
     imageserver \
-    MboxLauncher \
     DLNA \
     BluetoothRemote \
     Gallery2 \
@@ -176,8 +175,7 @@ PRODUCT_PACKAGES += \
     webview \
     Browser2 \
     DeskClock \
-    FileBrower \
-    SystemUIOverlay
+    FileBrower
 
 #add camera app
 PRODUCT_PACKAGES += Camera2

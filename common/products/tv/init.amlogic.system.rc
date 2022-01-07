@@ -61,6 +61,33 @@ on boot
     chmod 666 /sys/class/video/show_first_frame_nosync
     chown media system /sys/class/video/show_first_frame_nosync
 
+    chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_cur_freq
+
+    chmod 666 /sys/class/leds/state_led/state_brightness
+    chmod 666 /sys/class/leds/state_led/breath
+
+    chmod 666 /sys/class/fan/enable
+    chmod 666 /sys/class/fan/level
+    chmod 666 /sys/class/fan/mode
+    chmod 666 /sys/class/fan/temp
+    chmod 666 /sys/class/fan/trigger_temp_high
+    chmod 666 /sys/class/fan/trigger_temp_low
+    chmod 666 /sys/class/fan/trigger_temp_mid
+
+    chmod 666 /sys/class/mcu/poweroff
+    chmod 666 /sys/class/mcu/rst
+    chmod 666 /sys/class/mcu/redled
+
+    chmod 666 /sys/class/mcu/wol_enable
+    chmod 666 /sys/class/mcu/ageing_test
+
+    chmod 666 /sys/class/backlight/aml-bl/brightness
+    chmod 666 /sys/class/backlight/aml-bl1/brightness
+
+    chmod 666 /sys/class/efuse/mac
+    chmod 666 /sys/class/efuse/usid
+
     #vfm map
     chown media  system /sys/class/vfm/map
     chmod 666 /sys/class/vfm/map

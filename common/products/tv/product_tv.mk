@@ -135,8 +135,8 @@ PRODUCT_COPY_FILES += \
 # Save memory
 # dumpsys SurfaceFlinger | grep com.android.systemui.ImageWallpaper
 # 16.00 KiB |   64 (  64) x   64 |    1 |       2B | 0x40000000000b00 | com.android.systemui.ImageWallpaper#0
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/default_wallpaper.png:$(TARGET_COPY_OUT_VENDOR)/etc/default_wallpaper.png
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/default_wallpaper.png:$(TARGET_COPY_OUT_VENDOR)/etc/default_wallpaper.png
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.wallpaper=vendor/etc/default_wallpaper.png
