@@ -88,6 +88,8 @@ on boot
     chmod 666 /sys/class/efuse/mac
     chmod 666 /sys/class/efuse/usid
 
+    chmod 666 /sys/class/rtc/rtc0/bootalarm
+
     #vfm map
     chown media  system /sys/class/vfm/map
     chmod 666 /sys/class/vfm/map
