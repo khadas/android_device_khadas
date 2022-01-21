@@ -20,6 +20,8 @@
 ifneq ($(BOARD_COMPILE_ATV),false)
   BOARD_COMPILE_CTS := true
 endif
+BOARD_COMPILE_ATV := false
+BOARD_COMPILE_CTS := false
 
 $(call inherit-product, device/google/atv/products/atv_mainline_system.mk)
 
@@ -192,7 +194,9 @@ PRODUCT_PACKAGES += \
     KSettings \
     KTools \
     SchPwrOnOff \
-    TTS
+    TTS \
+    DocumentsUI
+
 PRODUCT_COPY_FILES += \
 	device/khadas/kvim4/TTS_so/libtts_android.so:system/lib64/libtts_android.so \
 	device/khadas/kvim4/TTS_so/libtts_android_neon.so:system/lib64/libtts_android_neon.so
