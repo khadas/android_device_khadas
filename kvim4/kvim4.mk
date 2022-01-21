@@ -198,7 +198,9 @@ PRODUCT_PACKAGES += \
     KSettings \
     KTools \
     SchPwrOnOff \
-    TTS
+    TTS \
+    DocumentsUI
+
 PRODUCT_COPY_FILES += \
 	device/khadas/kvim4/TTS_so/libtts_android.so:system/lib64/libtts_android.so \
 	device/khadas/kvim4/TTS_so/libtts_android_neon.so:system/lib64/libtts_android_neon.so
