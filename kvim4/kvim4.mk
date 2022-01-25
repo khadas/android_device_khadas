@@ -23,6 +23,8 @@ endif
 BOARD_COMPILE_ATV := false
 BOARD_COMPILE_CTS := false
 
+BUILD_WITH_GAPPS_CONFIG=false
+
 $(call inherit-product, device/google/atv/products/atv_mainline_system.mk)
 
 # GTVS
@@ -194,12 +196,17 @@ PRODUCT_PACKAGES += \
     KSettings \
     KTools \
     SchPwrOnOff \
-    TTS \
+    AptoideTV \
     DocumentsUI
 
+ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
+
+else
+PRODUCT_PACKAGES += TTS
 PRODUCT_COPY_FILES += \
 	device/khadas/kvim4/TTS_so/libtts_android.so:system/lib64/libtts_android.so \
 	device/khadas/kvim4/TTS_so/libtts_android_neon.so:system/lib64/libtts_android_neon.so
+endif
 
 TARGET_BUILD_KERNEL_4_9 ?= false
 
