@@ -173,7 +173,6 @@ PRODUCT_PACKAGES += \
     MusicFX \
     Music \
     webview \
-    Browser2 \
     DeskClock \
     FileBrower
 
