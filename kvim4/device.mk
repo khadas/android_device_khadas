@@ -117,10 +117,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_CHARACTERISTICS := kvim4,nosdcard
 ifeq ($(BOARD_COMPILE_ATV), false)
-PRODUCT_PACKAGE_OVERLAYS := \
+DEVICE_PACKAGE_OVERLAYS := \
     device/khadas/$(PRODUCT_DIR)/overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-   device/khadas/$(PRODUCT_DIR)/overlay
 endif
 
 # setup dalvik vm configs.
