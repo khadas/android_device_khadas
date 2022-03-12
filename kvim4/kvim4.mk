@@ -163,7 +163,7 @@ BUILD_WITH_AML_MP := true
 TARGET_WITH_MEDIA_EXT_LEVEL := 4
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.hdmi.device_type=0
+        ro.hdmi.device_type=4
 
 PRODUCT_NAME := kvim4
 PRODUCT_DEVICE := kvim4

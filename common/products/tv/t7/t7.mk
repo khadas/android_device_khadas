@@ -201,4 +201,4 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/initscripts/irblaster1.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/irblaster1.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.platform.hdmi.device_type=0
+    ro.vendor.platform.hdmi.device_type=4
