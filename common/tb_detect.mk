@@ -16,4 +16,4 @@
 
 # for tb detect module
 PRODUCT_COPY_FILES += \
-	device/amlogic/common/init.amlogic.tb_detect.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.amlogic.tb_detect.rc
+	device/khadas/common/init.amlogic.tb_detect.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.amlogic.tb_detect.rc

@@ -1,4 +1,4 @@
-$(call inherit-product, device/amlogic/common/core_amlogic.mk)
+$(call inherit-product, device/khadas/common/core_amlogic.mk)
 
 ifeq ($(TARGET_BUILD_LIVETV),true)
 #TV input HAL
@@ -72,9 +72,9 @@ ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
     NativeImagePlayer
 
-#MboxLauncher
+#Launcher3
 PRODUCT_PACKAGES += \
-    MboxLauncher
+    Launcher3
 endif
 
 #screencontrol
@@ -122,14 +122,14 @@ PRODUCT_COPY_FILES += \
 #copy lowmemorykiller.txt
 ifeq ($(BUILD_WITH_LOWMEM_COMMON_CONFIG),true)
 PRODUCT_COPY_FILES += \
-	device/amlogic/common/config/lowmemorykiller_2G.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller_2G.txt \
-	device/amlogic/common/config/lowmemorykiller.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller.txt \
-	device/amlogic/common/config/lowmemorykiller_512M.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller_512M.txt
+	device/khadas/common/config/lowmemorykiller_2G.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller_2G.txt \
+	device/khadas/common/config/lowmemorykiller.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller.txt \
+	device/khadas/common/config/lowmemorykiller_512M.txt:$(TARGET_COPY_OUT_VENDOR)/etc/lowmemorykiller_512M.txt
 endif
 
 #DDR LOG
 PRODUCT_COPY_FILES += \
-    device/amlogic/common/ddrtest.sh:$(TARGET_COPY_OUT_VENDOR)/bin/ddrtest.sh
+    device/khadas/common/ddrtest.sh:$(TARGET_COPY_OUT_VENDOR)/bin/ddrtest.sh
 
 # USB
 PRODUCT_COPY_FILES += \
@@ -143,10 +143,20 @@ endif
 
 # Bluetooth idc config file
 PRODUCT_COPY_FILES += \
-    device/amlogic/common/products/mbox/Vendor_1915_Product_0001.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1915_Product_0001.idc \
-    device/amlogic/common/products/mbox/Vendor_1d5a_Product_c082.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1d5a_Product_c082.idc
+    device/khadas/common/products/mbox/Vendor_1915_Product_0001.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1915_Product_0001.idc \
+    device/khadas/common/products/mbox/Vendor_1d5a_Product_c082.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1d5a_Product_c082.idc
 
-custom_keylayouts := $(wildcard device/amlogic/common/keyboards/*.kl)
+# USB HID Multitouch
+PRODUCT_COPY_FILES += \
+    device/khadas/common/products/mbox/Vendor_0eef_Product_0005.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_0eef_Product_0005.idc \
+    device/khadas/common/products/mbox/Vendor_03fc_Product_05d8.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_03fc_Product_05d8.idc \
+    device/khadas/common/products/mbox/Vendor_1870_Product_0119.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1870_Product_0119.idc \
+    device/khadas/common/products/mbox/Vendor_1870_Product_0100.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_1870_Product_0100.idc \
+    device/khadas/common/products/mbox/Vendor_2808_Product_81c9.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_2808_Product_81c9.idc \
+    device/khadas/common/products/mbox/Vendor_16b4_Product_0704.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_16b4_Product_0704.idc \
+    device/khadas/common/products/mbox/Vendor_16b4_Product_0705.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_16b4_Product_0705.idc \
+    device/khadas/common/products/mbox/Vendor_04d8_Product_0c03.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Vendor_04d8_Product_0c03.idc
+custom_keylayouts := $(wildcard device/khadas/common/keyboards/*.kl)
 PRODUCT_COPY_FILES += $(foreach file,$(custom_keylayouts),\
     $(file):$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/$(notdir $(file)))
 
@@ -182,5 +192,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 BOARD_HAVE_CEC_HIDL_SERVICE := true
 
-PRODUCT_COPY_FILES += device/amlogic/common/products/mbox/dhclient/dhclient:system/bin/dhclient \
-			device/amlogic/common/products/mbox/dhclient/dhclient-script:system/etc/dhcpcd/dhclient-script
+PRODUCT_COPY_FILES += device/khadas/common/products/mbox/dhclient/dhclient:system/bin/dhclient \
+			device/khadas/common/products/mbox/dhclient/dhclient-script:system/etc/dhcpcd/dhclient-script

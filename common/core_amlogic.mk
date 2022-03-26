@@ -47,6 +47,12 @@ PRODUCT_PACKAGES += \
 	dtc \
 	mkdtimg
 
+PRODUCT_PACKAGES += \
+	i2cget \
+	i2cset \
+	i2cdump \
+	i2cdetect
+
 #PRODUCT_PACKAGES += \
 #    Galaxy4 \
 #    HoloSpiralWallpaper \
@@ -99,7 +105,7 @@ PRODUCT_COPY_FILES += \
         frameworks/av/media/libeffects/data/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf
 
 PRODUCT_COPY_FILES += \
-        device/amlogic/common/ddr/ddr_window_64.ko:$(PRODUCT_OUT)/obj/lib_vendor/ddr_window_64.ko
+        device/khadas/common/ddr/ddr_window_64.ko:$(PRODUCT_OUT)/obj/lib_vendor/ddr_window_64.ko
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown \
@@ -171,7 +177,6 @@ PRODUCT_PACKAGES += \
     RemoteIME \
     DeskClock \
     MusicFX \
-    Browser2 \
     LatinIME \
     Music
 endif
@@ -288,7 +293,7 @@ PRODUCT_SUPPORTS_VERITY_FEC := true
 # The dev key is used to sign boot and recovery images, and the verity
 # metadata table. Actual product deliverables will be re-signed by hand.
 # We expect this file to exist with the suffixes ".x509.pem" and ".pk8".
-PRODUCT_VERITY_SIGNING_KEY := device/amlogic/common/security/verity
+PRODUCT_VERITY_SIGNING_KEY := device/khadas/common/security/verity
 ifneq ($(TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL),true)
 PRODUCT_PACKAGES += \
         verity_key.amlogic
@@ -303,15 +308,15 @@ endif
 #ifeq ($(BUILD_WITH_APP_OPTIMIZATION),true)
 
 PRODUCT_COPY_FILES += \
-    device/amlogic/common/optimization/liboptimization_32.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboptimization.so \
-    device/amlogic/common/optimization/config:$(TARGET_COPY_OUT_VENDOR)/package_config/config
+    device/khadas/common/optimization/liboptimization_32.so:$(TARGET_COPY_OUT_VENDOR)/lib/liboptimization.so \
+    device/khadas/common/optimization/config:$(TARGET_COPY_OUT_VENDOR)/package_config/config
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.app.optimization=true
 
 ifeq ($(ANDROID_BUILD_TYPE), 64)
 PRODUCT_COPY_FILES += \
-    device/amlogic/common/optimization/liboptimization_64.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liboptimization.so
+    device/khadas/common/optimization/liboptimization_64.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liboptimization.so
 endif
 #endif
 
@@ -376,7 +381,7 @@ PRODUCT_COPY_FILES += \
         hardware/amlogic/wifi/multi_wifi/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi@1.0-service.rc
 
 PRODUCT_COPY_FILES += \
-    device/amlogic/common/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/khadas/common/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 #Audio HAL
 PRODUCT_PACKAGES += \

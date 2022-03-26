@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-PRODUCT_DIR := w400
+PRODUCT_DIR := kvim3
 ANDROID_BUILD_TYPE :=64
 
 ifneq ($(ANDROID_BUILD_TYPE), 64)
@@ -48,8 +48,8 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 
 TARGET_BOARD_PLATFORM := g12b
-TARGET_BOOTLOADER_BOARD_NAME := w400
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/amlogic/w400/bluetooth
+TARGET_BOOTLOADER_BOARD_NAME := kvim3
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/khadas/kvim3/bluetooth
 
 # Allow passing `--second` to mkbootimg via 2ndbootloader.
 TARGET_BOOTLOADER_IS_2ND := true
@@ -65,11 +65,11 @@ TARGET_USE_DEFAULT_HDR_PROPERTY := true
 USE_HWC2 := true
 HWC_DISPLAY_NUM := 2
 HWC_PIPELINE := "dual"
-HWC_PRIMARY_FRAMEBUFFER_WIDTH := 1024
-HWC_PRIMARY_FRAMEBUFFER_HEIGHT := 600
+HWC_PRIMARY_FRAMEBUFFER_WIDTH := 1920
+HWC_PRIMARY_FRAMEBUFFER_HEIGHT := 1080
 HWC_EXTEND_FRAMEBUFFER_WIDTH := 1920
 HWC_EXTEND_FRAMEBUFFER_HEIGHT := 1080
-HWC_PRIMARY_CONNECTOR_TYPE := "panel"
+HWC_PRIMARY_CONNECTOR_TYPE := "hdmi"
 HWC_EXTEND_CONNECTOR_TYPE := "hdmi-only"
 #panel does not support AFBC in default
 HWC_PRIMARY_DISP_SUPPORT_AFBC := false
@@ -143,12 +143,12 @@ endif
 endif
 
 TARGET_SUPPORT_USB_BURNING_V2 := true
-TARGET_AMLOGIC_RES_PACKAGE := device/amlogic/$(PRODUCT_DIR)/logo_img_files
+TARGET_AMLOGIC_RES_PACKAGE := device/khadas/$(PRODUCT_DIR)/logo_img_files
 
 ifeq ($(BOARD_BUILD_SYSTEM_ROOT_IMAGE), true)
-TARGET_RECOVERY_FSTAB := device/amlogic/$(PRODUCT_DIR)/recovery/recovery_system.fstab
+TARGET_RECOVERY_FSTAB := device/khadas/$(PRODUCT_DIR)/recovery/recovery_system.fstab
 else
-TARGET_RECOVERY_FSTAB := device/amlogic/$(PRODUCT_DIR)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/khadas/$(PRODUCT_DIR)/recovery/recovery.fstab
 endif
 
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.mboxdefault
@@ -160,7 +160,7 @@ BOARD_KERNEL_OFFSET := 0x1080000
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
-TARGET_RELEASETOOLS_EXTENSIONS := device/amlogic/common
+TARGET_RELEASETOOLS_EXTENSIONS := device/khadas/common
 TARGET_USE_BLOCK_BASE_UPGRADE := true
 TARGET_OTA_UPDATE_DTB := true
 #TARGET_RECOVERY_DISABLE_ADB_SIDELOAD := true
@@ -178,7 +178,7 @@ TARGET_RECOVERY_UPDATER_LIBS := libinstall_amlogic
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS += libenv libsystemcontrol_static libsecurity libfdt
 endif
 
-include device/amlogic/common/sepolicy.mk
+include device/khadas/common/sepolicy.mk
 #MALLOC_IMPL := dlmalloc
 MALLOC_SVELTE := true
 
@@ -189,23 +189,23 @@ PRODUCT_SHIPPING_API_LEVEL := 28
 TARGET_USES_MKE2FS := true
 
 ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
-DEVICE_MANIFEST_FILE := device/amlogic/common/products/mbox/manifest/manifest_aosp.xml
+DEVICE_MANIFEST_FILE := device/khadas/common/products/mbox/manifest/manifest_aosp.xml
 else
-DEVICE_MANIFEST_FILE := device/amlogic/common/products/mbox/manifest/manifest_gtvs.xml
+DEVICE_MANIFEST_FILE := device/khadas/common/products/mbox/manifest/manifest_gtvs.xml
 endif
 
-AUTO_PATCH_AB := device/amlogic/common/products/mbox/manifest/ab_update.sh
+AUTO_PATCH_AB := device/khadas/common/products/mbox/manifest/ab_update.sh
 ifeq ($(AB_OTA_UPDATER),true)
 $(shell ($(AUTO_PATCH_AB) $(DEVICE_MANIFEST_FILE)))
 endif
-#DEVICE_MATRIX_FILE   := device/amlogic/common/compatibility_matrix.xml
+#DEVICE_MATRIX_FILE   := device/khadas/common/compatibility_matrix.xml
 
 BOARD_VNDK_VERSION := current
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_INCLUDE_RECOVERY_DTBO := true
 
 ###npu board config
-AUTO_PATCH_NPU := device/amlogic/common/products/mbox/manifest/npu_update.sh
+AUTO_PATCH_NPU := device/khadas/common/products/mbox/manifest/npu_update.sh
 ifeq ($(BOARD_NPU_SERVICE_ENABLE),true)
 $(shell ($(AUTO_PATCH_NPU) $(DEVICE_MANIFEST_FILE)))
 endif
