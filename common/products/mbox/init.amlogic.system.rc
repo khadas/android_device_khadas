@@ -441,6 +441,12 @@ service watchdogd /sbin/watchdogd 10 20
     class core
     disabled
     seclabel u:r:watchdogd:s0
+service ril-daemon /vendor/bin/hw/rild -l /vendor/lib/libquectel-ril.so
+    class main
+    socket rild stream 777 root radio
+    socket rild-debug stream 777 radio system
+    user root
+    group radio cache inet misc audio sdcard_rw log
 
 #wifi firmware_path
 #on property:wlan.driver.status=ok

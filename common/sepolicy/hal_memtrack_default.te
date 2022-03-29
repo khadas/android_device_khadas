@@ -87,6 +87,11 @@ allow hal_memtrack_default hdcp_rx22:file { read open getattr };
 allow hal_memtrack_default dtvkitserver:dir {search};
 allow hal_memtrack_default dtvkitserver:file {read open getattr};
 
+allow hal_memtrack_default imageserver:dir {read write create open ioctl search};
+allow hal_memtrack_default rild:dir {read write create ioctl open search};
+allow hal_memtrack_default rild:file {read write create ioctl open getattr};
+allow hal_memtrack_default device:file {read write create open ioctl};
+
 allow hal_memtrack_default subtitleserver:dir {search};
 allow hal_memtrack_default subtitleserver:file r_file_perms;
 
