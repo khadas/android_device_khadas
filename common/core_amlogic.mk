@@ -238,7 +238,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.amlogic \
     memtrack.amlogic \
     screen_source.amlogic \
-    thermal.amlogic
+    thermal.amlogic \
+    sensors.amlogic
 
 #glscaler and 3d format api
 PRODUCT_PACKAGES += \
@@ -462,6 +463,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
+#sensor hal
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@1.0-impl
 
 #thermal hal
 PRODUCT_PACKAGES += \

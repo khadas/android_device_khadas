@@ -73,6 +73,9 @@
 /dev/ptya1                0660   system     system
 /dev/ttyHS2               0666   bluetooth  bluetooth
 /dev/ttyS20               0664   system     system
+#gsneosr
+/dev/input/event*         0666   input     system
+/dev/gsensor              0660   system     system
 
 #For invensense`s sensors
 /dev/mpu                  0666   system     system
