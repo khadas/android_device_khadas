@@ -468,6 +468,12 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     android.hardware.sensors@1.0-impl
 
+#gnss hal
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0 \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
+
 #thermal hal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \

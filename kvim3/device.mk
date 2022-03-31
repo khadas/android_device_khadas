@@ -116,6 +116,9 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
     device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
     device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
+# GPS HAL
+PRODUCT_PACKAGES += \
+    gps.amlogic
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
