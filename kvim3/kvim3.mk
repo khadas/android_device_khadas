@@ -406,13 +406,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.has.pppoe=true
 endif
 
-#################################################################################
-#
-#                                                DEFAULT LOWMEMORYKILLER CONFIG
-#
-#################################################################################
-BUILD_WITH_LOWMEM_COMMON_CONFIG := true
-
 BOARD_USES_USB_PM := true
 
 
@@ -422,7 +415,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=280
 endif
 
 #########################################################################
@@ -430,7 +423,7 @@ endif
 #                          Khadas Build Config
 #
 #########################################################################
-#BUILD_WITH_GAPPS_CONFIG := true
+BUILD_WITH_GAPPS_CONFIG := true
 
 #########################################################################
 #
@@ -502,14 +495,6 @@ PRODUCT_PACKAGES += \
 	libnnsdk \
         libnndemo
 endif
-#########################################################################
-#
-#                                     Auto Patch
-#                          must put in the end of mk files
-#########################################################################
-AUTO_PATCH_SHELL_FILE := vendor/amlogic/common/tools/auto_patch/auto_patch.sh
-AUTO_PATCH_AB := vendor/amlogic/common/tools/auto_patch/auto_patch_ab.sh
-HAVE_WRITED_SHELL_FILE := $(shell test -f $(AUTO_PATCH_SHELL_FILE) && echo yes)
 
 ifneq ($(TARGET_BUILD_LIVETV),true)
 TARGET_BUILD_LIVETV := false
@@ -523,9 +508,5 @@ ifeq ($(AB_OTA_UPDATER),true)
 $(warning $(shell ($(AUTO_PATCH_AB) $(PRODUCT_DIR))))
 endif
 endif
-
-PRODUCT_PACKAGES += \
-    Settings \
-    SettingsIntelligence
 
 NEED_ISP := true
