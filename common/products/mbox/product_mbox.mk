@@ -107,7 +107,8 @@ endif
 #Tvsettings
 PRODUCT_PACKAGES += \
     TvSettings \
-    DroidTvSettings
+    DroidTvSettings \
+    SchPwrOnOff
 
 
 #USB PM
