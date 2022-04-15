@@ -441,6 +441,13 @@ service watchdogd /sbin/watchdogd 10 20
     class core
     disabled
     seclabel u:r:watchdogd:s0
+
+service preinstall /system/bin/preinstall.sh
+    user root
+    group root
+    oneshot
+    seclabel u:r:preinstall:s0
+
 service rsdb /vendor/bin/rsdb.sh
        user root
        group root
@@ -506,6 +513,8 @@ service bugreport /system/bin/dumpstate -d -p -B -P -z \
     class main
     disabled
     oneshot
+on property:sys.boot_completed=1
+    start preinstall
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
