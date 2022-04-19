@@ -27,6 +27,40 @@ on boot
 on property:sys.boot_completed=1
     insmod /vendor/lib/modules/galcore.ko
     chmod 666 /dev/galcore
+
+#uboot env
+    chmod 666 /dev/block/env
+
+#rtc timer
+    chmod 666 /sys/class/rtc/rtc0/bootalarm
+
+#led
+    chmod 666 /sys/class/leds/sys_led/trigger
+    chmod 666 /sys/class/redled/mode
+
+#cooling fan
+    chmod 666 /sys/class/fan/mode
+    chmod 666 /sys/class/fan/level
+    chmod 666 /sys/class/fan/enable
+    chmod 666 /sys/class/fan/type
+    chmod 0666 /sys/class/mcu/ageing_test
+#wol
+    chmod 666 /sys/class/wol/enable
+
+#mac
+    chmod 666 /sys/class/efuse/mac
+
+#mcu
+    chmod 666 /sys/class/mcu/rst
+    chmod 666 /sys/class/mcu/portmode
+    chmod 666 /sys/class/mcu/ethernet_mode
+
+#hardware version
+    chmod 666 /sys/class/khadas/hwver
+
 #4G
     chmod 777 /dev/ttyUSB0
     chmod 777 /dev/ttyUSB2
+
+#cmdline
+    chmod 666 /proc/cmdline
