@@ -104,6 +104,9 @@ DEVICE_PACKAGE_OVERLAYS := \
 endif
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# GPS HAL
+PRODUCT_PACKAGES += \
+    gps.amlogic
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
