@@ -116,6 +116,11 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
     device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
     device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
+
+# Light HAL
+PRODUCT_PACKAGES += \
+    lights.amlogic
+
 # GPS HAL
 PRODUCT_PACKAGES += \
     gps.amlogic
