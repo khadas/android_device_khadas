@@ -98,6 +98,8 @@
     <!-- Keyguard component -->
     <string name="config_keyguardComponent" translatable="false">com.droidlogic/com.droidlogic.StubKeyguardService</string>
 
+    <bool name="config_wifi_dual_band_support">true</bool>
+
     <bool name="config_showNavigationBar">true</bool>
     <!-- disable wallpaper, which may consume too much boot time -->
     <!-- cannot disable wallpaper, com.android.settings will crash! -->
@@ -105,6 +107,6 @@
 
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">2.android.pool.ntp.org</string>
-	<!-- disable checkWallpaperAtBoot -->
+    <!-- disable checkWallpaperAtBoot -->
     <bool name="config_checkWallpaperAtBoot">false</bool>
 </resources>

@@ -80,6 +80,9 @@ PRODUCT_PACKAGES += \
     Launcher3
 endif
 
+PRODUCT_PACKAGES += \
+    setbootenv \
+    getbootenv
 #screencontrol
 PRODUCT_PACKAGES += \
     screencontrol \
@@ -110,6 +113,9 @@ PRODUCT_PACKAGES += \
     DroidTvSettings \
     SchPwrOnOff
 
+#Browser
+PRODUCT_PACKAGES += \
+    Lightning
 
 #USB PM
 PRODUCT_PACKAGES += \
