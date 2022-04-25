@@ -17,8 +17,8 @@ else
 KERNEL_DEVICETREE="t7_a311d2_an400_3g t7_a311d2_an400 t7_a311d2_an400_4g  t7_a311d2_an400_8g"
 fi
 DTBO_DEVICETREE=android_overlay_dt
-PRODUCT_DIRNAME=device/khadas/t7_an400
-BOARD_DEVICENAME=t7_an400
+PRODUCT_DIRNAME=device/khadas/kvim4
+BOARD_DEVICENAME=kvim4
 
 ENABLE_KASAN=false
 

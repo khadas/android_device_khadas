@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/files/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     device/khadas/$(PRODUCT_DIR)/files/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
-PRODUCT_CHARACTERISTICS := t7_an400,nosdcard
+PRODUCT_CHARACTERISTICS := kvim4,nosdcard
 ifeq ($(BOARD_COMPILE_ATV), false)
 PRODUCT_PACKAGE_OVERLAYS := \
     device/khadas/$(PRODUCT_DIR)/overlay

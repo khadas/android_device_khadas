@@ -13,7 +13,7 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
-LOCAL_PATH := device/khadas/t7_an400
+LOCAL_PATH := device/khadas/kvim4
 
 include $(LOCAL_PATH)/kernel_config_build.mk
 include device/khadas/common/factory.mk

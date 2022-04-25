@@ -21,7 +21,7 @@ ifneq ($(BOARD_COMPILE_ATV),false)
   BOARD_COMPILE_CTS := true
 endif
 
-PRODUCT_DIR := t7_an400
+PRODUCT_DIR := kvim4
 # For overlaying the google ATV default tv_core_hardware.xml, don't move
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
@@ -162,10 +162,10 @@ TARGET_WITH_MEDIA_EXT_LEVEL := 4
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=0
 
-PRODUCT_NAME := t7_an400
-PRODUCT_DEVICE := t7_an400
+PRODUCT_NAME := kvim4
+PRODUCT_DEVICE := kvim4
 PRODUCT_BRAND := Amlogic
-PRODUCT_MODEL := t7_an400
+PRODUCT_MODEL := kvim4
 PRODUCT_MANUFACTURER := Amlogic
 
 PRODUCT_TYPE := tv
