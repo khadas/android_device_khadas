@@ -13,10 +13,10 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
-LOCAL_PATH := device/amlogic/t7_an400
+LOCAL_PATH := device/khadas/t7_an400
 
 include $(LOCAL_PATH)/kernel_config_build.mk
-include device/amlogic/common/factory.mk
+include device/khadas/common/factory.mk
 
 #moved to INSTALLED_RADIOIMAGE_TARGET in factory.mk for secureboot
 #$(call add-radio-file,bootloader.img)

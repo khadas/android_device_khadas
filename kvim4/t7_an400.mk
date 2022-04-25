@@ -24,7 +24,7 @@ endif
 PRODUCT_DIR := t7_an400
 # For overlaying the google ATV default tv_core_hardware.xml, don't move
 PRODUCT_COPY_FILES += \
-    device/amlogic/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
+    device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
 
 $(call inherit-product, device/google/atv/products/atv_mainline_system.mk)
 
@@ -106,11 +106,11 @@ BOARD_HAS_ADTV := true
 
 #tuner
 TUNER_MODULE := cxd2856
-include device/amlogic/common/tuner/tuner.mk
+include device/khadas/common/tuner/tuner.mk
 
 #hdr10_tmo
 HDR10_TMO_MODULE := true
-include device/amlogic/common/video_algorithm/hdr10_tmo/hdr10_tmo.mk
+include device/khadas/common/video_algorithm/hdr10_tmo/hdr10_tmo.mk
 
 #dtvkit
 ifneq ($(TARGET_BUILD_IRDETO),true)
@@ -121,21 +121,21 @@ endif
 
 #dnlp
 DNLP_MODULE := true
-include device/amlogic/common/video_algorithm/dnlp/dnlp.mk
+include device/khadas/common/video_algorithm/dnlp/dnlp.mk
 
 #ldim_fw
 LDIM_FW_MODULE := true
-include device/amlogic/common/ldim/ldim.mk
+include device/khadas/common/ldim/ldim.mk
 
 #speech
 SPEECH_MODULE := true
-include device/amlogic/common/speech/speech.mk
+include device/khadas/common/speech/speech.mk
 
 BOARD_ENABLE_FAR_FIELD_AEC := true
 
-$(call inherit-product, device/amlogic/common/products/tv/product_tv.mk)
-$(call inherit-product, device/amlogic/$(PRODUCT_DIR)/device.mk)
-$(call inherit-product, device/amlogic/$(PRODUCT_DIR)/vendor_prop.mk)
+$(call inherit-product, device/khadas/common/products/tv/product_tv.mk)
+$(call inherit-product, device/khadas/$(PRODUCT_DIR)/device.mk)
+$(call inherit-product, device/khadas/$(PRODUCT_DIR)/vendor_prop.mk)
 $(call inherit-product-if-exists, vendor/amlogic/$(PRODUCT_DIR)/device-vendor.mk)
 
 #########################################################################
@@ -179,7 +179,7 @@ OTA_UP_PART_NUM_CHANGED := false
 
 PLATFORM_TDK_VERSION := 38
 BOARD_AML_SOC_TYPE ?= A311D2
-BOARD_AML_TDK_KEY_PATH := device/amlogic/common/tdk_keys/
+BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
 BUILD_WITH_AVB := true
 
 TARGET_BUILD_KERNEL_4_9 ?= false
@@ -239,7 +239,7 @@ include vendor/amlogic/common/wifi_bt/bluetooth/configs/bluetooth.mk
 #########################################################################
 BOARD_ALSA_AUDIO=tiny
 BOARD_HAVE_HARDWARE_EQDRC_AUGE := true
-include device/amlogic/common/audio.mk
+include device/khadas/common/audio.mk
 
 #########################################################################
 #
@@ -315,7 +315,7 @@ BOARD_USES_DYNAMIC_FINGERPRINT ?= true
 #                                     TB detect
 #
 #########################################################################
-$(call inherit-product, device/amlogic/common/tb_detect.mk)
+$(call inherit-product, device/khadas/common/tb_detect.mk)
 
 ifeq ($(AB_OTA_UPDATER),true)
 my_src_fstab := fstab.ab
@@ -330,16 +330,16 @@ endif
 my_dst_fstab := $(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.amlogic
 
 PRODUCT_COPY_FILES += \
-    device/amlogic/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic \
-    device/amlogic/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(my_dst_fstab)
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic \
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(my_dst_fstab)
 
 
-$(call inherit-product, device/amlogic/common/media.mk)
+$(call inherit-product, device/khadas/common/media.mk)
 
 GPU_HW_VERSION=r1p0
-include device/amlogic/common/gpu/gondul-user-arm64.mk
+include device/khadas/common/gpu/gondul-user-arm64.mk
 
-include device/amlogic/common/products/tv/t7/t7.mk
+include device/khadas/common/products/tv/t7/t7.mk
 #########################################################################
 #
 ##                                     Auto Patch

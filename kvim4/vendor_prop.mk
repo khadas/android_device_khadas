@@ -24,7 +24,7 @@
 # vendor_prop.mk defines the default prop values.
 # if change the default values, need define prop above.
 
-$(call inherit-product, device/amlogic/common/products/tv/t7/vendor_prop.mk)
+$(call inherit-product, device/khadas/common/products/tv/t7/vendor_prop.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.usehwmjpeg=true \
     ro.vendor.platform.omx=true
