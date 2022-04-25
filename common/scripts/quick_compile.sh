@@ -342,7 +342,7 @@ read_android_type() {
 # if no params compile userdebug
 ########################################################################################################################################################################
 compile_uboot() {
-    cd bootloader/uboot-repo
+    cd bootloader/uboot
 
     if [ $uboot_drm_type -eq 1 ]; then
         echo "${uboot_exec_aosp[platform_type]}"
@@ -371,26 +371,6 @@ print_uboot_info() {
     echo -e "Problem:"
     echo -e "source code update, need update bootloader\n"
     echo "Solution:"
-    cd bootloader/uboot-repo/bl2/bin/
-    echo "bl2       : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl30/bin/
-    echo "bl30      : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl30/src_ao/
-    echo "bl30 src  : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl31/bin/
-    echo "bl31      : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl31_1.3/bin/
-    echo "bl31_1.3  : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl32_3.8/bin/
-    echo "bl32_3.8  : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl33/v2015
-    echo "bl33      : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl33/v2019
-    echo "bl33_v2019: "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/fip/
-    echo "fip       : "$(git log --pretty=format:"%H" -1); cd ../../../
-    cd vendor/amlogic/common/tdk/
-    echo "tdk       : "$(git log --pretty=format:"%H" -1); cd ../../../../
     cd vendor/amlogic/common/tdk_v3/
     echo "tdk_v3    : "$(git log --pretty=format:"%H" -1); cd ../../../../
     echo -e;
