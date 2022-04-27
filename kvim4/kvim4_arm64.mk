@@ -21,7 +21,8 @@
 ifneq ($(BOARD_COMPILE_ATV),false)
   BOARD_COMPILE_CTS := true
 endif
-
+BOARD_COMPILE_ATV := false
+BOARD_COMPILE_CTS := false
 PRODUCT_DIR := kvim4
 # For android 64 bit system
 ANDROID_BUILD_TYPE = 64
