@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form name="Bluestretch_AV_PAL" platform="txlx" commands="">
+<Group num="0" val="0">
+<Page tab_title="Blue Stretch" layout="10x4">
+<Control ui_type="checkbox" name="bluestretch_enable" range="0~1" addr="0x1d9c" mask="31:31" dst="U" desc="bluestretch enable" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="blue_stretch_en_sel" range="0~1" addr="0x1d9c" mask="30:30" dst="U" desc="blue stretch enable selection, 0: use the enable of the current frame 1: use the enable of the next frame" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="bluestretch_cb_inc" range="0~1" addr="0x1d9c" mask="29:29" dst="U" desc="cb value increase or decrease selection, 0: cb minus delta value 1: cb plus delta value" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="bluestretch_cr_inc" range="0~1" addr="0x1d9c" mask="28:28" dst="U" desc="cr value increase or decrease selection, 0: cr minus delta value 1: cr plus delta value" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_gain" range="0~255" addr="0x1d9c" mask="23:16" dst="U" desc="blue_stretch_gain" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_gain_cb4cr" range="0~255" addr="0x1d9c" mask="15:8" dst="U" desc="cb gain instead of cr" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_luma_high" range="0~255" addr="0x1d9c" mask="7:0" dst="U" desc="blue_stretch_luma_high" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="title" name="" range="" addr="" mask="" dst="" desc="" default="" value="" cmd=""/>
+<Control ui_type="slider" name="bluestretch_error_crp" range="0~31" addr="0x1d9d" mask="31:27" dst="U" desc="cr positive" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="blue_stretch_error_sign[3]" range="0~1" addr="0x1d9c" mask="27:27" dst="U" desc="blue_stretch_error_sign[3]" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_error_crp_inv" range="0~2047" addr="0x1d9d" mask="26:16" dst="U" desc="crp_inv={blue_stretch_error_sign[3],bluestretch_error_crp_inv}" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="title" name="" range="" addr="" mask="" dst="" desc="" default="" value="" cmd=""/>
+<Control ui_type="slider" name="bluestretch_error_crn" range="0~31" addr="0x1d9d" mask="15:11" dst="U" desc="cr negative" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="blue_stretch_error_sign[2]" range="0~1" addr="0x1d9c" mask="26:26" dst="U" desc="blue_stretch_error_sign[2]" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_error_crn_inv" range="0~2047" addr="0x1d9d" mask="10:0" dst="U" desc="crn_inv={blue_stretch_error_sign[2],bluestretch_error_crn_inv}" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="title" name="" range="" addr="" mask="" dst="" desc="" default="" value="" cmd=""/>
+<Control ui_type="slider" name="bluestretch_error_cbp" range="0~31" addr="0x1d9e" mask="31:27" dst="U" desc="cb positive" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="blue_stretch_error_sign[1]" range="0~1" addr="0x1d9c" mask="25:25" dst="U" desc="blue_stretch_error_sign[1]" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_error_cbp_inv" range="0~2047" addr="0x1d9e" mask="26:16" dst="U" desc="cbp_inv={blue_stretch_error_sign[1],bluestretch_error_cbp_inv}" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="title" name="" range="" addr="" mask="" dst="" desc="" default="" value="" cmd=""/>
+<Control ui_type="slider" name="bluestretch_error_cbn" range="0~31" addr="0x1d9e" mask="15:11" dst="U" desc="cb negative" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="checkbox" name="blue_stretch_error_sign[0]" range="0~1" addr="0x1d9c" mask="24:24" dst="U" desc="blue_stretch_error_sign[0]" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="bluestretch_error_cbn_inv" range="0~2047" addr="0x1d9e" mask="10:0" dst="U" desc="crp_inv={blue_stretch_error_sign[0],bluestretch_error_cbn_inv}" default="0" value="0" cmd="common:2,0xff000000"/>
+</Page>
+</Group>
+</Form>
+

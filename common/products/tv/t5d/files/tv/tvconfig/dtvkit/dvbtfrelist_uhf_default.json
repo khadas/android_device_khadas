@@ -1,0 +1,298 @@
+{
+    "frequencylist": [
+        {
+            "name": "ch21",
+            "bandwidth": "8MHZ",
+            "frequency": "474000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch22",
+            "bandwidth": "8MHZ",
+            "frequency": "482000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch23",
+            "bandwidth": "8MHZ",
+            "frequency": "490000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch24",
+            "bandwidth": "8MHZ",
+            "frequency": "498000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch25",
+            "bandwidth": "8MHZ",
+            "frequency": "506000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch26",
+            "bandwidth": "8MHZ",
+            "frequency": "514000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch27",
+            "bandwidth": "8MHZ",
+            "frequency": "522000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch28",
+            "bandwidth": "8MHZ",
+            "frequency": "530000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch29",
+            "bandwidth": "8MHZ",
+            "frequency": "538000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch30",
+            "bandwidth": "8MHZ",
+            "frequency": "546000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch31",
+            "bandwidth": "8MHZ",
+            "frequency": "554000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch32",
+            "bandwidth": "8MHZ",
+            "frequency": "562000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch33",
+            "bandwidth": "8MHZ",
+            "frequency": "570000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch34",
+            "bandwidth": "8MHZ",
+            "frequency": "578000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch35",
+            "bandwidth": "8MHZ",
+            "frequency": "586000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch36",
+            "bandwidth": "8MHZ",
+            "frequency": "594000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch37",
+            "bandwidth": "8MHZ",
+            "frequency": "602000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch38",
+            "bandwidth": "8MHZ",
+            "frequency": "610000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch39",
+            "bandwidth": "8MHZ",
+            "frequency": "618000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch40",
+            "bandwidth": "8MHZ",
+            "frequency": "626000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch41",
+            "bandwidth": "8MHZ",
+            "frequency": "634000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch42",
+            "bandwidth": "8MHZ",
+            "frequency": "642000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch43",
+            "bandwidth": "8MHZ",
+            "frequency": "650000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch44",
+            "bandwidth": "8MHZ",
+            "frequency": "658000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch45",
+            "bandwidth": "8MHZ",
+            "frequency": "666000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch46",
+            "bandwidth": "8MHZ",
+            "frequency": "674000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch47",
+            "bandwidth": "8MHZ",
+            "frequency": "682000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch48",
+            "bandwidth": "8MHZ",
+            "frequency": "690000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch49",
+            "bandwidth": "8MHZ",
+            "frequency": "698000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch50",
+            "bandwidth": "8MHZ",
+            "frequency": "706000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch51",
+            "bandwidth": "8MHZ",
+            "frequency": "714000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch52",
+            "bandwidth": "8MHZ",
+            "frequency": "722000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch53",
+            "bandwidth": "8MHZ",
+            "frequency": "730000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch54",
+            "bandwidth": "8MHZ",
+            "frequency": "738000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch55",
+            "bandwidth": "8MHZ",
+            "frequency": "746000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch56",
+            "bandwidth": "8MHZ",
+            "frequency": "754000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch57",
+            "bandwidth": "8MHZ",
+            "frequency": "762000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch58",
+            "bandwidth": "8MHZ",
+            "frequency": "770000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch59",
+            "bandwidth": "8MHZ",
+            "frequency": "778000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch60",
+            "bandwidth": "8MHZ",
+            "frequency": "786000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch61",
+            "bandwidth": "8MHZ",
+            "frequency": "794000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch62",
+            "bandwidth": "8MHZ",
+            "frequency": "802000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch63",
+            "bandwidth": "8MHZ",
+            "frequency": "810000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch64",
+            "bandwidth": "8MHZ",
+            "frequency": "818000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch65",
+            "bandwidth": "8MHZ",
+            "frequency": "826000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch66",
+            "bandwidth": "8MHZ",
+            "frequency": "834000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch67",
+            "bandwidth": "8MHZ",
+            "frequency": "842000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch68",
+            "bandwidth": "8MHZ",
+            "frequency": "850000000",
+            "cofdmmode": "udef"
+        },
+        {
+            "name": "ch69",
+            "bandwidth": "8MHZ",
+            "frequency": "858000000",
+            "cofdmmode": "udef"
+        }
+    ]
+}

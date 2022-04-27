@@ -1,0 +1,47 @@
+<mixer>
+  <ctl name="HDMIIN Audio output mode" value="I2S" />
+  <ctl name="HDMI ARC Switch" value="0" />
+
+  <path name="speaker">
+   <ctl name="AMP Mute" value="1" />
+   <ctl name="AMP1 Mute" value="1" />
+  </path>
+
+  <path name="speaker_off">
+   <ctl name="AMP Mute" value="0" />
+   <ctl name="AMP1 Mute" value="0" />
+  </path>
+
+  <path name="hdmi_arc">
+   <ctl name="HDMI ARC Switch" value="1" />
+  </path>
+
+  <path name="hdmi_arc_off">
+   <ctl name="HDMI ARC Switch" value="0" />
+  </path>
+
+  <path name="spdif_on">
+   <ctl name="Audio spdif mute" value="0" />
+  </path>
+
+  <path name="spdif_off">
+   <ctl name="Audio spdif mute" value="1" />
+  </path>
+
+  <path name="headphone">
+  </path>
+
+  <path name="main_mic">
+  </path>
+
+  <path name="headset-mic">
+  </path>
+
+  <path name="line_in">
+    <ctl name="TDMIN_B source select" value="acodec_adc" />
+  </path>
+
+  <path name="hdmirx_in">
+    <ctl name="TDMIN_B source select" value="hdmirx" />
+  </path>
+</mixer>

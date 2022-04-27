@@ -1,0 +1,365 @@
+{
+    "countrylist": [
+        {
+            "countrycode": "def",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid",
+            "frequencylist": "dvbcfrelist_default.json"
+        },
+        {
+            "countrycode": "aus",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "350",
+            "LastUnanllocLcnx": "399",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "aut",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "bel",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "blr",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "chi",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "cri",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "cze",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "deu",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "dma",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "dnk",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "ecu",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "esp",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "fin",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "fra",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "gbr",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "1000",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "hrv",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "isl",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "ita",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "850",
+            "LastUnanllocLcnx": "999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "nor",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "0",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "nzl",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "rus",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid",
+            "frequencylist": "dvbcfrelist_rus.json",
+            "operatorlist": "rus_operators"
+        },
+        {
+            "countrycode": "srb",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "swe",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "tur",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "899",
+            "tidy-db": "tsid,onid"
+        },
+        {
+            "countrycode": "ukr",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1",
+            "FirstUnanllocLcn": "800",
+            "LastUnanllocLcnx": "9999",
+            "tidy-db": "tsid,onid"
+        }
+    ],
+    "rus_operators": [
+        {
+            "countrycode": "rus",
+            "name": "Onlime",
+            "code": "12",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "306000",
+            "symbolrate": "0",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "Akado",
+            "code": "13",
+            "modulation": "auto",
+            "networkid": "41024",
+            "frequency": "330000",
+            "symbolrate": "6875",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "Dom.ru",
+            "code": "15",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "Rostelecom",
+            "code": "29",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "MST",
+            "code": "28",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "Kabinet TV",
+            "code": "30",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1"
+        },
+        {
+            "countrycode": "rus",
+            "name": "Other",
+            "code": "0",
+            "modulation": "auto",
+            "networkid": "0",
+            "frequency": "0",
+            "symbolrate": "0",
+            "LCN": "1"
+        }
+    ]
+}

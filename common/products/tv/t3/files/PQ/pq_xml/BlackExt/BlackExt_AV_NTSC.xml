@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form name="BlackExt_AV_NTSC" platform="txlx" commands="">
+<Group num="0" val="0">
+<Page tab_title="Black Extension" layout="4x4">
+<Control ui_type="checkbox" name="blackext_enable" range="0~1" addr="0x1da1" mask="3:3" dst="U" desc="black enxtension enable" default="0" value="0" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="blackext_start" range="0~255" addr="0x1d80" mask="31:24" dst="U" desc="" default="70" value="70" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="blackext_slope1" range="0~255" addr="0x1d80" mask="23:16" dst="U" desc="" default="33" value="33" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="blackext_mid_point" range="0~255" addr="0x1d80" mask="15:8" dst="U" desc="" default="32" value="32" cmd="common:2,0xff000000"/>
+<Control ui_type="slider" name="blackext_slope2" range="0~255" addr="0x1d80" mask="7:0" dst="U" desc="" default="28" value="28" cmd="common:2,0xff000000"/>
+</Page>
+</Group>
+</Form>
+

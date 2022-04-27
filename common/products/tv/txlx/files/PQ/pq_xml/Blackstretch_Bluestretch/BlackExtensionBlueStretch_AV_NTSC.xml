@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form name="BlackExtensionBlueStretch_AV_NTSC" platform="txlx" commands="">
+<Group num="0" val="0">
+<Page tab_title="" layout="10x4">
+<Control ui_type="checkbox" name="demo_blackext_enable" range="0~1" addr="0x1da1" mask="3:3" dst="U" desc="demo black enxtension enable" default="0" value="1" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="blackext_start" range="0~255" addr="0x1d80" mask="31:24" dst="U" desc="" default="0" value="80" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="blackext_slope1" range="0~255" addr="0x1d80" mask="23:16" dst="U" desc="" default="0" value="34" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="blackext_mid_point" range="0~255" addr="0x1d80" mask="15:8" dst="U" desc="" default="0" value="32" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="blackext_slope2" range="0~255" addr="0x1d80" mask="7:0" dst="U" desc="" default="0" value="26" cmd="common:2,0xff900000"/>
+<Control ui_type="checkbox" name="demo_chroma_coring_enable" range="0~1" addr="0x1da1" mask="4:4" dst="U" desc="demo chroma coring enable" default="0" value="1" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="chroma_coring_y_threshold" range="0~4095" addr="0x1da0" mask="25:16" dst="U" desc="Bypass chroma coring if Y less than this threshold" default="0" value="512" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="chroma_coring_threshold" range="0~255" addr="0x1da0" mask="15:8" dst="U" desc="Chroma coring threshold" default="0" value="14" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="chroma_coring_slope" range="0~15" addr="0x1da0" mask="3:0" dst="U" desc="Chroma coring slope" default="0" value="13" cmd="common:2,0xff900000"/>
+<Control ui_type="checkbox" name="demo_bluestrch_enable" range="0~1" addr="0x1da1" mask="16:16" dst="U" desc="demo bluestretch enable" default="0" value="1" cmd="common:2,0xff900000"/>
+<Control ui_type="checkbox" name="bluestrch_cb_inc" range="0~1" addr="0x1d9c" mask="29:29" dst="U" desc="blue_stretch_cb_inc" default="0" value="1" cmd="common:2,0xff900000"/>
+<Control ui_type="checkbox" name="bluestrch_cr_inc" range="0~1" addr="0x1d9c" mask="28:28" dst="U" desc="blue_stretch_cr_inc" default="0" value="0" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_gain" range="0~255" addr="0x1d9c" mask="23:16" dst="U" desc="blue_stretch_gain" default="0" value="16" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_gain_cb4cr" range="0~255" addr="0x1d9c" mask="15:8" dst="U" desc="blue_stretch_gain_cb4cr" default="0" value="8" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_luma_high" range="0~255" addr="0x1d9c" mask="7:0" dst="U" desc="blue_stretch_luma_high" default="0" value="96" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_error_crp" range="0~31" addr="0x1d9d" mask="31:27" dst="U" desc="blue_stretch_error_crp" default="0" value="16" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_error_crn" range="0~31" addr="0x1d9d" mask="15:11" dst="U" desc="blue_stretch_error_crn" default="0" value="16" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_error_cbp" range="0~31" addr="0x1d9e" mask="31:27" dst="U" desc="blue_stretch_error_cbp" default="0" value="8" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="bluestrch_error_cbn" range="0~31" addr="0x1d9e" mask="15:11" dst="U" desc="blue_stretch_error_cbn" default="0" value="8" cmd="common:2,0xff900000"/>
+<Control ui_type="checkbox" name="center_bar_enable" range="0~1" addr="0x1da3" mask="31:31" dst="U" desc="Center bar enable" default="0" value="0" cmd="common:2,0xff900000"/>
+<Control ui_type="slider" name="demo_left_top_scrn_width" range="0~4095" addr="0x1da2" mask="11:0" dst="U" desc="demo left or top screen width" default="0" value="8" cmd="common:2,0xff900000"/>
+</Page>
+</Group>
+</Form>
+

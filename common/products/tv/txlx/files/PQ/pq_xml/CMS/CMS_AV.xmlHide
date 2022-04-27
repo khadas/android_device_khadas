@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form name="CMS_AV" platform="txlx" commands="">
+<Group num="0" val="">
+<Page tab_title="CM_VISUAL_GUIDE" layout="50x3">
+<Control ui_type="reg" name="CMS_en"           range="0~255" addr="0" mask="" dst="U" desc="" default="" value="0" cmd=""/>
+<Control ui_type="reg" name="CMS_sat_purple"   range="-100~127" addr="1" mask="" dst="U" desc="" default="" value="30" cmd=""/>
+<Control ui_type="reg" name="CMS_sat_red"      range="-100~127" addr="2" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_sat_skin"     range="-100~127" addr="3" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_sat_green"    range="-100~127" addr="4" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_sat_yellow"   range="-100~127" addr="5" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_sat_cyan"     range="-100~127" addr="6" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_sat_blue"     range="-100~127" addr="7" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_purple"   range="-127~127" addr="8" mask="" dst="U" desc="" default="" value="10" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_red"      range="-127~127" addr="9" mask="" dst="U" desc="" default="" value="30" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_skin"     range="-127~127" addr="10" mask="" dst="U" desc="" default="" value="-60" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_green"    range="-127~127" addr="11" mask="" dst="U" desc="" default="" value="50" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_yellow"   range="-127~127" addr="12" mask="" dst="U" desc="" default="" value="50" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_cyan"     range="-127~127" addr="13" mask="" dst="U" desc="" default="" value="40" cmd=""/> 
+<Control ui_type="reg" name="CMS_hue_blue"     range="-127~127" addr="14" mask="" dst="U" desc="" default="" value="-40" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_purple"  range="-15~15" addr="15" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_red"     range="-15~15" addr="16" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_skin"    range="-15~15" addr="17" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_green"   range="-15~15" addr="18" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_yellow"  range="-15~15" addr="19" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_cyan"    range="-15~15" addr="20" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+<Control ui_type="reg" name="CMS_luma_blue"    range="-15~15" addr="21" mask="" dst="U" desc="" default="" value="0" cmd=""/> 
+
+</Page>
+</Group>
+
+</Form>
+

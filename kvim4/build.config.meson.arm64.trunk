@@ -1,0 +1,39 @@
+. common/build.config.common
+. common/build.config.aarch64
+. device/amlogic/common/kernelbuild/build.config.common
+
+DEFCONFIG=meson64_a64_defconfig
+EXTRA_CMDS=''
+
+#It is a must to set GPU driver's version
+GPU_DRV_VERSION=r25p0
+
+if [[ -n ${BOARD_COMPILE_HDMITX_ONLY} && \
+         `echo "${BOARD_COMPILE_HDMITX_ONLY}" \
+         |awk '{print length($0)}'` -eq 4 ]];then
+echo "set kernel device tree to t7 hdmi only"
+KERNEL_DEVICETREE=t7_a311d2_an400_hdmitx_only
+else
+KERNEL_DEVICETREE="t7_a311d2_an400_3g t7_a311d2_an400 t7_a311d2_an400_4g  t7_a311d2_an400_8g"
+fi
+DTBO_DEVICETREE=android_overlay_dt
+PRODUCT_DIRNAME=device/amlogic/t7_an400
+BOARD_DEVICENAME=t7_an400
+
+ENABLE_KASAN=false
+
+FILES=""
+
+EXT_MODULES="
+vendor/amlogic/common/wifi_bt/wifi/configs/5_4
+vendor/amlogic/common/wifi_bt/bluetooth/configs/5_4
+vendor/amlogic/common/gpu/bifrost
+vendor/amlogic/common/tdk_linuxdriver
+hardware/amlogic/media_modules
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/iq
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/lens
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/sensor
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/v4l2_dev
+"
+
+STOP_SHIP_TRACEPRINTK=1
