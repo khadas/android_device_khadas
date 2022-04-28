@@ -31,3 +31,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.hdmi.device_type=0
+#adb
+PRODUCT_PROPERTY_OVERRIDES += \
+    service.adb.tcp.port=5555
