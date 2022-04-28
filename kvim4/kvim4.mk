@@ -201,7 +201,8 @@ PRODUCT_PACKAGES += \
     KTools \
     SchPwrOnOff \
     AptoideTV \
-    DocumentsUI
+    DocumentsUI \
+    LatinIME
 
 ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
 
