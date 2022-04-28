@@ -167,7 +167,12 @@
 /dev/tee0               		u:object_r:drm_device:s0
 /dev/teepriv0           		u:object_r:drm_device:s0
 /dev/ttyS[1-2]      			u:object_r:hci_attach_dev:s0
-/dev/ttyUSB.*				u:object_r:radio_device:s0
+/dev/ttyUSB.*				    u:object_r:radio_device:s0
+/dev/mhi_.*                               u:object_r:radio_device:s0
+/dev/qcqmi.*				    u:object_r:radio_device:s0
+/dev/cdc-wdm.*				    u:object_r:radio_device:s0
+/vendor/bin/hw/rild				u:object_r:rild_exec:s0
+/dev/socket/rildOemHook         u:object_r:rild_socket:s0
 /dev/tvafe0             		u:object_r:video_device:s0
 /dev/vdin0              		u:object_r:video_device:s0
 /dev/vdin1              		u:object_r:video_device:s0

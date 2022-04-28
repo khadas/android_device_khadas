@@ -56,3 +56,10 @@ on property:sys.boot_completed=1
 on property:init.svc.bootanim=stopped
     write /sys/class/codec_mm/config "codec_mm.scatter.reserved_block_mm_M=0"
     write /sys/class/codec_mm/config "codec_mm.scatter.no_alloc_from_sys=1"
+
+# add EM06 4G
+service ril-daemon /vendor/bin/hw/rild -l /vendor/lib/libquectel-ril.so
+    class main
+    user root
+    group radio cache inet misc audio sdcard_rw log
+    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
