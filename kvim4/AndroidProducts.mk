@@ -15,14 +15,10 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/kvim4.mk \
     $(LOCAL_DIR)/kvim4_arm64.mk \
 
 
 COMMON_LUNCH_CHOICES := \
-    kvim4-eng \
-    kvim4-user \
-    kvim4-userdebug \
     kvim4_arm64-eng \
     kvim4_arm64-user \
     kvim4_arm64-userdebug

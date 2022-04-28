@@ -44,6 +44,8 @@ endif
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
 
+BUILD_WITH_GAPPS_CONFIG=false
+
 $(call inherit-product, device/google/atv/products/atv_mainline_system.mk)
 
 # GTVS
@@ -177,13 +179,16 @@ BUILD_WITH_AML_MP := true
 TARGET_WITH_MEDIA_EXT_LEVEL := 4
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.hdmi.device_type=0
+        ro.hdmi.device_type=4
 
 PRODUCT_NAME := kvim4_arm64
 PRODUCT_DEVICE := kvim4
 PRODUCT_BRAND := Amlogic
 PRODUCT_MODEL := kvim4
 PRODUCT_MANUFACTURER := Amlogic
+
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.display.id=VIM4_R_V$(shell date +%y%m%d)
 
 PRODUCT_TYPE := tv
 # Non updatable APEX
@@ -201,6 +206,28 @@ PLATFORM_TDK_VERSION := 38
 BOARD_AML_SOC_TYPE ?= A311D2
 BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
 BUILD_WITH_AVB := true
+PRODUCT_PACKAGES += lights
+
+#KVIM4 app
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep \
+    FactoryTest \
+    Settings \
+    KSettings \
+    KTools \
+    SchPwrOnOff \
+    AptoideTV \
+    DocumentsUI \
+    LatinIME
+
+ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
+
+else
+PRODUCT_PACKAGES += TTS
+PRODUCT_COPY_FILES += \
+	device/khadas/kvim4/TTS_so/libtts_android.so:system/lib64/libtts_android.so \
+	device/khadas/kvim4/TTS_so/libtts_android_neon.so:system/lib64/libtts_android_neon.so
+endif
 
 TARGET_BUILD_KERNEL_4_9 ?= false
 
@@ -395,3 +422,19 @@ else
 $(warning $(SCRIPT_RESULT))
 endif
 endif
+
+# add EM06 4G
+PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
+PRODUCT_PACKAGES += \
+    rild \
+    dhcptool \
+    TeleService \
+    TelephonyProvider
+
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim4/ril/libquectel-ril/chat:system/bin/chat \
+    device/khadas/kvim4/ril/libquectel-ril/libquectel-ril.so:vendor/lib/libquectel-ril.so \
+    device/khadas/kvim4/ril/libquectel-ril/ip-up:system/etc/ppp/ip-up \
+    device/khadas/kvim4/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
+    device/khadas/kvim4/ril/apns-conf.xml:system/etc/apns-conf.xml
+#add end
