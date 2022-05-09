@@ -34,7 +34,7 @@ DEFAULT_MEDIA_KERNEL_MODULES := \
 	$(PRODUCT_OUT)/obj/lib_vendor/amvdec_av1.ko \
 	$(PRODUCT_OUT)/obj/lib_vendor/amvdec_av1_v4l.ko \
 	$(PRODUCT_OUT)/obj/lib_vendor/video_framerate_adapter.ko \
-	$(PRODUCT_OUT)/obj/lib_vendor/media_sync.ko
+	$(PRODUCT_OUT)/obj/lib_vendor/media_sync.ko \
 	$(PRODUCT_OUT)/obj/lib_vendor/pts_server.ko
 ifneq ("$(wildcard $(PRODUCT_OUT)/obj/lib_vendor/amvenc_multi.ko)","")
     DEFAULT_MEDIA_KERNEL_MODULES += $(PRODUCT_OUT)/obj/lib_vendor/amvenc_multi.ko
