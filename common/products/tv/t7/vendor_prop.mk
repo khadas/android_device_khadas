@@ -194,7 +194,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.hwc.lcdpath=1
+    persist.vendor.hwc.lcdpath=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sys.hdmionly=true
