@@ -122,7 +122,7 @@
                 </mixPort>
                 <mixPort name="built-in mic" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="16000"
+                             samplingRates="16000,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
                 <mixPort name="ble_in" role="sink">
