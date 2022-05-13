@@ -32,6 +32,7 @@
   </path>
 
   <path name="main_mic">
+    <ctl name="TDMIN_B source select" value="acodec_adc" />
   </path>
 
   <path name="headset-mic">
