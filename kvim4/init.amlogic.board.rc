@@ -53,10 +53,6 @@ on property:ro.boot.oem.key1=*
 on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
 
-on property:init.svc.bootanim=stopped
-    write /sys/class/codec_mm/config "codec_mm.scatter.reserved_block_mm_M=0"
-    write /sys/class/codec_mm/config "codec_mm.scatter.no_alloc_from_sys=1"
-
 # add EM06 4G
 service ril-daemon /vendor/bin/hw/rild -l /vendor/lib/libquectel-ril.so
     class main
