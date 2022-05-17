@@ -130,6 +130,8 @@ $(call inherit-product, device/khadas/common/products/tv/t7/device.mk)
 #Dolby MS12 2.4 Decryption
 include device/khadas/common/dolby_ms12/dolby_ms12.mk
 
+PRODUCT_PROPERTY_OVERRIDES += ro.vendor.ethernet_settings=true
+
 ifeq ($(BOARD_USES_DYNAMIC_FINGERPRINT),true)
 PRODUCT_OEM_PROPERTIES := ro.product.name
 PRODUCT_OEM_PROPERTIES += ro.product.brand
