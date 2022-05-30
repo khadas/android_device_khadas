@@ -47,8 +47,8 @@ PRODUCT_PACKAGES += \
     utility_busybox
 
 # LiveTv
-PRODUCT_PACKAGES += \
-    DroidLiveTvSettings
+# PRODUCT_PACKAGES += \
+#     DroidLiveTvSettings
 endif
 
 # DTVKit
@@ -82,8 +82,8 @@ PRODUCT_PACKAGES += \
     screencatch
 
 #Tvsettings
-PRODUCT_PACKAGES += \
-    DroidTvSettings
+#PRODUCT_PACKAGES += \
+#    DroidTvSettings
 
 ifneq ($(BOARD_COMPILE_ATV), false)
 PRODUCT_PACKAGES += \
