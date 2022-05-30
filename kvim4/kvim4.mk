@@ -181,7 +181,7 @@ TARGET_WITH_MEDIA_EXT_LEVEL := 4
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=4
 
-PRODUCT_NAME := kvim4_arm64
+PRODUCT_NAME := kvim4
 PRODUCT_DEVICE := kvim4
 PRODUCT_BRAND := Amlogic
 PRODUCT_MODEL := kvim4
