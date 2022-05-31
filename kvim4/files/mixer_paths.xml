@@ -1,5 +1,5 @@
 <mixer>
-  <ctl name="HDMIIN Audio output mode" value="I2S" />
+  <ctl name="HDMIIN Audio output mode" value="SPDIF" />
   <ctl name="HDMI ARC Switch" value="0" />
 
   <path name="speaker">
@@ -43,6 +43,6 @@
   </path>
 
   <path name="hdmirx_in">
-    <ctl name="TDMIN_B source select" value="hdmirx" />
+    <!--ctl name="TDMIN_B source select" value="hdmirx" /-->
   </path>
 </mixer>
