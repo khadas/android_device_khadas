@@ -188,7 +188,7 @@ PRODUCT_MODEL := kvim4
 PRODUCT_MANUFACTURER := Amlogic
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.build.display.id=VIM4_R_V$(shell date +%y%m%d)
+        ro.build.display.id=vim4_android11_64bit_v$(shell date +%y%m%d)
 
 PRODUCT_TYPE := tv
 # Non updatable APEX
