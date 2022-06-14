@@ -40,6 +40,11 @@ $(call inherit-product, device/khadas/common/dynamic_zygote_seondary/dynamic_zyg
 endif
 endif
 
+$(shell python device/khadas/kvim4/auto_generator.py preinstall)
+-include device/khadas/kvim4/preinstall/preinstall.mk
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim4/preinstall/preinstall.sh:system/bin/preinstall.sh
+
 # For overlaying the google ATV default tv_core_hardware.xml, don't move
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
@@ -216,7 +221,6 @@ PRODUCT_PACKAGES += \
     KSettings \
     KTools \
     SchPwrOnOff \
-    AptoideTV \
     DocumentsUI \
     LatinIME
 
