@@ -36,5 +36,6 @@
     <feature name="android.software.autofill" />
 
     <feature name="android.software.cts" />
+    <feature name="android.software.print" />
 
 </permissions>
