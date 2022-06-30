@@ -58,7 +58,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 # Low memory platform
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.config.low_ram=true \
     ro.vendor.platform.support.dolbyvision=false
 
 #the prop is used for enable or disable
@@ -71,7 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 #Dolby DD+ decoder option
 #this prop to for videoplayer display the DD+/DD icon when playback
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.vendor.platform.support.dolby=true
+    ro.vendor.platform.support.dolby=false
 
 #DTS decoder option
 #display dts icon when playback

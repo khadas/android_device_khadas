@@ -425,13 +425,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Third_party_apk_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/Third_party_apk_camera.xml \
 
 include device/khadas/common/software.mk
-ifeq ($(TARGET_BUILD_GOOGLE_ATV),true)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120
-else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=280
-endif
+
 
 #########################################################################
 #
