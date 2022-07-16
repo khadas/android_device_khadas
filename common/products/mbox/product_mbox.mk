@@ -77,7 +77,9 @@ PRODUCT_PACKAGES += \
 
 #Launcher3
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3 \
+    FactoryTest
+
 endif
 
 PRODUCT_PACKAGES += \
