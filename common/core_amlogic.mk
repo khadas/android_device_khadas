@@ -277,6 +277,10 @@ PRODUCT_PACKAGES += \
     screen_source.amlogic \
     sensors.amlogic
 
+#add device owner feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.device_admin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.device_admin.xml
+
 #sensor hal
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
