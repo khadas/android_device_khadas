@@ -8,18 +8,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
     debug.sf.vsync_reactor=0
 
-# config of surfaceflinger
-ifeq ($(PRODUCT_SUPPORT_4K_UI), true)
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.surface_flinger.max_graphics_width=3840 \
-    ro.surface_flinger.max_graphics_height=2160 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-else
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.surface_flinger.max_graphics_width=1920 \
-    ro.surface_flinger.max_graphics_height=1080 \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-endif
 
 PRODUCT_PRODUCT_PROPERTIES += \
     camera.disable_zsl_mode=1
