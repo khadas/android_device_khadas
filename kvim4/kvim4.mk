@@ -437,7 +437,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/khadas/kvim4/ril/libquectel-ril/chat:system/bin/chat \
-    device/khadas/kvim4/ril/libquectel-ril/libquectel-ril.so:vendor/lib/libquectel-ril.so \
+    device/khadas/kvim4/ril/libquectel-ril/libquectel-ril.so:vendor/lib64/libquectel-ril.so \
     device/khadas/kvim4/ril/libquectel-ril/ip-up:system/etc/ppp/ip-up \
     device/khadas/kvim4/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
     device/khadas/kvim4/ril/apns-conf.xml:system/etc/apns-conf.xml
