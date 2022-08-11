@@ -154,7 +154,9 @@ INSTALLED_FIRMWARE_TARGET := \
 $(INSTALLED_FIRMWARE_TARGET): $(SOURCE_FIRMWARE_FILES)
 	@echo "cp kernel modules"
 	mkdir -p $(PRODUCT_OUT)/vendor/lib/firmware/video
+ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
 	cp $(PREBUILT_KERNEL_PATH)/lib/firmware/video/checkmsg $(PRODUCT_OUT)/vendor/lib/firmware/video/
+endif
 ifeq ($(BOARD_AML_SOC_TYPE),)
 	cp $(PREBUILT_KERNEL_PATH)/lib/firmware/video/*.bin $(PRODUCT_OUT)/vendor/lib/firmware/video/
  else
