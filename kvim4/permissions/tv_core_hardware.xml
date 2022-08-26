@@ -24,11 +24,12 @@
     <feature name="android.hardware.location" />
     <feature name="android.hardware.location.network" />
     <feature name="android.hardware.screen.landscape" />
-    <feature name="android.hardware.type.television" />
+    <!--feature name="android.hardware.type.television" /-->
 
     <feature name="android.software.backup" />
-    <feature name="android.software.leanback" />
+    <!--feature name="android.software.leanback" /-->
     <feature name="android.software.leanback_only" />
+    <feature name="android.software.live_tv" />
     <feature name="android.software.picture_in_picture" notLowRam="true" />
     <feature name="android.software.activities_on_secondary_displays" notLowRam="true" />
     <feature name="android.software.voice_recognizers" notLowRam="true" />
