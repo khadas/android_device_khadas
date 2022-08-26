@@ -15,14 +15,13 @@
 #
 # Generic key layout file for full alphabetic US English PC style external keyboards.
 #
-# This file is intentionally very generic and is intended to support a broad range of keyboards.
+# This file is intentionally very generic and is intended to support a broad rang of keyboards.
 # Do not edit the generic key layout to support a specific keyboard; instead, create
 # a new key layout file with the required keyboard configuration.
 #
 
-
 key 116   POWER
-key 466   TV_INPUT
+key usage 0x0c01bb TV_INPUT
 key 2     1
 key 3     2
 key 4     3
@@ -32,7 +31,7 @@ key 7     6
 key 8     7
 key 9     8
 key 10    9
-key 471   TV_INPUT_VGA_1
+key 370   TV_INPUT_VGA_1
 key 11    0
 key 358   INFO
 key 398   PROG_RED
@@ -41,22 +40,25 @@ key 400   PROG_YELLOW
 key 401   PROG_BLUE
 key 156   BOOKMARK
 key 217   ASSIST
-key 141   SETTINGS
+key 384   SETTINGS
 key 103   DPAD_UP
-key 108   DPAD_DOWN
 key 105   DPAD_LEFT
+key 353   DPAD_CENTER
 key 106   DPAD_RIGHT
-key 28    DPAD_CENTER
+key 108   DPAD_DOWN
 key 158   BACK
-key 102   HOME
-key 138   GUIDE
+key 172   HOME
+key 362   GUIDE
 key 114   VOLUME_DOWN
 key 115   VOLUME_UP
 key 113   VOLUME_MUTE
 key 402   CHANNEL_UP
 key 403   CHANNEL_DOWN
-
-key 188 F1
-key 187 F2
-key 189 F3
-key 190 F4
+#youtube
+key usage 0x0c0077  BUTTON_3
+#netflix
+key usage 0x0c0078  BUTTON_4
+#amazon
+key usage 0x0c0079  BUTTON_6
+#google play store
+key usage 0x0c007a  BUTTON_7
