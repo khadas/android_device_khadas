@@ -5,6 +5,8 @@ allow mediacodec audio_device:chr_file { setattr open read write };
 #allow mediacodec sysfs_xbmc:file  { open read write};
 #allow mediacodec audioserver_service:service_manager find;
 get_prop(mediacodec, vendor_media_prop)
+get_prop(mediacodec, ptsserver_device)
+set_prop(mediacodec, ptsserver_device)
 allow mediacodec vendor_default_prop:file { read open getattr map };
 
 allow mediacodec kernel:system module_request;
@@ -40,3 +42,5 @@ allow mediacodec meson_display_ipc_hwservice:hwservice_manager find;
 allow mediacodec hal_graphics_composer_default:binder call;
 allow mediacodec system_control:binder { call };
 allow mediacodec ge2d_device:chr_file rw_file_perms;
+
+allow mediacodec ptsserver_device:chr_file rw_file_perms;

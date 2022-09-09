@@ -94,7 +94,7 @@
 /dev/vdin0                0660   system       system
 /dev/vdin1                0660   system     system
 /dev/virtmem              0666   system       system
-/dev/ptsserver            0660   media        system
+/dev/ptsserver            0666   mediacodec   system
 
 # Mali
 /dev/ump                  0666   system       graphics
