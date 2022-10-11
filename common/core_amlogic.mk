@@ -167,7 +167,7 @@ PRODUCT_PACKAGES += \
     RemoteIME \
     NativeImagePlayer \
     imageserver \
-    DLNA \
+    WallpaperCropper \
     BluetoothRemote \
     Gallery2 \
     MusicFX \
