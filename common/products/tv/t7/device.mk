@@ -65,10 +65,6 @@ PRODUCT_COPY_FILES += \
     $(CHIP_DIR)/files/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 
-#HDCP 1.4 file
-PRODUCT_COPY_FILES += \
-    $(CHIP_DIR)/files/tv/dec:$(TARGET_COPY_OUT_ODM)/bin/dec
-
 # tv config file
 TVCONFIG_FILES := \
     $(CHIP_DIR)/files/tv/tvconfig/*

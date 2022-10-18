@@ -215,8 +215,7 @@ PRODUCT_COPY_FILES += \
 #
 #########################################################################
 
-PRODUCT_COPY_FILES += \
-    device/khadas/common/products/tv/t3/files/tv/dec:$(TARGET_COPY_OUT_VENDOR)/bin/dec
+
 
 #########################################################################
 #
