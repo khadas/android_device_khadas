@@ -171,7 +171,21 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.raw.decoder" type="audio/raw" />
         <MediaCodec name="OMX.amlogic.audio.decoder.ac3" type="audio/ac3" />
         <MediaCodec name="OMX.amlogic.audio.decoder.eac3" type="audio/eac3" />
-        <MediaCodec name="OMX.amlogic.audio.decoder.dtshd" type="audio/dtshd" />
+        <MediaCodec name="OMX.amlogic.audio.decoder.dts" type="audio/vnd.dts">
+            <Limit name="channel-count" max="8" />
+            <Limit name="sample-rate" ranges="44100,48000,88200,96000" />
+            <Limit name="bitrate" range="32000-1509000" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.audio.decoder.dtshd" type="audio/vnd.dts.hd">
+            <Limit name="channel-count" max="8" />
+            <Limit name="sample-rate" ranges="44100,48000,88200,96000,176000,192000" />
+            <Limit name="bitrate" range="32000-25000000" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.audio.decoder.dtse" type="audio/vnd.dts.hd;profile=lbr">
+            <Limit name="channel-count" max="6" />
+            <Limit name="sample-rate" ranges="22050,24000,44100,48000" />
+            <Limit name="bitrate" range="32000-512000" />
+        </MediaCodec>
         <MediaCodec name="OMX.google.opus.decoder" type="audio/opus">
             <Limit name="channel-count" max="8" />
             <Limit name="sample-rate" ranges="48000" />

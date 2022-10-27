@@ -155,6 +155,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.amlogic.rm40.decoder.sw" type="video/rm40" />
         <MediaCodec name="OMX.amlogic.wmv2.decoder.sw" type="video/wmv2" />
         <MediaCodec name="OMX.amlogic.wmv1.decoder.sw" type="video/wmv1" />
+        <MediaCodec name="OMX.amlogic.h263.decoder.sw" type="video/3gpp" />
         <MediaCodec name="OMX.amlogic.vp8.decoder.sw" type="video/x-vnd.on2.vp8">
             <Limit name="size" min="2x2" max="2048x2048" />
             <Limit name="alignment" value="2x2" />

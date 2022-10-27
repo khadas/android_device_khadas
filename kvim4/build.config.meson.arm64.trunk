@@ -34,6 +34,13 @@ vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/iq
 vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/lens
 vendor/amlogic/common/arm_isp/linux_54_t7/kernel/subdev/sensor
 vendor/amlogic/common/arm_isp/linux_54_t7/kernel/v4l2_dev
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/mipi_yuv_sensor/amlcam
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/mipi_yuv_sensor/sensor/imx290
+vendor/amlogic/common/arm_isp/linux_54_t7/kernel/mipi_yuv_sensor/sensor/ov5640
+vendor/amlogic/common/arm_isp/linux_54_t7c/amlcam
+vendor/amlogic/common/arm_isp/linux_54_t7c/sensor
+vendor/amlogic/common/cve/driver
+vendor/amlogic/common/adla
 "
 
 STOP_SHIP_TRACEPRINTK=1

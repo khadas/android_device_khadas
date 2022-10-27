@@ -34,6 +34,9 @@ ifeq ($(BUILD_WITH_MIRACAST),true)
 DEVICE_MANIFEST_FILE += device/khadas/common/hidl_manifests/newdevices/manifest_wfd.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/khadas/common/hidl_manifests/newdevices/device_matrix_product_amlogic_wfd.xml
 endif
+ifeq ($(BOARD_ADLA_SERVICE_ENABLE), true)
+DEVICE_MANIFEST_FILE += device/khadas/common/hidl_manifests/newdevices/manifest_adla.xml
+endif
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/khadas/common/hidl_manifests/newdevices/device_matrix_product_amlogic.xml
 
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -54,6 +57,9 @@ DEVICE_MANIFEST_FILE += device/khadas/common/hidl_manifests/manifest_netflix.xml
 endif
 ifeq ($(BUILD_WITH_MIRACAST),true)
 DEVICE_MANIFEST_FILE += device/khadas/common/hidl_manifests/manifest_wfd.xml
+endif
+ifeq ($(BOARD_ADLA_SERVICE_ENABLE), true)
+DEVICE_MANIFEST_FILE += device/khadas/common/hidl_manifests/newdevices/manifest_adla.xml
 endif
 
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -96,7 +102,8 @@ endif
 #Display config
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/files/mesondisplay.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mesondisplay.cfg \
-    device/khadas/$(PRODUCT_DIR)/files/mesondisplay.cfg:recovery/root/sbin/mesondisplay.cfg
+    device/khadas/$(PRODUCT_DIR)/files/mesondisplay.cfg:recovery/root/sbin/mesondisplay.cfg \
+    device/khadas/common/config/framerate.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/framerate.cfg
 
 # ddr 1g config file
 PRODUCT_COPY_FILES += \

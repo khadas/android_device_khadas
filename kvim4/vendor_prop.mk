@@ -17,7 +17,11 @@
 # build for Meson reference board.
 ###############################################################################
 
-
+#if TV SOC as mbox
+ifeq ($(BOARD_COMPILE_HDMITX_ONLY), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.tv.soc.as.mbox=true
+endif
 
 ###############################################################################
 # !!! This line of code needs to be on the last line.
@@ -26,11 +30,20 @@
 
 $(call inherit-product, device/khadas/common/products/tv/t7/vendor_prop.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.platform.usehwmjpeg=true \
-    ro.vendor.platform.omx=true
+    ro.vendor.platform.hdmi.device_type=4
+
+#
+#uncomment following to enable dual cam feature.used by cameraHAL.
+#PRODUCT_PROPERTY_OVERRIDES += \
+#     vendor.media.camera.dual = true \
+#     vendor.media.camera.count = 2
+#
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.platform.hdmi.device_type=4
+    ro.vendor.platform.usehwmjpeg=true \
+    ro.vendor.platform.omx=true \
+    ro.vendor.camera_mipi.faceback=true
+
 #adb
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555

@@ -162,6 +162,21 @@ $(call inherit-product, device/khadas/$(PRODUCT_DIR)/device.mk)
 $(call inherit-product, device/khadas/$(PRODUCT_DIR)/vendor_prop.mk)
 $(call inherit-product-if-exists, vendor/amlogic/$(PRODUCT_DIR)/device-vendor.mk)
 
+########################################################################
+#
+#                            ADLA
+#
+########################################################################
+BOARD_ADLA_SERVICE_ENABLE := true
+ifeq ($(BOARD_ADLA_SERVICE_ENABLE), true)
+PRODUCT_CHIP_ID :=ADLA_T7
+PRODUCT_PACKAGES += android.hardware.neuralnetworks@1.3-service-aml-driver
+PRODUCT_PACKAGES += \
+        libadla_nnrt \
+        libadla \
+        libadla_compiler
+endif
+
 #########################################################################
 #
 #                                                CTC
@@ -241,6 +256,9 @@ endif
 
 ifeq ($(AB_OTA_UPDATER),true)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+BOARD_USES_VBMETA_SYSTEM := true
+
 ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
 BUILDING_VENDOR_BOOT_IMAGE ?= true
 endif
@@ -293,6 +311,27 @@ include device/khadas/common/audio.mk
 
 #########################################################################
 #
+#                      GDC
+#
+#########################################################################
+BOARD_GDC_LIB := true
+
+ifeq ($(BOARD_GDC_LIB),true)
+PRODUCT_PACKAGES += libgdc libdewarp
+endif
+
+# GDC firmware
+#
+#########################################################################
+BOARD_GDC_FW_BUILTIN := true
+
+ifeq ($(BOARD_GDC_FW_BUILTIN),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/gdc,$(TARGET_COPY_OUT_VENDOR)/lib/firmware/gdc)
+endif
+
+#########################################################################
+#
 #  PlayReady DRM
 #
 #########################################################################
@@ -327,14 +366,14 @@ endif
 ##                          Audio License Decoder
 #
 #########################################################################
-TARGET_DOLBY_MS12_VERSION := 2
+#TARGET_DOLBY_MS12_VERSION := 2
 ifeq ($(TARGET_DOLBY_MS12_VERSION), 2)
     TARGET_BUILD_DOLBY_MS12_V2 := true
 else
     #TARGET_BUILD_DOLBY_MS12 := true
 endif
 
-#TARGET_BUILD_DOLBY_DDP := true
+TARGET_BUILD_DOLBY_DDP := true
 TARGET_BUILD_DTSHD := true
 
 #################################################################################
@@ -425,6 +464,28 @@ else
 $(warning $(SCRIPT_RESULT))
 endif
 endif
+#########################################################################
+#
+#                  ueventd parallel restorecon dirs
+#
+#
+#########################################################################
+PRODUCT_COPY_FILES += \
+    device/khadas/$(PRODUCT_DIR)/ueventd.parallel.rc:$(TARGET_COPY_OUT_ODM)/ueventd.rc
+
+PRODUCT_PACKAGES += libispaml
+
+#CVE
+PRODUCT_PACKAGES += libcve
+
+#########################################################################
+#
+#                  ueventd parallel restorecon dirs
+#
+#
+#########################################################################
+PRODUCT_COPY_FILES += \
+    device/khadas/$(PRODUCT_DIR)/ueventd.parallel.rc:$(TARGET_COPY_OUT_ODM)/ueventd.rc
 
 # add EM06 4G
 PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9

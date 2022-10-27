@@ -12,13 +12,13 @@ odm                                                     /odm                    
 /dev/block/by-name/metadata                             /metadata                         ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,formattable,first_stage_mount
 /dev/block/by-name/odm_ext                              /mnt/vendor/odm_ext               ext4    ro,noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,slotselect,first_stage_mount
 
-/dev/block/userdata                                     /data                             ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    latemount,wait,check,fileencryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption,quota,formattable,reservedsize=32M
+/dev/block/userdata                                     /data                             ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    latemount,wait,check,fileencryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption,quota,formattable,reservedsize=32M,checkpoint=block
 /dev/block/param                                        /mnt/vendor/param                 ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,quota,formattable
 /dev/block/tee                                          /mnt/vendor/tee                   ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,formattable
 /dev/block/factory                                      /mnt/vendor/factory               vfat    noatime,nodiratime,nosuid,noexec,dmask=0022                      wait,check
 /dev/block/platform/soc/fe08c000.mmc/by-name/misc       /misc                             emmc    defaults                                                         defaults
 # Add for zram. zramsize can be in numeric (byte) , in percent
-/dev/block/zram0     /mnt/vendor/swap_zram0             swap      defaults                             wait,zramsize=268435456
+/dev/block/zram0     /mnt/vendor/swap_zram0             swap      defaults                             wait,zramsize=50%
 /dev/block/loop     auto                loop      defaults                                  voldmanaged=loop:auto
 /devices/*.sd*/*/block/mmcblk*  auto          auto       defaults     voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/*.crg*drd/xhci-hcd.*.auto/usb?/*/host*/target*/block/sd*  auto    auto    defaults       voldmanaged=usb:auto,encryptable=userdata
