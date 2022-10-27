@@ -29,17 +29,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.support.dolbyvision=true
 
-#camera max to 720p
-#PRODUCT_PROPERTY_OVERRIDES += \
-    #ro.media.camera_preview.maxsize=1280x720 \
-    #ro.media.camera_preview.limitedrate=1280x720x30,640x480x30,320x240x28
+#media
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.media.dv.standalone.component=true
 
 #camera max to 1080p
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.media.camera_preview.maxsize=1920x1080 \
-    ro.media.camera_preview.limitedrate=1920x1080x30,1280x720x30,640x480x30,320x240x28 \
-    ro.media.camera_preview.usemjpeg=1
-    # ro.vendor.camera_usb.faceback=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.media.camera_preview.maxsize=1920x1080 \
+    vendor.media.camera_preview.limitedrate=1280x720x30,640x480x30,320x240x28
+
+#camera max to 1080p
+#PRODUCT_PRODUCT_PROPERTIES += \
+#    ro.media.camera_preview.maxsize=1920x1080 \
+#    ro.media.camera_preview.limitedrate=1920x1080x30,1280x720x30,640x480x30,320x240x28 \
+#    ro.media.camera_preview.usemjpeg=1
+#    ro.vendor.camera_usb.faceback=true
 
 # t962x3_ab301 support screen capture
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -54,7 +58,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=100
 
 #if need pppoe
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.net.pppoe=true
 
 #the prop is used for enable or disable
@@ -106,7 +110,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.afbcd.enable=1
 
 #disable timeshift
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     tv.dtv.tf.disable=true
 
 # crypto volume
@@ -152,7 +156,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #used for controlling reference board's preview window,
 #project's need disable it or can refer its implementation method.
 ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     tv.need.droidlogic.preview_window=true
 endif
 
@@ -168,10 +172,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.min.duration.secs=5
 
 #support video_composer
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     media.omx.display_mode=3
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
     media.sf.omxvideo-optmize=1
 
 #omx2
@@ -203,11 +207,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.use_minfree_levels=true
 
-PRODUCT_PROPERTY_OVERRIDES += ro.llk.enable=false
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.llk.enable=false
 
 #audio dual spdif setting
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.platform.is.dualspdif=true
+    ro.vendor.platform.is.dualspdif=false
 
 #tv path use video_tunnel
 PRODUCT_PROPERTY_OVERRIDES += \

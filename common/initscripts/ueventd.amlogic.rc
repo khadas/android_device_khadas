@@ -40,6 +40,34 @@
 /dev/video50              0660   system     camera
 /dev/video51              0660   system     camera
 /dev/video52              0660   system     camera
+/dev/video60              0660   system     camera
+/dev/video61              0660   system     camera
+/dev/video62              0660   system     camera
+/dev/video63              0660   system     camera
+/dev/video64              0660   system     camera
+/dev/video65              0660   system     camera
+/dev/video66              0660   system     camera
+/dev/video67              0660   system     camera
+/dev/video68              0660   system     camera
+/dev/video69              0660   system     camera
+/dev/video70              0660   system     camera
+/dev/video71              0660   system     camera
+/dev/video72              0660   system     camera
+/dev/video73              0660   system     camera
+/dev/video74              0660   system     camera
+/dev/video75              0660   system     camera
+/dev/video76              0660   system     camera
+/dev/video77              0660   system     camera
+/dev/v4l-subdev0          0660   system     camera
+/dev/v4l-subdev1          0660   system     camera
+/dev/v4l-subdev2          0660   system     camera
+/dev/v4l-subdev3          0660   system     camera
+/dev/v4l-subdev4          0660   system     camera
+/dev/v4l-subdev5          0660   system     camera
+/dev/v4l-subdev6          0660   system     camera
+/dev/v4l-subdev7          0660   system     camera
+/dev/v4l-subdev8          0660   system     camera
+/dev/v4l-subdev9          0660   system     camera
 /dev/amaudio_utils        0660   media        system
 /dev/amaudio_ctl          0660   media        system
 /dev/amvenc_avc           0660   mediacodec   system
@@ -56,6 +84,8 @@
 /dev/ac_isp4uf            0660   system    camera
 /dev/secmem               0660   system     mediadrm
 /dev/amresource_mgr       0666   media     system
+/dev/gdc                  0660   system     camera
+/dev/amlgdc               0660   system     camera
 
 #audio data
 /dev/audio_data_debug     0660   mediacodec   audio
@@ -128,6 +158,9 @@
 /dev/tee0                 0666   system       system
 
 /dev/block/by-name/frp    0660   system       system
+
+/dev/galcore              0666   system       system
+/dev/adla0                0666   system       system
 
 # /sys/ sysfs
 #

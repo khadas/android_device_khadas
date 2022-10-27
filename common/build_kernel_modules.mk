@@ -133,6 +133,8 @@ include device/khadas/common/ldim/ldim_modules.mk
 include device/khadas/common/tuner/tuner_modules.mk
 include device/khadas/common/video_algorithm/dnlp/dnlp_modules.mk
 include device/khadas/common/video_algorithm/hdr10_tmo/hdr10_tmo_modules.mk
+include device/khadas/common/video_algorithm/color_tune/color_tune_modules.mk
+include device/khadas/common/video_algorithm/frc/frc_modules.mk
 ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
 include device/khadas/common/speech/speech_modules.mk
 endif

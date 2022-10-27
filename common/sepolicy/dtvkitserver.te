@@ -25,6 +25,9 @@ allow dtvkitserver sysfs:file { write open read  getattr};
 allow dtvkitserver platform_app:binder { call };
 allow dtvkitserver { dtvkitserver_hwservice  hidl_base_hwservice }:hwservice_manager { add };
 allow dtvkitserver systemcontrol_hwservice:hwservice_manager {find};
+allow dtvkitserver oad_data_file:dir{ create write read add_name remove_name open search };
+allow dtvkitserver oad_data_file:file { ioctl getattr read write open create lock setattr unlink append map};
+allow dtvkitserver oad_data_file:chr_file{ ioctl };
 
 allow dtvkitserver system_data_root_file:dir r_dir_perms;
 allow dtvkitserver tee_vendor_file:dir r_dir_perms;

@@ -21,6 +21,8 @@ soong_config_module_type {
         "playready_tvp",
         "enable_swcodec",
         "support_pq_compress_db",
+        "systemcontrol_display_type",
+        "systemcontrol_ui_type",
     ],
     properties: [
         "cflags", "srcs"
@@ -52,6 +54,24 @@ soong_config_string_variable {
     values: [
         "TDK24",
         "TDK38",
+    ],
+}
+
+soong_config_string_variable {
+    name: "systemcontrol_display_type",
+    values: [
+        "MBOX",
+        "TV",
+        "MID",
+    ],
+}
+
+soong_config_string_variable {
+    name: "systemcontrol_ui_type",
+    values: [
+        "UHD",
+        "FHD",
+        "HD",
     ],
 }
 

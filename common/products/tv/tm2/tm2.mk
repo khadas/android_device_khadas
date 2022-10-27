@@ -90,6 +90,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_KEY_PATH := device/khadas/common/security/testkey_rsa2048.pem
 BOARD_AVB_ROLLBACK_INDEX := 0
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --prop dovi_hash:b00595345b44b13a3df532771168bb1af10c1a67d2c3e30cd6d51227f53dc338
 
 ifneq ($(AB_OTA_UPDATER),true)
 BOARD_AVB_RECOVERY_KEY_PATH := device/khadas/common/security/testkey_rsa2048.pem

@@ -8,6 +8,10 @@ SOONG_CONFIG_amlogic_vendorconfig += hwc_dynamic_switch_viu
 SOONG_CONFIG_amlogic_vendorconfig_hwc_dynamic_switch_viu := $(HWC_DYNAMIC_SWITCH_VIU)
 SOONG_CONFIG_amlogic_vendorconfig += build_livetv
 SOONG_CONFIG_amlogic_vendorconfig_build_livetv := $(TARGET_BUILD_LIVETV)
+SOONG_CONFIG_amlogic_vendorconfig += systemcontrol_display_type
+SOONG_CONFIG_amlogic_vendorconfig_systemcontrol_display_type := $(SYSTEMCONTROL_DISPLAY_TYPE)
+SOONG_CONFIG_amlogic_vendorconfig += systemcontrol_ui_type
+SOONG_CONFIG_amlogic_vendorconfig_systemcontrol_ui_type := $(SYSTEMCONTROL_UI_TYPE)
 
 # for alsa library
 SOONG_CONFIG_amlogic_vendorconfig += build_alsa_audio

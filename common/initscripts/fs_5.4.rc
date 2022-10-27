@@ -28,6 +28,9 @@ on post-fs-data
     mkdir /data/vendor/irdeto 0770 system system
     chmod 0666 /dev/bl40
 
+    #for adla
+    mkdir /data/vendor/nn 0777 system system
+
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 

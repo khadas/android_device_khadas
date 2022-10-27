@@ -163,6 +163,14 @@ if [ -z "${SKIP_MRPROPER}" ] ; then
   set +x
 fi
 
+echo "=========CONFIG_BOOTIMAGE: ${CONFIG_BOOTIMAGE}"
+if [ "$CONFIG_BOOTIMAGE" == "user" ];then
+  set -x
+  sed -i '/CONFIG_DEBUG_FS=y/d' ${KERNEL_DIR}/arch/arm64/configs/meson64_defconfig
+  sed -i '/CONFIG_DEBUG_FS=y/d' ${KERNEL_DIR}/arch/arm/configs/meson64_a32_defconfig
+  set +x
+fi
+
 if [ "${PRE_DEFCONFIG_CMDS}" != "" ]; then
   echo "========================================================"
   echo " Running pre-defconfig command(s):"

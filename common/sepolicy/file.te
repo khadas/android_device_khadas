@@ -100,6 +100,8 @@ type factory_vendor_file, file_type;
 
 #dtvkit
 type dtvkit_data_file, file_type, data_file_type;
+type oad_data_file, file_type, data_file_type;
+type nn_data_file, file_type, data_file_type;
 
 type mediadrm_vendor_data_file, file_type, data_file_type;
 
@@ -107,3 +109,6 @@ type sysfs_tee, fs_type, sysfs_type;
 
 # /dev/aml_dsm
 type aml_dsm_device, fs_type,sysfs_type;
+
+# ntfs3
+type ntfs3, sdcard_type, fs_type, mlstrustedobject;

@@ -59,6 +59,7 @@ typeattribute vendor_block_device super_block_device_type;
 typeattribute system_block_device super_block_device_type;
 typeattribute system_block_fsck_device super_block_device_type;
 
-type galcore_device, dev_type;
+type galcore_device, dev_type, mlstrustedobject;
 type dolby_fw_device, dev_type;
 type key_device, dev_type;
+type adla_device, dev_type, mlstrustedobject;

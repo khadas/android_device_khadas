@@ -54,3 +54,6 @@ set_prop(vendor_init, vendor_miracast_prop)
 
 allow vendor_init aml_dsm_device:chr_file setattr;
 allow vendor_init default_prop:file { read };
+
+# allow init getattr /dev/adla0 node
+allow vendor_init adla_device:chr_file { open getattr read write ioctl };

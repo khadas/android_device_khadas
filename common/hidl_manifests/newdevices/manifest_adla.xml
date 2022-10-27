@@ -1,0 +1,12 @@
+<manifest version="1.0" type="device" target-level="5">
+    <hal format="hidl">
+        <name>android.hardware.neuralnetworks</name>
+        <transport>hwbinder</transport>
+        <version>1.3</version>
+        <interface>
+            <name>IDevice</name>
+            <instance>aml-driver</instance>
+        </interface>
+        <fqname>@1.3::IDevice/aml-driver</fqname>
+    </hal>
+</manifest>

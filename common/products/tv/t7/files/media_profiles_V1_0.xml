@@ -1,7 +1,7 @@
 <MediaSettings>
 
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
-    <CamcorderProfiles cameraId="0" startOffsetMs="50">
+    <CamcorderProfiles cameraId="0">
 
         <EncoderProfile quality="1080p" fileFormat="3gp" duration="60">
             <Video codec="h264"
@@ -113,7 +113,7 @@
 
     </CamcorderProfiles>
 
-    <CamcorderProfiles cameraId="1" startOffsetMs="50">
+    <CamcorderProfiles cameraId="1">
 
         <EncoderProfile quality="1080p" fileFormat="3gp" duration="60">
             <Video codec="h264"
@@ -228,9 +228,6 @@
     <EncoderOutputFileFormat name="3gp" />
     <EncoderOutputFileFormat name="mp4" />
 
-    <VideoDecoderCap name="wmv" enabled="true" />
-    <AudioDecoderCap name="wma" enabled="true" />
-
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="192000" maxBitRate="420000"
         minFrameWidth="176" maxFrameWidth="352"
@@ -284,4 +281,7 @@
         minBitRate="4750" maxBitRate="12200"
         minSampleRate="8000" maxSampleRate="8000"
         minChannels="1" maxChannels="1" />
+
+    <VideoDecoderCap name="wmv" enabled="true" />
+    <AudioDecoderCap name="wma" enabled="true" />
 </MediaSettings>

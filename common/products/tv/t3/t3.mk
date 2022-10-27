@@ -224,7 +224,8 @@ PRODUCT_COPY_FILES += \
 #
 #########################################################################
 PRODUCT_COPY_FILES += \
-    device/khadas/common/products/tv/t3/files/nn/PQ_e8.nb:$(TARGET_COPY_OUT_VENDOR)/bin/nn/PQ_e8.nb \
+    device/khadas/common/products/tv/t3/files/nn/PQNet.nb:$(TARGET_COPY_OUT_VENDOR)/bin/nn/PQNet.nb \
+    device/khadas/common/products/tv/t3/files/nn/scenes_data.txt:$(TARGET_COPY_OUT_VENDOR)/etc/scenes_data.txt \
     device/khadas/common/products/tv/t3/files/nn/SRNetx2_e8.nb:$(TARGET_COPY_OUT_VENDOR)/bin/nn/SRNetx2_e8.nb \
     device/khadas/common/products/tv/t3/files/nn/SRNetx3_e8.nb:$(TARGET_COPY_OUT_VENDOR)/bin/nn/SRNetx3_e8.nb \
     device/khadas/common/products/tv/t3/files/nn/SRNetx4_960_e8.nb:$(TARGET_COPY_OUT_VENDOR)/bin/nn/SRNetx4_960_e8.nb

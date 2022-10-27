@@ -436,25 +436,25 @@ PRODUCT_PACKAGES += android.hardware.health@2.1-service.droidlogic
 
 #Audio HAL
 PRODUCT_PACKAGES += \
-     android.hardware.audio@5.0-impl:32 \
-     android.hardware.audio@4.0-impl:32 \
-     android.hardware.audio.effect@5.0-impl:32 \
-     android.hardware.audio.effect@4.0-impl:32 \
-     android.hardware.audio@2.0-impl:32 \
-     android.hardware.audio.effect@2.0-impl:32 \
+     android.hardware.audio@5.0-impl \
+     android.hardware.audio@4.0-impl \
+     android.hardware.audio.effect@5.0-impl \
+     android.hardware.audio.effect@4.0-impl \
+     android.hardware.audio@2.0-impl \
+     android.hardware.audio.effect@2.0-impl \
      android.hardware.audio@2.0-service-droidlogic
 
 ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl:32 \
-    android.hardware.audio.effect@6.0-impl:32
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl
 endif
 
 #Camera HAL
 PRODUCT_PACKAGES += \
      camera.amlogic \
-     android.hardware.camera.provider@2.5-legacy \
-     android.hardware.camera.provider@2.5-service
+     android.hardware.camera.provider@2.5-legacy-droidlogic \
+     android.hardware.camera.provider@2.5-service-droidlogic
 
 #Power HAL
 PRODUCT_PACKAGES += \

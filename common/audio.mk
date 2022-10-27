@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
     libdbx \
     param_set \
     AudioEffectTool \
-    libAmlAudioOutPort \
+    libAmlAudioOutPort
 
 PRODUCT_COPY_FILES += hardware/amlogic/audio/amlogic_AQ_tools/Amlogic_EQ_Param_Generator:$(TARGET_COPY_OUT_VENDOR)/bin/Amlogic_EQ_Param_Generator
 PRODUCT_COPY_FILES += hardware/amlogic/audio/amlogic_AQ_tools/Amlogic_DRC_Param_Generator:$(TARGET_COPY_OUT_VENDOR)/bin/Amlogic_DRC_Param_Generator

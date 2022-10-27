@@ -8,3 +8,5 @@ allow untrusted_app debugfs_mali:dir search;
 allow untrusted_app hal_graphics_allocator_default_tmpfs:file rw_file_perms;
 
 get_prop(untrusted_app, vendor_netflix_prop)
+allow untrusted_app galcore_device:chr_file { write open read getattr ioctl };
+allow untrusted_app adla_device:chr_file { write open read getattr ioctl };

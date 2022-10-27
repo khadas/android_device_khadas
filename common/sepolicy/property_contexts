@@ -41,8 +41,3 @@ persist.vendor.miracast.hdcp2         u:object_r:vendor_miracast_prop:s0
 persist.vendor.sys.memc             u:object_r:vendor_memc_prop:s0
 
 persist.vendor.tvconfig.path             u:object_r:vendor_platform_prop:s0
-
-vendor.sys.tv.stream.realtime            u:object_r:config_prop:s0
-tv.channels.count                        u:object_r:vendor_tv_prop:s0
-tv.dtv.audio.channels                    u:object_r:vendor_tv_prop:s0
-tv_current_channel_blocked               u:object_r:vendor_tv_prop:s0

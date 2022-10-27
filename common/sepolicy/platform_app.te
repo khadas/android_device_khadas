@@ -37,14 +37,18 @@ get_prop(platform_app, vendor_tv_prop)
 get_prop(platform_app, vendor_netflix_prop)
 get_prop(dtvkitserver, vendor_tv_prop)
 set_prop(dtvkitserver, vendor_tv_prop)
-set_prop(platform_app, config_prop)
-get_prop(platform_app, config_prop)
 allow platform_app subtitleserver:binder { call transfer };
 allow platform_app dtvkit_data_file:dir { search open read getattr };
+allow platform_app oad_data_file:dir{ create write read add_name remove_name open search getattr };
+allow platform_app oad_data_file:file { ioctl getattr read write open create lock setattr unlink append map};
+allow platform_app oad_data_file:chr_file{ ioctl };
+allow platform_app nn_data_file:dir{ create write read add_name remove_name open search getattr };
+allow platform_app nn_data_file:file { ioctl getattr read write open create lock setattr unlink append map};
+allow platform_app nn_data_file:chr_file{ ioctl };
+
 
 allow platform_app screencontrol_hwservice:hwservice_manager { find };
 allow platform_app screen_control:binder { call };
 
 allow platform_app self:netlink_kobject_uevent_socket { create read bind getopt setopt };
 allow platform_app vendor_configs_file:file { getattr read open };
-allow platform_app atv_prop:file {open read getattr map};

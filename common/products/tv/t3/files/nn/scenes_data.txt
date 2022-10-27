@@ -1,0 +1,80 @@
+/*
+ * About the use of this document:
+ * scenens_data: The data in this table is provided for NN processing results.
+ * Used when model_type is 0, not used temporarily.
+ * NN_scenes_data: The data in this table is provided for NN processing
+ * results. Used when model_type is 1, now NN uses the data in this table.
+ * AIPQ_scenes_data: The data in this table is used to pass to the PQ driver.
+ * scenes_count: The total number of scenes. If you increase or decrease the
+ * total number of scenes, please modify this value.
+ * max_len: The maximum length of the scene string, the default is 60
+ * characters, a scene string exceeds 60 characters, please modify this value.
+ * The serial number in front of the scene indicates the position of the scene
+ * in the character array, so if a scene is added or deleted, the serial number
+ * in front of the scene needs to be added or deleted accordingly.
+ */
+
+=====================================================================
+/* Used when model_type is 0, not used temporarily. */
+scenens_data:
+scenes_count: 23, max_len: 60
+=====================================================================
+0: faceskin,
+1: bluesky,
+2: flowers,
+3: foods,
+4: breads,
+5: fruits,
+6: meats,
+7: document,
+8: ocean,
+9: pattern,
+10: group,
+11: animals,
+12: grass,
+13: iceskate,
+14: leaves,
+15: racetrack,
+16: fireworks,
+17: waterfall,
+18: beach,
+19: waterside,
+20: snows,
+21: nightscop,
+22: sunset
+
+
+=====================================================================
+/* Used when model_type is 1, now NN uses the data in this table. */
+NN_scenes_data:
+scenes_count: 14, max_len: 60
+=====================================================================
+0: Animal
+1: Arch
+2: Skin
+3: Blue
+4: FlFd
+5: Document
+6: Green
+7: Grouppeople
+8: Night
+9: Pattern
+10: Snow
+11: Sports
+12: Sunset
+13: Underwater
+
+
+=====================================================================
+/* The data in this table is used to pass to the PQ driver. */
+AIPQ_scenes_data:
+scenes_count: 8, max_len: 60
+=====================================================================
+0: Skin,
+1: Blue,
+2: FlFd,
+3: Arch,
+4: Green,
+5: Night,
+6: Document,
+7: MAX_SCENE

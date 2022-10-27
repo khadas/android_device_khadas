@@ -6,6 +6,8 @@
 /data/vendor/btmic(/.*)?		u:object_r:btmic_data_file:s0
 /data/misc/hdcp                         u:object_r:hdcp_file:s0
 /data/vendor/dtvkit(/.*)?               u:object_r:dtvkit_data_file:s0
+/data/vendor/oad(/.*)?               u:object_r:oad_data_file:s0
+/data/vendor/nn(/.*)?                   u:object_r:nn_data_file:s0
 
 /dev/amaudio_.*     			u:object_r:audio_device:s0
 /dev/amaudio2_out       		u:object_r:audio_device:s0
@@ -180,6 +182,7 @@
 /dev/hidraw[0-3]			u:object_r:hidraw_device:s0
 /dev/galcore                            u:object_r:galcore_device:s0
 /dev/amresource_mgr			u:object_r:video_device:s0
+/dev/adla0                              u:object_r:adla_device:s0
 
 /dev/hdmitx_report           u:object_r:hdmitx_device:s0
 /dev/stune/foreground/tasks   u:object_r:tasks_device:s0
@@ -454,6 +457,9 @@
 /vendor/bin/hw/android\.hardware\.wifi@1\.0-service\.droidlogic          u:object_r:hal_wifi_default_exec:s0
 /vendor/bin/hw/android\.hardware\.tv\.tuner@1\.0-service\.droidlogic     u:object_r:hal_tv_tuner_default_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service-droidlogic      u:object_r:hal_bluetooth_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.[0-9]-service-ovx-driver    u:object_r:hal_neuralnetworks_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.[0-9]-service-aml-driver    u:object_r:hal_neuralnetworks_adla_exec:s0
+/vendor/bin/hw/android\.hardware\.camera\.provider@2\.5-service-droidlogic                      u:object_r:hal_camera_default_exec:s0
 
 /data/vendor/mediadrm(/.*)?                                              u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/mediacas(/.*)?                                              u:object_r:mediadrm_vendor_data_file:s0

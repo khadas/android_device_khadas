@@ -34,7 +34,8 @@ TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Set the property to enable dynamic start/stop zygote_secondary feature
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dynamic.zygote_secondary=enable
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.dynamic.zygote_secondary=enable
 
 # Compile zygote secondary proxy
 PRODUCT_PACKAGES += \

@@ -13,6 +13,7 @@ allow hal_dumpstate_default vendor_shell_exec:file rx_file_perms;
 allow hal_dumpstate_default vendor_toolbox_exec:file rx_file_perms;
 allow hal_dumpstate_default graphics_device:dir search;
 allow hal_dumpstate_default sysfs_mali:dir search;
+allow hal_dumpstate_default sysfs:file rw_file_perms;
 
 allow hal_dumpstate_default sysfs_audio_cap:file r_file_perms;
 # Access to vendor logging property
