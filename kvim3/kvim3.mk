@@ -71,7 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.hdmi.device_type=4 \
         persist.sys.hdmi.keep_awake=false
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.build.display.id=VIM3_Pie_V$(shell date +%y%m%d)
+        ro.build.display.id=VIM3-Android-9-64bit-V$(shell date +%y%m%d)
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
 #wifi hotpot
