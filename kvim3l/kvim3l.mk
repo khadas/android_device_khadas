@@ -78,7 +78,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         persist.sys.hdmi.keep_awake=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.build.display.id=VIM3L_Pie_V$(shell date +%y%m%d)
+        ro.build.display.id=VIM3L-Android-9-64bit-V$(shell date +%y%m%d)
 
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
