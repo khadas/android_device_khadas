@@ -174,7 +174,8 @@ PRODUCT_PACKAGES += android.hardware.neuralnetworks@1.3-service-aml-driver
 PRODUCT_PACKAGES += \
         libadla_nnrt \
         libadla \
-        libadla_compiler
+        libadla_compiler \
+        libnnsdk
 endif
 
 #########################################################################
