@@ -172,7 +172,6 @@ PRODUCT_PACKAGES += Camera2
 ifneq ($(TARGET_BUILD_GOOGLE_ATV), true)
 PRODUCT_PACKAGES += \
     AppInstaller \
-    DocumentsUI \
     FileBrowser \
     RemoteIME \
     DeskClock \
