@@ -39,10 +39,10 @@ $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 
 TARGET_WITH_MEDIA_EXT_LEVEL := 4
 
-$(shell python device/khadas/kvim4/auto_generator.py preinstall)
--include device/khadas/kvim4/preinstall/preinstall.mk
+$(shell python device/khadas/kvim3/auto_generator.py preinstall)
+-include device/khadas/kvim3/preinstall/preinstall.mk
 PRODUCT_COPY_FILES += \
-    device/khadas/kvim4/preinstall/preinstall.sh:system/bin/preinstall.sh
+    device/khadas/kvim3/preinstall/preinstall.sh:system/bin/preinstall.sh
 
 #########################################################################
 #
