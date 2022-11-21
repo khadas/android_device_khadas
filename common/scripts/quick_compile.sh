@@ -232,14 +232,14 @@ kernel_exec[18]="./mk oppen -v 5.4"
 ###########################################################################################
 
 ###########################################################################################
-# A311D2 32bit
+# A311D2 64bit
 project[19]="kvim4"
 soc[19]="A311D2"
 hardware[19]="A311D2-AN400"
 module[19]="kvim4"
 uboot_path[19]="device/khadas/kvim4"
-uboot_exec_aosp[19]="./mk kvim4_lpddr4x --avb2 --vab"
-uboot_exec_drm[19]="./mk kvim4_lpddr4x --bl32 bl32_3.8/bin/t7/a311d2/blob-bl32.bin.signed --vab"
+uboot_exec_aosp[19]="./mk kvim4_lpddr4x --avb2 --vab --fastboot-write"
+uboot_exec_drm[19]="./mk kvim4_lpddr4x --avb2 --vab --fastboot-write"
 kernel_exec[19]="./mk kvim4 -v 5.4"
 ###########################################################################################
 
