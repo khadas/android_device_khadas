@@ -37,6 +37,12 @@ $(call inherit-product, device/khadas/$(PRODUCT_DIR)/vendor_prop.mk)
 $(call inherit-product, device/khadas/common/products/mbox/product_mbox.mk)
 $(call inherit-product, device/khadas/$(PRODUCT_DIR)/device.mk)
 $(call inherit-product-if-exists, vendor/google/products/gms.mk)
+
+$(shell python device/khadas/kvim3l/auto_generator.py preinstall)
+-include device/khadas/kvim3l/preinstall/preinstall.mk
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim3l/preinstall/preinstall.sh:system/bin/preinstall.sh
+
 #########################################################################
 #
 #                                               Media extension
@@ -434,7 +440,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #                                    Khadas Build Config
 #
 #########################################################################
-BUILD_WITH_GAPPS_CONFIG := false
+BUILD_WITH_GAPPS_CONFIG := true
 
 
 #########################################################################
