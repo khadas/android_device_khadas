@@ -39,6 +39,7 @@ on boot
     write /sys/module/amvdec_h265/parameters/dynamic_buf_num_margin 9
     write /sys/module/amvdec_vp9/parameters/max_buf_num 12
     write /sys/module/amvdec_mh264_v4l/parameters/adjust_dpb_size  18
+	write /sys/module/aml_media/parameters/vpp_hold_line 4
 #HDMI IN
     chmod 666 /sys/class/sii9233a/port
     chmod 666 /sys/class/sii9233a/enable
