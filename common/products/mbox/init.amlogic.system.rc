@@ -515,6 +515,12 @@ service factoryreset /vendor/bin/factoryreset.sh
     oneshot
     seclabel u:r:install_recovery:s0
 
+service cmdserver /system/bin/cmdserver
+    class main
+    user root
+    group root
+    oneshot
+    seclabel u:r:cmdserver:s0
 service bugreport /system/bin/dumpstate -d -p -B -P -z \
     -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
@@ -522,6 +528,9 @@ service bugreport /system/bin/dumpstate -d -p -B -P -z \
     oneshot
 on property:sys.boot_completed=1
     start preinstall
+
+on property:sys.boot_completed=1
+    start cmdserver
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete

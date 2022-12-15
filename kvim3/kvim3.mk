@@ -88,6 +88,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/khadas/$(PRODUCT_DIR)/start_softap.sh:$(TARGET_COPY_OUT_VENDOR)/bin/start_softap.sh
 
+# add cmdclient & cmdserver
+PRODUCT_COPY_FILES += \
+        device/khadas/common/cmdclient:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdclient \
+        device/khadas/common/cmdserver:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdserver
+
 PRODUCT_NAME := kvim3
 PRODUCT_DEVICE := kvim3
 PRODUCT_BRAND := Khadas
