@@ -59,6 +59,9 @@ on property:sys.boot_completed=1
 #wol
     chmod 666 /sys/class/wol/enable
 
+#funtion key
+    chmod 666 /sys/class/adc_keypad/table
+
 #ircut for mipi camera
     chmod 666 /sys/class/camera/ircut
 

@@ -47,6 +47,9 @@ on property:sys.boot_completed=1
 #wol
     chmod 666 /sys/class/wol/enable
 
+#funtion key
+    chmod 666 /sys/class/adc_keypad/table
+
 #mac
     chmod 666 /sys/class/efuse/mac
 

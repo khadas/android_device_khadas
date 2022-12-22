@@ -113,7 +113,8 @@ endif
 PRODUCT_PACKAGES += \
     TvSettings \
     DroidTvSettings \
-    SchPwrOnOff
+    SchPwrOnOff \
+    KhadasControl
 
 #Browser
 PRODUCT_PACKAGES += \
