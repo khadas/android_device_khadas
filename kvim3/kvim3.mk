@@ -321,6 +321,12 @@ include device/khadas/common/audio.mk
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.external.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.external.xml
 
+# for change logo bmp file
+PRODUCT_COPY_FILES += \
+    device/khadas/common/logo/change_logo.sh:$(TARGET_COPY_OUT_VENDOR)/bin/change_logo.sh \
+    device/khadas/common/logo/minigzip:$(TARGET_COPY_OUT_VENDOR)/bin/minigzip \
+    device/khadas/common/logo/logo_img_packer:$(TARGET_COPY_OUT_VENDOR)/bin/logo_img_packer
+
 #########################################################################
 #
 #                                                GDC
