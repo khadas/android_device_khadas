@@ -236,6 +236,7 @@ PRODUCT_PACKAGES += \
     KSettings \
     KTools \
     SchPwrOnOff \
+    DocumentsUI \
     LatinIME
 
 ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
