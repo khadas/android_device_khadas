@@ -47,3 +47,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #adb
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.media.hdmi.vdin.enable=true \
+    vendor.media.hdmi.vdin.port=2
