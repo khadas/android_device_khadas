@@ -162,6 +162,7 @@
 
 /dev/galcore              0666   system       system
 /dev/adla0                0666   system       system
+/dev/hdmirx0              0660   system       system
 
 # /sys/ sysfs
 #
