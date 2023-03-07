@@ -89,6 +89,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
 
+# Customize the function key as the home key by default
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.sys.func.key.action=102
+
 # add cmdclient & cmdserver
 PRODUCT_COPY_FILES += \
         device/khadas/common/cmdclient:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdclient \
