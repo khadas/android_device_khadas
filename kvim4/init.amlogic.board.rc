@@ -28,6 +28,7 @@ on post-fs-data
     # for mipi only yuv sensor
     #insmod /vendor/lib/modules/ov5640.ko
     insmod /vendor/lib/modules/ov08a10.ko
+    insmod /vendor/lib/modules/imx415.ko
     insmod /vendor/lib/modules/amlcam.ko
 #    insmod /vendor/lib/modules/amlogic_cve.ko
     insmod /vendor/lib/modules/adla_core.ko
