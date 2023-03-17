@@ -145,6 +145,7 @@ PRODUCT_PACKAGES += \
     FactoryTest \
     SchPwrOnOff \
     KSettings \
+    DocumentsUI \
     KTools
 
 BUILD_WITH_GAPPS_CONFIG=false
