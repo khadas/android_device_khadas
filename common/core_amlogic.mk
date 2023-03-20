@@ -726,6 +726,12 @@ PRODUCT_PACKAGES += \
 
 endif
 
+PRODUCT_PACKAGES += \
+	i2cget \
+	i2cset \
+	i2cdump \
+	i2cdetect
+
 ################# add for FFM ####################
 ifeq ($(BOARD_HAS_MIC_TOGGLE), true)
 PRODUCT_PACKAGES += \
