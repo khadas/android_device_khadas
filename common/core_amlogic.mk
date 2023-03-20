@@ -736,5 +736,11 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PACKAGES += \
+	i2cget \
+	i2cset \
+	i2cdump \
+	i2cdetect
+
+PRODUCT_PACKAGES += \
     MtpService
 #########################################################################
