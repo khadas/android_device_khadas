@@ -93,10 +93,19 @@ endif
 ifeq ($(BUILD_WITH_AVB),true)
 BOARD_AVB_ENABLE := true
 #BOARD_BUILD_DISABLED_VBMETAIMAGE := true
+ifeq ($(PRODUCT_USE_PREBUILD_SECURE_BOOTLOADER),true)
+BOARD_AVB_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_KEY_PATH := $(PRODUCT_SCS_VENDOR_KEY_DIR)/fip/rsa/$(PRODUCT_SCS_PROJECT_NAME)/rootrsa-0/key/bl33-level-3-rsa-priv.pem
+else
 BOARD_AVB_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_KEY_PATH := device/khadas/common/security/testkey_rsa2048.pem
+endif #ifeq ($(PRODUCT_USE_PREBUILD_SECURE_BOOTLOADER),true)
 BOARD_AVB_ROLLBACK_INDEX := 0
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --prop dovi_hash:3cd93647bdd864b4ae1712d57a7de3153e3ee4a4dfcfae5af8b1b7d999b93c5a
+$(warning BOARD_AVB_KEY_PATH is $(BOARD_AVB_KEY_PATH))
+ifeq ($(BOARD_AVB_KEY_PATH),)
+	$(error BOARD_AVB_KEY_PATH undefined or null)
+endif
 
 ifneq ($(AB_OTA_UPDATER),true)
 BOARD_AVB_RECOVERY_KEY_PATH := device/khadas/common/security/testkey_rsa2048.pem
