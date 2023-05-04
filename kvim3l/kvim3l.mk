@@ -89,6 +89,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.vendor.sys.cec.set_menu_language=false
 
+#ext board logo led default brightness value,mode value
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.logoled.brightness=1
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.logo.led.trigger=1
+
 # Customize the function key as the home key by default
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.sys.func.key.action=102
