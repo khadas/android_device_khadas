@@ -26,6 +26,7 @@
     <feature name="android.hardware.screen.landscape" />
     <feature name="android.hardware.screen.portrait" />
     <feature name="android.hardware.touchscreen" />
+    <feature name="android.hardware.sensor.accelerometer" />
     <!-- <feature name="android.hardware.type.television" /> -->
 
     <feature name="android.software.backup" />
