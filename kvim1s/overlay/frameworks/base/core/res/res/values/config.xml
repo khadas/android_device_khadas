@@ -57,6 +57,11 @@
         <item>"wlan0"</item>
     </string-array>
 
+    <!-- True if the device supports split screen as a form of multi-window. -->
+    <bool name="config_supportsSplitScreenMultiWindow">true</bool>
+    <integer name="config_defaultUiModeType">4</integer>
+    <bool name="config_lockUiMode">true</bool>
+
     <!-- If supported, are dreams enabled? (by default) -->
     <bool name="config_dreamsEnabledByDefault">false</bool>
     <!-- If supported and enabled, are dreams activated when asleep and charging? (by default) -->
