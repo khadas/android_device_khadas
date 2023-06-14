@@ -111,18 +111,23 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/khadas/common/ril/libquectel-ril/chat:system/bin/chat \
-    device/khadas/common/ril/libquectel-ril/libquectel-ril.so:vendor/lib/libquectel-ril.so \
+    device/khadas/common/ril/libquectel-ril/libquectel-ril.so:vendor/lib64/libquectel-ril.so \
     device/khadas/common/ril/libquectel-ril/ip-up:system/etc/ppp/ip-up \
     device/khadas/common/ril/libquectel-ril/ip-down:system/etc/ppp/ip-down \
     device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
     device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
 
+# 4G GPS HAL
+PRODUCT_COPY_FILES += \
+	device/khadas/common/ril/gps_cfg.inf:vendor/etc/gps_cfg.inf \
+	device/khadas/common/ril/gps.default.so:vendor/lib64/hw/gps.default.so
+
 # Light HAL
 PRODUCT_PACKAGES += \
     lights.amlogic
 
-# GPS HAL
-PRODUCT_PACKAGES += \
+# USB GPS HAL
+# PRODUCT_PACKAGES += \
     gps.amlogic
 
 # setup dalvik vm configs.

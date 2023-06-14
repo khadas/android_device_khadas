@@ -318,7 +318,13 @@
   <apn carrier="Telenor MMS" mcc="240" mnc="09" apn="services.telenor.se" mmsc="http://mms" mmsproxy="173.30.253.241" mmsport="8799" type="mms" />
   <apn carrier="Spring data" mcc="240" mnc="10" apn="data.springmobil.se" type="default,supl" />
   <apn carrier="Spring MMS" mcc="240" mnc="10" apn="mms.springmobil.se" mmsc="http://mms.springmobil.se" mmsproxy="213.88.184.37" mmsport="8080" type="mms" />
-  <apn carrier="Nortel" mcc="242" mnc="01" apn="telenor" type="default,supl" />
+  <apn carrier="Ludo Internet" mcc="242" mnc="01" apn="internet.ventelo.no" type="default,supl" />
+  <apn carrier="Ludo MMS" mcc="242" mnc="01" apn="mms.ventelo.no" user="ventelo" password="1111" mmsc="http://mmsc/" mmsproxy="10.10.10.11" mmsport="8080" type="mms" />
+  <apn carrier="Telenor Internet" mcc="242" mnc="01" apn="telenor" type="default,supl" />
+  <apn carrier="Telenor MMS" mcc="242" mnc="01" apn="telenor" mmsc="http://mmsc/" mmsproxy="10.10.10.11" mmsport="8080" type="mms" />
+  <apn carrier="Mobitalk Internet" mcc="242" mnc="01" apn="telenor" user="dj" password="dj" proxy="10.10.10.10" port="8080" type="default,supl" />
+  <apn carrier="Mobitalk MMS" mcc="242" mnc="01" apn="telenor" user="dj" password="dj" mmsc="http://mmsc/" mmsproxy="10.10.10.11" mmsport="8080" type="mms" />
+  <apn carrier="Talkmore" mcc="242" mnc="01" apn="telenor" type="default,supl,mms" />
   <apn carrier="Netcom Internet" mcc="242" mnc="02" apn="internet.netcom.no" type="default,supl" />
   <apn carrier="Chess MMS" mcc="242" mnc="02" apn="mms.netcom.no" user="chess" password="chess" mmsc="http://mms/" mmsproxy="193.209.134.133" mmsport="8080" type="mms" />
   <apn carrier="Chess Internet" mcc="242" mnc="02" apn="netcom" user="chess" password="chess" proxy="10.254.254.10" port="8080" type="default,supl" />
@@ -786,6 +792,7 @@
   <apn carrier="MTNL Mumbai Postpaid" mcc="404" mnc="69" apn="gprsmtnlmum" user="mtnl" password="mtnl123" mmsc="http://172.16.39.140/mms/" mmsproxy="172.16.39.10" mmsport="9401" type="default,supl,mms" />
   <apn carrier="MTNL Mumbai Prepaid" mcc="404" mnc="69" apn="gprsppsmum" user="mtnl" password="mtnl123" mmsc="http://172.16.39.140/mms/" mmsproxy="172.16.39.10" mmsport="9401" type="default,supl,mms" />
   <apn carrier="Airtel" mcc="404" mnc="70" apn="airtelgprs.com" mmsc="http://100.1.201.171:10021/mmsc" mmsproxy="100.1.201.172" mmsport="8799" type="default,supl,mms" />
+  <apn carrier="Airtel" mcc="404" mnc="78" apn="airtelgprs.com" mmsc="http://100.1.201.171:10021/mmsc" mmsproxy="100.1.201.172" mmsport="8799" type="default,supl,mms" />
   <apn carrier="BSNL" mcc="404" mnc="71" apn="bsnlnet" user="MSISDN" password="MSISDN" type="default,supl" />
   <apn carrier="BSNL MMS" mcc="404" mnc="71" apn="mmssouth.cellone.in" user="MSISDN" password="mmsc" mmsc="http://10.7.236.11:8514" mmsproxy="10.7.236.11" mmsport="8080" type="mms" />
   <apn carrier="BSNL" mcc="404" mnc="72" apn="bsnlnet" user="MSISDN" password="MSISDN" type="default,supl" />
