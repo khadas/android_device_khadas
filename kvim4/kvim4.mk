@@ -516,3 +516,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service
 
 #add end
+
+#add busybox
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim4/busybox-armv8l:system/bin/busybox
