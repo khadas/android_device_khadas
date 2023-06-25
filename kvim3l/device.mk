@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
 
 # 4G GPS HAL
-PRODUCT_COPY_FILES += \
+# PRODUCT_COPY_FILES += \
 	device/khadas/common/ril/gps_cfg.inf:vendor/etc/gps_cfg.inf \
 	device/khadas/common/ril/gps.default.so:vendor/lib64/hw/gps.default.so
 
@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
     lights.amlogic
 
 # USB GPS HAL
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     gps.amlogic
 
 # setup dalvik vm configs.
