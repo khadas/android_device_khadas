@@ -469,7 +469,6 @@ service ril-daemon /vendor/bin/hw/rild -l /vendor/lib64/libquectel-ril.so
     socket rild-debug stream 777 radio system
     user root
     group radio cache inet misc audio sdcard_rw log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 #wifi firmware_path
 #on property:wlan.driver.status=ok
