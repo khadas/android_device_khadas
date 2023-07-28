@@ -197,3 +197,6 @@ AUTO_PATCH_NPU := device/khadas/common/products/mbox/manifest/npu_update.sh
 ifeq ($(BOARD_NPU_SERVICE_ENABLE),true)
 $(shell ($(AUTO_PATCH_NPU) $(DEVICE_MANIFEST_FILE)))
 endif
+
+#sta ap
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
