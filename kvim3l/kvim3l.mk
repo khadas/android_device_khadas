@@ -99,6 +99,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         persist.sys.func.key.action=102
 
+#wifi hotpot
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.softap.band=0
+PRODUCT_COPY_FILES += \
+	device/khadas/$(PRODUCT_DIR)/rsdb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/rsdb.sh
+# add softap sh
+PRODUCT_COPY_FILES += \
+        device/khadas/$(PRODUCT_DIR)/start_softap.sh:$(TARGET_COPY_OUT_VENDOR)/bin/start_softap.sh
+
 # add cmdclient & cmdserver
 PRODUCT_COPY_FILES += \
         device/khadas/common/cmdclient:$(TARGET_COPY_OUT_SYSTEM)/bin/cmdclient \
