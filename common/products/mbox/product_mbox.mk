@@ -114,7 +114,6 @@ PRODUCT_PACKAGES += \
     TvSettings \
     DroidTvSettings \
     SchPwrOnOff \
-    LogoLedControl \
     KhadasControl
 
 #Browser
