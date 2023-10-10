@@ -23,4 +23,4 @@
 # !!! This line of code needs to be on the last line.
 # g12a/vendor_prop.mk defines the default prop values.
 # if change the default values, need define prop above.
-$(call inherit-product, device/amlogic/common/products/mbox/g12a/vendor_prop.mk)
+$(call inherit-product, device/khadas/common/products/mbox/g12a/vendor_prop.mk)

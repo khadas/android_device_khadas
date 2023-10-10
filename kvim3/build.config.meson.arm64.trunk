@@ -1,6 +1,6 @@
 . common/build.config.common
 . common/build.config.aarch64
-. device/amlogic/common/kernelbuild/build.config.common
+. device/khadas/common/kernelbuild/build.config.common
 
 DEFCONFIG=meson64_a64_defconfig
 EXTRA_CMDS=''
@@ -10,7 +10,7 @@ GPU_DRV_VERSION=r25p0
 
 KERNEL_DEVICETREE=g12a_s905x2_u215
 DTBO_DEVICETREE=android_overlay_dt
-PRODUCT_DIRNAME=device/amlogic/w400
+PRODUCT_DIRNAME=device/khadas/w400
 BOARD_DEVICENAME=w400
 
 

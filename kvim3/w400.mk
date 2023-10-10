@@ -43,7 +43,7 @@ BOARD_HAS_ADTV := true
 
 #tuner
 TUNER_MODULE := cxd2856
-include device/amlogic/common/tuner/tuner.mk
+include device/khadas/common/tuner/tuner.mk
 
 #dtvkit
 ifneq ($(TARGET_BUILD_IRDETO),true)
@@ -64,9 +64,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 
-$(call inherit-product, device/amlogic/common/products/mbox/product_mbox.mk)
-$(call inherit-product, device/amlogic/w400/device.mk)
-$(call inherit-product, device/amlogic/w400/vendor_prop.mk)
+$(call inherit-product, device/khadas/common/products/mbox/product_mbox.mk)
+$(call inherit-product, device/khadas/w400/device.mk)
+$(call inherit-product, device/khadas/w400/vendor_prop.mk)
 $(call inherit-product-if-exists, vendor/amlogic/w400/device-vendor.mk)
 
 
@@ -99,7 +99,7 @@ PROCUDT_UBOOT_PARAMS := g12b_w400_v1
 
 OTA_UP_PART_NUM_CHANGED := true
 
-BOARD_AML_TDK_KEY_PATH := device/amlogic/common/tdk_keys/
+BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
 BUILD_WITH_AVB := true
 BUILD_WITH_UDC := false
 
@@ -156,7 +156,7 @@ include vendor/amlogic/common/wifi_bt/bluetooth/configs/bluetooth.mk
 #
 #########################################################################
 BOARD_ALSA_AUDIO=tiny
-include device/amlogic/common/audio.mk
+include device/khadas/common/audio.mk
 
 #########################################################################
 
@@ -191,7 +191,7 @@ endif
 #########################################################################
 
 
-$(call inherit-product, device/amlogic/common/media.mk)
+$(call inherit-product, device/khadas/common/media.mk)
 
 ########################################################################
 #
@@ -227,7 +227,7 @@ BOARD_USES_DYNAMIC_FINGERPRINT ?= true
 # TB detect
 #
 #########################################################################
-$(call inherit-product, device/amlogic/common/tb_detect.mk)
+$(call inherit-product, device/khadas/common/tb_detect.mk)
 
 ifeq ($(AB_OTA_UPDATER),true)
 my_src_fstab := fstab.ab
@@ -250,14 +250,14 @@ my_dst_fstab := $(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.amlo
 endif
 
 PRODUCT_COPY_FILES += \
-    device/amlogic/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic \
-    device/amlogic/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(my_dst_fstab)
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic \
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(my_dst_fstab)
 
 BOARD_INSTALL_VULKAN:=true
-#include device/amlogic/common/gpu/dvalin-user-arm64.mk
-include device/amlogic/common/gpu/gondul-user-arm64.mk
+#include device/khadas/common/gpu/dvalin-user-arm64.mk
+include device/khadas/common/gpu/gondul-user-arm64.mk
 
-include device/amlogic/common/products/mbox/g12a/g12a.mk
+include device/khadas/common/products/mbox/g12a/g12a.mk
 
 #########################################################################
 #

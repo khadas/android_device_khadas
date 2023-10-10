@@ -761,9 +761,9 @@ fi
 
 echo "========================================================"
 echo " Files copied to device dir"
-DTBTOOL=${ROOT_DIR}/device/amlogic/common/kernelbuild/dtbTool
-DTCTOOL=${ROOT_DIR}/device/amlogic/common/kernelbuild/dtc
-DTIMGTOOL=${ROOT_DIR}/device/amlogic/common/kernelbuild/mkdtimg
+DTBTOOL=${ROOT_DIR}/device/khadas/common/kernelbuild/dtbTool
+DTCTOOL=${ROOT_DIR}/device/khadas/common/kernelbuild/dtc
+DTIMGTOOL=${ROOT_DIR}/device/khadas/common/kernelbuild/mkdtimg
 
 rm -rf ${ROOT_DIR}/${PRODUCT_DIRNAME}-kernel/5.4/lib/*
 mkdir -p ${ROOT_DIR}/${PRODUCT_DIRNAME}-kernel/5.4/lib/firmware/video/
