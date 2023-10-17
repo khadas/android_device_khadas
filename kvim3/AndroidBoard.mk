@@ -15,7 +15,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # For faraday path gets set to device/khadas/franklin/faraday but actually want the below.
-LOCAL_PATH := device/khadas/w400
+LOCAL_PATH := device/khadas/kvim3
 
 include $(LOCAL_PATH)/kernel_config_build.mk
 include device/khadas/common/factory.mk

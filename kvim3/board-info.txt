@@ -1,2 +1,2 @@
-require board=w400
+require board=kvim3
 require version-bootloader=01.01.210226.141724

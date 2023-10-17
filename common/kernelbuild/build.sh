@@ -283,7 +283,7 @@ if [ -z "${SKIP_BUILD_KERNEL}" ] ; then
 if [ -z "${SKIP_DEFCONFIG}" ] ; then
 set -x
 if [ $KERNEL_A32_SUPPORT ]; then
-    cp ${KERNEL_DIR}/arch/arm/configs/meson64_a32_defconfig ${KERNEL_DIR}/arch/arm/configs/meson64_a32_tmp_defconfig
+    cp ${KERNEL_DIR}/arch/arm/configs/kvim_a32_defconfig ${KERNEL_DIR}/arch/arm/configs/meson64_a32_tmp_defconfig
     if [ "$CONFIG_BOOTIMAGE" == "user" ];then
         cat ${KERNEL_DIR}/scripts/amlogic/meson64_r_user_diffconfig >> ${KERNEL_DIR}/arch/arm/configs/meson64_a32_tmp_defconfig
     fi
@@ -295,14 +295,14 @@ else
         if [ -n "${CUSTOMER_DEFCONFIG}" ]; then
             cat ${KERNEL_DIR}/customer/arch/arm64/configs/${CUSTOMER_DEFCONFIG} $GKI_EXT_MODULE_CFG_TMP > ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
         else
-            cat ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_R_defconfig $GKI_EXT_MODULE_CFG_TMP > ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
+            cat ${KERNEL_DIR}/arch/arm64/configs/kvim_defconfig $GKI_EXT_MODULE_CFG_TMP > ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
         fi
         sed -i 's/=m/=y/g' ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
     else
         if [ -n "${CUSTOMER_DEFCONFIG}" ]; then
             cp ${KERNEL_DIR}/customer/arch/arm64/configs/${CUSTOMER_DEFCONFIG} ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
         else
-            cp ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_R_defconfig ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
+            cp ${KERNEL_DIR}/arch/arm64/configs/kvim_defconfig ${KERNEL_DIR}/arch/arm64/configs/meson64_a64_gki_defconfig
         fi
 
     fi

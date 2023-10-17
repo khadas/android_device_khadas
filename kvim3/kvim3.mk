@@ -21,14 +21,14 @@ ifneq ($(BOARD_COMPILE_ATV),false)
   BOARD_COMPILE_CTS := true
 endif
 
-PRODUCT_DIR := w400
+PRODUCT_DIR := kvim3
 
 ########################################################################
 #
 #                            TV
 #
 ########################################################################
-ifneq (,$(filter $(TARGET_PRODUCT),w400))
+ifneq (,$(filter $(TARGET_PRODUCT),kvim3))
 TARGET_BUILD_LIVETV := false
 else
 TARGET_BUILD_LIVETV := true
@@ -65,13 +65,13 @@ endif
 
 
 $(call inherit-product, device/khadas/common/products/mbox/product_mbox.mk)
-$(call inherit-product, device/khadas/w400/device.mk)
-$(call inherit-product, device/khadas/w400/vendor_prop.mk)
-$(call inherit-product-if-exists, vendor/amlogic/w400/device-vendor.mk)
+$(call inherit-product, device/khadas/kvim3/device.mk)
+$(call inherit-product, device/khadas/kvim3/vendor_prop.mk)
+$(call inherit-product-if-exists, vendor/amlogic/kvim3/device-vendor.mk)
 
 
 PRODUCT_HAS_NETFLIX_PACKAGE := true
-$(call inherit-product-if-exists, vendor/amlogic/w400/nts/nts.mk)
+$(call inherit-product-if-exists, vendor/amlogic/kvim3/nts/nts.mk)
 #########################################################################
 #
 #                                               Media extension
@@ -95,7 +95,7 @@ PRODUCT_TYPE := mbox
 BOARD_AML_VENDOR_PATH := vendor/amlogic/common/
 BOARD_WIDEVINE_TA_PATH := vendor/amlogic/
 
-PROCUDT_UBOOT_PARAMS := g12b_w400_v1
+PROCUDT_UBOOT_PARAMS := kvim3
 
 OTA_UP_PART_NUM_CHANGED := true
 

@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/w400.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/kvim3.mk
 COMMON_LUNCH_CHOICES := \
-    w400-eng \
-    w400-user \
-    w400-userdebug
+    kvim3-eng \
+    kvim3-user \
+    kvim3-userdebug
 

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-PRODUCT_DIR := w400
+PRODUCT_DIR := kvim3
 
 ifneq ($(ANDROID_BUILD_TYPE), 64)
 TARGET_ARCH := arm
@@ -263,7 +263,7 @@ include device/khadas/common/soong_config/soong_config.mk
 ifeq ($(BOARD_USES_DYNAMIC_FINGERPRINT),true)
 #Building raw OEM images with "make custom_images"
 PRODUCT_CUSTOM_IMAGE_MAKEFILES := \
-    device/khadas/w400/oem/oem.mk
+    device/khadas/kvim3/oem/oem.mk
 
 #re-sign the raw ext4 OEM image
 ifeq ($(filter $(MAKECMDGOALS),custom_images),)
@@ -276,17 +276,17 @@ BOARD_AVB_OEM_ROLLBACK_INDEX_LOCATION := 1
 ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
 BOARD_AVB_OEM_PARTITION_SIZE := 16777216
 BOARD_AVB_OEM_IMAGE_LIST := \
-    device/khadas/w400/oem/oem_4.9/oem.img
+    device/khadas/kvim3/oem/oem_4.9/oem.img
 else
 BOARD_AVB_OEM_PARTITION_SIZE := 33554432
 BOARD_AVB_OEM_IMAGE_LIST := \
-    device/khadas/w400/oem/oem.img
+    device/khadas/kvim3/oem/oem.img
 endif
 
 #Set the OEM partition mounting flag to Read Only
 TARGET_RECOVERY_FSTYPE_MOUNT_OPTIONS := ext4=ro
 #Building OTAs for OEM properties
-OEM_OTA_CONFIG := device/khadas/w400/oem/oem.prop
+OEM_OTA_CONFIG := device/khadas/kvim3/oem/oem.prop
 endif
 
 #GKI firstlist and blacklist modules

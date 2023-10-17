@@ -5,6 +5,6 @@ else
 CUSTOM_IMAGE_PARTITION_SIZE := 31457280
 endif
 CUSTOM_IMAGE_FILE_SYSTEM_TYPE := ext4
-CUSTOM_IMAGE_DICT_FILE := device/khadas/w400/oem/oem_dict.txt
+CUSTOM_IMAGE_DICT_FILE := device/khadas/kvim3/oem/oem_dict.txt
 CUSTOM_IMAGE_SELINUX := true
-CUSTOM_IMAGE_COPY_FILES := device/khadas/w400/oem/oem.prop:oem.prop
+CUSTOM_IMAGE_COPY_FILES := device/khadas/kvim3/oem/oem.prop:oem.prop
