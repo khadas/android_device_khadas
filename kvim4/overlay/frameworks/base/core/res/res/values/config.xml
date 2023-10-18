@@ -115,7 +115,7 @@
 
     <!-- True if the device supports split screen as a form of multi-window. -->
     <bool name="config_supportsSplitScreenMultiWindow">true</bool>
-    <integer name="config_defaultUiModeType">4</integer>
+    <integer name="config_defaultUiModeType">1</integer>
     <bool name="config_lockUiMode">true</bool>
     <!-- Keyguard component -->
     <!--string name="config_keyguardComponent" translatable="false">com.droidlogic/com.droidlogic.StubKeyguardService</string-->
