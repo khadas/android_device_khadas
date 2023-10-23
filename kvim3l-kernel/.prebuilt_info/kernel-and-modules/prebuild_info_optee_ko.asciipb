@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "c8394c47"
+    target: "kernel"
+    source_file: "optee.ko"
+  }
+  dest_file: "optee.ko"
+  version: "c8394c478ac57f34a78a9d932801884476051eb5"
+  version_group: "kernel-and-modules"
+  source: "repo:[vendor/amlogic/common/tdk/linuxdriver]-branch:[q-amlogic]"
+  git_project: "device/amlogic/franklin-kernel"
+}

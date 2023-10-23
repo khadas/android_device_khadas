@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "d94d41ce"
+    target: "kernel"
+    source_file: "mali.ko"
+  }
+  dest_file: "mali.ko"
+  version: "d94d41ce0e4fbd18ab6e79352780bf8677bbcccf"
+  version_group: "kernel-and-modules"
+  source: "repo:[vendor/amlogic/common/gpu]-branch:[mainline]"
+  git_project: "device/amlogic/franklin-kernel"
+}

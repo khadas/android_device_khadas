@@ -1,0 +1,280 @@
+# Copyright (C) 2011 Amlogic Inc
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# This file is the build configuration for a full Android
+# build for Meson reference board.
+#
+#ATV version, need compile DRM related modules
+ifneq ($(BOARD_COMPILE_ATV),false)
+  BOARD_COMPILE_CTS := true
+endif
+
+PRODUCT_DIR := kvim3l
+
+########################################################################
+#
+#                            TV
+#
+########################################################################
+ifneq (,$(filter $(TARGET_PRODUCT),kvim3l))
+TARGET_BUILD_LIVETV := false
+else
+TARGET_BUILD_LIVETV := true
+endif
+
+ifeq ($(TARGET_BUILD_LIVETV),true)
+PRODUCT_PACKAGES += \
+    droidlogic.tv.software.core.xml
+
+#dvbstack
+BOARD_HAS_ADTV := true
+
+#tuner
+TUNER_MODULE := cxd2856
+include device/khadas/common/tuner/tuner.mk
+
+#dtvkit
+ifneq ($(TARGET_BUILD_IRDETO),true)
+PRODUCT_SUPPORT_DTVKIT := true
+SUPPORT_DTVKIT_IN_VENDOR := true
+endif
+endif
+
+PRODUCT_PACKAGES += \
+    libdvbcallsocket \
+    am_av_test
+
+#ifeq ($(TARGET_PRODUCT),franklin_hybrid)
+#BOARD_ENABLE_FAR_FIELD_AEC := true
+#endif
+
+ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.media.support.mvc=false
+endif
+
+
+$(call inherit-product, device/khadas/common/products/mbox/product_mbox.mk)
+$(call inherit-product, device/khadas/kvim3l/device.mk)
+$(call inherit-product, device/khadas/kvim3l/vendor_prop.mk)
+$(call inherit-product-if-exists, vendor/amlogic/kvim3l/device-vendor.mk)
+
+
+PRODUCT_HAS_NETFLIX_PACKAGE := true
+$(call inherit-product-if-exists, vendor/amlogic/kvim3l/nts/nts.mk)
+#########################################################################
+#
+#                                               Media extension
+#
+#########################################################################
+#TARGET_WITH_MEDIA_EXT_LEVEL := 4
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hdmi.device_type=4 \
+    ro.hdmi.set_menu_language=false \
+    persist.sys.hdmi.keep_awake=false
+
+PRODUCT_NAME := $(TARGET_PRODUCT)
+PRODUCT_DEVICE := $(TARGET_PRODUCT)
+PRODUCT_BRAND := Amlogic
+PRODUCT_MODEL := $(TARGET_PRODUCT)
+PRODUCT_MANUFACTURER := Amlogic
+
+PRODUCT_TYPE := mbox
+
+BOARD_AML_VENDOR_PATH := vendor/amlogic/common/
+BOARD_WIDEVINE_TA_PATH := vendor/amlogic/
+
+PROCUDT_UBOOT_PARAMS := kvim3l
+
+OTA_UP_PART_NUM_CHANGED := true
+
+BOARD_AML_TDK_KEY_PATH := device/khadas/common/tdk_keys/
+BUILD_WITH_AVB := true
+BUILD_WITH_UDC := false
+
+BOARD_USES_ODM_EXTIMAGE := true
+
+TARGET_BUILD_KERNEL_4_9 ?= true
+
+ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
+AB_OTA_UPDATER :=true
+endif
+
+ifeq ($(AB_OTA_UPDATER),true)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
+BUILDING_VENDOR_BOOT_IMAGE ?= true
+endif
+endif
+
+#JUST FOR QA TEST REQUIREMENT
+PRODUCT_PACKAGES += \
+    Gallery2
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+#BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
+#########################################################################
+#
+#                          SECURE BOOT V3
+#
+#########################################################################
+#########Support compiling out encrypted zip/aml_upgrade_package.img directly
+BOARD_AML_SECUREBOOT_KEY_DIR := ./bootloader/uboot-repo/bl33/v2015/board/amlogic/g12a_u212_v1/aml-key
+BOARD_AML_SECUREBOOT_SOC_TYPE := sm1
+
+#########################################################################
+#
+#                          Dm-Verity
+#
+#########################################################################
+#TARGET_USE_SECURITY_DM_VERITY_MODE_WITH_TOOL := true
+
+#########################################################################
+#
+#                      WiFi and Bluetooth
+#
+#########################################################################
+include vendor/amlogic/common/wifi_bt/wifi/configs/wifi.mk
+BOARD_HAVE_BLUETOOTH := true
+include vendor/amlogic/common/wifi_bt/bluetooth/configs/bluetooth.mk
+
+#########################################################################
+#
+# Audio
+#
+#########################################################################
+BOARD_ALSA_AUDIO=tiny
+include device/khadas/common/audio.mk
+
+#########################################################################
+
+#########################################################################
+#
+# PlayReady DRM
+#
+#########################################################################
+#export BOARD_PLAYREADY_LEVEL=3 for PlayReady+NOTVP
+#export BOARD_PLAYREADY_LEVEL=1 for PlayReady+OPTEE+TVP
+
+#########################################################################
+#
+# Verimatrix DRM
+#
+##########################################################################
+#verimatrix web
+BUILD_WITH_VIEWRIGHT_WEB := false
+#verimatrix stb
+BUILD_WITH_VIEWRIGHT_STB := false
+#########################################################################
+
+#########################################################################
+#
+#  WifiDisplay
+#
+##########################################################################
+ifeq ($(BOARD_COMPILE_ATV), false)
+BUILD_WITH_MIRACAST := true
+endif
+
+#########################################################################
+
+
+$(call inherit-product, device/khadas/common/media.mk)
+
+########################################################################
+#
+#                          Audio License Decoder
+#
+########################################################################
+TARGET_DOLBY_MS12_VERSION := 2
+ifeq ($(TARGET_DOLBY_MS12_VERSION), 2)
+    TARGET_BUILD_DOLBY_MS12_V2 := true
+else
+    TARGET_BUILD_DOLBY_MS12_V1 := true
+endif
+
+#TARGET_BUILD_DOLBY_DDP := true
+TARGET_BUILD_DTSHD := true
+#################################################################################
+#
+# DEFAULT LOWMEMORYKILLER CONFIG
+#
+#################################################################################
+BUILD_WITH_LOWMEM_COMMON_CONFIG := true
+
+BOARD_USES_USB_PM := true
+#########################################################################
+#
+#           OEM Partitions based dynamic fingerprint
+#
+#########################################################################
+BOARD_USES_DYNAMIC_FINGERPRINT ?= true
+
+#########################################################################
+#
+# TB detect
+#
+#########################################################################
+$(call inherit-product, device/khadas/common/tb_detect.mk)
+
+ifeq ($(AB_OTA_UPDATER),true)
+my_src_fstab := fstab.ab
+else
+my_src_fstab := fstab.system
+endif
+
+ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
+my_src_fstab := $(my_src_fstab)_4.9
+endif
+
+ifeq ($(BOARD_USES_DYNAMIC_FINGERPRINT),true)
+my_src_fstab := $(my_src_fstab)_oem
+endif
+
+ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
+my_dst_fstab := $(TARGET_COPY_OUT_RAMDISK)/first_stage_ramdisk/fstab.amlogic
+else
+my_dst_fstab := $(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.amlogic
+endif
+
+PRODUCT_COPY_FILES += \
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.amlogic \
+    device/khadas/$(PRODUCT_DIR)/$(my_src_fstab).amlogic:$(my_dst_fstab)
+
+BOARD_INSTALL_VULKAN:=true
+include device/khadas/common/gpu/dvalin-user-arm64.mk
+
+include device/khadas/common/products/mbox/g12a/g12a.mk
+
+#########################################################################
+#
+##                                     Auto Patch
+#                          must put in the end of mk files
+##########################################################################
+ifeq ($(BOARD_COMPILE_ATV),false)
+AUTO_PATCH_SHELL_FILE := vendor/amlogic/common/pre_submit_for_google/auto_patch.sh
+HAVE_WRITED_SHELL_FILE := $(shell test -f $(AUTO_PATCH_SHELL_FILE) && echo yes)
+IS_REFERENCE_PROJECT := true
+ifeq ($(HAVE_WRITED_SHELL_FILE),yes)
+SCRIPT_RESULT :=$(shell ($(AUTO_PATCH_SHELL_FILE) $(IS_REFERENCE_PROJECT) $(TARGET_BUILD_LIVETV)  $(BOARD_COMPILE_ATV) )))
+ifeq ($(filter Error,$(SCRIPT_RESULT)), Error)
+$(error $(SCRIPT_RESULT))
+else
+$(warning $(SCRIPT_RESULT))
+endif
+endif
+endif

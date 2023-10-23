@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "85da0617"
+    target: "kernel"
+    source_file: "amvdec_vp9.ko"
+  }
+  dest_file: "amvdec_vp9.ko"
+  version: "85da061765fee5c9b64b4db65ea1a33ea3b3a744"
+  version_group: "kernel-and-modules"
+  source: "repo:[hardware/amlogic/media_modules]-branch:[amlogic-4.9-dev]"
+  git_project: "device/amlogic/franklin-kernel"
+}

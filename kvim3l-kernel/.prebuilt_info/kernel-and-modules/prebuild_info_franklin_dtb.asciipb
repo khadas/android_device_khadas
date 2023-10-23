@@ -1,0 +1,13 @@
+drops {
+  android_build_drop {
+    build_id: "f533f9fd"
+    target: "kernel"
+    source_file: "franklin.dtb"
+  }
+  dest_file: "dt.img"
+  version: "f533f9fdb837f6ccf5b9dd7443e5d5ed4ee02550"
+  version_group: "kernel-and-modules"
+  source: "repo:[common]-branch:[bringup/amlogic-4.9/sync20190611_forQ]"
+  git_project: "device/amlogic/franklin-kernel"
+}
+

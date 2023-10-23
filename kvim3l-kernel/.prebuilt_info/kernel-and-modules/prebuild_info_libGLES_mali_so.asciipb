@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "3e813200"
+    target: "kernel"
+    source_file: "libGLES_mali.so"
+  }
+  dest_file: "libGLES_mali.so"
+  version: "3e813200a94be2ffbfa28fb77f8b4e6332708743"
+  version_group: "kernel-and-modules"
+  source: "repo:[vendor/amlogic/common/gpu-lib]-branch:[android]"
+  git_project: "device/amlogic/franklin-kernel"
+}

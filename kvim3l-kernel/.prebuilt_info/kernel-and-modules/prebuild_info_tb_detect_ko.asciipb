@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "e76c5481"
+    target: "kernel"
+    source_file: "tb_detect.ko"
+  }
+  dest_file: "tb_detect.ko"
+  version: "e76c54811a421435b219850f1ba5312696083979"
+  version_group: "kernel-and-modules"
+  source: "repo:[hardware/amlogic/tb_modules]-branch:[q-amlogic]"
+  git_project: "device/amlogic/franklin-kernel"
+}

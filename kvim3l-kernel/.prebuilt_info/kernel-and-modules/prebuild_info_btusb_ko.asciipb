@@ -1,0 +1,12 @@
+drops {
+  android_build_drop {
+    build_id: "aa7557da"
+    target: "kernel"
+    source_file: "btusb.ko"
+  }
+  dest_file: "btusb.ko"
+  version: "aa7557da41f1633ad0e3f4b4663803bcab908fa2"
+  version_group: "kernel-and-modules"
+  source: "repo:[vendor/amlogic/common/wifi_bt]-branch:[q-amlogic]"
+  git_project: "device/amlogic/franklin-kernel"
+}

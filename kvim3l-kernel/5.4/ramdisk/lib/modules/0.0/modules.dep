@@ -1,0 +1,62 @@
+meson-gx-socinfo.ko:
+xhci-plat-hcd.ko: dwc3.ko
+meson-clk-measure.ko:
+adc_keypad.ko: aml_mailbox.ko
+pps_core.ko:
+meson-cpufreq.ko:
+aml_spifc.ko:
+stmmac.ko: ptp.ko pps_core.ko phylink.ko
+meson_ir.ko:
+dwmac-ipq806x.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+aml_dvb_extern_fe.ko:
+aml_gki_tool.ko:
+dwc3-qcom.ko:
+dwc3.ko: dwc3-of-simple.ko
+dwmac_meson.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+meson_saradc.ko:
+aml_usb3v3phy.ko: aml_usb3v2phy.ko
+aml_efuse_unifykey.ko:
+reg_access.ko:
+hifi4dsp.ko: aml_mailbox_dsp.ko aml_mailbox.ko
+aml_usbotg.ko: aml_usb3v3phy.ko
+aml_pinctrl.ko:
+dwc_otg.ko: aml_gki_tool.ko xhci-plat-hcd.ko
+dwmac_meson8b.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+dwmac-qcom-ethqos.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+reboot.ko:
+aml_mailbox.ko:
+ptp.ko: pps_core.ko
+aml_pcie_v2.ko:
+aml_rng.ko:
+meson-clk-debug.ko: meson-clk-measure.ko
+aml_i2c.ko:
+thermal.ko:
+mdio_mux.ko:
+tee.ko:
+aml_media.ko: aml_efuse_unifykey.ko tee.ko meson-clk-measure.ko aml_gki_tool.ko aml_mailbox.ko
+meson_jtag.ko:
+aml_usb3v2phy.ko: aml_usb2phy.ko
+aml_vrtc.ko: aml_mailbox.ko
+aml_mdio_g12a.ko: mdio_mux.ko
+meson-gxl.ko:
+cxd2880-spi.ko:
+snd-soc-dummy_codec.ko:
+meson_clk.ko:
+dwc3-haps.ko:
+dwc3-of-simple.ko: aml_usbotg.ko
+aml_mailbox_dsp.ko:
+meson_gxbb_wdt.ko:
+meson_bc_timer.ko:
+dwmac-generic.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+snd-soc-aml_t9015.ko: snd_soc.ko aml_media.ko aml_efuse_unifykey.ko tee.ko meson-clk-measure.ko aml_gki_tool.ko aml_mailbox.ko
+dwmac-dwc-qos-eth.ko: stmmac-platform.ko stmmac.ko ptp.ko pps_core.ko phylink.ko
+gspca_main.ko:
+aml_ddr_tool.ko:
+meson_wdt.ko:
+meson-mx-socinfo.ko:
+stmmac-platform.ko: stmmac.ko ptp.ko pps_core.ko phylink.ko
+phylink.ko:
+snd_soc.ko: aml_media.ko aml_efuse_unifykey.ko tee.ko meson-clk-measure.ko aml_gki_tool.ko aml_mailbox.ko
+exfat.ko:
+aml_usb2phy.ko:
+aml_crypto_dma.ko:

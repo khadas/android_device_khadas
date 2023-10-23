@@ -1,0 +1,13 @@
+drops {
+  android_build_drop {
+    build_id: "12cae11e"
+    target: "kernel"
+    source_file: "dhd.ko"
+  }
+  dest_file: "dhd.ko"
+  version: "12cae11ecf31c225807745af5a3f36403f3cbf10"
+  version_group: "kernel-and-modules"
+  source: "repo:[hardware/wifi/broadcom/drivers/ap6xxx]-branch:[p-amlogic]"
+  git_project: "device/amlogic/franklin-kernel"
+}
+
