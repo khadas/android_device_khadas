@@ -210,12 +210,6 @@ endif
 
 #TARGET_BUILD_DOLBY_DDP := true
 TARGET_BUILD_DTSHD := true
-#################################################################################
-#
-# DEFAULT LOWMEMORYKILLER CONFIG
-#
-#################################################################################
-BUILD_WITH_LOWMEM_COMMON_CONFIG := true
 
 BOARD_USES_USB_PM := true
 #########################################################################
