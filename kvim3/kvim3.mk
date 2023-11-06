@@ -84,11 +84,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi.set_menu_language=false \
     persist.sys.hdmi.keep_awake=false
 
-PRODUCT_NAME := $(TARGET_PRODUCT)
-PRODUCT_DEVICE := $(TARGET_PRODUCT)
-PRODUCT_BRAND := Amlogic
-PRODUCT_MODEL := $(TARGET_PRODUCT)
-PRODUCT_MANUFACTURER := Amlogic
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.display.id = VIM3-Android-11-32bit-V$(shell date +%y%m%d)
+
+PRODUCT_NAME := kvim3
+PRODUCT_DEVICE := kvim3
+PRODUCT_BRAND := Khadas
+PRODUCT_MODEL := VIM3
+PRODUCT_MANUFACTURER := Khadas
 
 PRODUCT_TYPE := mbox
 
