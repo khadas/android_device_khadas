@@ -21,3 +21,6 @@ on property:ro.boot.oem.key1=*
 
 #uboot env
     chmod 666 /dev/block/env
+
+#led
+    chmod 666 /sys/class/leds/sys_led/trigger
