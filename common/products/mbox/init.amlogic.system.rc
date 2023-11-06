@@ -104,6 +104,12 @@ service fuse_loop /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/loop /storage
 #    disabled
 #    seclabel u:r:watchdogd:s0
 
+service preinstall /system/bin/preinstall.sh
+    user root
+    group root
+    oneshot
+    seclabel u:r:preinstall:s0
+
 service remotecfg /vendor/bin/remotecfg /vendor/etc/remote.conf
     class main
     oneshot
@@ -135,6 +141,9 @@ service bugreport /system/bin/dumpstate -d -p -B -z \
     class main
     disabled
     oneshot
+
+on property:sys.boot_completed=1
+    start preinstall
 
 on property:sys.boot_completed=1
     start factoryreset
