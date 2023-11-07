@@ -39,6 +39,7 @@ on property:ro.boot.oem.key1=*
 
 #mcu
     chmod 666 /sys/class/mcu/rst
+    chmod 666 /sys/class/mcu/portmode
 
 #cmdline
     chmod 666 /proc/cmdline
