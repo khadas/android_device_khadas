@@ -78,6 +78,13 @@ PRODUCT_PACKAGES += \
     tspacktest \
     screencatch
 
+#Launcher3
+PRODUCT_PACKAGES += \
+    Launcher3
+
+PRODUCT_PACKAGES += \
+    FactoryTest
+
 #Tvsettings
 PRODUCT_PACKAGES += \
     TvSettings \
