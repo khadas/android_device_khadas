@@ -298,16 +298,16 @@ BUILD_WITH_GAPPS_CONFIG := false
 ##                                     Auto Patch
 #                          must put in the end of mk files
 ##########################################################################
-ifeq ($(BOARD_COMPILE_ATV),false)
-AUTO_PATCH_SHELL_FILE := vendor/amlogic/common/pre_submit_for_google/auto_patch.sh
-HAVE_WRITED_SHELL_FILE := $(shell test -f $(AUTO_PATCH_SHELL_FILE) && echo yes)
-IS_REFERENCE_PROJECT := true
-ifeq ($(HAVE_WRITED_SHELL_FILE),yes)
-SCRIPT_RESULT :=$(shell ($(AUTO_PATCH_SHELL_FILE) $(IS_REFERENCE_PROJECT) $(TARGET_BUILD_LIVETV)  $(BOARD_COMPILE_ATV) )))
-ifeq ($(filter Error,$(SCRIPT_RESULT)), Error)
-$(error $(SCRIPT_RESULT))
-else
-$(warning $(SCRIPT_RESULT))
-endif
-endif
-endif
+#ifeq ($(BOARD_COMPILE_ATV),false)
+#AUTO_PATCH_SHELL_FILE := vendor/amlogic/common/pre_submit_for_google/auto_patch.sh
+#HAVE_WRITED_SHELL_FILE := $(shell test -f $(AUTO_PATCH_SHELL_FILE) && echo yes)
+#IS_REFERENCE_PROJECT := true
+#ifeq ($(HAVE_WRITED_SHELL_FILE),yes)
+#SCRIPT_RESULT :=$(shell ($(AUTO_PATCH_SHELL_FILE) $(IS_REFERENCE_PROJECT) $(TARGET_BUILD_LIVETV)  $(BOARD_COMPILE_ATV) )))
+#ifeq ($(filter Error,$(SCRIPT_RESULT)), Error)
+#$(error $(SCRIPT_RESULT))
+#else
+#$(warning $(SCRIPT_RESULT))
+#endif
+#endif
+#endif
