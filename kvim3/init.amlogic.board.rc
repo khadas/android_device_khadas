@@ -33,3 +33,6 @@ on property:ro.boot.oem.key1=*
 
 #wol
     chmod 666 /sys/class/wol/enable
+
+#mac
+    chmod 666 /sys/class/efuse/mac
