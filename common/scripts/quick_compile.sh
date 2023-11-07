@@ -36,26 +36,8 @@ usage() {
 # Project Config
 ########################################################################################################################################################################
 #Project Name                  SOC Name              Hardware Name             lunch project name           uboot compile params               tdk path
-project[1]="Franklin"       ;soc[1]="S905X2"         ;hardware[1]="U212"       ; module[1]="franklin"      ;uboot[1]="g12a_u212_v1"         ;tdk[1]="g12a/bl32.img"
-project[2]="Newton"         ;soc[2]="S905X3"         ;hardware[2]="AC215"      ; module[2]="newton"        ;uboot[2]="sm1_ac215_v1"         ;tdk[2]="g12a/bl32.img"
-project[3]="Marconi"        ;soc[3]="T962X2"         ;hardware[3]="X301"       ; module[3]="marconi"       ;uboot[3]="tl1_x301_v1"          ;tdk[3]="tl1/bl32.img"
-project[4]="Dalton"         ;soc[4]="T962E2"         ;hardware[4]="AB311"      ; module[4]="dalton"        ;uboot[4]="tm2_t962e2_ab311_v1"  ;tdk[4]="tm2/bl32.img"
-project[5]="OHM"            ;soc[5]="S905X4"         ;hardware[5]="AH212"      ; module[5]="ohm"           ;uboot[5]="sc2_ah212"            ;tdk[5]="buildIn"
-project[6]="REDI"           ;soc[6]="T950D4/T950X4"  ;hardware[6]="AM301/AM311"; module[6]="redi"          ;uboot[6]="t5d_am301_v1"         ;tdk[6]="t5d/bl32.img"
-project[7]="OPPEN"          ;soc[7]="S905Y4"         ;hardware[7]="AP222"      ; module[7]="oppen"         ;uboot[7]="s4_ap222"             ;tdk[7]="v3_s4/s905y4"
-project[8]="PLANCK"         ;soc[8]="S805X2"         ;hardware[8]="AQ222"      ; module[8]="planck"        ;uboot[8]="s4_aq222"             ;tdk[8]="v3_s4/s805x2"
-project[9]="OHMCAS"         ;soc[9]="S905C2"         ;hardware[9]="905C2AH232" ; module[9]="ohmcas"        ;uboot[9]="sc2_ah232"            ;tdk[9]="buildIn"
-project[10]="AP201"         ;soc[10]="S905Y4"        ;hardware[10]="AP201"     ; module[10]="ap201"        ;uboot[10]="s4_ap201"            ;tdk[10]="buildIn"
-project[11]="Ohm_mxl258c"   ;soc[11]="S905X4"        ;hardware[11]="AH212"     ; module[11]="ohm_mxl258c"  ;uboot[11]="sc2_ah212"           ;tdk[11]="buildIn"
-project[12]="Smith"         ;soc[12]="T965D4"        ;hardware[12]="AR321"     ; module[12]="smith"        ;uboot[12]="t3_t965d4"           ;tdk[12]="buildIn"
-project[13]="T982_AR301"    ;soc[13]="T982"          ;hardware[13]="AR301"     ; module[13]="t982_ar301"   ;uboot[13]="t3_t982"             ;tdk[13]="buildIn"
-project[14]="OPPENCAS"      ;soc[14]="S905C3"        ;hardware[14]="AP232"     ; module[14]="oppencas"     ;uboot[14]="s4_ap232"            ;tdk[14]="v3_s4/s905c3"
-project[15]="Oppen_mxl258c" ;soc[15]="S905Y4"        ;hardware[15]="AP222"     ; module[15]="oppen_mxl258c";uboot[15]="s4_ap222"            ;tdk[15]="v3_s4/s905y4"
-project[16]="Oppencas_mxl258c" ;soc[16]="S905C3"     ;hardware[16]="AP232"     ; module[16]="oppencas_mxl258c";uboot[16]="s4_ap232"         ;tdk[16]="v3_s4/s905y4"
-project[17]="Franklin"      ;soc[17]="S905X2"        ;hardware[17]="U212"      ; module[17]="franklin"     ;uboot[17]="g12a_u212_v1"        ;tdk[17]="g12a/bl32.img"
-project[18]="Franklin_Hybrid";soc[18]="S905X2"       ;hardware[18]="U215"      ; module[18]="franklin_hybrid"   ;uboot[18]="g12a_u215_v1"  ;tdk[18]="g12a/bl32.img"
-project[19]="Soddy"         ;soc[19]="T962D4"        ;hardware[19]="AT301"     ; module[19]="soddy"        ;uboot[19]="t5w_at301_v1"          ;tdk[19]="buildIn"
-project[20]="AP223"         ;soc[20]="S905Y4"        ;hardware[20]="AP223"     ; module[20]="ap223"        ;uboot[20]="s4_ap223"            ;tdk[20]="v3_s4/s905y4"
+project[1]="kvim3"       ;soc[1]="S922X/S922Z"     ;hardware[1]="W200"       ; module[1]="kvim3"      ;uboot[1]="kvim3"      ;tdk[1]="g12a/bl32.img"
+project[2]="kvim3l"      ;soc[2]="S905S/905D3"     ;hardware[2]="U202/AC202" ; module[2]="kvim3l"     ;uboot[2]="kvim3l"      ;tdk[2]="g12a/bl32.img"
 ########################################################################################################################################################################
 
 
@@ -161,7 +143,7 @@ read_android_type() {
 compile_uboot() {
     uboot_name=${uboot[platform_type]}
     tdk_name=${tdk[platform_type]}
-    cd bootloader/uboot-repo
+    cd bootloader/uboot
 
     if [ $uboot_drm_type -gt 1 ]; then
         compile_bl32="--bl32 ../../vendor/amlogic/common/tdk/secureos/$tdk_name"
@@ -202,17 +184,15 @@ print_uboot_info() {
     echo -e "Problem:"
     echo -e "source code update, need update bootloader\n"
     echo "Solution:"
-    cd bootloader/uboot-repo/bl2/bin/
+    cd bootloader/uboot/bl2/bin/
     echo "bl2       : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl30/src_ao/
+    cd bootloader/uboot/bl30/src_ao/
     echo "bl30      : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl31_1.3/bin/
+    cd bootloader/uboot/bl31_1.3/bin/
     echo "bl31_1.3  : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl32_3.8/bin/
+    cd bootloader/uboot/bl32_3.8/bin/
     echo "bl32_3.8  : "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/bl33/v2019
-    echo "bl33_v2019: "$(git log --pretty=format:"%H" -1); cd ../../../../
-    cd bootloader/uboot-repo/fip/
+    cd bootloader/uboot/fip/
     echo "fip       : "$(git log --pretty=format:"%H" -1); cd ../../../
     cd vendor/amlogic/common/tdk_v3/
     echo "tdk_v3    : "$(git log --pretty=format:"%H" -1); cd ../../../../

@@ -137,8 +137,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #
 #########################################################################
 #########Support compiling out encrypted zip/aml_upgrade_package.img directly
-BOARD_AML_SECUREBOOT_KEY_DIR := ./bootloader/uboot-repo/bl33/v2015/board/amlogic/g12a_u212_v1/aml-key
-BOARD_AML_SECUREBOOT_SOC_TYPE := sm1
+BOARD_AML_SECUREBOOT_KEY_DIR := ./bootloader/uboot/board/khadas/kvim3/aml-key
+BOARD_AML_SECUREBOOT_SOC_TYPE := g12b
 
 #########################################################################
 #
