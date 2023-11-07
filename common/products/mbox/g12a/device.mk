@@ -104,8 +104,8 @@ endif
 # Set default USB configuration
 #
 #########################################################################
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    persist.sys.usb.config=mtp
 
 #########################################################################
 #
