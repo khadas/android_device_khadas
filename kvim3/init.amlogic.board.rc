@@ -29,3 +29,6 @@ on property:ro.boot.oem.key1=*
     chmod 666 /sys/class/fan/mode
     chmod 666 /sys/class/fan/level
     chmod 666 /sys/class/fan/enable
+
+#wol
+    chmod 666 /sys/class/wol/enable
