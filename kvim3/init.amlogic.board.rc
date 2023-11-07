@@ -36,3 +36,6 @@ on property:ro.boot.oem.key1=*
 
 #mac
     chmod 666 /sys/class/efuse/mac
+
+#mcu
+    chmod 666 /sys/class/mcu/rst
