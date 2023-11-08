@@ -125,7 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 #enable/disable afbc
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    vendor.afbcd.enable=1
+    vendor.afbcd.enable=0
 
 # low memory for 1G
 #PRODUCT_PROPERTY_OVERRIDES += \
