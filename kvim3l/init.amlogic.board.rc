@@ -18,3 +18,28 @@ on boot
 
 on property:ro.boot.oem.key1=*
     setprop ro.oem.key1 ${ro.boot.oem.key1}
+
+#uboot env
+    chmod 666 /dev/block/env
+
+#led
+    chmod 666 /sys/class/leds/sys_led/trigger
+    chmod 666 /sys/class/redled/mode
+
+#cooling fan
+    chmod 666 /sys/class/fan/mode
+    chmod 666 /sys/class/fan/level
+    chmod 666 /sys/class/fan/enable
+
+#wol
+    chmod 666 /sys/class/wol/enable
+
+#mac
+    chmod 666 /sys/class/efuse/mac
+
+#mcu
+    chmod 666 /sys/class/mcu/rst
+    chmod 666 /sys/class/mcu/portmode
+
+#cmdline
+    chmod 666 /proc/cmdline
