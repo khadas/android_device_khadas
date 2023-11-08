@@ -266,6 +266,10 @@ include device/khadas/common/gpu/dvalin-user-arm64.mk
 
 include device/khadas/common/products/mbox/g12a/g12a.mk
 
+include device/khadas/common/software.mk
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=280
+
 #########################################################################
 #
 #                          Khadas Build Config
