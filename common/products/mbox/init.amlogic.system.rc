@@ -67,6 +67,9 @@ on boot
     write /sys/class/vfm/map "rm default"
     write /sys/class/vfm/map "add default decoder ppmgr deinterlace amvideo"
 
+    #backlight
+    chown system system /sys/class/backlight/aml-bl/brightness
+
     chmod 666 /sys/class/video/show_first_frame_nosync
     chown media system /sys/class/video/show_first_frame_nosync
 
