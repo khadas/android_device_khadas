@@ -156,6 +156,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.is.tv=0
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.omx.dw=1
+
 #bootvideo
 #0                      |050
 #^                      |
