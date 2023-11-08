@@ -89,6 +89,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.display.id = VIM3L-Android-11-32bit-V$(shell date +%y%m%d)
 
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.vendor.sys.cec.set_menu_language=false
+
 PRODUCT_NAME := kvim3l
 PRODUCT_DEVICE := kvim3l
 PRODUCT_BRAND := Khadas
