@@ -142,6 +142,14 @@ endif
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
+PRODUCT_PACKAGES += \
+    dhcptool \
+    rild    \
+    TeleService
+
+PRODUCT_COPY_FILES += \
+    device/khadas/common/ril/libhuawei-ril/libhuawei-ril.so:vendor/lib/libhuawei-ril.so \
+    device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.picture_in_picture.xml:vendor/etc/permissions/android.software.picture_in_picture.xml
