@@ -91,6 +91,11 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/initscripts/audio.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/audio.rc
 endif
 
+$(shell python $(LOCAL_PATH)/auto_generator.py preinstall)
+-include device/khadas/kvim3l/preinstall/preinstall.mk
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim3l/preinstall/preinstall.sh:system/bin/preinstall.sh
+
 #########################################################################
 #
 # Media codec
