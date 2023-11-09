@@ -81,6 +81,7 @@ endif
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/khadas/common/scripts
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TARGET_RECOVERY_DEFAULT_ROTATION := ROTATION_LEFT
 TARGET_RECOVERY_UI_LIB += libamlogic_ui librecovery_amlogic
 TARGET_RECOVERY_UI_LIB += \
     libsystemcontrol_static \
