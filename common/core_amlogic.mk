@@ -277,7 +277,9 @@ PRODUCT_PACKAGES += \
     gralloc.amlogic \
     hwcomposer.amlogic \
     memtrack.amlogic \
-    screen_source.amlogic
+    screen_source.amlogic \
+    thermal.amlogic \
+    sensors.amlogic
 
 #glscaler and 3d format api
 PRODUCT_PACKAGES += \
@@ -514,6 +516,11 @@ endif
 #usb gadget hal
 PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.1-service.droidlogic
+
+#sensor hal
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@1.0-impl
 
 #gnss hal
 PRODUCT_PACKAGES += \
