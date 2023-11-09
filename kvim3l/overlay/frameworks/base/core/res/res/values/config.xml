@@ -110,6 +110,9 @@
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">2.android.pool.ntp.org</string>
 
+     <!-- disable checkWallpaperAtBoot -->
+     <bool name="config_checkWallpaperAtBoot">false</bool>
+
     <!-- Integer size limit, in KB, for a single WifiLogger ringbuffer, in default logging mode -->
     <integer translatable="false" name="config_wifi_logger_ring_buffer_default_size_limit_kb">16</integer>
 
