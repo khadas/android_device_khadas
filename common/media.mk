@@ -414,6 +414,10 @@ ifeq ($(BUILD_WITH_DEC_INFO_TEST),true)
 PRODUCT_PACKAGES += DecInfo_test
 endif
 
+ifeq ($(BUILD_WITH_DEC_INFO_TEST),true)
+PRODUCT_PACKAGES += DecInfo_test
+endif
+
 ifeq ($(BUILD_WITH_TEEVIDEOFIRM_LOAD),true)
 PRODUCT_PACKAGES += \
     libtee_load_video_fw \
