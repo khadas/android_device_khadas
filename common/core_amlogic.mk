@@ -515,6 +515,12 @@ endif
 PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.1-service.droidlogic
 
+#gnss hal
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0 \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
+
 #thermal hal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.droidlogic

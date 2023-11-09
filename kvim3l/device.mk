@@ -139,6 +139,10 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/khadas/$(PRODUCT_DIR)/overlay
 endif
 
+# GPS HAL
+PRODUCT_PACKAGES += \
+    gps.amlogic
+
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
