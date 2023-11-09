@@ -302,7 +302,7 @@ include device/khadas/common/products/mbox/g12a/g12a.mk
 #                          Khadas Build Config
 #
 #########################################################################
-BUILD_WITH_GAPPS_CONFIG := false
+BUILD_WITH_GAPPS_CONFIG := true
 
 #########################################################################
 #
