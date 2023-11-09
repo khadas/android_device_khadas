@@ -33,6 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.preview.MaxSize=1920x1080 \
     ro.camera.preview.LimitedRate=1920x1080x30,1280x720x30,640x480x30,320x240x28 \
     ro.camera.preview.UseMJPEG=1 \
+    ro.vendor.platform.board_camera=true \
     ro.vendor.platform.usehwmjpeg=true \
     ro.vendor.platform.omx=true
 
