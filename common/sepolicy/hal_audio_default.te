@@ -39,7 +39,7 @@ allow hal_audio_default sysfs:dir { open read };
 allow hal_audio_default vendor_data_file:dir { add_name remove_name write };
 allow hal_audio_default vendor_data_file:lnk_file { read };
 allow hal_audio_default vendor_data_file:file { create read open setattr unlink};
-allow hal_audio_default dvb_device:chr_file { open read write ioctl };
+#allow hal_audio_default dvb_device:chr_file { open read write ioctl };
 allow hal_audio_default frontend_device:chr_file { open read write ioctl };
 allow hal_audio_default codec_device:chr_file { read write open ioctl };
 allow hal_audio_default mediasync_device:chr_file rw_file_perms;

@@ -44,7 +44,7 @@ allow system_server update_engine:binder call;
 
 allow system_server mediaprovider:file { write open };
 
-allow system_server dvb_device:chr_file rw_file_perms;
+#allow system_server dvb_device:chr_file rw_file_perms;
 
 allow system_server { sysfs_amhdmitx }:file { read write open getattr };
 allow system_server storage_stub_file:dir { getattr };
