@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
     TvSettings \
     DroidTvSettings
 
+#Browser
+PRODUCT_PACKAGES += \
+    Lightning
+
 PRODUCT_PACKAGES += \
     setbootenv \
     getbootenv
