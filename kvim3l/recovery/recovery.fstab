@@ -5,7 +5,7 @@
 /dev/block/recovery     /recovery   emmc    defaults    defaults
 /dev/block/boot         /boot   emmc    defaults    defaults
 /dev/block/misc         /misc   emmc    defaults    defaults
-/dev/block/system       /       ext4    defaults,ro    defaults
+/dev/block/system       /system   ext4    defaults,ro    defaults
 /dev/block/vendor       /vendor ext4    defaults,ro    defaults
 /dev/block/odm          /odm    ext4    defaults    defaults
 /dev/block/param        /param    ext4    defaults    defaults
@@ -28,10 +28,10 @@
 /dev/block/mmcblk2p6    /sdcard vfat    defaults    defaults
 /dev/block/mmcblk    /sdcard vfat    defaults    defaults
 /dev/block/sd##         /udisk  auto    defaults    defaults
-/dev/block/nvme0n1      /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p1    /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p2    /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p3    /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p4    /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p5    /pcie  auto    defaults    defaults
-/dev/block/nvme0n1p6    /pcie  auto    defaults    defaults
+/dev/block/nvme0n1      /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p1    /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p2    /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p3    /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p4    /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p5    /pcie   auto    defaults    defaults
+/dev/block/nvme0n1p6    /pcie   auto    defaults    defaults
