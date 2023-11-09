@@ -122,6 +122,8 @@ BOARD_USES_ODM_EXTIMAGE := true
 
 TARGET_BUILD_KERNEL_4_9 ?= true
 
+NEED_ISP := true
+
 ifneq ($(TARGET_BUILD_KERNEL_4_9),true)
 AB_OTA_UPDATER :=true
 endif
