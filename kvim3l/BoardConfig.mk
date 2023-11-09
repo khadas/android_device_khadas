@@ -60,6 +60,7 @@ USE_HWC2 := true
 #panel does not support AFBC in default
 HWC_PRIMARY_DISP_SUPPORT_AFBC := false
 HWC_EXTEND_DISP_SUPPORT_AFBC := true
+HWC_ENABLE_PRE_DISPLAY_CALIBRATE := true
 
 include hardware/amlogic/gralloc/gralloc.device.mk
 
