@@ -67,7 +67,7 @@ endif
 
 ifeq ($(BOARD_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-+    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
+    frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 endif
 
 
