@@ -102,10 +102,8 @@ endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hdmi.device_type=4 \
-    ro.hdmi.set_menu_language=false \
-    persist.sys.hdmi.keep_awake=false
-
+        ro.hdmi.device_type=4 \
+        persist.sys.hdmi.keep_awake=false
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.display.id = VIM3-Android-11-32bit-V$(shell date +%y%m%d)
 

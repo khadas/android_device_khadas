@@ -96,7 +96,7 @@ TARGET_RECOVERY_UPDATER_LIBS := libinstall_amlogic
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS += libsystemcontrol_static libfdt libtinyxml2
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
 
 ifeq ($(TARGET_BUILD_LIVETV),true)
