@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
     utility_busybox
 
 # LiveTv
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     DroidLiveTvSettings
 endif
 

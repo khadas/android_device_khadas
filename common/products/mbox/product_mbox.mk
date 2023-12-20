@@ -158,7 +158,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/default_wallpaper.png:$(TARGET_COPY_OUT_VENDOR)/etc/default_wallpaper.png
 
-PRODUCT_PRODUCT_PROPERTIES += \
+#PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.wallpaper=vendor/etc/default_wallpaper.png
 
 # Include BUILD_NUMBER if defined

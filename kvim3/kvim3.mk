@@ -77,7 +77,29 @@ $(call inherit-product-if-exists, vendor/amlogic/kvim3/nts/nts.mk)
 #                                               Media extension
 #
 #########################################################################
-#TARGET_WITH_MEDIA_EXT_LEVEL := 4
+TARGET_WITH_MEDIA_EXT_LEVEL := 4
+ifeq ($(TARGET_WITH_MEDIA_EXT_LEVEL), 1)
+    TARGET_WITH_MEDIA_EXT :=true
+    TARGET_WITH_SWCODEC_EXT :=true
+else
+ifeq ($(TARGET_WITH_MEDIA_EXT_LEVEL), 2)
+    TARGET_WITH_MEDIA_EXT :=true
+    TARGET_WITH_CODEC_EXT := true
+else
+ifeq ($(TARGET_WITH_MEDIA_EXT_LEVEL), 3)
+    TARGET_WITH_MEDIA_EXT :=true
+    TARGET_WITH_SWCODEC_EXT := true
+    TARGET_WITH_CODEC_EXT := true
+else
+ifeq ($(TARGET_WITH_MEDIA_EXT_LEVEL), 4)
+    TARGET_WITH_MEDIA_EXT :=true
+    TARGET_WITH_SWCODEC_EXT := true
+    TARGET_WITH_CODEC_EXT := true
+    TARGET_WITH_PLAYERS_EXT := true
+endif
+endif
+endif
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi.device_type=4 \

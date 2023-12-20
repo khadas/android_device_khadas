@@ -168,7 +168,6 @@ PRODUCT_PACKAGES += \
     RemoteIME \
     NativeImagePlayer \
     imageserver \
-    MboxLauncher \
     DLNA \
     BluetoothRemote \
     Gallery2 \

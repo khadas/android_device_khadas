@@ -170,11 +170,3 @@ $(call inherit-product, device/khadas/common/products/mbox/g12a/device.mk)
 
 #Dolby MS12 2.4 Decryption
 include device/khadas/common/dolby_ms12/dolby_ms12.mk
-
-ifeq ($(BOARD_USES_DYNAMIC_FINGERPRINT),true)
-PRODUCT_OEM_PROPERTIES := ro.product.name
-PRODUCT_OEM_PROPERTIES += ro.product.brand
-PRODUCT_OEM_PROPERTIES += ro.product.device
-PRODUCT_OEM_PROPERTIES += ro.product.manufacturer
-PRODUCT_OEM_PROPERTIES += ro.product.model
-endif
