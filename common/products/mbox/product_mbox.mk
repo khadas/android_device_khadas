@@ -87,8 +87,14 @@ PRODUCT_PACKAGES += \
 
 #Tvsettings
 PRODUCT_PACKAGES += \
-    TvSettings \
-    DroidTvSettings \
+    TvSettings
+
+#DroidTvsettings
+PRODUCT_PACKAGES += \
+    DroidTvSettings
+
+#SchPwrOnOff
+PRODUCT_PACKAGES += \
     SchPwrOnOff
 
 #Browser
