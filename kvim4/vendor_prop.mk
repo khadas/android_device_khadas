@@ -42,6 +42,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.platform.usehwmjpeg=true \
     ro.vendor.platform.omx=true \
+    vendor.camhal.use.dewarp=true \
+    vendor.camhal.use.dewarp.linear=true \
     ro.vendor.camera_mipi.faceback=true
 
 #adb
