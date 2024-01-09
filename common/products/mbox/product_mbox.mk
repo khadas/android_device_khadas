@@ -97,6 +97,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SchPwrOnOff
 
+#function key customize
+PRODUCT_PACKAGES += \
+    KhadasControl
+
 #Browser
 PRODUCT_PACKAGES += \
     Lightning

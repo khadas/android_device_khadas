@@ -110,6 +110,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.sys.cec.set_menu_language=false
 
+#Customize the function key as the home key by default
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.sys.func.key.action=102
+
 #wifi hotpot
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.softap.band=0
