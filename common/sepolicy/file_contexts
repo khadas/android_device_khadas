@@ -293,6 +293,19 @@
 /sys/devices/platform/meson-fb/graphics/fb[0-3](/.*)            u:object_r:sysfs_display:s0
 /sys/devices/platform/fb/graphics/fb[0-3](/.*)                  u:object_r:sysfs_display:s0
 /sys/class/lcd/enable                                           u:object_r:sysfs_lcd:s0
+/sys/class/camera/cam_state                                     u:object_r:sysfs_camera:s0
+/sys/class/tty/ttyACM0/device/uevent                            u:object_r:sysfs_acm:s0
+/sys/class/leds/sys_led/trigger                                 u:object_r:sysfs_led:s0
+/sys/devices/platform/gpioleds/leds/sys_led/trigger             u:object_r:sysfs_led:s0
+/sys/class/redled/mode                                          u:object_r:sysfs_led:s0
+/sys/class/fan/enable                                           u:object_r:sysfs_fan:s0
+/sys/class/fan/mode                                             u:object_r:sysfs_fan:s0
+/sys/class/fan/level                                            u:object_r:sysfs_fan:s0
+/sys/class/fan/temp                                             u:object_r:sysfs_fan:s0
+/sys/class/fan/type                                             u:object_r:sysfs_fan:s0
+/sys/class/wol/enable                                           u:object_r:sysfs_wol:s0
+/sys/class/mcu/portmode                                         u:object_r:sysfs_mcu:s0
+/sys/class/mcu/ethernet_mode                                    u:object_r:sysfs_mcu:s0
 /sys/class/video/video_scaler_path_sel                          u:object_r:sysfs_video:s0
 /sys/module/amdolby_vision/parameters(/.*)?                     u:object_r:sysfs_video:s0
 
@@ -427,6 +440,7 @@
 /vendor/bin/hw/android\.hardware\.drm@1\.3-service\.playready  u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.3-service\.netflix  u:object_r:hal_drm_default_exec:s0
 /vendor/bin/hw/android\.hardware\.drm@1\.3-service\.clearkey  u:object_r:hal_drm_clearkey_exec:s0
+/vendor/bin/hw/android\.hardware\.gnss@1\.0-service                      u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power\.aidl-service.droidlogic         u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/lights                                                    u:object_r:hal_light_default_exec:s0
 
