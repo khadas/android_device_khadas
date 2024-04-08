@@ -50,7 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.autoconnectbt.rssilimit=70
 
 PRODUCT_PROPERTY_OVERRIDES += \
-   ro.vendor.platform.support.dolbyvision=false
+   vendor.system.support.dolbyvision=false
 
 #the prop is used for enable or disable
 #DD+/DD force output when HDMI EDID is not supported
