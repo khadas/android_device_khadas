@@ -102,8 +102,13 @@ PRODUCT_PACKAGES += \
     KhadasControl
 
 #Browser
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     Lightning
+
+PRODUCT_PACKAGES += \
+    Music \
+    DocumentsUI \
+    VideoPlayer
 
 PRODUCT_PACKAGES += \
     setbootenv \
