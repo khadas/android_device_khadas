@@ -80,7 +80,7 @@ PRODUCT_PACKAGES += \
 
 #Launcher3
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3QuickStep
 
 PRODUCT_PACKAGES += \
     FactoryTest
