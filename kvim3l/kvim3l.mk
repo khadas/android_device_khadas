@@ -60,6 +60,10 @@ PRODUCT_PACKAGES += \
 #BOARD_ENABLE_FAR_FIELD_AEC := true
 #endif
 
+# For overlaying the google ATV default tv_core_hardware.xml, don't move
+PRODUCT_COPY_FILES += \
+    device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
+
 ifeq ($(TARGET_BUILD_KERNEL_4_9),true)
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.support.mvc=false

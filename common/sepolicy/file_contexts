@@ -168,6 +168,7 @@
 /dev/hidraw[0-3]			u:object_r:hidraw_device:s0
 /dev/galcore                            u:object_r:galcore_device:s0
 /dev/amresource_mgr			u:object_r:video_device:s0
+/dev/gsensor                            u:object_r:gsensor_device:s0
 
 /dev/hdmitx_report           u:object_r:hdmitx_device:s0
 /dev/stune/foreground/tasks   u:object_r:tasks_device:s0
