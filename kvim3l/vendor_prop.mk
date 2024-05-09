@@ -47,6 +47,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.autoconnectbt.nameprefix=Amlogic_RC_B12 \
     ro.vendor.autoconnectbt.rssilimit=70
 
+#if wifi Only
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.radio.noril=false
+
+#if need pppoe
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.net.pppoe=true
+
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    vendor.afbcd.enable=1
+
 PRODUCT_PROPERTY_OVERRIDES += \
    vendor.system.support.dolbyvision=false
 

@@ -62,7 +62,7 @@
     -->
     <!--<bool name="config_enableWifiDisplay">true</bool>-->
     <!--<bool name="config_enableWifiP2pAutoAcceptInvitation">true</bool>-->
-    <bool name="config_sms_capable">false</bool>
+    <bool name="config_sms_capable">true</bool>
     <!-- Flag indicating whether the current device is "voice capable".
          If true, this means that the device supports circuit-switched
          (i.e. voice) phone calls over the telephony network, and is
@@ -74,7 +74,7 @@
          PackageManager.FEATURE_TELEPHONY system feature, which is
          available on *any* device with a telephony radio, even if the
          device is data-only. -->
-    <bool name="config_voice_capable">false</bool>
+    <bool name="config_voice_capable">true</bool>
 
     <!-- Enable overlay for all location components. -->
     <bool name="config_enableNetworkLocationOverlay" translatable="false">true</bool>
