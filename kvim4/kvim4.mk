@@ -235,6 +235,7 @@ PRODUCT_PACKAGES += \
     FactoryTest \
     Settings \
     KSettings \
+    OTAService \
     KTools \
     SchPwrOnOff \
     DocumentsUI \
