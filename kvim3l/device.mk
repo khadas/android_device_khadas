@@ -139,17 +139,25 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/khadas/$(PRODUCT_DIR)/overlay
 endif
 
-# GPS HAL
+# USB GPS HAL
 PRODUCT_PACKAGES += \
     gps.amlogic
+
+# 4G GPS HAL
+# PRODUCT_COPY_FILES += \
+	device/khadas/common/ril/gps_cfg.inf:vendor/etc/gps_cfg.inf \
+	device/khadas/common/ril/gps.default.so:vendor/lib/hw/gps.default.so
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
+# add EM06 4G
+PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
 PRODUCT_PACKAGES += \
     dhcptool \
     rild    \
-    TeleService
+    TeleService \
+    TelephonyProvider
 
 PRODUCT_COPY_FILES += \
     device/khadas/common/ril/libquectel-ril/chat:system/bin/chat \
