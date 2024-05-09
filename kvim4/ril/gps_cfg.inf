@@ -1,7 +1,8 @@
 #you can modify this config file to adapt your demand.
 #the line start with ';' means not support
 #the line start with '#' means use default config
-
+#if use gps only module via uart MODULE_TYPE must be configured
+;MODULE_TYPE=
 NMEA_PORT_PATH=rild-nmea
 ;RMC_HZ=1
 ;NMEA_PORT_PATH=/dev/ttyO1
@@ -19,3 +20,4 @@ NMEA_PORT_PATH=rild-nmea
 ;FUNC_AGPS
 ;I2C_ADDR=
 ;NMEA_LOG_LEVEL=
+;libcutils_path=
