@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Music \
     DocumentsUI \
-    VideoPlayer
+    VideoPlayer \
+    LatinIME
 
 PRODUCT_PACKAGES += \
     setbootenv \
