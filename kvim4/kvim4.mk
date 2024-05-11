@@ -239,6 +239,7 @@ PRODUCT_PACKAGES += \
     KTools \
     SchPwrOnOff \
     DocumentsUI \
+	SoundRecorder \
     LatinIME
 
 ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
