@@ -116,6 +116,12 @@ PRODUCT_PACKAGES += \
     SchPwrOnOff \
     KhadasControl
 
+#Khadas OTA upgrade
+PRODUCT_PACKAGES += \
+    OTAService
+#Khadas official firmware flag
+PRODUCT_PROPERTY_OVERRIDES += ro.kofficial.version=false
+
 #Browser
 PRODUCT_PACKAGES += \
     Lightning
