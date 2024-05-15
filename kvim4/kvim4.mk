@@ -90,6 +90,9 @@ NEED_ISP := true
 
 PRODUCT_SUPPORT_4K_UI := true
 
+#khadas official firmware flag
+PRODUCT_PROPERTY_OVERRIDES += ro.kofficial.version=false
+
 ifneq ($(BOARD_COMPILE_ATV), false)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320
