@@ -114,7 +114,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.kofficial.version=false
 PRODUCT_PACKAGES += \
     Music \
     DocumentsUI \
-    VideoPlayer \
     LatinIME
 
 PRODUCT_PACKAGES += \

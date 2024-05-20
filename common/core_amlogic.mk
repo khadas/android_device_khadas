@@ -506,11 +506,9 @@ PRODUCT_PACKAGES += \
     vendor.amlogic.hardware.hdmicec@1.0 \
     hdmi_cec.amlogic
 
-#Android new device will use AIDL to instead of HIDL
-ifeq ($(BOARD_ENABLE_LIGHT_CONTROL),true)
-    PRODUCT_PACKAGES += \
-        lights
-endif
+# Light HAL
+PRODUCT_PACKAGES += \
+    lights.amlogic
 
 #usb gadget hal
 PRODUCT_PACKAGES += \

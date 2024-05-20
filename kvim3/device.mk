@@ -167,10 +167,6 @@ PRODUCT_COPY_FILES += \
     device/khadas/common/ril/apns-conf.xml:system/etc/apns-conf.xml \
     device/khadas/common/ril/ql-ril.conf:system/etc/ql-ril.conf
 
-# Light HAL
-PRODUCT_PACKAGES += \
-    lights.amlogic
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.picture_in_picture.xml:vendor/etc/permissions/android.software.picture_in_picture.xml
 
