@@ -142,8 +142,8 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.afbcd.enable=1
 
 # low memory for 1G
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.config.low_ram=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=true
 
 # crypto volume
 PRODUCT_PROPERTY_OVERRIDES += \
