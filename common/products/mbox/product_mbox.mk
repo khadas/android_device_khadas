@@ -80,7 +80,8 @@ PRODUCT_PACKAGES += \
 
 #Launcher3
 PRODUCT_PACKAGES += \
-    Launcher3QuickStep
+    Launcher3QuickStep \
+    WallpaperCropper
 
 PRODUCT_PACKAGES += \
     FactoryTest
@@ -112,7 +113,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.kofficial.version=false
     Lightning
 
 PRODUCT_PACKAGES += \
-    Music \
     DocumentsUI \
     LatinIME
 
