@@ -478,3 +478,7 @@ endif
 #########################################################################
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/ueventd.parallel.rc:$(TARGET_COPY_OUT_ODM)/ueventd.rc
+
+#add busybox
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim1s/busybox-armv8l:system/bin/busybox
