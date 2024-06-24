@@ -10,8 +10,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # config of surfaceflinger
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.surface_flinger.max_graphics_width=1920 \
-    ro.surface_flinger.max_graphics_height=1080 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 PRODUCT_PRODUCT_PROPERTIES += \
