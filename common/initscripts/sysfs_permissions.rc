@@ -146,6 +146,9 @@ on init
     chmod 0666 /sys/module/amdolby_vision/parameters/dolby_vision_level
     chown media system /sys/module/amdolby_vision/parameters/dolby_vision_level
 
+    chmod 0664 /sys/class/display2/mode
+    chown system system /sys/class/display2/mode
+
     chmod 0664 /sys/class/display/mode
     chown system system /sys/class/display/mode
 
