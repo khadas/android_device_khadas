@@ -122,6 +122,9 @@ PRODUCT_PACKAGES += \
 #Khadas official firmware flag
 PRODUCT_PROPERTY_OVERRIDES += ro.kofficial.version=false
 
+PRODUCT_PACKAGES += \
+    RemoteSettings
+
 #Browser
 PRODUCT_PACKAGES += \
     Lightning
