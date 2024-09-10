@@ -61,6 +61,14 @@ USE_HWC2 := true
 HWC_PRIMARY_DISP_SUPPORT_AFBC := false
 HWC_EXTEND_DISP_SUPPORT_AFBC := true
 
+HWC_DISPLAY_NUM := 1
+HWC_PRIMARY_FRAMEBUFFER_WIDTH := 1920
+HWC_PRIMARY_FRAMEBUFFER_HEIGHT := 1080
+HWC_EXTEND_FRAMEBUFFER_WIDTH := 1920
+HWC_EXTEND_FRAMEBUFFER_HEIGHT := 1080
+HWC_PRIMARY_CONNECTOR_TYPE := panel
+HWC_EXTEND_CONNECTOR_TYPE := hdmi-only
+
 include hardware/amlogic/gralloc/gralloc.device.mk
 
 include hardware/amlogic/hwcomposer/hwcomposer.device.mk
