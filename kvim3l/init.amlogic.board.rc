@@ -68,6 +68,10 @@ on property:sys.boot_completed=1
 #cmdline
     chmod 666 /proc/cmdline
 
+#Infrared controller
+    chmod 666 /sys/class/remote/amremote/custom_keymap
+    chmod 666 /sys/class/remote/amremote/receive_scancode
+
 service preinstall /system/bin/preinstall.sh
     user root
     group root
