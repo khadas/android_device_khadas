@@ -91,6 +91,9 @@ on boot
     chmod 666 /sys/class/mcu/wol_enable
     chmod 666 /sys/class/mcu/ageing_test
 
+    chmod 666 /sys/class/remote/amremote/custom_keymap
+    chmod 666 /sys/class/remote/amremote/receive_scancode
+
     chmod 666 /sys/class/efuse/mac
     chmod 666 /sys/class/efuse/usid
 

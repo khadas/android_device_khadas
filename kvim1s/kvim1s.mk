@@ -146,7 +146,8 @@ PRODUCT_PACKAGES += \
     SchPwrOnOff \
     KSettings \
     DocumentsUI \
-    KTools
+    KTools \
+    RemoteSettings
 
 BUILD_WITH_GAPPS_CONFIG=false
 ifeq ($(BUILD_WITH_GAPPS_CONFIG),true)
