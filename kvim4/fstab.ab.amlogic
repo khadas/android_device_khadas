@@ -10,7 +10,7 @@ product                                                 /product                
 odm                                                     /odm                              ext4    ro,barrier=1                                         wait,slotselect,avb,logical,first_stage_mount
 
 /dev/block/by-name/metadata                             /metadata                         ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,formattable,first_stage_mount
-/dev/block/by-name/odm_ext                              /mnt/vendor/odm_ext               ext4    ro,noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,slotselect,first_stage_mount
+/dev/block/by-name/odm_ext                              /mnt/vendor/odm_ext               ext4    rw,noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,slotselect,first_stage_mount
 
 /dev/block/userdata                                     /data                             ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    latemount,wait,check,fileencryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption,quota,formattable,reservedsize=32M,checkpoint=block
 /dev/block/param                                        /mnt/vendor/param                 ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,quota,formattable
