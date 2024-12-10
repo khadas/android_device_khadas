@@ -80,3 +80,11 @@ service preinstall /system/bin/preinstall.sh
 
 on property:sys.boot_completed=1
     start preinstall
+
+service cmdserver /system/bin/cmdserver
+    user root
+    group root
+    seclabel u:r:cmdserver:s0
+
+on property:sys.boot_completed=1
+    start cmdserver

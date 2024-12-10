@@ -45,6 +45,10 @@ $(shell python device/khadas/kvim4/auto_generator.py preinstall)
 PRODUCT_COPY_FILES += \
     device/khadas/kvim4/preinstall/preinstall.sh:system/bin/preinstall.sh
 
+PRODUCT_COPY_FILES += \
+    device/khadas/kvim4/cmd/cmdserver:system/bin/cmdserver \
+    device/khadas/kvim4/cmd/cmdclient:system/bin/cmdclient
+
 # For overlaying the google ATV default tv_core_hardware.xml, don't move
 PRODUCT_COPY_FILES += \
     device/khadas/$(PRODUCT_DIR)/permissions/tv_core_hardware.xml:system/etc/permissions/tv_core_hardware.xml
