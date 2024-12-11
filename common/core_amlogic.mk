@@ -350,6 +350,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/khadas/common/keyboards/virtual-remote.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/virtual-remote.idc
 
+$(shell mkdir -p $(OUT_DIR)/target/product/$(TARGET_PRODUCT))
+$(shell mkdir -p $(OUT_DIR)/target/product/$(TARGET_PRODUCT)/upgrade)
+$(shell cp -r $(LOCAL_PATH)/custom_img/custom.img $(OUT_DIR)/target/product/$(TARGET_PRODUCT)/)
+$(shell cp -r $(LOCAL_PATH)/custom_img/custom.img $(OUT_DIR)/target/product/$(TARGET_PRODUCT)/upgrade/)
+
 #########################################################################
 #
 #                                                App optimization
