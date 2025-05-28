@@ -1,2 +1,0 @@
-kvim3/preinstall/Chrome.apk filter=lfs diff=lfs merge=lfs -text
-kvim3l/preinstall/Chrome.apk filter=lfs diff=lfs merge=lfs -text
