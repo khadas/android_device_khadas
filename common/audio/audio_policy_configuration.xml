@@ -56,6 +56,10 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
+                <mixPort name="tunnel pcm" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_HW_AV_SYNC">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="32000,44100,48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
                 <mixPort name="multichannel output" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_HW_AV_SYNC">
                     <profile name=""/>
                 </mixPort>
@@ -64,11 +68,26 @@
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
+                <mixPort name="built-in mic" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000"
+                             channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
+                </mixPort>
+                <mixPort name="tunnel a2dp" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_HW_AV_SYNC">
+                    <profile name=""/>
+                </mixPort>
+                <mixPort name="mmap_no_irq_out" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_MMAP_NOIRQ">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                        samplingRates="48000"
+                        channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
             </mixPorts>
             <devicePorts>
                 <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
-                <!-- <devicePort tagName="HDMI Out" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
-                </devicePort> -->
+                <devicePort tagName="HDMI Out" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
                 <devicePort tagName="Speaker" role="sink" type="AUDIO_DEVICE_OUT_SPEAKER">
                     <gains>
                         <gain name="gain_1" mode="AUDIO_GAIN_MODE_JOINT"
@@ -94,6 +113,21 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </devicePort>
+                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100"
+                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
 
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -117,16 +151,28 @@
             </devicePorts>
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
-                <!-- <route type="mix" sink="HDMI Out"
-                       sources="primary output,multichannel output"/> -->
+                <route type="mix" sink="HDMI Out"
+                       sources="primary output,tunnel pcm,multichannel output,mmap_no_irq_out"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,BT SCO Headset Mic"/>
+                       sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
+                <route type="mix" sink="BT SCO"
+                       sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
+                <route type="mix" sink="BT SCO Headset"
+                       sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
                 <route type="mix" sink="Wired Headset"
-                       sources="primary output,BT SCO Headset Mic"/>
+                       sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
                 <route type="mix" sink="Wired Headphones"
-                       sources="primary output,BT SCO Headset Mic"/>
+                       sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic"/>
+                       sources="Wired Headset Mic,BT SCO Headset Mic"/>
+                <route type="mix" sink="built-in mic"
+                       sources="Built-In Mic,Built-In Back Mic"/>
+                <route type="mix" sink="BT A2DP Out"
+                       sources="primary output,tunnel a2dp,mmap_no_irq_out"/>
+                <route type="mix" sink="BT A2DP Headphones"
+                       sources="primary output,tunnel a2dp,mmap_no_irq_out"/>
+                <route type="mix" sink="BT A2DP Speaker"
+                       sources="primary output,tunnel a2dp,mmap_no_irq_out"/>
             </routes>
 
         </module>

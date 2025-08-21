@@ -68,6 +68,11 @@
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
+                <mixPort name="built-in mic" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000"
+                             channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
+                </mixPort>
                 <mixPort name="tunnel a2dp" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_HW_AV_SYNC">
                     <profile name=""/>
                 </mixPort>
@@ -159,7 +164,9 @@
                 <route type="mix" sink="Wired Headphones"
                        sources="primary output,BT SCO Headset Mic,mmap_no_irq_out"/>
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic"/>
+                       sources="Wired Headset Mic,BT SCO Headset Mic"/>
+                <route type="mix" sink="built-in mic"
+                       sources="Built-In Mic,Built-In Back Mic"/>
                 <route type="mix" sink="BT A2DP Out"
                        sources="primary output,tunnel a2dp,mmap_no_irq_out"/>
                 <route type="mix" sink="BT A2DP Headphones"
